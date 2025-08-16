@@ -1,103 +1,137 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useMemo, useState } from "react"
+import type { Slot, SlotKey, Role } from "@/types"
+import { players } from "@/data/players"
+import { useTeamStore } from "@/stores/teamStore"
+
+const SLOTS: Slot[] = [
+  { key: "S", label: "Setter", role: "Setter" },
+  { key: "OP", label: "Opposite", role: "Opposite" },
+  { key: "OH1", label: "Outside Hitter 1", role: "Outside Hitter" },
+  { key: "OH2", label: "Outside Hitter 2", role: "Outside Hitter" },
+  { key: "MB1", label: "Middle Blocker 1", role: "Middle Blocker" },
+  { key: "MB2", label: "Middle Blocker 2", role: "Middle Blocker" },
+  { key: "L", label: "Libero", role: "Libero" }
+]
+
+export default function Page() {
+  const [q, setQ] = useState("")
+  const { selected, selectSlot, assignments, clearSlot, assignSelected, reset, isAssigned } =
+    useTeamStore()
+
+  const selectedSlot = useMemo(() => SLOTS.find((s) => s.key === selected) ?? null, [selected])
+
+  const assignedName = (k: SlotKey) => {
+    const id = assignments[k]
+    if (!id) return "— vacío —"
+    const p = players.find((x) => x.id === id)
+    return p?.name ?? "—"
+  }
+
+  const candidates = useMemo(() => {
+    if (!selectedSlot) return []
+    const role: Role = selectedSlot.role
+    const nameQ = q.trim().toLowerCase()
+    return players
+      .filter((p) => p.roles.includes(role))
+      .filter((p) => !isAssigned(p.id) || assignments[selectedSlot.key] === p.id) // permitir el que ya está
+      .filter((p) => (nameQ ? p.name.toLowerCase().includes(nameQ) : true))
+  }, [selectedSlot, q, assignments, isAssigned])
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="mx-auto max-w-6xl p-6 space-y-8">
+      <header className="flex items-end justify-between">
+        <div>
+          <h1 className="text-2xl font-semibold">Team Builder — Haikyuu!!</h1>
+          <p className="text-sm text-gray-500">Selecciona una posición y asigna jugadores.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={reset}
+          className="rounded-xl border px-4 py-2 text-sm hover:bg-gray-50"
+          title="Resetear equipo"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          Reset
+        </button>
+      </header>
+
+      {/* Slots */}
+      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
+        {SLOTS.map((s) => {
+          const active = selected === s.key
+          return (
+            <button
+              key={s.key}
+              onClick={() => selectSlot(s.key)}
+              className={[
+                "rounded-2xl border p-4 text-left transition",
+                active ? "ring-2 ring-black bg-gray-50" : "hover:bg-gray-50"
+              ].join(" ")}
+            >
+              <div className="text-xs uppercase tracking-wide text-gray-500">{s.label}</div>
+              <div className="mt-1 text-[13px] text-gray-600">{s.role}</div>
+              <div className="mt-3 text-sm font-medium">{assignedName(s.key)}</div>
+
+              {assignments[s.key] && (
+                <div className="mt-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      clearSlot(s.key)
+                    }}
+                    className="text-xs rounded-lg border px-2 py-1 hover:bg-gray-100"
+                  >
+                    Quitar
+                  </button>
+                </div>
+              )}
+            </button>
+          )
+        })}
+      </section>
+
+      {/* Panel de asignación */}
+      <section className="rounded-2xl border p-4">
+        {!selectedSlot ? (
+          <p className="text-sm text-gray-500">Selecciona una posición para ver candidatos.</p>
+        ) : (
+          <>
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-lg font-semibold">
+                Asignar a: <span className="font-normal">{selectedSlot.label}</span>
+              </h2>
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Buscar por nombre..."
+                className="w-64 rounded-xl border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <ul className="mt-4 divide-y">
+              {candidates.length === 0 && (
+                <li className="py-3 text-sm text-gray-500">Sin resultados para esta posición.</li>
+              )}
+              {candidates.map((p) => (
+                <li key={p.id} className="flex items-center justify-between gap-2 py-3">
+                  <div>
+                    <div className="text-sm font-medium">{p.name}</div>
+                    <div className="text-xs text-gray-500">
+                      {p.team ? `${p.team} · ` : ""}{p.roles.join(", ")}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => assignSelected(p.id)}
+                    className="rounded-xl border px-3 py-1.5 text-sm hover:bg-gray-50"
+                  >
+                    Asignar
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    </main>
+  )
 }
