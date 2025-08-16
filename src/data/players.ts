@@ -2,6 +2,7 @@ import type { Player } from "../types";
 
 export const players: Player[] = [
   // ATSUMU MIYA
+
   {
     id: "atsumu-miya-ur",
     name: "Atsumu Miya",
@@ -9,7 +10,7 @@ export const players: Player[] = [
     rarity: "UR",
     roles: ["S"],
     typeTags: ["Quick Attack", "Serve", "Setter"],
-    image: "/public/characters/atsumu-miya-ur.jpg",
+    image: "/public/characters/atsumu-miya-ur.png",
     stats: {
       basic: {
         quickAttack: 126,
@@ -101,7 +102,7 @@ export const players: Player[] = [
     rarity: "UR",
     roles: ["OP"],
     typeTags: ["Quick Attack", "Serve"],
-    image: "/public/characters/atsumu-miya-ur.jpg",
+    image: "/public/characters/atsumu-miya-ur.png",
     stats: {
       basic: {
         quickAttack: 126,
