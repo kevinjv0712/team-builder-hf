@@ -1,5 +1,12 @@
 export type Role = "S" | "WS" | "MB" | "OP" | "LI"; // Setter, Outside, Middle, Opposite, Libero
-export type Rarity = "UR" | "SSR" | "SR";
+export type Rarity = "SP" | "UR" | "SSR" | "SR";
+export type SlotKey = "LI" | "WS1" | "WS2" | "MB1" | "MB2" | "OP" | "S";
+
+export interface Slot {
+  key: SlotKey;
+  label: string;
+  role: Role;
+}
 
 export type SkillKey =
   | "quick attack"
@@ -70,6 +77,7 @@ export interface Memory {
 export interface Player {
   id: string;
   name: string;
+  shortName: string;
   team: string;
   rarity: Rarity;
   roles: Role[];
