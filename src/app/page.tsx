@@ -9,6 +9,7 @@ import {
   type AnySlotKey,
   type BenchKey,
 } from "../stores/teamStore";
+import { schoolBonds } from "../data/schoolBonds";
 
 /* --------- layout titulares: 2 filas + LI lateral (row-span-2) ---------- */
 const SLOTS: Slot[] = [
@@ -38,7 +39,7 @@ const TEAM_BG: Record<string, string> = {
   AobaJohsai: "/teams/aoba-johsai.webp",
   Date: "/teams/date.webp",
   Fukurodani: "/teams/fukurodani.webp",
-  Inarizaki: "/teams/inarizaki.jpg",
+  Inarizaki: "/teams/inarizaki.webp",
   Karasuno: "/teams/karasuno.jpeg",
   Nekoma: "/teams/nekoma.webp",
   Shiratorizawa: "/teams/shiratorizawa.webp",
@@ -390,13 +391,36 @@ export default function Page() {
 
   const dominantBg = dominantTeam ? TEAM_BG[dominantTeam] : null;
 
+  type SelectedBond =
+    | { kind: "school"; team: string }
+    | { kind: "player"; name: string; participants: string[]; effect: string };
+
+  const [selectedBond, setSelectedBond] = useState<SelectedBond | null>(null);
+
+  // ¿Resaltar esta carta?
+  const highlightIds = useMemo(() => {
+    if (!selectedBond) return new Set<string>();
+    if (selectedBond.kind === "school") {
+      // resalta a los titulares de ese team (sólo titulares, sin banca)
+      return new Set(
+        onCourtPlayers
+          .filter((p) => p.team === selectedBond.team)
+          .map((p) => p.id)
+      );
+    }
+    return new Set(selectedBond.participants);
+  }, [selectedBond, onCourtPlayers]);
+
+  const cardHighlightClass = (p: Player | null) =>
+    p && highlightIds.has(p.id) ? "ring-4 ring-amber-400 shadow-lg" : "";
+
   return (
     <main
       className="mx-auto max-w-7xl p-4 md:p-6"
       onClick={handleBackgroundClick}
     >
       {/* Header */}
-      <header className="mb-4 grid grid-cols-[1fr_auto] items-center gap-2">
+      <header className="mb-4 grid grid-cols-[1fr_auto] items-center gap-2 sticky top-0 z-40 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75">
         <h1 className="text-xl font-semibold min-w-0">
           Haikyu!! Fly High - Team Builder
         </h1>
@@ -459,15 +483,28 @@ export default function Page() {
           )}
 
           <div className="relative">
-            <h4 className="text-sm font-semibold mb-2">Active Bonds</h4>
+            <h4 className="text-sm font-semibold mb-1">Active Bonds</h4>
 
             {dominantTeam ? (
-              <div className="mb-2">
-                <span className="text-xs rounded-full border bg-gray-100 px-2 py-0.5">
-                  Active School Bond:{" "}
-                  <span className="font-medium">{dominantTeam}</span>
-                </span>
-              </div>
+              <button
+                className={`text-xs rounded-full px-2 py-0.5 ml-1 mb-1 ${
+                  selectedBond?.kind === "school" &&
+                  selectedBond.team === dominantTeam
+                    ? "bg-black text-white"
+                    : "bg-white border"
+                }`}
+                onClick={() =>
+                  setSelectedBond(
+                    selectedBond?.kind === "school" &&
+                      selectedBond.team === dominantTeam
+                      ? null
+                      : { kind: "school", team: dominantTeam }
+                  )
+                }
+              >
+                Active Bond School:{" "}
+                <span className="font-medium">{dominantTeam}</span>
+              </button>
             ) : (
               teamBonuses.length > 0 && (
                 <div className="mb-2 flex flex-wrap gap-2">
@@ -485,19 +522,69 @@ export default function Page() {
             )}
 
             {activeBondNames.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 ml-1">
                 {activeBondNames.map((n) => (
-                  <span
+                  <button
                     key={n}
-                    className="text-xs rounded-full bg-gray-100 px-2 py-0.5"
+                    className={`text-xs rounded-full px-2 py-0.5 ${
+                      selectedBond?.kind === "player" && selectedBond.name === n
+                        ? "bg-black text-white"
+                        : "bg-white border"
+                    }`}
+                    onClick={() => {
+                      // descubre participantes por nombre del bond:
+                      const all = onCourtPlayers.flatMap((p) =>
+                        p.bonds.map((b) => ({ p, b }))
+                      );
+                      const hit = all.find(({ b }) => b.name === n);
+                      const participants = hit?.b.participants?.length
+                        ? hit.b.participants
+                        : hit?.b.to
+                        ? [hit.b.to]
+                        : [];
+                      setSelectedBond(
+                        selectedBond?.kind === "player" &&
+                          selectedBond.name === n
+                          ? null
+                          : {
+                              kind: "player",
+                              name: n,
+                              participants: participants ?? [],
+                              effect: hit?.b.effect ?? "No effect description",
+                            }
+                      );
+                    }}
                   >
                     {n}
-                  </span>
+                  </button>
                 ))}
               </div>
             )}
           </div>
         </section>
+      )}
+
+      {/* Caja de información del bond seleccionado */}
+      {selectedBond && (
+        <div className="xl:hidden m-2 mt-4 rounded-lg border bg-white/80 p-3 text-xs">
+          {selectedBond.kind === "school" ? (
+            <>
+              <div className="font-semibold mb-1">
+                {schoolBonds[selectedBond.team]?.name ??
+                  `${selectedBond.team} Bond`}
+              </div>
+              <div className="text-gray-700">
+                {schoolBonds[selectedBond.team]?.effect ??
+                  "School bond active with 4 starters."}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="font-semibold mb-1">{selectedBond.name}</div>
+              <div className="text-gray-700">Active player bond.</div>
+            </>
+          )}
+        </div>
       )}
 
       {/* Panel móvil/mediano (Details/Bonds) */}
@@ -572,6 +659,7 @@ export default function Page() {
                           isActive
                             ? "ring-2 ring-black shadow"
                             : "hover:bg-gray-50",
+                          cardHighlightClass(p),
                           eligibleClass(meta.role),
                         ].join(" ")}
                         style={{ width: SLOT_W }}
@@ -666,6 +754,7 @@ export default function Page() {
                               ? "ring-2 ring-black shadow"
                               : "hover:bg-gray-50",
                             eligibleClass(meta.role),
+                            cardHighlightClass(p),
                           ].join(" ")}
                           style={{ width: SLOT_W }}
                           onClick={(e) => {
@@ -749,6 +838,7 @@ export default function Page() {
                         isActive
                           ? "ring-2 ring-black shadow"
                           : "hover:bg-gray-200",
+                        cardHighlightClass(p),
                         //eligibleClass(meta.role),
                       ].join(" ")}
                       title={p ? `${p.name} · ${p.team}` : "Bench"}
@@ -932,12 +1022,25 @@ export default function Page() {
                 </h4>
 
                 {dominantTeam ? (
-                  <div className="mb-2 ml-3">
-                    <span className="text-xs rounded-full bg-white px-2 py-0.5">
-                      Active Bond School:{" "}
-                      <span className="font-medium">{dominantTeam}</span>
-                    </span>
-                  </div>
+                  <button
+                    className={`text-xs rounded-full px-2 py-0.5 ml-3 mb-2 ${
+                      selectedBond?.kind === "school" &&
+                      selectedBond.team === dominantTeam
+                        ? "bg-black text-white"
+                        : "bg-white border"
+                    }`}
+                    onClick={() =>
+                      setSelectedBond(
+                        selectedBond?.kind === "school" &&
+                          selectedBond.team === dominantTeam
+                          ? null
+                          : { kind: "school", team: dominantTeam }
+                      )
+                    }
+                  >
+                    Active Bond School:{" "}
+                    <span className="font-medium">{dominantTeam}</span>
+                  </button>
                 ) : (
                   teamBonuses.length > 0 && (
                     <div className="mb-2 flex flex-wrap gap-2">
@@ -955,15 +1058,72 @@ export default function Page() {
                 )}
 
                 {activeBondNames.length > 0 && (
-                  <div className="ml-3 space-y-2">
+                  <div className="flex gap-2 ml-3">
                     {activeBondNames.map((n) => (
-                      <span
+                      <button
                         key={n}
-                        className="table text-xs rounded-full bg-white px-2 py-0.5"
+                        className={`text-xs rounded-full px-2 py-0.5 ${
+                          selectedBond?.kind === "player" &&
+                          selectedBond.name === n
+                            ? "bg-black text-white"
+                            : "bg-white border"
+                        }`}
+                        onClick={() => {
+                          // descubre participantes por nombre del bond:
+                          const all = onCourtPlayers.flatMap((p) =>
+                            p.bonds.map((b) => ({ p, b }))
+                          );
+                          const hit = all.find(({ b }) => b.name === n);
+                          const participants = hit?.b.participants?.length
+                            ? hit.b.participants
+                            : hit?.b.to
+                            ? [hit.b.to]
+                            : [];
+                          setSelectedBond(
+                            selectedBond?.kind === "player" &&
+                              selectedBond.name === n
+                              ? null
+                              : {
+                                  kind: "player",
+                                  name: n,
+                                  participants: participants ?? [],
+                                  effect:
+                                    hit?.b.effect ?? "No effect description",
+                                }
+                          );
+                        }}
                       >
                         {n}
-                      </span>
+                      </button>
                     ))}
+                  </div>
+                )}
+
+                {/* Caja de información del bond seleccionado */}
+                {selectedBond && (
+                  <div className="m-3 mt-4 rounded-lg border bg-white/80 p-3 text-xs">
+                    {selectedBond.kind === "school" ? (
+                      <>
+                        <div className="font-semibold mb-1">
+                          {schoolBonds[selectedBond.team]?.name ??
+                            `${selectedBond.team} Bond`}
+                        </div>
+                        <div className="text-gray-700">
+                          {schoolBonds[selectedBond.team]?.effect ??
+                            "School bond active with 4 starters."}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="font-semibold mb-1">
+                          {selectedBond.name}
+                        </div>
+                        <div className="text-gray-700">
+                          {selectedBond.effect ??
+                            "This player bond has no effect text defined."}
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
 
