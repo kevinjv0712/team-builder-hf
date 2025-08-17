@@ -8,7 +8,7 @@ export type BenchKey = "B1" | "B2" | "B3" | "B4" | "B5" | "B6";
 export type AnySlotKey = SlotKey | BenchKey;
 
 type PanelMode = "details" | "bonds";
-type Assignments = Partial<Record<AnySlotKey, string>>;
+type Assignments = Partial<Record<AnySlotKey, string | null>>;
 
 interface TeamState {
   selectedSlot: AnySlotKey | null;
@@ -20,6 +20,7 @@ interface TeamState {
   clearSlot: (k: AnySlotKey) => void;
   assignToSelected: (playerId: string) => void;
   isAssigned: (playerId: string) => boolean;
+  swapSlots: (a: AnySlotKey, b: AnySlotKey) => void;
 
   // Mantengo esta firma por si luego quieres mover la lógica al store;
   // el filtro por NOMBRE lo hacemos en la UI (con acceso a players).
@@ -77,5 +78,21 @@ export const useTeamStore = create<TeamState>((set, get) => ({
       detailsPlayerId: null,
       panelMode: "details",
       assignments: {},
+    }),
+
+  swapSlots: (a, b) =>
+    set((state) => {
+      const next = { ...state.assignments } as Record<
+        AnySlotKey,
+        string | null
+      >;
+      if (!(a in next)) next[a] = null;
+      if (!(b in next)) next[b] = null;
+
+      const tmp = next[a] ?? null;
+      next[a] = next[b] ?? null;
+      next[b] = tmp;
+
+      return { assignments: next, selectedSlot: b };
     }),
 }));

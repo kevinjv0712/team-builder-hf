@@ -247,42 +247,6 @@ export default function Page() {
   const TEAM_H = 16;
   const GAP = 20;
 
-  /** --- Bonos de equipo y vínculos activos --- */
-  const onCourtPlayers = useMemo(
-    () =>
-      Array.from(assignedIds)
-        .map((id) => getPlayerById(id))
-        .filter(Boolean) as Player[],
-    [assignedIds]
-  );
-
-  const teamBonuses = useMemo(() => {
-    const counts = new Map<string, number>();
-    onCourtPlayers.forEach((p) =>
-      counts.set(p.team, (counts.get(p.team) || 0) + 1)
-    );
-    return Array.from(counts.entries())
-      .filter(([, c]) => c >= 2) // regla temporal de 2
-      .map(([team, count]) => ({ team, count }));
-  }, [onCourtPlayers]);
-
-  const activeBondNames = useMemo(() => {
-    const set = new Set<string>();
-    onCourtPlayers.forEach((p) =>
-      p.bonds.forEach((b) => {
-        if (isBondActive(b)) set.add(b.name);
-      })
-    );
-    return Array.from(set);
-  }, [onCourtPlayers, assignments]);
-
-  // Team dominante y su fondo (si existe) para la sección Bonos
-  const dominantTeam = useMemo(
-    () => pickDominantTeam(teamBonuses),
-    [teamBonuses]
-  );
-  const dominantBg = dominantTeam ? TEAM_BG[dominantTeam] : null;
-
   /** --- Quitar selección al hacer click fuera --- */
   const handleBackgroundClick = (e: React.MouseEvent) => {
     const el = e.target as HTMLElement;
@@ -316,6 +280,115 @@ export default function Page() {
       } catch {}
     }
   };
+
+  const dragSrc = useRef<AnySlotKey | null>(null);
+  const DND_MIME = "application/x-slot";
+
+  const handleDragStart = (slot: AnySlotKey) => (e: React.DragEvent) => {
+    dragSrc.current = slot;
+    // set ambos por compatibilidad (Safari/Firefox/Chromium)
+    e.dataTransfer.setData(DND_MIME, String(slot));
+    e.dataTransfer.setData("text/plain", String(slot));
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault(); // sin esto no hay drop
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  const readDragSource = (e: React.DragEvent): AnySlotKey | null => {
+    return (
+      (e.dataTransfer.getData(DND_MIME) as AnySlotKey) ||
+      (e.dataTransfer.getData("text/plain") as AnySlotKey) ||
+      dragSrc.current ||
+      null
+    );
+  };
+
+  const { swapSlots } = useTeamStore();
+
+  const handleDrop = (dst: AnySlotKey) => (e: React.DragEvent) => {
+    e.preventDefault();
+    const src = readDragSource(e);
+    if (!src || src === dst) return;
+
+    const srcP = assignedPlayer(src);
+    const dstP = assignedPlayer(dst);
+
+    const dstRole = roleForSlot(dst);
+    const srcRole = roleForSlot(src);
+
+    // ¿Puede el jugador src ir al slot dst?
+    const srcFitsDst = !dstRole || (srcP && srcP.roles.includes(dstRole));
+    // ¿Puede el jugador dst (si existe) ir al slot src? (para swap)
+    const dstFitsSrc = !srcRole || !dstP || dstP.roles.includes(srcRole);
+
+    if (srcFitsDst && dstFitsSrc) {
+      swapSlots(src, dst);
+    } else {
+      // opcional: feedback visual/sonoro
+      // e.g. shake el destino o un toast "Posición no compatible"
+    }
+    dragSrc.current = null;
+  };
+
+  const [hoverRoles, setHoverRoles] = useState<Set<Role> | null>(null);
+  const [eligibleRoles, setEligibleRoles] = useState<Set<Role> | null>(null);
+
+  const beginRoleHighlight = (roles: Role[] | Set<Role>) =>
+    setEligibleRoles(new Set(roles));
+
+  const endRoleHighlight = () => setEligibleRoles(null);
+
+  const eligibleClass = (role: Role) =>
+    eligibleRoles?.has(role) ? "ring-4 ring-sky-400" : "";
+
+  const STARTER_KEYS: SlotKey[] = ["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"];
+
+  const onCourtIds = useMemo(() => {
+    // toma solo los ids de los slots titulares
+    return new Set(
+      STARTER_KEYS.map((k) => assignments[k]).filter(Boolean) as string[]
+    );
+  }, [assignments]);
+
+  /** --- Bonos de equipo y vínculos activos --- */
+  const onCourtPlayers = useMemo(
+    () =>
+      Array.from(onCourtIds)
+        .map((id) => getPlayerById(id))
+        .filter(Boolean) as Player[],
+    [onCourtIds]
+  );
+
+  const teamBonuses = useMemo(() => {
+    const counts = new Map<string, number>();
+    onCourtPlayers.forEach((p) =>
+      counts.set(p.team, (counts.get(p.team) || 0) + 1)
+    );
+    return Array.from(counts.entries())
+      .filter(([, c]) => c >= 3) // regla real: 4 titulares
+      .map(([team, count]) => ({ team, count }));
+  }, [onCourtPlayers]);
+
+  const activeBondNames = useMemo(() => {
+    const set = new Set<string>();
+    onCourtPlayers.forEach((p) =>
+      p.bonds.forEach((b) => {
+        if (isBondActive(b)) set.add(b.name);
+      })
+    );
+    return Array.from(set);
+  }, [onCourtPlayers, assignments]);
+
+  // Team dominante y su fondo (si existe) para la sección Bonos
+  const dominantTeam = useMemo(
+    () => pickDominantTeam(teamBonuses),
+    [teamBonuses]
+  );
+
+  const dominantBg = dominantTeam ? TEAM_BG[dominantTeam] : null;
 
   return (
     <main
@@ -499,6 +572,7 @@ export default function Page() {
                           isActive
                             ? "ring-2 ring-black shadow"
                             : "hover:bg-gray-50",
+                          eligibleClass(meta.role),
                         ].join(" ")}
                         style={{ width: SLOT_W }}
                         onClick={(e) => {
@@ -512,6 +586,10 @@ export default function Page() {
                         onTouchStart={() => startLongPress(occupant)}
                         onTouchEnd={() => cancelLongPress(occupant)}
                         onTouchCancel={() => cancelLongPress(occupant)}
+                        draggable={!!p}
+                        onDragStart={handleDragStart(occupant)}
+                        onDragOver={handleDragOver}
+                        onDrop={handleDrop(occupant)}
                       >
                         {p ? (
                           <img
@@ -587,6 +665,7 @@ export default function Page() {
                             isActive
                               ? "ring-2 ring-black shadow"
                               : "hover:bg-gray-50",
+                            eligibleClass(meta.role),
                           ].join(" ")}
                           style={{ width: SLOT_W }}
                           onClick={(e) => {
@@ -670,6 +749,7 @@ export default function Page() {
                         isActive
                           ? "ring-2 ring-black shadow"
                           : "hover:bg-gray-200",
+                        //eligibleClass(meta.role),
                       ].join(" ")}
                       title={p ? `${p.name} · ${p.team}` : "Bench"}
                       onClick={(e) => {
@@ -683,6 +763,10 @@ export default function Page() {
                       onTouchStart={() => startLongPress(bk)}
                       onTouchEnd={() => cancelLongPress(bk)}
                       onTouchCancel={() => cancelLongPress(bk)}
+                      draggable={!!p}
+                      onDragStart={handleDragStart(bk)}
+                      onDragOver={handleDragOver}
+                      onDrop={handleDrop(bk)}
                     >
                       {p ? (
                         <img
@@ -722,7 +806,14 @@ export default function Page() {
                     </div>
                     <PlayersRow
                       players={recommendedForSlot}
-                      onClickCard={(p) => assignToSelected(p.id)}
+                      onClickCard={(p) => {
+                        assignToSelected(p.id);
+                        setDetailsPlayer(p.id);
+                        if (!isLarge) setMobilePanel("details");
+                        endRoleHighlight();
+                      }}
+                      onBeginHighlight={beginRoleHighlight}
+                      onEndHighlight={endRoleHighlight}
                       badge="★"
                     />
                     <hr className="my-3" />
@@ -737,7 +828,14 @@ export default function Page() {
                 </div>
                 <PlayersRow
                   players={nonRecommendedForSlot}
-                  onClickCard={(p) => assignToSelected(p.id)}
+                  onClickCard={(p) => {
+                    assignToSelected(p.id);
+                    setDetailsPlayer(p.id);
+                    if (!isLarge) setMobilePanel("details");
+                    endRoleHighlight();
+                  }}
+                  onBeginHighlight={beginRoleHighlight}
+                  onEndHighlight={endRoleHighlight}
                 />
               </>
             )}
@@ -797,7 +895,12 @@ export default function Page() {
             ) : (
               <PlayersGrid
                 players={filteredAllPlayers}
-                onClickCard={inspectPlayer}
+                onClickCard={(p) => {
+                  inspectPlayer(p);
+                  endRoleHighlight();
+                }}
+                onBeginHighlight={beginRoleHighlight}
+                onEndHighlight={endRoleHighlight}
               />
             )}
           </section>
@@ -852,11 +955,11 @@ export default function Page() {
                 )}
 
                 {activeBondNames.length > 0 && (
-                  <div className="flex flex-wrap gap-2 ml-3">
+                  <div className="ml-3 space-y-2">
                     {activeBondNames.map((n) => (
                       <span
                         key={n}
-                        className="text-xs rounded-full bg-white px-2 py-0.5"
+                        className="table text-xs rounded-full bg-white px-2 py-0.5"
                       >
                         {n}
                       </span>
@@ -870,7 +973,15 @@ export default function Page() {
           )}
 
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-semibold">Player</h3>
+            <h3 className="text-base font-semibold flex items-center gap-2">
+              <span>Player</span>
+              {detailsPlayer && (
+                <span className="text-sm font-normal text-gray-600">
+                  — {detailsPlayer.shortName}{" "}
+                  <span className="text-gray-400">·</span> {detailsPlayer.team}
+                </span>
+              )}
+            </h3>
             <div className="flex gap-1">
               <button
                 onClick={() => setDesktopPanel("details")}
@@ -1057,16 +1168,26 @@ function PlayersRow({
   players,
   onClickCard,
   badge,
+  onBeginHighlight,
+  onEndHighlight,
 }: {
   players: Player[];
   onClickCard: (p: Player) => void;
   badge?: string;
+  onBeginHighlight?: (roles: Role[] | Set<Role>) => void;
+  onEndHighlight?: () => void;
 }) {
   return (
     <ul className="mt-1 flex gap-2 overflow-x-auto pb-1">
       {players.map((p) => (
         <li key={p.id} className="shrink-0 w-[92px]">
-          <PlayerCard p={p} onClick={() => onClickCard(p)} badge={badge} />
+          <PlayerCard
+            p={p}
+            onClick={() => onClickCard(p)}
+            badge={badge}
+            onBeginHighlight={onBeginHighlight}
+            onEndHighlight={onEndHighlight}
+          />
         </li>
       ))}
     </ul>
@@ -1076,14 +1197,24 @@ function PlayersRow({
 function PlayersGrid({
   players,
   onClickCard,
+  onBeginHighlight,
+  onEndHighlight,
 }: {
   players: Player[];
   onClickCard: (p: Player) => void;
+  onBeginHighlight?: (roles: Role[] | Set<Role>) => void;
+  onEndHighlight?: () => void;
 }) {
   return (
     <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-0">
       {players.map((p) => (
-        <PlayerCard key={p.id} p={p} onClick={() => onClickCard(p)} />
+        <PlayerCard
+          key={p.id}
+          p={p}
+          onClick={() => onClickCard(p)}
+          onBeginHighlight={onBeginHighlight}
+          onEndHighlight={onEndHighlight}
+        />
       ))}
     </div>
   );
@@ -1093,17 +1224,31 @@ function PlayerCard({
   p,
   onClick,
   badge,
+  onBeginHighlight,
+  onEndHighlight,
 }: {
   p: Player;
   onClick: () => void;
   badge?: string;
+  onBeginHighlight?: (roles: Role[] | Set<Role>) => void;
+  onEndHighlight?: () => void;
 }) {
   return (
     <button
       data-interactive="true"
+      draggable // permite drag para mostrar elegibles
+      onDragStart={() => onBeginHighlight?.(p.roles)}
+      onDragEnd={() => onEndHighlight?.()}
+      // fallback táctil/ratón por si el navegador no dispara drag:
+      onMouseDown={() => onBeginHighlight?.(p.roles)}
+      onMouseUp={() => onEndHighlight?.()}
+      onMouseLeave={() => onEndHighlight?.()}
+      onTouchStart={() => onBeginHighlight?.(p.roles)}
+      onTouchEnd={() => onEndHighlight?.()}
       onClick={(e) => {
         e.stopPropagation();
         onClick();
+        onEndHighlight?.();
       }}
       className="group relative block rounded-lg border hover:border-black overflow-hidden w-20"
       title={`${p.name} · ${p.team}`}
@@ -1153,4 +1298,14 @@ function FilterSelect({
       </select>
     </label>
   );
+}
+
+function roleForSlot(k: AnySlotKey): Role | null {
+  if (k === "LI") return "LI";
+  if (k === "OP") return "OP";
+  if (k === "S") return "S";
+  if (k === "WS1" || k === "WS2") return "WS";
+  if (k === "MB1" || k === "MB2") return "MB";
+  // banca
+  return null;
 }
