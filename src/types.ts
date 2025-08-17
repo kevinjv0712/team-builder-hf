@@ -1,13 +1,6 @@
 // src/types.ts
 export type Role = "S" | "WS" | "MB" | "OP" | "LI"; // Setter, Outside, Middle, Opposite, Libero
-export type Rarity = "SP" | "UR" | "SSR" | "SR";
-export type SlotKey = "LI" | "WS1" | "WS2" | "MB1" | "MB2" | "OP" | "S";
-
-export interface Slot {
-  key: SlotKey;
-  label: string;
-  role: Role;
-}
+export type Rarity = "UR" | "SSR" | "SR";
 
 export type SkillKey =
   | "quick attack"
