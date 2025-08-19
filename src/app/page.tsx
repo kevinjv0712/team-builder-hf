@@ -153,7 +153,7 @@ export default function Page() {
             </section>
 
             {/* Disponibles */}
-            <section className="pl-4 pb-2">
+            <section className="pl-4 pb-8">
               <div className="w-full">
                 <AvailableForSlot />
               </div>
@@ -179,8 +179,8 @@ export default function Page() {
               {showBonusMdUp ? (
                 <>
                   {/* BONIFICACIONES ARRIBA (estado normal) */}
-                  <section className="rounded-xl bg-neutral-600/100">
-                    <h2 className="sr-only">Bonificaciones</h2>
+                  <section className="rounded-xl bg-neutral-600/100 mt-4">
+                    <h2 className="sr-only">Active Bonds</h2>
                     <BonusesPanel onHighlightChange={setHighlightIds} />
                   </section>
                   {/* VÍNCULOS DEBAJO */}

@@ -13,6 +13,7 @@ const THUMB_MAX = 56;
 const CHIP_GAP = 8;
 const PANEL_RADIUS = 12;
 const STARTER_KEYS = ["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"] as const;
+const BENCH_KEYS = ["B1", "B2", "B3", "B4", "B5", "B6"] as const;
 
 // Fondo por escuela cuando hay bono activo (para la sección de Bonos)
 const TEAM_BG: Record<string, string> = {
@@ -35,11 +36,13 @@ export default function BonusesPanel({
 }: {
   onHighlightChange?: (ids: Set<string>) => void;
 }) {
-  // 1) Hooks SIEMPRE primero (sin returns aún)
+  // ---- Store snapshot (estable)
   const assignments = useTeamStore((s) => s.assignments);
 
+  // ---- Estado local
   const [sel, setSel] = useState<SelectedBond | null>(null);
 
+  // ---- Responsive thumbs
   const wrapRef = useRef<HTMLDivElement>(null);
   const [thumbPx, setThumbPx] = useState(32);
   useLayoutEffect(() => {
@@ -60,6 +63,7 @@ export default function BonusesPanel({
     };
   }, []);
 
+  // ---- Conjuntos de IDs presentes
   const onCourtIds = useMemo(() => {
     const ids = new Set<string>();
     STARTER_KEYS.forEach((k) => {
@@ -69,6 +73,22 @@ export default function BonusesPanel({
     return ids;
   }, [assignments]);
 
+  const benchIds = useMemo(() => {
+    const ids = new Set<string>();
+    BENCH_KEYS.forEach((k) => {
+      const id = (assignments as any)[k];
+      if (id) ids.add(id);
+    });
+    return ids;
+  }, [assignments]);
+
+  // Titulares + banca = presentes
+  const presentIds = useMemo(() => {
+    const s = new Set<string>(onCourtIds);
+    benchIds.forEach((id) => s.add(id));
+    return s;
+  }, [onCourtIds, benchIds]);
+
   const onCourtPlayers = useMemo(
     () =>
       Array.from(onCourtIds)
@@ -77,6 +97,7 @@ export default function BonusesPanel({
     [onCourtIds]
   );
 
+  // ---- Dominante por escuela
   const { dominantTeam, dominantCount } = useMemo(() => {
     const m = new Map<string, number>();
     for (const p of onCourtPlayers) {
@@ -104,8 +125,10 @@ export default function BonusesPanel({
     return TEAM_BG[dominantTeam] ?? "";
   }, [schoolActive, dominantTeam]);
 
+  // ---- Bonds activos: TODOS los participantes deben estar presentes (titulares o banca)
   const activeBonds = useMemo(() => {
     const map = new Map<string, BondEntry>();
+
     for (const p of onCourtPlayers) {
       for (const b of p.bonds ?? []) {
         const participants: string[] = b?.participants?.length
@@ -113,8 +136,13 @@ export default function BonusesPanel({
           : b?.to
           ? [b.to]
           : [];
-        const isActive = participants.some((id) => onCourtIds.has(id));
+
+        // Activo sólo si TODOS los participantes están en presentIds
+        const isActive =
+          participants.length > 0 &&
+          participants.every((id) => presentIds.has(id));
         if (!isActive) continue;
+
         const key = b.name ?? "Unnamed Bond";
         const prev = map.get(key);
         if (!prev) {
@@ -130,9 +158,9 @@ export default function BonusesPanel({
       }
     }
     return Array.from(map.values());
-  }, [onCourtPlayers, onCourtIds]);
+  }, [onCourtPlayers, presentIds]);
 
-  // ids a resaltar según selección
+  // ---- Resaltado segun selección
   useEffect(() => {
     if (!onHighlightChange) return;
     if (!sel) {
@@ -148,9 +176,12 @@ export default function BonusesPanel({
       return;
     }
 
-    // bond de jugador: resaltar participantes (si alguno está en cancha)
-    onHighlightChange(new Set(sel.participants));
-  }, [sel, onHighlightChange, onCourtPlayers]);
+    // Bond de jugador: resaltar SOLO los que están presentes
+    const presentParticipants = sel.participants.filter((id) =>
+      presentIds.has(id)
+    );
+    onHighlightChange(new Set(presentParticipants));
+  }, [sel, onHighlightChange, onCourtPlayers, presentIds]);
 
   const participants = useMemo(() => {
     if (!sel || sel.kind !== "player") return [];
@@ -159,11 +190,11 @@ export default function BonusesPanel({
       .filter(Boolean) as any[];
   }, [sel]);
 
-  // 2) Ya con todos los hooks llamados, ahora sí podemos decidir ocultar
+  // ---- Ocultar panel si no hay nada activo
   const shouldHide = !schoolActive && activeBonds.length === 0;
   if (shouldHide) return null;
 
-  // 3) Handlers (no-hooks)
+  // ---- Handlers
   const toggleSchool = () =>
     setSel((s) =>
       s?.kind === "school"
@@ -185,11 +216,11 @@ export default function BonusesPanel({
 
   const schoolInfo = dominantTeam ? schoolBonds[dominantTeam] : undefined;
 
-  // 4) Render
+  // ---- Render
   return (
     <section
       ref={wrapRef}
-      className="relative bg-natural-300 rounded-xl p-4 overflow-hidden"
+      className="relative bg-neutral-300/0 rounded-xl pl-4 pb-4 pr-2 pt-2 overflow-hidden"
       style={{ borderRadius: PANEL_RADIUS }}
       data-interactive="true"
     >
@@ -208,7 +239,7 @@ export default function BonusesPanel({
       )}
 
       <div className="relative">
-        <h4 className="text-sm font-bold mb-2">Bonificaciones</h4>
+        <h4 className="text-lg font-bold mb-2">Active Bonds</h4>
 
         {schoolActive && (
           <div className="mb-2">

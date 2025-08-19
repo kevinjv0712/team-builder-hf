@@ -69,7 +69,7 @@ export default function MobileSlidePanel({
                 onClick={onClose}
                 className="rounded border border-white/60 px-2 py-1 text-xs"
               >
-                Cerrar
+                Close
               </button>
             </div>
             {/* Contenido scroleable */}

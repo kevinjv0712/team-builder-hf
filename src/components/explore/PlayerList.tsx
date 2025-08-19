@@ -22,10 +22,10 @@ export default function PlayersList() {
   const teams = useMemo(() => {
     const s = new Set<string>();
     players.forEach((p: any) => p.team && s.add(p.team));
-    return ["Todos", ...Array.from(s).sort()];
+    return ["All", ...Array.from(s).sort()];
   }, []);
 
-  const roles = ["Todos", "S", "WS", "MB", "OP", "LI"];
+  const roles = ["All", "S", "WS", "MB", "OP", "LI"];
 
   const hasTypeTags = useMemo(
     () => players.some((p: any) => (p.typeTags ?? []).length > 0),
@@ -37,24 +37,24 @@ export default function PlayersList() {
     players.forEach((p: any) =>
       (p.typeTags ?? []).forEach((t: string) => s.add(t))
     );
-    return ["Todos", ...Array.from(s).sort()];
+    return ["All", ...Array.from(s).sort()];
   }, []);
 
   // ---------- Estado filtros ----------
   const [query, setQuery] = useState("");
-  const [team, setTeam] = useState<string>("Todos");
-  const [role, setRole] = useState<string>("Todos");
-  const [typeTag, setTypeTag] = useState<string>(hasTypeTags ? "Todos" : "N/A");
+  const [team, setTeam] = useState<string>("All");
+  const [role, setRole] = useState<string>("All");
+  const [typeTag, setTypeTag] = useState<string>(hasTypeTags ? "All" : "N/A");
 
   // ---------- Filtrado ----------
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return players.filter((p: any) => {
-      if (team !== "Todos" && p.team !== team) return false;
-      if (role !== "Todos" && !(p.roles || []).includes(role)) return false;
+      if (team !== "All" && p.team !== team) return false;
+      if (role !== "All" && !(p.roles || []).includes(role)) return false;
       if (
         hasTypeTags &&
-        typeTag !== "Todos" &&
+        typeTag !== "All" &&
         !(p.typeTags || []).includes(typeTag)
       )
         return false;
@@ -139,7 +139,7 @@ export default function PlayersList() {
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <label className="flex items-center gap-1">
           <span className="text-[10px] uppercase tracking-wide opacity-70">
-            Buscar
+            Name
           </span>
           <input
             className="rounded border bg-neutral-900 px-2 py-1 text-xs"
@@ -152,7 +152,7 @@ export default function PlayersList() {
 
         <label className="flex items-center gap-1">
           <span className="text-[10px] uppercase tracking-wide opacity-70">
-            Equipo
+            Team
           </span>
           <select
             suppressHydrationWarning
@@ -171,7 +171,7 @@ export default function PlayersList() {
 
         <label className="flex items-center gap-1">
           <span className="text-[10px] uppercase tracking-wide opacity-70">
-            Posición
+            Position
           </span>
           <select
             className="rounded border bg-neutral-900 px-2 py-1 text-xs"
@@ -215,10 +215,10 @@ export default function PlayersList() {
             setRole("Todos");
             if (hasTypeTags) setTypeTag("Todos");
           }}
-          title="Limpiar filtros"
+          title="Clear filters"
           data-interactive="true"
         >
-          Limpiar
+          Clear
         </button>
       </div>
 

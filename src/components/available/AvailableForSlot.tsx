@@ -13,8 +13,8 @@ const COLS_SM = 10; // ≥ sm
 const COLS_XL = 12; // ≥ xl (muy, muy pequeñas)
 
 // separaciones
-const CARD_GAP = 8; // gap entre tarjetas
-const SECTION_GAP = 14; // separación vertical entre secciones
+const CARD_GAP = 6; // gap entre tarjetas
+const SECTION_GAP = 12; // separación vertical entre secciones
 
 // límites de seguridad (no afectan el “ser pequeñas”, solo evitan rarezas)
 const MIN_SAFE = 46; // px
@@ -142,7 +142,7 @@ export default function AvailableForSlot() {
   if (!selectedSlot) {
     return (
       <p className="text-sm text-gray-400">
-        Selecciona un slot para ver jugadores disponibles.
+        Select a slot to view available players.
       </p>
     );
   }
