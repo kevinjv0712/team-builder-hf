@@ -1,3 +1,5 @@
+// src/data/schoolBonds.ts
+
 export const schoolBonds: Record<string, { name: string; effect: string }> = {
   Inarizaki: {
     name: "Inarizaki Bond",
