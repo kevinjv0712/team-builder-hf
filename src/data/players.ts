@@ -1,3 +1,4 @@
+// src/players.ts
 import type { Player } from "./types";
 import {
   karasunoPlayers,

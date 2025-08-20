@@ -1,6 +1,7 @@
 // src/types.ts
 export type Role = "S" | "WS" | "MB" | "OP" | "LI"; // Setter, Outside, Middle, Opposite, Libero
 export type Rarity = "UR" | "SSR" | "SR" | "SP";
+export type Server = "Japan" | "Global";
 
 export type SkillKey =
   | "quick attack"
@@ -83,4 +84,5 @@ export interface Player {
   resonances: Resonance[]; // 5 items
   potentials: Potentials;
   memory: Memory;
+  server: Server;
 }

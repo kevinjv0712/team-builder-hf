@@ -15,7 +15,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SP",
     roles: ["S"],
-    typeTags: ["Setter", "Serve", "Team Support"],
+    typeTags: ["Setter", "Serve"],
     image: "/characters/karasuno/koshi-sugawara-sp.png",
     stats: {
       // SP baseline for a setter (consistent with Karasuno scaling)
@@ -142,7 +142,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SP",
     roles: ["LI"],
-    typeTags: ["Receive", "Save", "Cooldown"],
+    typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-sp.png",
     stats: {
       basic: {
@@ -263,7 +263,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SP",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Receive", "Team Support"],
+    typeTags: ["Quick Attack"],
     image: "/characters/karasuno/shoyo-hinata-sp.png",
     stats: {
       basic: {
@@ -375,7 +375,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SP",
     roles: ["MB"],
-    typeTags: ["Block", "Quick Attack", "Debuff"],
+    typeTags: ["Block", "Quick Attack"],
     image: "/characters/karasuno/kei-tsukishima-sp.png",
     stats: {
       // SP baseline for a blocker (consistent with Karasuno scaling)
@@ -500,14 +500,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "UR",
     roles: ["S"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Serve", "Setter", "Quick Attack"],
     image: "/characters/karasuno/tobio-kageyama-ur.png",
     stats: {
       basic: {
@@ -852,14 +845,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SSR",
     roles: ["LI"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-ssr.png",
     stats: {
       basic: {
@@ -985,14 +971,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SSR",
     roles: ["WS"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Serve", "Power Attack"],
     image: "/characters/karasuno/asahi-azumane-ssr.png",
     stats: {
       basic: {
@@ -1123,14 +1102,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SSR",
     roles: ["WS"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Power Attack"],
     image: "/characters/karasuno/ryunosuke-tanaka-ssr.png",
     stats: {
       basic: {
@@ -1249,14 +1221,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SSR",
     roles: ["MB"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Quick Attack", "Block"],
     image: "/characters/karasuno/kei-tsukishima-ssr.png",
     stats: {
       basic: {
@@ -1492,14 +1457,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["S"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Serve", "Power Attack", "Setter"],
     image: "/characters/karasuno/koshi-sugawara-sr.png",
     stats: {
       basic: {
@@ -1735,14 +1693,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["LI"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-sr.png",
     stats: {
       basic: {
@@ -1872,14 +1823,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Power Attack"],
     image: "/characters/karasuno/ryunosuke-tanaka-sr.png",
     stats: {
       basic: {
@@ -2002,14 +1946,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Receive"],
     image: "/characters/karasuno/chikara-ennoshita-sr.png",
     stats: {
       basic: {
@@ -2127,14 +2064,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Serve", "Power Attack"],
     image: "/characters/karasuno/asahi-azumane-sr.png",
     stats: {
       basic: {
@@ -2254,14 +2184,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Quick Attack", "Block"],
     image: "/characters/karasuno/kei-tsukishima-sr.png",
     stats: {
       basic: {
@@ -2493,14 +2416,7 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: [
-      "Serve",
-      "Power Attack",
-      "Setter",
-      "Quick Attack",
-      "Block",
-      "Receive",
-    ],
+    typeTags: ["Serve"],
     image: "/characters/karasuno/tadashi-yamaguchi-sr.png",
     stats: {
       basic: {

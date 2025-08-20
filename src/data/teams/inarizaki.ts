@@ -1,3 +1,4 @@
+// src/teams/inarizaki.ts
 import type { Player } from "../types";
 
 export const inarizakiPlayers: Player[] = [
@@ -11,6 +12,7 @@ export const inarizakiPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Quick Attack", "Serve", "Setter"],
     image: "/characters/inarizaki/atsumu-miya-ur.png",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 126,
@@ -93,6 +95,7 @@ export const inarizakiPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Quick Attack", "Serve"],
     image: "/characters/inarizaki/osamu-miya-ur.png",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 126,
