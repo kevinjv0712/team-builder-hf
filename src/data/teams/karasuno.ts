@@ -1,5 +1,5 @@
 // src/data/teams/karasuno.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const karasunoPlayers: Player[] = [
   // =========================================================
@@ -16,7 +16,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SP",
     roles: ["S"],
     typeTags: ["Setter", "Serve"],
-    image: "/characters/karasuno/koshi-sugawara-sp.png",
+    image: "/characters/karasuno/koshi-sugawara-sp.jpg",
     stats: {
       // SP baseline for a setter (consistent with Karasuno scaling)
       basic: {
@@ -143,7 +143,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SP",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/yu-nishinoya-sp.png",
+    image: "/characters/karasuno/yu-nishinoya-sp.jpg",
     stats: {
       basic: {
         quickAttack: 90,
@@ -264,7 +264,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SP",
     roles: ["MB"],
     typeTags: ["Quick Attack"],
-    image: "/characters/karasuno/shoyo-hinata-sp.png",
+    image: "/characters/karasuno/shoyo-hinata-sp.jpg",
     stats: {
       basic: {
         quickAttack: 118,
@@ -376,7 +376,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SP",
     roles: ["MB"],
     typeTags: ["Block", "Quick Attack"],
-    image: "/characters/karasuno/kei-tsukishima-sp.png",
+    image: "/characters/karasuno/kei-tsukishima-sp.jpg",
     stats: {
       // SP baseline for a blocker (consistent with Karasuno scaling)
       basic: {
@@ -501,7 +501,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "UR",
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Quick Attack"],
-    image: "/characters/karasuno/tobio-kageyama-ur.png",
+    image: "/characters/karasuno/tobio-kageyama-ur.jpg",
     stats: {
       basic: {
         quickAttack: 999,
@@ -596,7 +596,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Quick Attack"],
-    image: "/characters/karasuno/tobio-kageyama-ssr.png",
+    image: "/characters/karasuno/tobio-kageyama-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 109,
@@ -716,7 +716,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["OP"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/daichi-sawamura-ssr.png",
+    image: "/characters/karasuno/daichi-sawamura-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 75,
@@ -846,7 +846,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/yu-nishinoya-ssr.png",
+    image: "/characters/karasuno/yu-nishinoya-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 68,
@@ -972,7 +972,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["WS"],
     typeTags: ["Serve", "Power Attack"],
-    image: "/characters/karasuno/asahi-azumane-ssr.png",
+    image: "/characters/karasuno/asahi-azumane-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 83,
@@ -1103,7 +1103,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["WS"],
     typeTags: ["Power Attack"],
-    image: "/characters/karasuno/ryunosuke-tanaka-ssr.png",
+    image: "/characters/karasuno/ryunosuke-tanaka-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 83,
@@ -1222,7 +1222,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/karasuno/kei-tsukishima-ssr.png",
+    image: "/characters/karasuno/kei-tsukishima-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 115,
@@ -1342,7 +1342,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SSR",
     roles: ["MB"],
     typeTags: ["Quick Attack"],
-    image: "/characters/karasuno/shoyo-hinata-ssr.png",
+    image: "/characters/karasuno/shoyo-hinata-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 121,
@@ -1458,7 +1458,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Serve", "Power Attack", "Setter"],
-    image: "/characters/karasuno/koshi-sugawara-sr.png",
+    image: "/characters/karasuno/koshi-sugawara-sr.jpg",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1582,7 +1582,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["OP"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/daichi-sawamura-sr.png",
+    image: "/characters/karasuno/daichi-sawamura-sr.jpg",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1694,7 +1694,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/yu-nishinoya-sr.png",
+    image: "/characters/karasuno/yu-nishinoya-sr.jpg",
     stats: {
       basic: {
         quickAttack: 55,
@@ -1824,7 +1824,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Power Attack"],
-    image: "/characters/karasuno/ryunosuke-tanaka-sr.png",
+    image: "/characters/karasuno/ryunosuke-tanaka-sr.jpg",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1947,7 +1947,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Receive"],
-    image: "/characters/karasuno/chikara-ennoshita-sr.png",
+    image: "/characters/karasuno/chikara-ennoshita-sr.jpg",
     stats: {
       basic: {
         quickAttack: 61,
@@ -2065,7 +2065,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Serve", "Power Attack"],
-    image: "/characters/karasuno/asahi-azumane-sr.png",
+    image: "/characters/karasuno/asahi-azumane-sr.jpg",
     stats: {
       basic: {
         quickAttack: 68,
@@ -2185,7 +2185,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/karasuno/kei-tsukishima-sr.png",
+    image: "/characters/karasuno/kei-tsukishima-sr.jpg",
     stats: {
       basic: {
         quickAttack: 94,
@@ -2297,7 +2297,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack"],
-    image: "/characters/karasuno/shoyo-hinata-sr.png",
+    image: "/characters/karasuno/shoyo-hinata-sr.jpg",
     stats: {
       basic: {
         quickAttack: 98,
@@ -2417,7 +2417,7 @@ export const karasunoPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Serve"],
-    image: "/characters/karasuno/tadashi-yamaguchi-sr.png",
+    image: "/characters/karasuno/tadashi-yamaguchi-sr.jpg",
     stats: {
       basic: {
         quickAttack: 88,

@@ -325,6 +325,7 @@ export default function LineupAndBench({
 
                   {/* Carta 19/26 */}
                   <div
+                    data-slotkey={occupant}
                     data-interactive="true"
                     className={[
                       "relative rounded-2xl bg-neutral-700 transition",
@@ -454,6 +455,7 @@ export default function LineupAndBench({
                       </div>
                     </div>
                     <div
+                      data-slotkey="LI"
                       data-interactive="true"
                       className={[
                         "relative rounded-2xl bg-neutral-700 transition",
@@ -591,6 +593,7 @@ export default function LineupAndBench({
 
             return (
               <button
+                data-slotkey={bk}
                 key={bk}
                 className={[
                   "relative rounded-2xl bg-neutral-500 overflow-hidden",

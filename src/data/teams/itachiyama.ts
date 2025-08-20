@@ -1,5 +1,5 @@
 // src/data/teams/itachiyama.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const itachiyamaPlayers: Player[] = [
   // ===================== KIYOOMI SAKUSA (UR) =====================
@@ -11,7 +11,7 @@ export const itachiyamaPlayers: Player[] = [
     rarity: "UR",
     roles: ["WS"],
     typeTags: ["Power Attack", "Receive", "Awareness Up", "Team Morale"],
-    image: "/characters/itachiyama/kiyoomi-sakusa-ur.png",
+    image: "/characters/itachiyama/kiyoomi-sakusa-ur.jpg",
     stats: {
       basic: {
         quickAttack: 112,
@@ -131,7 +131,7 @@ export const itachiyamaPlayers: Player[] = [
     rarity: "UR",
     roles: ["LI"],
     typeTags: ["Receive", "Set", "Enhance Team", "Team Morale"],
-    image: "/characters/itachiyama/motoya-komori-ur.png",
+    image: "/characters/itachiyama/motoya-komori-ur.jpg",
     stats: {
       basic: {
         quickAttack: 88,

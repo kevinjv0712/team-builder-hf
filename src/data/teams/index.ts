@@ -7,4 +7,3 @@ export { dateTechPlayers } from "./date-tech";
 export { fukurodaniPlayers } from "./fukurodani";
 export { itachiyamaPlayers } from "./itachiyama";
 export { kamomedaiPlayers } from "./kamomedai";
-export { kitagawaDaiichiPlayers } from "./kitagawa-daiichi";

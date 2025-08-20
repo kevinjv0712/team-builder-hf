@@ -1,5 +1,5 @@
 // src/teams/inarizaki.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const inarizakiPlayers: Player[] = [
   // ATSUMU MIYA

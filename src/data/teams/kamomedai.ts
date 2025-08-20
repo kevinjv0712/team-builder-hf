@@ -1,5 +1,5 @@
 // src/data/teams/kamomedai.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const kamomedaiPlayers: Player[] = [
   // ===================== SACHIRO HIRUGAMI (UR) =====================
@@ -11,7 +11,7 @@ export const kamomedaiPlayers: Player[] = [
     rarity: "UR",
     roles: ["MB"],
     typeTags: ["Block", "Serve", "Enhance Team"],
-    image: "/characters/kamomedai/sachiro-hirugami-ur.png",
+    image: "/characters/kamomedai/sachiro-hirugami-ur.jpg",
     stats: {
       basic: {
         quickAttack: 126,
@@ -142,7 +142,7 @@ export const kamomedaiPlayers: Player[] = [
       "Receive",
       "Block",
     ],
-    image: "/characters/kamomedai/kourai-hoshiumi-ur.png",
+    image: "/characters/kamomedai/kourai-hoshiumi-ur.jpg",
     stats: {
       basic: {
         quickAttack: 101,

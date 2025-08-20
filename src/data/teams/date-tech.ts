@@ -1,5 +1,5 @@
 // src/data/teams/date-tech.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const dateTechPlayers: Player[] = [
   // ===================== TAKANOBU AONE (SP / Swimsuit) =====================
@@ -11,7 +11,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SP",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block", "Serve"],
-    image: "/characters/date/takanobu-aone-sp.png",
+    image: "/characters/date/takanobu-aone-sp.jpg",
     stats: {
       basic: {
         quickAttack: 144,
@@ -125,7 +125,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SSR",
     roles: ["S"],
     typeTags: ["Setter", "Block", "Serve"],
-    image: "/characters/date/kanji-koganegawa-ssr.png",
+    image: "/characters/date/kanji-koganegawa-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 79,
@@ -244,7 +244,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SSR",
     roles: ["OP"],
     typeTags: ["Power Attack", "Block", "Serve", "Receive"],
-    image: "/characters/date/takehito-sasaya-ssr.png",
+    image: "/characters/date/takehito-sasaya-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 83,
@@ -363,7 +363,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SSR",
     roles: ["WS"],
     typeTags: ["Serve", "Power Attack", "Block", "Receive"],
-    image: "/characters/date/kenji-futakuchi-ssr.png",
+    image: "/characters/date/kenji-futakuchi-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 79,
@@ -487,7 +487,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SSR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/date/takanobu-aone-ssr.png",
+    image: "/characters/date/takanobu-aone-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 115,
@@ -608,7 +608,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Setter", "Block", "Serve"],
-    image: "/characters/date/kaname-moniwa-sr.png",
+    image: "/characters/date/kaname-moniwa-sr.jpg",
     stats: {
       basic: {
         quickAttack: 60,
@@ -727,7 +727,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Setter", "Block", "Serve"],
-    image: "/characters/date/kanji-koganegawa-sr.png",
+    image: "/characters/date/kanji-koganegawa-sr.jpg",
     stats: {
       basic: {
         quickAttack: 65,
@@ -839,7 +839,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["OP"],
     typeTags: ["Power Attack", "Block", "Receive"],
-    image: "/characters/date/takehito-sasaya-sr.png",
+    image: "/characters/date/takehito-sasaya-sr.jpg",
     stats: {
       basic: {
         quickAttack: 68,
@@ -950,7 +950,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Power Attack", "Block", "Serve", "Receive"],
-    image: "/characters/date/kenji-futakuchi-sr.png",
+    image: "/characters/date/kenji-futakuchi-sr.jpg",
     stats: {
       basic: {
         quickAttack: 65,
@@ -1062,7 +1062,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Receive", "Block", "Power Attack"],
-    image: "/characters/date/yutaka-obara-sr.png",
+    image: "/characters/date/yutaka-obara-sr.jpg",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1180,7 +1180,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/date/takanobu-aone-sr.png",
+    image: "/characters/date/takanobu-aone-sr.jpg",
     stats: {
       basic: {
         quickAttack: 94,
@@ -1292,7 +1292,7 @@ export const dateTechPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/date/yasushi-kamasaki-sr.png",
+    image: "/characters/date/yasushi-kamasaki-sr.jpg",
     stats: {
       basic: {
         quickAttack: 94,

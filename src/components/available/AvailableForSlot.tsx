@@ -1,24 +1,28 @@
 // src/components/available/AvailableForSlot.tsx
 "use client";
 
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
-import type { AnySlotKey, BenchKey } from "@/stores/teamStore";
+import type { AnySlotKey } from "@/stores/teamStore";
+import { useHasMounted } from "@/utils/useHasMounted";
 
-/* ========= Parámetros AJUSTABLES (lo importante) ========= */
-// n° de columnas objetivo por breakpoint
-const COLS_XS = 8; // < sm (muy pequeñas)
+/* ========= Parámetros AJUSTABLES ========= */
+const COLS_XS = 8; // < sm
 const COLS_SM = 10; // ≥ sm
-const COLS_XL = 12; // ≥ xl (muy, muy pequeñas)
+const COLS_XL = 12; // ≥ xl
 
-// separaciones
-const CARD_GAP = 6; // gap entre tarjetas
-const SECTION_GAP = 12; // separación vertical entre secciones
+const CARD_GAP = 6;
+const SECTION_GAP = 12;
 
-// límites de seguridad (no afectan el “ser pequeñas”, solo evitan rarezas)
-const MIN_SAFE = 46; // px
-const MAX_CARD = 160; // px (tope superior por si el contenedor es gigantesco)
+const MIN_SAFE = 120; // px
+const MAX_CARD = 360; // px (tope superior)
+
+const PANEL_MARGIN = 8; // margen a bordes de viewport
+const PANEL_MAX_W = 920; // ancho máximo del panel
+const PANEL_MIN_W = 280; // ancho mínimo del panel
+const PANEL_MAX_H_VH = 90; // alto máximo del panel en % de viewport
 
 /* ===== Helpers de rol/slots ===== */
 const STARTER_KEYS = new Set(["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"]);
@@ -38,7 +42,6 @@ const roleForSlot = (k: AnySlotKey | null | undefined) =>
 const isBenchSlot = (k: AnySlotKey | null | undefined) =>
   !!k && !STARTER_KEYS.has(k);
 
-// Bonds → ¿candidato tiene vínculo con alguien en cancha?
 function hasBondWithOnCourt(candidate: any, onCourtIds: Set<string>): boolean {
   if (!candidate?.bonds?.length) return false;
   for (const b of candidate.bonds) {
@@ -52,13 +55,17 @@ function hasBondWithOnCourt(candidate: any, onCourtIds: Set<string>): boolean {
   return false;
 }
 
+/* ====== Panel flotante anclado a un slot ====== */
 export default function AvailableForSlot() {
+  const mounted = useHasMounted();
   const { selectedSlot, assignments } = useTeamStore();
+  const selectSlot = useTeamStore((s) => s.selectSlot);
 
   const assignToSelected =
     (useTeamStore.getState() as any).assignToSelected ||
     ((pid: string) => console.warn("Falta assignToSelected(pid) en el store"));
 
+  // IDs ya usados (se excluyen de la lista)
   const assignedIds = useMemo(() => {
     const vals = Object.values(assignments ?? {}).filter(Boolean) as string[];
     return new Set(vals);
@@ -66,16 +73,18 @@ export default function AvailableForSlot() {
 
   const selectedRole = roleForSlot(selectedSlot as AnySlotKey);
   const showAll = isBenchSlot(selectedSlot);
-  // Filtrado base por rol (o todos si banca)
+
+  // Filtrado por slot
   const base = useMemo(() => {
+    if (!selectedSlot) return [] as any[];
     const pool =
       showAll || !selectedRole
         ? players
         : players.filter((p) => p.roles?.includes(selectedRole));
     return pool.filter((p) => !assignedIds.has(p.id));
-  }, [selectedSlot, assignedIds]);
+  }, [selectedSlot, showAll, selectedRole, assignedIds]);
 
-  // IDs en cancha (para recomendaciones)
+  // IDs en cancha para recomendaciones
   const onCourtIds = useMemo(() => {
     const ids = new Set<string>();
     STARTER_KEYS.forEach((k) => {
@@ -94,34 +103,27 @@ export default function AvailableForSlot() {
     [base, onCourtIds]
   );
 
-  /* ===== Tamaño de tarjeta derivado del bloque padre (no “rellenar”) =====
-     Estrategia: calculamos un ancho fijo de tarjeta en px según #columnas “target”.
-     Usamos FLEX + WRAP; cada item tiene width fijo (no crece para rellenar).
-     Si hay 1 sola tarjeta, queda PEQUEÑA y centrada (no enorme). */
-  const containerRef = useRef<HTMLDivElement>(null);
+  /* ===== Tamaño de tarjeta ===== */
+  const contentRef = useRef<HTMLDivElement>(null);
   const [cardPx, setCardPx] = useState(90);
 
   useLayoutEffect(() => {
-    const el = containerRef.current;
+    const el = contentRef.current;
     if (!el) return;
 
     const mqlSm = window.matchMedia("(min-width: 640px)");
     const mqlXl = window.matchMedia("(min-width: 1280px)");
 
     const compute = () => {
-      const W = el.clientWidth; // ancho REAL del bloque
+      const W = el.clientWidth;
       const colsTarget = mqlXl.matches
         ? COLS_XL
         : mqlSm.matches
         ? COLS_SM
         : COLS_XS;
-
-      // ancho de tarjeta “fijo” para lograr X columnas (sin rellenar):
-      // card = floor((W - gap*(cols-1)) / cols)
       let s = Math.floor((W - CARD_GAP * (colsTarget - 1)) / colsTarget);
       if (!Number.isFinite(s) || s < MIN_SAFE) s = MIN_SAFE;
       if (s > MAX_CARD) s = MAX_CARD;
-
       setCardPx(s);
     };
 
@@ -137,45 +139,191 @@ export default function AvailableForSlot() {
       mqlXl.removeEventListener("change", compute);
       window.removeEventListener("resize", compute);
     };
-  }, []);
+  }, [mounted]);
 
-  if (!selectedSlot) {
-    return (
-      <p className="text-sm text-gray-400">
-        Select a slot to view available players.
-      </p>
+  /* ===== Posicionamiento anclado ===== */
+  const [pos, setPos] = useState<{ left: number; top: number; width: number }>({
+    left: 0,
+    top: 0,
+    width: 360,
+  });
+
+  const recomputePosition = () => {
+    if (!selectedSlot || !mounted) return;
+
+    const anchor =
+      (document.querySelector(
+        `[data-slotkey="${selectedSlot}"]`
+      ) as HTMLElement) || null;
+
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    const width = Math.min(
+      Math.max(PANEL_MIN_W, Math.round(vw * 0.9)),
+      PANEL_MAX_W
     );
-  }
 
-  return (
-    <div ref={containerRef} className="w-full">
-      {/* Recomendados (arriba si hay) */}
-      {recommended.length > 0 && (
-        <section className="mb-[14px]">
-          <div className="text-xs font-semibold mb-2">Recomendados</div>
-          <ThumbGrid
-            list={recommended}
-            cardPx={cardPx}
-            gap={CARD_GAP}
-            onClick={(p) => assignToSelected(p.id)}
-            showBadge
-          />
-        </section>
-      )}
+    // Default: centro de la pantalla
+    let left = Math.round(Math.max(PANEL_MARGIN, (vw - width) / 2));
+    let top = Math.round(PANEL_MARGIN + 56); // bajo el header fijo como fallback
 
-      {/* Resto */}
-      <section
-        style={{ marginTop: recommended.length ? `${SECTION_GAP}px` : 0 }}
+    if (anchor) {
+      const r = anchor.getBoundingClientRect();
+      const centerX = r.left + r.width / 2;
+
+      // Preferimos debajo del slot, centrado
+      let candidateTop = Math.round(r.bottom + PANEL_MARGIN);
+      let candidateLeft = Math.round(
+        Math.min(
+          Math.max(centerX - width / 2, PANEL_MARGIN),
+          vw - width - PANEL_MARGIN
+        )
+      );
+
+      // Si no hay espacio abajo, intentamos arriba
+      const maxHeight = Math.round((PANEL_MAX_H_VH / 100) * vh);
+      const needHeight = Math.min(maxHeight, vh - 2 * PANEL_MARGIN);
+      if (candidateTop + needHeight > vh - PANEL_MARGIN) {
+        candidateTop = Math.round(r.top - PANEL_MARGIN - needHeight);
+        if (candidateTop < PANEL_MARGIN) {
+          candidateTop = Math.round(
+            Math.max(PANEL_MARGIN, vh - needHeight - PANEL_MARGIN)
+          );
+        }
+      }
+
+      left = candidateLeft;
+      top = candidateTop;
+    }
+
+    setPos({ left, top, width });
+  };
+
+  useLayoutEffect(() => {
+    if (!mounted || !selectedSlot) return;
+    recomputePosition();
+
+    const onScroll = () => {
+      // Reposicionar mientras se desplaza
+      recomputePosition();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", recomputePosition, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", recomputePosition);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted, selectedSlot]);
+
+  /* ===== Cerrar ===== */
+  const close = () => {
+    try {
+      selectSlot(null as any);
+    } catch {
+      // si el store no acepta null, al menos oculta por UI (pero lo normal es limpiar selección)
+    }
+  };
+
+  // Cerrar con Escape
+  useEffect(() => {
+    if (!selectedSlot) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selectedSlot]);
+
+  // Si no hay slot seleccionado → no renderizamos nada
+  if (!mounted || !selectedSlot) return null;
+
+  const body = (
+    <div className="fixed inset-0 z-50">
+      {/* backdrop */}
+      <div
+        className="absolute inset-0 bg-black/40"
+        onClick={close}
+        aria-hidden
+      />
+      {/* panel */}
+      <div
+        role="dialog"
+        aria-label="Available players"
+        className="absolute rounded-xl border bg-neutral-900 shadow-xl"
+        style={{
+          left: pos.left,
+          top: pos.top,
+          width: pos.width,
+          maxHeight: `min(${PANEL_MAX_H_VH}vh, 680px)`,
+          overflow: "hidden",
+        }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <ThumbGrid
-          list={others}
-          cardPx={cardPx}
-          gap={CARD_GAP}
-          onClick={(p) => assignToSelected(p.id)}
-        />
-      </section>
+        {/* header del panel */}
+        <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-white/10">
+          <div className="text-md font-semibold text-gray-200">
+            {showAll ? "Available Players" : `Available — ${selectedRole}`}
+          </div>
+          <button
+            onClick={close}
+            className="rounded border px-2 py-1 text-xs bg-neutral-400 hover:bg-white/10"
+            aria-label="Close"
+          >
+            Close
+          </button>
+        </div>
+
+        {/* contenido scroleable */}
+        <div
+          ref={contentRef}
+          className="px-3 py-3 overflow-auto"
+          style={{ maxHeight: `calc(min(${PANEL_MAX_H_VH}vh, 680px) - 40px)` }}
+        >
+          {recommended.length > 0 && (
+            <section className="mb-[14px]">
+              <div className="text-md text-neutral-300 font-semibold mb-2">
+                Recommended
+              </div>
+              <ThumbGrid
+                list={recommended}
+                cardPx={cardPx}
+                gap={CARD_GAP}
+                onClick={(p) => {
+                  assignToSelected(p.id);
+                  close();
+                }}
+                showBadge
+              />
+            </section>
+          )}
+
+          <section
+            style={{ marginTop: recommended.length ? `${SECTION_GAP}px` : 0 }}
+          >
+            <ThumbGrid
+              list={others}
+              cardPx={cardPx}
+              gap={CARD_GAP}
+              onClick={(p) => {
+                assignToSelected(p.id);
+                close();
+              }}
+            />
+          </section>
+
+          {recommended.length === 0 && others.length === 0 && (
+            <p className="text-center text-xs text-gray-400 py-6">
+              No hay jugadores disponibles para este slot.
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
+
+  return createPortal(body, document.body);
 }
 
 /* ===================== Subcomponente: Grid ===================== */
@@ -195,7 +343,7 @@ function ThumbGrid({
   if (!list.length) return null;
 
   return (
-    <div className="flex flex-wrap" style={{ gap: `${gap}px` }}>
+    <div className="flex flex-wrap justify-center" style={{ gap: `${gap}px` }}>
       {list.map((p) => (
         <button
           key={p.id}
@@ -203,7 +351,7 @@ function ThumbGrid({
           className="relative rounded-lg border border-white/40 bg-neutral-800 hover:bg-neutral-700 transition overflow-hidden"
           style={{
             width: `${cardPx}px`,
-            aspectRatio: "19 / 26", // mantiene 19:26
+            aspectRatio: "19 / 26",
           }}
           title={`${p.name} · ${p.team}`}
         >
@@ -213,7 +361,6 @@ function ThumbGrid({
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
           />
-          {/* badge */}
           {showBadge && (
             <div className="absolute top-0 left-0 rounded-md bg-amber-400 text-black text-[8px] font-bold px-1.5 py-0.5">
               ★

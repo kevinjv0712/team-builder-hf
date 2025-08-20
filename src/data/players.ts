@@ -1,5 +1,5 @@
 // src/players.ts
-import type { Player } from "./types";
+import type { Player } from "@/types";
 import {
   karasunoPlayers,
   inarizakiPlayers,
@@ -10,7 +10,6 @@ import {
   fukurodaniPlayers,
   itachiyamaPlayers,
   kamomedaiPlayers,
-  kitagawaDaiichiPlayers,
 } from "./teams";
 
 export const playersByTeam = {
@@ -23,7 +22,6 @@ export const playersByTeam = {
   Fukurodani: fukurodaniPlayers,
   Itachiyama: itachiyamaPlayers,
   Kamomedai: kamomedaiPlayers,
-  "Kitagawa Daiichi": kitagawaDaiichiPlayers,
 } as const;
 
 export const players: Player[] = Object.values(playersByTeam).flat();

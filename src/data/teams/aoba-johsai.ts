@@ -1,4 +1,4 @@
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const aobaJohsaiPlayers: Player[] = [
   // ===== TORU OIKAWA (UR - placeholder) =====
@@ -10,7 +10,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "UR",
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Power Attack"],
-    image: "/characters/aoba-johsai/toru-oikawa-ur.png",
+    image: "/characters/aoba-johsai/toru-oikawa-ur.jpg",
     stats: {
       basic: {
         quickAttack: 0,
@@ -76,7 +76,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SSR",
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Power Attack"],
-    image: "/characters/aoba-johsai/toru-oikawa-ssr.png",
+    image: "/characters/aoba-johsai/toru-oikawa-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 75,
@@ -195,7 +195,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SSR",
     roles: ["WS"],
     typeTags: ["Power Attack"],
-    image: "/characters/aoba-johsai/hajime-iwaizumi-ssr.png",
+    image: "/characters/aoba-johsai/hajime-iwaizumi-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 83,
@@ -315,7 +315,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Power Attack"],
-    image: "/characters/aoba-johsai/hajime-iwaizumi-sr.png",
+    image: "/characters/aoba-johsai/hajime-iwaizumi-sr.jpg",
     stats: {
       basic: {
         quickAttack: 68,
@@ -434,7 +434,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SSR",
     roles: ["OP"],
     typeTags: ["Power Attack", "Serve"],
-    image: "/characters/aoba-johsai/kentaro-kyotani-ssr.png",
+    image: "/characters/aoba-johsai/kentaro-kyotani-ssr.jpg",
     stats: {
       basic: {
         quickAttack: 83,
@@ -554,7 +554,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["OP"],
     typeTags: ["Power Attack", "Serve"],
-    image: "/characters/aoba-johsai/kentaro-kyotani-sr.png",
+    image: "/characters/aoba-johsai/kentaro-kyotani-sr.jpg",
     stats: {
       basic: {
         quickAttack: 68,
@@ -674,7 +674,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Block", "Quick Attack"],
-    image: "/characters/aoba-johsai/issei-matsukawa-sr.png",
+    image: "/characters/aoba-johsai/issei-matsukawa-sr.jpg",
     stats: {
       basic: {
         quickAttack: 93,
@@ -794,7 +794,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Receive", "Power Attack"],
-    image: "/characters/aoba-johsai/takahiro-hanamaki-sr.png",
+    image: "/characters/aoba-johsai/takahiro-hanamaki-sr.jpg",
     stats: {
       basic: {
         quickAttack: 61,
@@ -914,7 +914,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/aoba-johsai/shinji-watari-sr.png",
+    image: "/characters/aoba-johsai/shinji-watari-sr.jpg",
     stats: {
       basic: {
         quickAttack: 56,
@@ -1026,7 +1026,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Serve", "Power Attack", "Setter"],
-    image: "/characters/aoba-johsai/shigeru-yahaba-sr.png",
+    image: "/characters/aoba-johsai/shigeru-yahaba-sr.jpg",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1138,7 +1138,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/aoba-johsai/yutaro-kindaichi-sr.png",
+    image: "/characters/aoba-johsai/yutaro-kindaichi-sr.jpg",
     stats: {
       basic: {
         quickAttack: 99,
@@ -1258,7 +1258,7 @@ export const aobaJohsaiPlayers: Player[] = [
     rarity: "SR",
     roles: ["OP"],
     typeTags: ["Receive", "Power Attack"],
-    image: "/characters/aoba-johsai/akira-kunimi-sr.png",
+    image: "/characters/aoba-johsai/akira-kunimi-sr.jpg",
     stats: {
       basic: {
         quickAttack: 67,

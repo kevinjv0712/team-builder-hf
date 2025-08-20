@@ -286,9 +286,9 @@ export default function PlayerDetails({
       <section className="mt-1">
         <div className="text-xs font-semibold mb-2">Bonds</div>
         {(selected.bonds ?? []).length === 0 ? (
-          <div className="text-xs text-gray-500">No bonds.</div>
+          <div className="text-xs text-gray-500 mb-4">No bonds.</div>
         ) : (
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-4">
             {selected.bonds.map((b: any, i: number) => {
               const participants = b?.participants?.length
                 ? b.participants

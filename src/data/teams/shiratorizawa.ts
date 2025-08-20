@@ -1,5 +1,5 @@
 // src/data/teams/shiratorizawa.ts
-import type { Player } from "../types";
+import type { Player } from "@/types";
 
 export const shiratorizawaPlayers: Player[] = [
   // ===================== TAICHI KAWANISHI (SR) =====================
@@ -76,17 +76,47 @@ export const shiratorizawaPlayers: Player[] = [
         to: "satori-tendo-ssr",
         name: "Shiratorizawa’s Middle Block",
         participants: ["taichi-kawanishi-sr", "satori-tendo-ssr"],
-        effect: "Increases Block stat of your side's front row players while both are on court.",
+        effect:
+          "Increases Block stat of your side's front row players while both are on court.",
       },
     ],
     resonances: [
-      { level: "I", name: "Skill Resonance I", effect: "Increases Basic Stats by 6%." },
-      { level: "II", name: "Skill Resonance II", effect: "Reduces ADAPTIVE MOVE cooldown by 2 net crossings." },
-      { level: "III", name: "Skill Resonance III", effect: "Increases Basic Stats by 6%." },
-      { level: "IV", name: "Skill Resonance IV", effect: "Increases TAICHI KAWANISHI's Reflex by 15% when blocking." },
-      { level: "V", name: "Skill Resonance V", effect: "Increases Basic Stats by 6%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: "Reduces ADAPTIVE MOVE cooldown by 2 net crossings.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect: "Increases TAICHI KAWANISHI's Reflex by 15% when blocking.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 6%.",
+      },
     ],
-    potentials: { recommended: { primaryType: "", primaryCount: 4, secondaryType: "", secondaryCount: 2, reason: "" }, equipped: [] },
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
     memory: { name: "", effect: "" },
   },
 
@@ -140,9 +170,9 @@ export const shiratorizawaPlayers: Player[] = [
         key: "passive",
         name: "Future Ace",
         levels: {
-          "1": "At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of \"Sharp\". Each stack increases his Power Attack by 2.5%, up to 5 stacks.",
-          "2": "At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of \"Sharp\". Each stack increases his Power Attack by 2.5%, up to 5 stacks.",
-          "3": "At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of \"Sharp\". Each stack increases his Power Attack by 2.5%, up to 5 stacks.",
+          "1": 'At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of "Sharp". Each stack increases his Power Attack by 2.5%, up to 5 stacks.',
+          "2": 'At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of "Sharp". Each stack increases his Power Attack by 2.5%, up to 5 stacks.',
+          "3": 'At the end of each turn, TSUTOMU GOSHIKI gains 1 stack(s) of "Sharp". Each stack increases his Power Attack by 2.5%, up to 5 stacks.',
           "4": undefined,
           "5": undefined,
         },
@@ -161,13 +191,44 @@ export const shiratorizawaPlayers: Player[] = [
     ],
     bonds: [],
     resonances: [
-      { level: "I", name: "Skill Resonance I", effect: "Increases Basic Stats by 10%." },
-      { level: "II", name: "Skill Resonance II", effect: 'FUTURE ACE new effect: Each stack of "Sharp" increases Awareness by 2%.' },
-      { level: "III", name: "Skill Resonance III", effect: "Increases Basic Stats by 10%." },
-      { level: "IV", name: "Skill Resonance IV", effect: "When your side enters Team Morale Awakening state, MIRACLE MAKER cooldown is reset." },
-      { level: "V", name: "Skill Resonance V", effect: "Increases Basic Stats by 10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          'FUTURE ACE new effect: Each stack of "Sharp" increases Awareness by 2%.',
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When your side enters Team Morale Awakening state, MIRACLE MAKER cooldown is reset.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 10%.",
+      },
     ],
-    potentials: { recommended: { primaryType: "", primaryCount: 4, secondaryType: "", secondaryCount: 2, reason: "" }, equipped: [] },
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
     memory: { name: "", effect: "" },
   },
 
@@ -245,31 +306,56 @@ export const shiratorizawaPlayers: Player[] = [
         to: "wakatoshi-ushijima-ur",
         name: "Lifelong Best Friends",
         participants: ["satori-tendo-ssr", "wakatoshi-ushijima-ur"],
-        effect: "Increases WAKATOSHI USHIJIMA's Attack Technique and SATORI TENDŌ's Defense Technique while both are deployed.",
+        effect:
+          "Increases WAKATOSHI USHIJIMA's Attack Technique and SATORI TENDŌ's Defense Technique while both are deployed.",
       },
       {
         to: "taichi-kawanishi-sr",
         name: "Shiratorizawa’s Middle Block",
         participants: ["satori-tendo-ssr", "taichi-kawanishi-sr"],
-        effect: "Front-row block coordination boosts your side's front row Block stat.",
+        effect:
+          "Front-row block coordination boosts your side's front row Block stat.",
       },
     ],
     resonances: [
-      { level: "I", name: "Skill Resonance I", effect: "Increases Basic Stats by 10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 10%.",
+      },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "When SATORI TENDŌ is present, at match start, applies “Enrage” debuff to opponent players (reduces Power/Quick Attack stats).",
+        effect:
+          "When SATORI TENDŌ is present, at match start, applies “Enrage” debuff to opponent players (reduces Power/Quick Attack stats).",
       },
-      { level: "III", name: "Skill Resonance III", effect: "Increases Basic Stats by 10%." },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 10%.",
+      },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "Increases SATORI TENDŌ's Block stat by 10%; if the opponent spiker has a debuff when he blocks, increases TENDŌ's Reflex by 10% for that block.",
+        effect:
+          "Increases SATORI TENDŌ's Block stat by 10%; if the opponent spiker has a debuff when he blocks, increases TENDŌ's Reflex by 10% for that block.",
       },
-      { level: "V", name: "Skill Resonance V", effect: "Increases Basic Stats by 10%." },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 10%.",
+      },
     ],
-    potentials: { recommended: { primaryType: "", primaryCount: 4, secondaryType: "", secondaryCount: 2, reason: "" }, equipped: [] },
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
     memory: { name: "", effect: "" },
   },
 
@@ -281,7 +367,13 @@ export const shiratorizawaPlayers: Player[] = [
     team: "Shiratorizawa",
     rarity: "UR",
     roles: ["OP"],
-    typeTags: ["Power Attack", "Serve", "Awareness Up", "Stat Bonus", "Debuff Cleanse"],
+    typeTags: [
+      "Power Attack",
+      "Serve",
+      "Awareness Up",
+      "Stat Bonus",
+      "Debuff Cleanse",
+    ],
     image: "/characters/shiratorizawa/wakatoshi-ushijima-ur.png",
     stats: {
       basic: {
@@ -347,25 +439,49 @@ export const shiratorizawaPlayers: Player[] = [
         to: "satori-tendo-ssr",
         name: "Lifelong Best Friends",
         participants: ["wakatoshi-ushijima-ur", "satori-tendo-ssr"],
-        effect: "Increases WAKATOSHI USHIJIMA's Attack Technique and SATORI TENDŌ's Defense Technique while both are deployed.",
+        effect:
+          "Increases WAKATOSHI USHIJIMA's Attack Technique and SATORI TENDŌ's Defense Technique while both are deployed.",
       },
     ],
     resonances: [
-      { level: "I", name: "Skill Resonance I", effect: "Increases Basic Stats by 13%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 13%.",
+      },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Reduces UNDISPUTED ACE cooldown to 4 net crossings; when a player on your side performs a Critical play, reduces UNDISPUTED ACE cooldown by 1 net crossing.",
+        effect:
+          "Reduces UNDISPUTED ACE cooldown to 4 net crossings; when a player on your side performs a Critical play, reduces UNDISPUTED ACE cooldown by 1 net crossing.",
       },
-      { level: "III", name: "Skill Resonance III", effect: "Increases Basic Stats by 13%." },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 13%.",
+      },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "Doubles WAKATOSHI USHIJIMA's Awareness stat; when USHIJIMA performs a Critical play, recovers 2 Stamina.",
+        effect:
+          "Doubles WAKATOSHI USHIJIMA's Awareness stat; when USHIJIMA performs a Critical play, recovers 2 Stamina.",
       },
-      { level: "V", name: "Skill Resonance V", effect: "Increases Basic Stats by 13%." },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 13%.",
+      },
     ],
-    potentials: { recommended: { primaryType: "", primaryCount: 4, secondaryType: "", secondaryCount: 2, reason: "" }, equipped: [] },
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
     memory: { name: "", effect: "" },
   },
 ];
