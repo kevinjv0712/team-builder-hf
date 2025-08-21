@@ -10,8 +10,9 @@ export const itachiyamaPlayers: Player[] = [
     team: "Itachiyama",
     rarity: "UR",
     roles: ["WS"],
-    typeTags: ["Power Attack", "Receive", "Awareness Up", "Team Morale"],
+    typeTags: ["Power Attack", "Receive"],
     image: "/characters/itachiyama/kiyoomi-sakusa-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 112,
@@ -130,8 +131,9 @@ export const itachiyamaPlayers: Player[] = [
     team: "Itachiyama",
     rarity: "UR",
     roles: ["LI"],
-    typeTags: ["Receive", "Set", "Enhance Team", "Team Morale"],
+    typeTags: ["Receive", "Setter"],
     image: "/characters/itachiyama/motoya-komori-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 88,

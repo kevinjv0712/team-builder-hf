@@ -1,6 +1,245 @@
 import type { Player } from "@/types";
-
 export const nekomaPlayers: Player[] = [
+  // src/data/teams/nekoma.ts
+  // ===================== KENMA KOZUME (SP) =====================
+  {
+    id: "kenma-kozume-sp",
+    name: "Kenma Kozume (Swimsuit)",
+    shortName: "Kenma (SP)",
+    team: "Nekoma",
+    rarity: "SP",
+    roles: ["S"],
+    typeTags: ["Receive", "Setter"],
+    image: "/characters/nekoma/kenma-kozume-sp.png",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 102,
+        powerAttack: 90,
+        set: 148,
+        serve: 104,
+        receive: 136,
+        block: 88,
+        save: 118,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Game Director",
+        levels: {
+          "1": 'While KENMA (SP) is present, allies’ Receive +6%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6): each stack grants allies +1% Receive.',
+          "2": 'While KENMA (SP) is present, allies’ Receive +7.5%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6): each stack grants allies +1% Receive.',
+          "3": 'While KENMA (SP) is present, allies’ Receive +9%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6): each stack grants allies +1% Receive.',
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Silent Set",
+        levels: {
+          "1": "KENMA (SP) performs a Set with 125% of Set stat.",
+          "2": "KENMA (SP) performs a Set with 140% of Set stat.",
+          "3": "KENMA (SP) performs a Set with 155% of Set stat.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Reading the Flow",
+        levels: {
+          "1": "After your side achieves a PERFECT Receive, the next Set by KENMA (SP) grants the spiker +6% Power/Quick Attack for 1 rally.",
+          "2": "After your side achieves a PERFECT Receive, the next Set by KENMA (SP) grants the spiker +7.5% Power/Quick Attack for 1 rally.",
+          "3": "After your side achieves a PERFECT Receive, the next Set by KENMA (SP) grants the spiker +9% Power/Quick Attack for 1 rally.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Sneak Dump",
+        levels: {
+          "1": "KENMA (SP) performs an unblockable Setter Dump with 235% of Set stat.",
+          "2": "KENMA (SP) performs an unblockable Setter Dump with 250% of Set stat.",
+          "3": "KENMA (SP) performs an unblockable Setter Dump with 265% of Set stat.",
+          "4": "KENMA (SP) performs an unblockable Setter Dump with 280% of Set stat.",
+          "5": "KENMA (SP) performs an unblockable Setter Dump with 295% of Set stat.",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "shoyo-hinata-sp",
+        name: "Cats & Crows in Summer",
+        participants: ["kenma-kozume-sp", "shoyo-hinata-sp"],
+        effect:
+          "After Kenma (SP) casts SNEAK DUMP, Hinata (SP) gains +12% Quick Attack for 1 rally.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: 'When SNEAK DUMP is cast, gain 2 stacks of "Keep It Alive".',
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect: 'At match start, gain 4 stacks of "Keep It Alive".',
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 13%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
+  // ===================== MORISUKE YAKU (SSR) =====================
+  {
+    id: "morisuke-yaku-ssr",
+    name: "Morisuke Yaku",
+    shortName: "Yaku",
+    team: "Nekoma",
+    rarity: "SSR",
+    roles: ["LI"],
+    typeTags: ["Receive"],
+    image: "/characters/nekoma/morisuke-yaku-ssr.png",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 62,
+        powerAttack: 84,
+        set: 94,
+        serve: 102,
+        receive: 132,
+        block: 86,
+        save: 124,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.06, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Catlike Reflexes",
+        levels: {
+          "1": "YAKU’s Receive +10%; Save +8%.",
+          "2": "YAKU’s Receive +12%; Save +9%.",
+          "3": "YAKU’s Receive +14%; Save +10%.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Libero Anchor",
+        levels: {
+          "1": "While YAKU is present, back-row allies’ Receive +6%.",
+          "2": "While YAKU is present, back-row allies’ Receive +7.5%.",
+          "3": "While YAKU is present, back-row allies’ Receive +9%.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "First Touch Mastery",
+        levels: {
+          "1": "On PERFECT Receive by YAKU, next Set on your side grants the spiker +6% Power/Quick Attack.",
+          "2": "On PERFECT Receive by YAKU, next Set on your side grants the spiker +8% Power/Quick Attack.",
+          "3": "On PERFECT Receive by YAKU, next Set on your side grants the spiker +10% Power/Quick Attack.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Laser Receive",
+        levels: {
+          "1": "YAKU performs a Receive with 230% of Receive stat as power.",
+          "2": "YAKU performs a Receive with 242% of Receive stat as power.",
+          "3": "YAKU performs a Receive with 255% of Receive stat as power.",
+          "4": "YAKU performs a Receive with 268% of Receive stat as power.",
+          "5": "YAKU performs a Receive with 281% of Receive stat as power.",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "lev-haiba-ssr",
+        name: "Wall & Shield",
+        participants: ["morisuke-yaku-ssr", "lev-haiba-ssr"],
+        effect:
+          "When YAKU (SSR) achieves PERFECT Receive, Lev (SSR)’s next Quick gains +12% power.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: "When losing, YAKU’s Receive +12% and Save +12%.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "Once per turn, a failed Receive/Save by YAKU becomes opponent free-ball instead.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 10%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
   // ===================== KENMA (SSR) =====================
   {
     id: "kenma-kozume-ssr",
@@ -9,10 +248,10 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SSR",
     roles: ["S"],
-    typeTags: ["Set", "Receive", "Control"],
+    typeTags: ["Setter", "Receive"],
     image: "/characters/nekoma/kenma-kozume-ssr.png",
+    server: "Global",
     stats: {
-      // (valores aproximados de tus capturas)
       basic: {
         quickAttack: 81,
         powerAttack: 114,
@@ -30,9 +269,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Divine Vision",
         levels: {
-          "1": "While KENMA KOZUME is on the court, increases your side's players' Receive power by 8% of their Receive stat. When Kozume's Set or your side's Receive results in PERFECT, gain 1 stacks of \"Keep It Alive\". Each stack increases Receive power of your side's players by 3%, up to 6 stacks.",
-          "2": "While KENMA KOZUME is on the court, increases your side's players' Receive power by 8% of their Receive stat. When Kozume's Set or your side's Receive results in PERFECT, gain 1 stacks of \"Keep It Alive\". Each stack increases Receive power of your side's players by 3%, up to 6 stacks.",
-          "3": "While KENMA KOZUME is on the court, increases your side's players' Receive power by 8% of their Receive stat. When Kozume's Set or your side's Receive results in PERFECT, gain 1 stacks of \"Keep It Alive\". Each stack increases Receive power of your side's players by 3%, up to 6 stacks.",
+          "1": 'While KENMA is on the court, allies’ Receive +8%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6), each stack +3% Receive.',
+          "2": 'While KENMA is on the court, allies’ Receive +9.5%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6), each stack +3% Receive.',
+          "3": 'While KENMA is on the court, allies’ Receive +11%. On PERFECT Receive or PERFECT Set, gain 1 stack of "Keep It Alive" (max 6), each stack +3% Receive.',
           "4": undefined,
           "5": undefined,
         },
@@ -41,9 +280,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Steady Setting",
         levels: {
-          "1": "KENMA KOZUME performs a Set with 120% of his Set stat.",
-          "2": "KENMA KOZUME performs a Set with 120% of his Set stat.",
-          "3": "KENMA KOZUME performs a Set with 120% of his Set stat.",
+          "1": "KENMA performs a Set with 120% of Set stat.",
+          "2": "KENMA performs a Set with 132% of Set stat.",
+          "3": "KENMA performs a Set with 145% of Set stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -52,9 +291,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "The Brain",
         levels: {
-          "1": 'While KENMA KOZUME is on the court, increases your side\'s players\' Receive power by 6% of their Receive stat. If "Keep It Alive" exceeds 5 stacks, additionally increases their Receive power by 150% and Save power by 150%. When your side\'s Receive or Save fails, consumes 6 stacks of "Keep It Alive" to convert the result to PERFECT.',
-          "2": 'While KENMA KOZUME is on the court, increases your side\'s players\' Receive power by 6% of their Receive stat. If "Keep It Alive" exceeds 5 stacks, additionally increases their Receive power by 150% and Save power by 150%. When your side\'s Receive or Save fails, consumes 6 stacks of "Keep It Alive" to convert the result to PERFECT.',
-          "3": 'While KENMA KOZUME is on the court, increases your side\'s players\' Receive power by 6% of their Receive stat. If "Keep It Alive" exceeds 5 stacks, additionally increases their Receive power by 150% and Save power by 150%. When your side\'s Receive or Save fails, consumes 6 stacks of "Keep It Alive" to convert the result to PERFECT.',
+          "1": 'Allies’ Receive +6%. If "Keep It Alive" ≥ 6, allies’ Receive +150% and Save +150%; on failed Receive/Save, consume 6 stacks to convert to PERFECT.',
+          "2": 'Allies’ Receive +7.5%. If "Keep It Alive" ≥ 6, allies’ Receive +150% and Save +150%; on failed Receive/Save, consume 6 stacks to convert to PERFECT.',
+          "3": 'Allies’ Receive +9%. If "Keep It Alive" ≥ 6, allies’ Receive +150% and Save +150%; on failed Receive/Save, consume 6 stacks to convert to PERFECT.',
           "4": undefined,
           "5": undefined,
         },
@@ -63,11 +302,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Deceptive Dump",
         levels: {
-          "1": "KENMA KOZUME performs an unblockable Setter Dump with 220% of his Set stat.",
-          "2": "KENMA KOZUME performs an unblockable Setter Dump with 220% of his Set stat.",
-          "3": "KENMA KOZUME performs an unblockable Setter Dump with 220% of his Set stat.",
-          "4": "KENMA KOZUME performs an unblockable Setter Dump with 220% of his Set stat.",
-          "5": "KENMA KOZUME performs an unblockable Setter Dump with 220% of his Set stat.",
+          "1": "KENMA performs an unblockable Setter Dump with 220% of Set stat.",
+          "2": "KENMA performs an unblockable Setter Dump with 235% of Set stat.",
+          "3": "KENMA performs an unblockable Setter Dump with 250% of Set stat.",
+          "4": "KENMA performs an unblockable Setter Dump with 265% of Set stat.",
+          "5": "KENMA performs an unblockable Setter Dump with 280% of Set stat.",
         },
       },
     ],
@@ -77,7 +316,7 @@ export const nekomaPlayers: Player[] = [
         name: "Brain & Control Tower",
         participants: ["kenma-kozume-ssr", "tetsuro-kuroo-ur"],
         effect:
-          "Con habilidades combinadas que potencian Quick Spike y control del bloqueo cuando ambos están en cancha.",
+          "Quick/Block coordination: PERFECT Set from Kenma empowers Kuroo’s Quick by +10%.",
       },
     ],
     resonances: [
@@ -89,8 +328,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'When casting DECEPTIVE DUMP, gain 2 stacks of "Keep It Alive" Buff.',
+        effect: "Casting DECEPTIVE DUMP grants 2 stacks of Keep It Alive.",
       },
       {
         level: "III",
@@ -100,8 +338,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          'While KENMA KOZUME is present, at the start of each match, receive 4 stacks of "Keep It Alive" Buff.',
+        effect: "Start with 4 stacks of Keep It Alive.",
       },
       {
         level: "V",
@@ -130,8 +367,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "UR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block", "Debuff"],
+    typeTags: ["Quick Attack", "Block"],
     image: "/characters/nekoma/tetsuro-kuroo-ur.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 121,
@@ -150,9 +388,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Supreme Captain",
         levels: {
-          "1": "Increases TETSURO KUROO's Quick Attack stat by 10%; while KUROO is present, each time the ball crosses the net, increases his Block and Quick Attack stats by 5%, up to 5 stacks.",
-          "2": "Increases TETSURO KUROO's Quick Attack stat by 10%; while KUROO is present, each time the ball crosses the net, increases his Block and Quick Attack stats by 5%, up to 5 stacks.",
-          "3": "Increases TETSURO KUROO's Quick Attack stat by 10%; while KUROO is present, each time the ball crosses the net, increases his Block and Quick Attack stats by 5%, up to 5 stacks.",
+          "1": "Kuroo’s Quick Attack +10%; each net crossing grants him +5% Quick Attack & Block (max 5 stacks).",
+          "2": "Kuroo’s Quick Attack +12%; each net crossing grants him +5% Quick Attack & Block (max 5 stacks).",
+          "3": "Kuroo’s Quick Attack +14%; each net crossing grants him +5% Quick Attack & Block (max 5 stacks).",
           "4": undefined,
           "5": undefined,
         },
@@ -161,9 +399,9 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "A-Quick Attack",
         levels: {
-          "1": 'TETSURO KUROO performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; each stack increases A-Quick Attack Spike power by 5% of Quick Attack stat, up to 3 stacks.',
-          "2": 'TETSURO KUROO performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; each stack increases A-Quick Attack Spike power by 5% of Quick Attack stat, up to 3 stacks.',
-          "3": 'TETSURO KUROO performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; each stack increases A-Quick Attack Spike power by 5% of Quick Attack stat, up to 3 stacks.',
+          "1": 'Performs a Quick Spike with 125% of Quick Attack; gain 1 "Power Charge" (each stack: +5% Quick to this skill, max 3).',
+          "2": 'Performs a Quick Spike with 140% of Quick Attack; gain 1 "Power Charge" (each stack: +5% Quick to this skill, max 3).',
+          "3": 'Performs a Quick Spike with 155% of Quick Attack; gain 1 "Power Charge" (each stack: +5% Quick to this skill, max 3).',
           "4": undefined,
           "5": undefined,
         },
@@ -172,9 +410,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Conductor",
         levels: {
-          "1": 'Increases TETSURO KUROO\'s Block stat by 14%; when KUROO achieves a PERFECT block result, applies "Enrage" Debuff to opponent spiker (reduces Power/Quick Attack stats by 10%).',
-          "2": 'Increases TETSURO KUROO\'s Block stat by 14%; when KUROO achieves a PERFECT block result, applies "Enrage" Debuff to opponent spiker (reduces Power/Quick Attack stats by 10%).',
-          "3": 'Increases TETSURO KUROO\'s Block stat by 14%; when KUROO achieves a PERFECT block result, applies "Enrage" Debuff to opponent spiker (reduces Power/Quick Attack stats by 10%).',
+          "1": "Kuroo’s Block +12%; on PERFECT block, apply Enrage to the spiker (-10% Power/Quick).",
+          "2": "Kuroo’s Block +14%; on PERFECT block, apply Enrage to the spiker (-10% Power/Quick).",
+          "3": "Kuroo’s Block +16%; on PERFECT block, apply Enrage to the spiker (-10% Power/Quick).",
           "4": undefined,
           "5": undefined,
         },
@@ -183,11 +421,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Reactive Block",
         levels: {
-          "1": "TETSURO KUROO performs a Block with 235% of Block stat as power; when the opponent's spiking player is affected by a debuff, increases this block's power by an additional 20% of Block stat.",
-          "2": "TETSURO KUROO performs a Block with 235% of Block stat as power; when the opponent's spiking player is affected by a debuff, increases this block's power by an additional 20% of Block stat.",
-          "3": "TETSURO KUROO performs a Block with 235% of Block stat as power; when the opponent's spiking player is affected by a debuff, increases this block's power by an additional 20% of Block stat.",
-          "4": "TETSURO KUROO performs a Block with 235% of Block stat as power; when the opponent's spiking player is affected by a debuff, increases this block's power by an additional 20% of Block stat.",
-          "5": "TETSURO KUROO performs a Block with 235% of Block stat as power; when the opponent's spiking player is affected by a debuff, increases this block's power by an additional 20% of Block stat.",
+          "1": "Block with 235% of Block; if the spiker is debuffed, +20% of Block added.",
+          "2": "Block with 250% of Block; if the spiker is debuffed, +20% of Block added.",
+          "3": "Block with 265% of Block; if the spiker is debuffed, +20% of Block added.",
+          "4": "Block with 280% of Block; if the spiker is debuffed, +20% of Block added.",
+          "5": "Block with 295% of Block; if the spiker is debuffed, +20% of Block added.",
         },
       },
     ],
@@ -197,7 +435,7 @@ export const nekomaPlayers: Player[] = [
         name: "Brain & Control Tower",
         participants: ["tetsuro-kuroo-ur", "kenma-kozume-ssr"],
         effect:
-          "Sinergia de Quick Spike y control defensivo al estar ambos en cancha.",
+          "PERFECT Set from Kenma boosts Kuroo’s next Quick by +10% power.",
       },
     ],
     resonances: [
@@ -209,7 +447,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Reduces A-QUICK ATTACK cooldown to 0 net crossings.",
+        effect: "A-QUICK ATTACK cooldown becomes 0 net crossings.",
       },
       {
         level: "III",
@@ -219,8 +457,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "CONDUCTOR condition modified: triggers on any block, with stronger debuff.",
+        effect: "CONDUCTOR triggers on any block with stronger effect.",
       },
       {
         level: "V",
@@ -249,8 +486,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SSR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block", "Enhance Team"],
+    typeTags: ["Quick Attack", "Block"],
     image: "/characters/nekoma/tetsuro-kuroo-ssr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 115,
@@ -269,9 +507,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Expert's Aura",
         levels: {
-          "1": "While TETSURO KUROO (Practice) is present, increases Strength of Quick Attack-type players on your side by 16%.",
-          "2": "While TETSURO KUROO (Practice) is present, increases Strength of Quick Attack-type players on your side by 16%.",
-          "3": "While TETSURO KUROO (Practice) is present, increases Strength of Quick Attack-type players on your side by 16%.",
+          "1": "While present, Quick Attack-type allies’ Strength +12%.",
+          "2": "While present, Quick Attack-type allies’ Strength +14%.",
+          "3": "While present, Quick Attack-type allies’ Strength +16%.",
           "4": undefined,
           "5": undefined,
         },
@@ -280,20 +518,20 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Steady Offense",
         levels: {
-          "1": 'TETSURO KUROO (Practice) performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; when casting STEADY OFFENSE, each stack increases spike power by 15% of Quick Attack stat, up to 2 stacks.',
-          "2": 'TETSURO KUROO (Practice) performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; when casting STEADY OFFENSE, each stack increases spike power by 15% of Quick Attack stat, up to 2 stacks.',
-          "3": 'TETSURO KUROO (Practice) performs a Quick Spike with 125% of Quick Attack stat as power; receives 1 stacks of "Power Charge"; when casting STEADY OFFENSE, each stack increases spike power by 15% of Quick Attack stat, up to 2 stacks.',
-          "4": undefined,
-          "5": undefined,
+          "1": 'Quick Spike with 125% of Quick; gain 1 "Power Charge" (each +15% Quick to this skill, up to 2).',
+          "2": 'Quick Spike with 140% of Quick; gain 1 "Power Charge" (each +15% Quick to this skill, up to 2).',
+          "3": 'Quick Spike with 155% of Quick; gain 1 "Power Charge" (each +15% Quick to this skill, up to 2).',
+          "4": 'Quick Spike with 170% of Quick; gain 1 "Power Charge" (each +15% Quick to this skill, up to 2).',
+          "5": 'Quick Spike with 185% of Quick; gain 1 "Power Charge" (each +15% Quick to this skill, up to 2).',
         },
       },
       {
         key: "passive",
         name: "Block Control Tower",
         levels: {
-          "1": "While TETSURO KUROO (Practice) is present, increases Block stat of players on your side by 8%.",
-          "2": "While TETSURO KUROO (Practice) is present, increases Block stat of players on your side by 8%.",
-          "3": "While TETSURO KUROO (Practice) is present, increases Block stat of players on your side by 8%.",
+          "1": "Allies’ Block +6% while KUROO (SSR) is present.",
+          "2": "Allies’ Block +7.5% while KUROO (SSR) is present.",
+          "3": "Allies’ Block +9% while KUROO (SSR) is present.",
           "4": undefined,
           "5": undefined,
         },
@@ -302,21 +540,21 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Lockdown",
         levels: {
-          "1": "TETSURO KUROO (Practice) performs a Block with 170% of Block stat as power; when other front row Block-type players are present, increases this block's power by 15% of Block stat.",
-          "2": "TETSURO KUROO (Practice) performs a Block with 170% of Block stat as power; when other front row Block-type players are present, increases this block's power by 15% of Block stat.",
-          "3": "TETSURO KUROO (Practice) performs a Block with 170% of Block stat as power; when other front row Block-type players are present, increases this block's power by 15% of Block stat.",
-          "4": "TETSURO KUROO (Practice) performs a Block with 170% of Block stat as power; when other front row Block-type players are present, increases this block's power by 15% of Block stat.",
-          "5": "TETSURO KUROO (Practice) performs a Block with 170% of Block stat as power; when other front row Block-type players are present, increases this block's power by 15% of Block stat.",
+          "1": "Block with 170% of Block; if other front row Block-types present, +15% Block added.",
+          "2": "Block with 185% of Block; if other front row Block-types present, +15% Block added.",
+          "3": "Block with 200% of Block; if other front row Block-types present, +15% Block added.",
+          "4": "Block with 215% of Block; if other front row Block-types present, +15% Block added.",
+          "5": "Block with 230% of Block; if other front row Block-types present, +15% Block added.",
         },
       },
     ],
     bonds: [
       {
-        to: "kenma-kozume-sr",
-        name: "Pivot & Control Tower",
-        participants: ["tetsuro-kuroo-ssr", "kenma-kozume-sr"],
+        to: "kenma-kozume-ur",
+        name: "Captain & Genius",
+        participants: ["tetsuro-kuroo-ssr", "kenma-kozume-ur"],
         effect:
-          "Mejoran Set y control de bloqueos cuando ambos están en cancha.",
+          "After KUROO (SSR) blocks, Kenma (UR) gains +10% Set for 1 rally.",
       },
     ],
     resonances: [
@@ -328,8 +566,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'STEADY OFFENSE effect modified: "Power Charge" Buff has no stack limit.',
+        effect: 'STEADY OFFENSE "Power Charge" has no stack limit.',
       },
       {
         level: "III",
@@ -340,7 +577,7 @@ export const nekomaPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          'After casting LOCKDOWN, applies "Enrage" Debuff to opponent spiker and increases your side\'s Power/Quick Attack stats by 10%.',
+          "After LOCKDOWN, apply Enrage to the spiker and grant allies +10% Power/Quick.",
       },
       {
         level: "V",
@@ -369,8 +606,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["S"],
-    typeTags: ["Set", "Enhance Team"],
+    typeTags: ["Setter", "Receive"],
     image: "/characters/nekoma/kenma-kozume-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -389,9 +627,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Maintain",
         levels: {
-          "1": "While KENMA KOZUME (Practice) is present, increases Receive stat of your side's back row players by 8%.",
-          "2": "While KENMA KOZUME (Practice) is present, increases Receive stat of your side's back row players by 8%.",
-          "3": "While KENMA KOZUME (Practice) is present, increases Receive stat of your side's back row players by 8%.",
+          "1": "Back-row allies’ Receive +6% while KENMA (Practice) is present.",
+          "2": "Back-row allies’ Receive +8% while KENMA (Practice) is present.",
+          "3": "Back-row allies’ Receive +10% while KENMA (Practice) is present.",
           "4": undefined,
           "5": undefined,
         },
@@ -400,9 +638,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Setting Core",
         levels: {
-          "1": "While KENMA KOZUME (Practice) is present, when your side achieves a PERFECT receive, increases your side's next spike power by 7% of the spiker's Power/Quick Attack stat.",
-          "2": "While KENMA KOZUME (Practice) is present, when your side achieves a PERFECT receive, increases your side's next spike power by 7% of the spiker's Power/Quick Attack stat.",
-          "3": "While KENMA KOZUME (Practice) is present, when your side achieves a PERFECT receive, increases your side's next spike power by 7% of the spiker's Power/Quick Attack stat.",
+          "1": "On PERFECT Receive, next spike power +6% of spiker’s Power/Quick.",
+          "2": "On PERFECT Receive, next spike power +7.5% of spiker’s Power/Quick.",
+          "3": "On PERFECT Receive, next spike power +9% of spiker’s Power/Quick.",
           "4": undefined,
           "5": undefined,
         },
@@ -411,9 +649,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Tactical Direction",
         levels: {
-          "1": 'Increases KENMA KOZUME (Practice)\'s Set stat by 8%; while present, when your side achieves a PERFECT receive, receives 1 stacks of "Keep It Alive"; each stack increases Receive stat of players on your side by 1%, up to 6 stacks.',
-          "2": 'Increases KENMA KOZUME (Practice)\'s Set stat by 8%; while present, when your side achieves a PERFECT receive, receives 1 stacks of "Keep It Alive"; each stack increases Receive stat of players on your side by 1%, up to 6 stacks.',
-          "3": 'Increases KENMA KOZUME (Practice)\'s Set stat by 8%; while present, when your side achieves a PERFECT receive, receives 1 stacks of "Keep It Alive"; each stack increases Receive stat of players on your side by 1%, up to 6 stacks.',
+          "1": 'KENMA’s Set +8%. On PERFECT Receive, gain 1 "Keep It Alive" (each stack +1% team Receive, max 6).',
+          "2": 'KENMA’s Set +10%. On PERFECT Receive, gain 1 "Keep It Alive" (each stack +1.25% team Receive, max 6).',
+          "3": 'KENMA’s Set +12%. On PERFECT Receive, gain 1 "Keep It Alive" (each stack +1.5% team Receive, max 6).',
           "4": undefined,
           "5": undefined,
         },
@@ -422,11 +660,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Strategist of the Court",
         levels: {
-          "1": "KENMA KOZUME (Practice) performs a Set with 220% of Set stat as power.",
-          "2": "KENMA KOZUME (Practice) performs a Set with 220% of Set stat as power.",
-          "3": "KENMA KOZUME (Practice) performs a Set with 220% of Set stat as power.",
-          "4": "KENMA KOZUME (Practice) performs a Set with 220% of Set stat as power.",
-          "5": "KENMA KOZUME (Practice) performs a Set with 220% of Set stat as power.",
+          "1": "Set with 220% of Set stat.",
+          "2": "Set with 235% of Set stat.",
+          "3": "Set with 250% of Set stat.",
+          "4": "Set with 265% of Set stat.",
+          "5": "Set with 280% of Set stat.",
         },
       },
     ],
@@ -435,8 +673,7 @@ export const nekomaPlayers: Player[] = [
         to: "tetsuro-kuroo-ssr",
         name: "Pivot & Control Tower",
         participants: ["kenma-kozume-sr", "tetsuro-kuroo-ssr"],
-        effect:
-          "Set mejorado y torre de control de bloqueo al alinearlos juntos.",
+        effect: "Improves set quality and block coordination when aligned.",
       },
     ],
     resonances: [
@@ -448,8 +685,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'While KENMA KOZUME (Practice) is present, the maximum stack limit of "Keep It Alive" Buff is 10.',
+        effect: 'Max "Keep It Alive" stacks increased to 10.',
       },
       {
         level: "III",
@@ -459,8 +695,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "SETTING CORE condition modified: triggers when your side's receive result is not BAD.",
+        effect: "SETTING CORE also triggers when Receive result is not BAD.",
       },
       {
         level: "V",
@@ -489,8 +724,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["LI"],
-    typeTags: ["Receive", "Save", "Counter Quick"],
+    typeTags: ["Receive"],
     image: "/characters/nekoma/morisuke-yaku-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 55,
@@ -509,9 +745,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Nekoma Spirit",
         levels: {
-          "1": "Increases MORISUKE YAKU (Practice)'s Receive and Save stats by 10%.",
-          "2": "Increases MORISUKE YAKU (Practice)'s Receive and Save stats by 10%.",
-          "3": "Increases MORISUKE YAKU (Practice)'s Receive and Save stats by 10%.",
+          "1": "YAKU (Practice) Receive/Save +8%.",
+          "2": "YAKU (Practice) Receive/Save +10%.",
+          "3": "YAKU (Practice) Receive/Save +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -520,9 +756,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Defense Fortress",
         levels: {
-          "1": "While MORISUKE YAKU (Practice) is present, increases Receive stat of your side's back row players by 6%.",
-          "2": "While MORISUKE YAKU (Practice) is present, increases Receive stat of your side's back row players by 6%.",
-          "3": "While MORISUKE YAKU (Practice) is present, increases Receive stat of your side's back row players by 6%.",
+          "1": "Back-row allies’ Receive +6% while present.",
+          "2": "Back-row allies’ Receive +7.5% while present.",
+          "3": "Back-row allies’ Receive +9% while present.",
           "4": undefined,
           "5": undefined,
         },
@@ -531,9 +767,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Absolute Defense",
         levels: {
-          "1": "When MORISUKE YAKU (Practice) receives an opponent's Quick Spike, increases receive power by 12% of Receive stat.",
-          "2": "When MORISUKE YAKU (Practice) receives an opponent's Quick Spike, increases receive power by 12% of Receive stat.",
-          "3": "When MORISUKE YAKU (Practice) receives an opponent's Quick Spike, increases receive power by 12% of Receive stat.",
+          "1": "When receiving opponent Quick, YAKU’s Receive +10% (this touch).",
+          "2": "When receiving opponent Quick, YAKU’s Receive +12.5% (this touch).",
+          "3": "When receiving opponent Quick, YAKU’s Receive +15% (this touch).",
           "4": undefined,
           "5": undefined,
         },
@@ -542,11 +778,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "High Precision Receive",
         levels: {
-          "1": "MORISUKE YAKU (Practice) performs a Receive with 220% of Receive stat as power.",
-          "2": "MORISUKE YAKU (Practice) performs a Receive with 220% of Receive stat as power.",
-          "3": "MORISUKE YAKU (Practice) performs a Receive with 220% of Receive stat as power.",
-          "4": "MORISUKE YAKU (Practice) performs a Receive with 220% of Receive stat as power.",
-          "5": "MORISUKE YAKU (Practice) performs a Receive with 220% of Receive stat as power.",
+          "1": "Receive with 220% of Receive stat.",
+          "2": "Receive with 235% of Receive stat.",
+          "3": "Receive with 250% of Receive stat.",
+          "4": "Receive with 265% of Receive stat.",
+          "5": "Receive with 280% of Receive stat.",
         },
       },
     ],
@@ -560,8 +796,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "When losing, increases YAKU (Practice)'s Receive power by 12% of Receive stat and Save power by 12% of Save stat.",
+        effect: "When losing, YAKU (Practice) Receive +12% and Save +12%.",
       },
       {
         level: "III",
@@ -572,7 +807,7 @@ export const nekomaPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "Once per turn, when YAKU (Practice) would lose a point on a Receive/Save, the result changes to an opponent free-ball instead of a lost point.",
+          "Once per turn, a failed Receive/Save becomes opponent free-ball.",
       },
       {
         level: "V",
@@ -601,8 +836,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block"],
+    typeTags: ["Quick Attack"],
     image: "/characters/nekoma/lev-haiba-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 94,
@@ -621,9 +857,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Promising Player",
         levels: {
-          "1": 'Increases LEV HAIBA (Practice)\'s Quick Attack stat by 8%; while he is present, each time the ball crosses the net, LEV receives 1 stacks of "Expectation" (lasting 1 turns), each stack increases Quick Attack stat by 1%, up to 4 stacks.',
-          "2": 'Increases LEV HAIBA (Practice)\'s Quick Attack stat by 8%; while he is present, each time the ball crosses the net, LEV receives 1 stacks of "Expectation" (lasting 1 turns), each stack increases Quick Attack stat by 1%, up to 4 stacks.',
-          "3": 'Increases LEV HAIBA (Practice)\'s Quick Attack stat by 8%; while he is present, each time the ball crosses the net, LEV receives 1 stacks of "Expectation" (lasting 1 turns), each stack increases Quick Attack stat by 1%, up to 4 stacks.',
+          "1": 'Quick Attack +8%; each net crossing grants 1 "Expectation" (1 turn), each stack +1% Quick (max 4).',
+          "2": 'Quick Attack +9.5%; each net crossing grants 1 "Expectation" (1 turn), each stack +1% Quick (max 4).',
+          "3": 'Quick Attack +11%; each net crossing grants 1 "Expectation" (1 turn), each stack +1% Quick (max 4).',
           "4": undefined,
           "5": undefined,
         },
@@ -632,9 +868,9 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Evolved Block",
         levels: {
-          "1": 'LEV HAIBA (Practice) performs a Block with 105% of Block stat as power, receives 1 stacks of "Growth"; when casting EVOLVED BLOCK, each stack of "Growth" increases block power by 3% of Block stat, up to 2 stacks.',
-          "2": 'LEV HAIBA (Practice) performs a Block with 105% of Block stat as power, receives 1 stacks of "Growth"; when casting EVOLVED BLOCK, each stack of "Growth" increases block power by 3% of Block stat, up to 2 stacks.',
-          "3": 'LEV HAIBA (Practice) performs a Block with 105% of Block stat as power, receives 1 stacks of "Growth"; when casting EVOLVED BLOCK, each stack of "Growth" increases block power by 3% of Block stat, up to 2 stacks.',
+          "1": 'Block with 105% of Block; gain 1 "Growth" (each +3% Block to this skill, up to 2).',
+          "2": 'Block with 120% of Block; gain 1 "Growth" (each +3% Block to this skill, up to 2).',
+          "3": 'Block with 135% of Block; gain 1 "Growth" (each +3% Block to this skill, up to 2).',
           "4": undefined,
           "5": undefined,
         },
@@ -643,9 +879,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Free Spirit",
         levels: {
-          "1": "While LEV HAIBA (Practice) is in the front row, increases his Quick Attack stat by 11.5%.",
-          "2": "While LEV HAIBA (Practice) is in the front row, increases his Quick Attack stat by 11.5%.",
-          "3": "While LEV HAIBA (Practice) is in the front row, increases his Quick Attack stat by 11.5%.",
+          "1": "While in front row, Lev’s Quick +9.5%.",
+          "2": "While in front row, Lev’s Quick +11.5%.",
+          "3": "While in front row, Lev’s Quick +13.5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -654,11 +890,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Offensive Wing",
         levels: {
-          "1": "LEV HAIBA (Practice) performs a Quick Spike with 220% of Quick Attack stat as power.",
-          "2": "LEV HAIBA (Practice) performs a Quick Spike with 220% of Quick Attack stat as power.",
-          "3": "LEV HAIBA (Practice) performs a Quick Spike with 220% of Quick Attack stat as power.",
-          "4": "LEV HAIBA (Practice) performs a Quick Spike with 220% of Quick Attack stat as power.",
-          "5": "LEV HAIBA (Practice) performs a Quick Spike with 220% of Quick Attack stat as power.",
+          "1": "Quick Spike with 220% of Quick Attack.",
+          "2": "Quick Spike with 235% of Quick Attack.",
+          "3": "Quick Spike with 250% of Quick Attack.",
+          "4": "Quick Spike with 265% of Quick Attack.",
+          "5": "Quick Spike with 280% of Quick Attack.",
         },
       },
     ],
@@ -672,8 +908,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'When LEV HAIBA (Practice) scores with a Block, applies "Enrage" Debuff to the opponent spiker (reduces Power/Quick Attack stats by 10%).',
+        effect: "When Lev blocks and the spiker is debuffed, Lev’s Block +5%.",
       },
       {
         level: "III",
@@ -683,8 +918,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          'Each time you receive "Expectation" Buff, receive 1 additional stacks of "Expectation" Buff.',
+        effect: 'Gain +1 extra "Expectation" stack each time it is granted.',
       },
       {
         level: "V",
@@ -713,8 +947,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SSR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block", "Debuff"],
+    typeTags: ["Quick Attack", "Block"],
     image: "/characters/nekoma/lev-haiba-ssr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 116,
@@ -733,9 +968,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Triggered Burst",
         levels: {
-          "1": "While LEV HAIBA is on the court, when your side achieves a PERFECT Receive, his next Quick Spike gains 15% of his Quick Attack stat as additional power.",
-          "2": "While LEV HAIBA is on the court, when your side achieves a PERFECT Receive, his next Quick Spike gains 15% of his Quick Attack stat as additional power.",
-          "3": "While LEV HAIBA is on the court, when your side achieves a PERFECT Receive, his next Quick Spike gains 15% of his Quick Attack stat as additional power.",
+          "1": "On your PERFECT Receive, Lev’s next Quick gains +12% of Quick Attack stat.",
+          "2": "On your PERFECT Receive, Lev’s next Quick gains +15% of Quick Attack stat.",
+          "3": "On your PERFECT Receive, Lev’s next Quick gains +18% of Quick Attack stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -744,9 +979,9 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Momentum Block",
         levels: {
-          "1": "LEV HAIBA performs a Block with 105% of his Block stat.",
-          "2": "LEV HAIBA performs a Block with 105% of his Block stat.",
-          "3": "LEV HAIBA performs a Block with 105% of his Block stat.",
+          "1": "Block with 110% of Block stat.",
+          "2": "Block with 125% of Block stat.",
+          "3": "Block with 140% of Block stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -755,9 +990,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Gifted Athlete",
         levels: {
-          "1": "When LEV HAIBA performs a Quick Spike and the opponent's blocker is affected by a debuff, reduces that blocker's Block power by 10% of their Block stat.",
-          "2": "When LEV HAIBA performs a Quick Spike and the opponent's blocker is affected by a debuff, reduces that blocker's Block power by 10% of their Block stat.",
-          "3": "When LEV HAIBA performs a Quick Spike and the opponent's blocker is affected by a debuff, reduces that blocker's Block power by 10% of their Block stat.",
+          "1": "On Lev’s Quick vs a debuffed blocker: that blocker’s Block -8% (this rally).",
+          "2": "On Lev’s Quick vs a debuffed blocker: that blocker’s Block -10% (this rally).",
+          "3": "On Lev’s Quick vs a debuffed blocker: that blocker’s Block -12% (this rally).",
           "4": undefined,
           "5": undefined,
         },
@@ -766,15 +1001,23 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Talented Spike",
         levels: {
-          "1": "LEV HAIBA performs a Quick Spike with 245% of his Quick Attack stat as power.",
-          "2": "LEV HAIBA performs a Quick Spike with 245% of his Quick Attack stat as power.",
-          "3": "LEV HAIBA performs a Quick Spike with 245% of his Quick Attack stat as power.",
-          "4": "LEV HAIBA performs a Quick Spike with 245% of his Quick Attack stat as power.",
-          "5": "LEV HAIBA performs a Quick Spike with 245% of his Quick Attack stat as power.",
+          "1": "Quick Spike with 245% of Quick Attack.",
+          "2": "Quick Spike with 260% of Quick Attack.",
+          "3": "Quick Spike with 275% of Quick Attack.",
+          "4": "Quick Spike with 290% of Quick Attack.",
+          "5": "Quick Spike with 305% of Quick Attack.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "morisuke-yaku-ssr",
+        name: "Wall & Shield",
+        participants: ["lev-haiba-ssr", "morisuke-yaku-ssr"],
+        effect:
+          "After Lev (SSR) scores with a Quick, Yaku (SSR) gains +10% Receive for 1 rally.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -785,7 +1028,7 @@ export const nekomaPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "When LEV HAIBA blocks, if the opponent spiker has a debuff, increases LEV HAIBA's Block stat by 5%.",
+          "When Lev blocks a debuffed spiker, Lev’s Block +5% (stacks up to 2 for this rally).",
       },
       {
         level: "III",
@@ -795,8 +1038,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "TALENTED SPIKE new effect: When your side achieves a PERFECT Set, increases this Quick Spike's power by 12% of Quick Attack stat.",
+        effect: "On PERFECT Set, Talented Spike gains +12% of Quick Attack.",
       },
       {
         level: "V",
@@ -825,8 +1067,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: ["Power Attack", "Receive", "Team Morale"],
+    typeTags: ["Power Attack"],
     image: "/characters/nekoma/taketora-yamamoto-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 58,
@@ -845,9 +1088,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Peak Performance",
         levels: {
-          "1": "Increases TAKETORA YAMAMOTO's Power Spike power by 8% of his Power Attack stat. While he is on the court, your Team Morale gains 5 when scoring.",
-          "2": "Increases TAKETORA YAMAMOTO's Power Spike power by 8% of his Power Attack stat. While he is on the court, your Team Morale gains 5 when scoring.",
-          "3": "Increases TAKETORA YAMAMOTO's Power Spike power by 8% of his Power Attack stat. While he is on the court, your Team Morale gains 5 when scoring.",
+          "1": "Yamamoto’s Power Spike +6% of Power Attack; when your side scores, Team Morale +5.",
+          "2": "Yamamoto’s Power Spike +7.5% of Power Attack; when your side scores, Team Morale +5.",
+          "3": "Yamamoto’s Power Spike +9% of Power Attack; when your side scores, Team Morale +5.",
           "4": undefined,
           "5": undefined,
         },
@@ -856,9 +1099,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Perfect Defense",
         levels: {
-          "1": "TAKETORA YAMAMOTO performs a Receive with 120% of his Receive stat.",
-          "2": "TAKETORA YAMAMOTO performs a Receive with 120% of his Receive stat.",
-          "3": "TAKETORA YAMAMOTO performs a Receive with 120% of his Receive stat.",
+          "1": "Performs a Receive with 120% of Receive stat.",
+          "2": "Performs a Receive with 132% of Receive stat.",
+          "3": "Performs a Receive with 145% of Receive stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -867,9 +1110,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Gritty Spirit",
         levels: {
-          "1": "While TAKETORA YAMAMOTO is on the court, when your side scores, restores 10 Stamina to the teammate with the lowest Stamina.",
-          "2": "While TAKETORA YAMAMOTO is on the court, when your side scores, restores 10 Stamina to the teammate with the lowest Stamina.",
-          "3": "While TAKETORA YAMAMOTO is on the court, when your side scores, restores 10 Stamina to the teammate with the lowest Stamina.",
+          "1": "When your side scores, restore 8 Stamina to the ally with the lowest Stamina.",
+          "2": "When your side scores, restore 10 Stamina to the ally with the lowest Stamina.",
+          "3": "When your side scores, restore 12 Stamina to the ally with the lowest Stamina.",
           "4": undefined,
           "5": undefined,
         },
@@ -878,15 +1121,38 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Exhaust Spike",
         levels: {
-          "1": "TAKETORA YAMAMOTO performs a Power Spike with 220% of his Power Attack stat as power; if it scores, increases your Team Morale by 5.",
-          "2": "TAKETORA YAMAMOTO performs a Power Spike with 220% of his Power Attack stat as power; if it scores, increases your Team Morale by 5.",
-          "3": "TAKETORA YAMAMOTO performs a Power Spike with 220% of his Power Attack stat as power; if it scores, increases your Team Morale by 5.",
-          "4": "TAKETORA YAMAMOTO performs a Power Spike with 220% of his Power Attack stat as power; if it scores, increases your Team Morale by 5.",
-          "5": "TAKETORA YAMAMOTO performs a Power Spike with 220% of his Power Attack stat as power; if it scores, increases your Team Morale by 5.",
+          "1": "Power Spike with 220% of Power Attack; if it scores, Team Morale +5.",
+          "2": "Power Spike with 235% of Power Attack; if it scores, Team Morale +5.",
+          "3": "Power Spike with 250% of Power Attack; if it scores, Team Morale +5.",
+          "4": "Power Spike with 265% of Power Attack; if it scores, Team Morale +5.",
+          "5": "Power Spike with 280% of Power Attack; if it scores, Team Morale +5.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "nobuyuki-kai-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "taketora-yamamoto-sr",
+          "nobuyuki-kai-sr",
+          "shohei-fukunaga-sr",
+        ],
+        effect:
+          "When Yamamoto scores with a Power Spike, Kai gains +10% Receive for 1 rally.",
+      },
+      {
+        to: "shohei-fukunaga-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "taketora-yamamoto-sr",
+          "nobuyuki-kai-sr",
+          "shohei-fukunaga-sr",
+        ],
+        effect:
+          "When Yamamoto scores with a Power Spike, Fukunaga gains +10% Power Attack for 1 rally.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -896,8 +1162,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "When TAKETORA YAMAMOTO scores, removes all debuff effects from your side's back row players.",
+        effect: "On score by Yamamoto, remove all debuffs from your back row.",
       },
       {
         level: "III",
@@ -907,8 +1172,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "EXHAUST SPIKE new effect: increases its power by an additional 10% of Power Attack stat.",
+        effect: "EXHAUST SPIKE power +10% of Power Attack.",
       },
       {
         level: "V",
@@ -936,9 +1200,10 @@ export const nekomaPlayers: Player[] = [
     shortName: "Kai",
     team: "Nekoma",
     rarity: "SR",
-    roles: ["WS"],
-    typeTags: ["Receive", "Power Attack", "Team Morale"],
+    roles: ["OP"],
+    typeTags: ["Receive"],
     image: "/characters/nekoma/nobuyuki-kai-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -957,9 +1222,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Targeted Jump Serve",
         levels: {
-          "1": "When NOBUYUKI KAI receives an opponent's Jump Serve, increases this receive's power by 20% of Receive stat.",
-          "2": "When NOBUYUKI KAI receives an opponent's Jump Serve, increases this receive's power by 20% of Receive stat.",
-          "3": "When NOBUYUKI KAI receives an opponent's Jump Serve, increases this receive's power by 20% of Receive stat.",
+          "1": "When receiving a Jump Serve, this Receive +15% of Receive.",
+          "2": "When receiving a Jump Serve, this Receive +20% of Receive.",
+          "3": "When receiving a Jump Serve, this Receive +25% of Receive.",
           "4": undefined,
           "5": undefined,
         },
@@ -968,9 +1233,9 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Power Spike",
         levels: {
-          "1": "NOBUYUKI KAI performs a Power Spike with 120% of Power Attack stat as power.",
-          "2": "NOBUYUKI KAI performs a Power Spike with 120% of Power Attack stat as power.",
-          "3": "NOBUYUKI KAI performs a Power Spike with 120% of Power Attack stat as power.",
+          "1": "Power Spike with 120% of Power Attack.",
+          "2": "Power Spike with 132% of Power Attack.",
+          "3": "Power Spike with 145% of Power Attack.",
           "4": undefined,
           "5": undefined,
         },
@@ -979,9 +1244,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Stamina Match",
         levels: {
-          "1": "Increases NOBUYUKI KAI's Receive power by 8% of Receive stat; when he achieves a PERFECT receive, increases your Team Morale by 5.",
-          "2": "Increases NOBUYUKI KAI's Receive power by 8% of Receive stat; when he achieves a PERFECT receive, increases your Team Morale by 5.",
-          "3": "Increases NOBUYUKI KAI's Receive power by 8% of Receive stat; when he achieves a PERFECT receive, increases your Team Morale by 5.",
+          "1": "Kai’s Receive +6% of Receive; on PERFECT Receive, Team Morale +3.",
+          "2": "Kai’s Receive +8% of Receive; on PERFECT Receive, Team Morale +4.",
+          "3": "Kai’s Receive +10% of Receive; on PERFECT Receive, Team Morale +5.",
           "4": undefined,
           "5": undefined,
         },
@@ -990,15 +1255,38 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Perfect Reception",
         levels: {
-          "1": "NOBUYUKI KAI performs a Receive with 215% of Receive stat as power; when this Receive's result is NORMAL, changes it to PERFECT.",
-          "2": "NOBUYUKI KAI performs a Receive with 215% of Receive stat as power; when this Receive's result is NORMAL, changes it to PERFECT.",
-          "3": "NOBUYUKI KAI performs a Receive with 215% of Receive stat as power; when this Receive's result is NORMAL, changes it to PERFECT.",
-          "4": "NOBUYUKI KAI performs a Receive with 215% of Receive stat as power; when this Receive's result is NORMAL, changes it to PERFECT.",
-          "5": "NOBUYUKI KAI performs a Receive with 215% of Receive stat as power; when this Receive's result is NORMAL, changes it to PERFECT.",
+          "1": "Receive with 215% of Receive; if NORMAL, change to PERFECT.",
+          "2": "Receive with 230% of Receive; if NORMAL, change to PERFECT.",
+          "3": "Receive with 245% of Receive; if NORMAL, change to PERFECT.",
+          "4": "Receive with 260% of Receive; if NORMAL, change to PERFECT.",
+          "5": "Receive with 275% of Receive; if NORMAL, change to PERFECT.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "taketora-yamamoto-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "nobuyuki-kai-sr",
+          "taketora-yamamoto-sr",
+          "shohei-fukunaga-sr",
+        ],
+        effect:
+          "When Kai achieves PERFECT Receive, Yamamoto gains +10% Power Attack for 1 rally.",
+      },
+      {
+        to: "shohei-fukunaga-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "nobuyuki-kai-sr",
+          "taketora-yamamoto-sr",
+          "shohei-fukunaga-sr",
+        ],
+        effect:
+          "On Kai PERFECT Receive, Fukunaga gains +8% Power Attack for 1 rally.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -1009,7 +1297,7 @@ export const nekomaPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "PERFECT RECEPTION new effect: When opponent's Quick Spiker's Stamina is below 30, this receive will always be PERFECT.",
+          "PERFECT RECEPTION: vs tired Quick spikers (Stamina <30), always PERFECT.",
       },
       {
         level: "III",
@@ -1019,8 +1307,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "While NOBUYUKI KAI is present, when your side is behind, increases your side's back row players' Receive stat by 10%.",
+        effect: "When behind, back-row allies’ Receive +10%.",
       },
       {
         level: "V",
@@ -1049,8 +1336,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: ["Receive", "Power Attack"],
+    typeTags: ["Power Attack", "Receive"],
     image: "/characters/nekoma/shohei-fukunaga-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1069,9 +1357,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Rally Point",
         levels: {
-          "1": "SHOHEI FUKUNAGA performs a Receive with 120% of Receive stat as power.",
-          "2": "SHOHEI FUKUNAGA performs a Receive with 120% of Receive stat as power.",
-          "3": "SHOHEI FUKUNAGA performs a Receive with 120% of Receive stat as power.",
+          "1": "Receive with 120% of Receive stat.",
+          "2": "Receive with 132% of Receive stat.",
+          "3": "Receive with 145% of Receive stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -1080,9 +1368,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Back Row Tactics",
         levels: {
-          "1": "When all your back row players are of Receive-type, increases SHOHEI FUKUNAGA's Receive power by 18% of Receive stat; when FUKUNAGA's Receive result is NORMAL, changes it to PERFECT.",
-          "2": "When all your back row players are of Receive-type, increases SHOHEI FUKUNAGA's Receive power by 18% of Receive stat; when FUKUNAGA's Receive result is NORMAL, changes it to PERFECT.",
-          "3": "When all your back row players are of Receive-type, increases SHOHEI FUKUNAGA's Receive power by 18% of Receive stat; when FUKUNAGA's Receive result is NORMAL, changes it to PERFECT.",
+          "1": "If all back-row allies are Receive-type: Fukunaga Receive +12%; NORMAL Receive becomes PERFECT.",
+          "2": "If all back-row allies are Receive-type: Fukunaga Receive +15%; NORMAL Receive becomes PERFECT.",
+          "3": "If all back-row allies are Receive-type: Fukunaga Receive +18%; NORMAL Receive becomes PERFECT.",
           "4": undefined,
           "5": undefined,
         },
@@ -1091,9 +1379,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Firm Reception",
         levels: {
-          "1": "Increases SHOHEI FUKUNAGA's Receive stat by 10%.",
-          "2": "Increases SHOHEI FUKUNAGA's Receive stat by 10%.",
-          "3": "Increases SHOHEI FUKUNAGA's Receive stat by 10%.",
+          "1": "Fukunaga’s Receive +8%.",
+          "2": "Fukunaga’s Receive +10%.",
+          "3": "Fukunaga’s Receive +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1102,15 +1390,38 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Right-on-Line",
         levels: {
-          "1": "SHOHEI FUKUNAGA performs a Power Spike with 220% of Power Attack stat as power.",
-          "2": "SHOHEI FUKUNAGA performs a Power Spike with 220% of Power Attack stat as power.",
-          "3": "SHOHEI FUKUNAGA performs a Power Spike with 220% of Power Attack stat as power.",
-          "4": "SHOHEI FUKUNAGA performs a Power Spike with 220% of Power Attack stat as power.",
-          "5": "SHOHEI FUKUNAGA performs a Power Spike with 220% of Power Attack stat as power.",
+          "1": "Power Spike with 220% of Power Attack.",
+          "2": "Power Spike with 235% of Power Attack.",
+          "3": "Power Spike with 250% of Power Attack.",
+          "4": "Power Spike with 265% of Power Attack.",
+          "5": "Power Spike with 280% of Power Attack.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "taketora-yamamoto-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "shohei-fukunaga-sr",
+          "taketora-yamamoto-sr",
+          "nobuyuki-kai-sr",
+        ],
+        effect:
+          "On Fukunaga PERFECT Receive, Yamamoto gains +8% Power Attack for 1 rally.",
+      },
+      {
+        to: "nobuyuki-kai-sr",
+        name: "Neighborhood Trio",
+        participants: [
+          "shohei-fukunaga-sr",
+          "taketora-yamamoto-sr",
+          "nobuyuki-kai-sr",
+        ],
+        effect:
+          "On Fukunaga PERFECT Receive, Kai gains +8% Receive for 1 rally.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -1121,7 +1432,7 @@ export const nekomaPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "When SHOHEI FUKUNAGA performs a Power Spike, reduces opponent's receive power by 5% of the receiving player's Receive stat.",
+          "On Fukunaga Power Spike, reduce opponent receive by 5% of their Receive.",
       },
       {
         level: "III",
@@ -1132,7 +1443,7 @@ export const nekomaPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "While SHOHEI FUKUNAGA is present, when your side achieves a PERFECT receive, increases his Power Spike power by an additional 15% of Power Attack stat.",
+          "On team PERFECT Receive, Fukunaga’s next Power Spike +15% of Power Attack.",
       },
       {
         level: "V",
@@ -1152,7 +1463,7 @@ export const nekomaPlayers: Player[] = [
     },
     memory: { name: "", effect: "" },
   },
-  // ===================== Tamahiko Teshiro (SR) =====================
+  // ===================== TAMAHIKO TESHIRO (SR) =====================
   {
     id: "tamahiko-teshiro-sr",
     name: "Tamahiko Teshiro",
@@ -1160,8 +1471,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["S"],
-    typeTags: ["Set", "Serve", "Enhance Team"],
+    typeTags: ["Receive", "Serve", "Setter"],
     image: "/characters/nekoma/tamahiko-teshiro-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1181,8 +1493,8 @@ export const nekomaPlayers: Player[] = [
         name: "Calm Setting",
         levels: {
           "1": "TAMAHIKO TESHIRO performs a Set with 120% of Set stat as power.",
-          "2": "TAMAHIKO TESHIRO performs a Set with 120% of Set stat as power.",
-          "3": "TAMAHIKO TESHIRO performs a Set with 120% of Set stat as power.",
+          "2": "TAMAHIKO TESHIRO performs a Set with 132% of Set stat as power.",
+          "3": "TAMAHIKO TESHIRO performs a Set with 145% of Set stat as power.",
           "4": undefined,
           "5": undefined,
         },
@@ -1191,9 +1503,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Focused Serve",
         levels: {
-          "1": "Increases TAMAHIKO TESHIRO's Serve stat by 10%.",
+          "1": "Increases TAMAHIKO TESHIRO's Serve stat by 8%.",
           "2": "Increases TAMAHIKO TESHIRO's Serve stat by 10%.",
-          "3": "Increases TAMAHIKO TESHIRO's Serve stat by 10%.",
+          "3": "Increases TAMAHIKO TESHIRO's Serve stat by 12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1202,9 +1514,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Precise Receive",
         levels: {
-          "1": "While TAMAHIKO TESHIRO is present, increases Receive stat of your side's back row players by 6%.",
-          "2": "While TAMAHIKO TESHIRO is present, increases Receive stat of your side's back row players by 6%.",
-          "3": "While TAMAHIKO TESHIRO is present, increases Receive stat of your side's back row players by 6%.",
+          "1": "While TAMAHIKO TESHIRO is present, increases back-row allies’ Receive by 6%.",
+          "2": "While TAMAHIKO TESHIRO is present, increases back-row allies’ Receive by 7.5%.",
+          "3": "While TAMAHIKO TESHIRO is present, increases back-row allies’ Receive by 9%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1213,11 +1525,11 @@ export const nekomaPlayers: Player[] = [
         key: "active",
         name: "Ceiling Serve",
         levels: {
-          "1": "TAMAHIKO TESHIRO performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
-          "2": "TAMAHIKO TESHIRO performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
-          "3": "TAMAHIKO TESHIRO performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
-          "4": "TAMAHIKO TESHIRO performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
-          "5": "TAMAHIKO TESHIRO performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
+          "1": "Performs a Ceiling Serve with 215% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
+          "2": "Performs a Ceiling Serve with 230% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
+          "3": "Performs a Ceiling Serve with 245% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
+          "4": "Performs a Ceiling Serve with 260% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
+          "5": "Performs a Ceiling Serve with 275% of Serve stat as power; for this Serve, TESHIRO's Awareness increases by 10%.",
         },
       },
     ],
@@ -1232,7 +1544,7 @@ export const nekomaPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "When your side is behind, increases TAMAHIKO TESHIRO's Serve power by an additional 10% of Serve stat.",
+          "When your side is behind, increases TESHIRO's Serve power by an additional 10% of Serve stat.",
       },
       {
         level: "III",
@@ -1243,7 +1555,7 @@ export const nekomaPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "While TAMAHIKO TESHIRO is present, each time the ball crosses the net, increases your side's back row players' Receive stat by 3%, stacking up to 5 times.",
+          "While TAMAHIKO TESHIRO is present, each net crossing increases back-row allies’ Receive by 3%, stacking up to 5 times.",
       },
       {
         level: "V",
@@ -1263,7 +1575,8 @@ export const nekomaPlayers: Player[] = [
     },
     memory: { name: "", effect: "" },
   },
-  // ===================== So Inuoka (SR) =====================
+
+  // ===================== SO INUOKA (SR) =====================
   {
     id: "so-inuoka-sr",
     name: "Sō Inuoka",
@@ -1271,8 +1584,9 @@ export const nekomaPlayers: Player[] = [
     team: "Nekoma",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block", "Enhance Team"],
+    typeTags: ["Block"],
     image: "/characters/nekoma/so-inuoka-sr.png",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 94,
@@ -1288,12 +1602,12 @@ export const nekomaPlayers: Player[] = [
     },
     skills: [
       {
-        key: "active",
-        name: "Explosive Quick Attack",
+        key: "passive",
+        name: "Rising Wall",
         levels: {
-          "1": "SO INUOKA performs a Quick Spike with 120% of Quick Attack stat as power.",
-          "2": "SO INUOKA performs a Quick Spike with 120% of Quick Attack stat as power.",
-          "3": "SO INUOKA performs a Quick Spike with 120% of Quick Attack stat as power.",
+          "1": "SO INUOKA’s Block stat +8%.",
+          "2": "SO INUOKA’s Block stat +10%.",
+          "3": "SO INUOKA’s Block stat +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1302,9 +1616,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Shutdown Block",
         levels: {
-          "1": "Increases SO INUOKA's Block stat by 10%.",
-          "2": "Increases SO INUOKA's Block stat by 10%.",
-          "3": "Increases SO INUOKA's Block stat by 10%.",
+          "1": "When INUOKA blocks, consume 3 extra Stamina to increase this block's power by 14% of Block stat.",
+          "2": "When INUOKA blocks, consume 3 extra Stamina to increase this block's power by 20% of Block stat.",
+          "3": "When INUOKA blocks, consume 3 extra Stamina to increase this block's power by 25% of Block stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -1313,9 +1627,9 @@ export const nekomaPlayers: Player[] = [
         key: "passive",
         name: "Unquenchable Spirit",
         levels: {
-          "1": "While SO INUOKA is present, when your side is behind, increases your side's Block power by 3% of each player's Block stat, and increases back-row players' Receive power by 3% of their Receive stat.",
-          "2": "While SO INUOKA is present, when your side is behind, increases your side's Block power by 3% of each player's Block stat, and increases back-row players' Receive power by 3% of their Receive stat.",
-          "3": "While SO INUOKA is present, when your side is behind, increases your side's Block power by 3% of each player's Block stat, and increases back-row players' Receive power by 3% of their Receive stat.",
+          "1": "While INUOKA is present and your side is behind, team Block power +3% of each player's Block stat.",
+          "2": "While INUOKA is present and your side is behind, team Block power +4.5% of each player's Block stat.",
+          "3": "While INUOKA is present and your side is behind, team Block power +6% of each player's Block stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -1325,10 +1639,10 @@ export const nekomaPlayers: Player[] = [
         name: "Cover Block",
         levels: {
           "1": "SO INUOKA performs a Block with 180% of Block stat as power.",
-          "2": "SO INUOKA performs a Block with 180% of Block stat as power.",
-          "3": "SO INUOKA performs a Block with 180% of Block stat as power.",
-          "4": "SO INUOKA performs a Block with 180% of Block stat as power.",
-          "5": "SO INUOKA performs a Block with 180% of Block stat as power.",
+          "2": "SO INUOKA performs a Block with 195% of Block stat as power.",
+          "3": "SO INUOKA performs a Block with 210% of Block stat as power.",
+          "4": "SO INUOKA performs a Block with 225% of Block stat as power.",
+          "5": "SO INUOKA performs a Block with 240% of Block stat as power.",
         },
       },
     ],
@@ -1342,8 +1656,7 @@ export const nekomaPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "At the start of each turn, removes all debuff effects from SO INUOKA.",
+        effect: "At the start of each turn, remove all debuffs from SO INUOKA.",
       },
       {
         level: "III",
@@ -1354,7 +1667,7 @@ export const nekomaPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When your side's players achieve a PERFECT touch, reduces COVER BLOCK cooldown by 1 net crossings.",
+          "When your team achieves a PERFECT touch, reduce COVER BLOCK cooldown by 1 net crossing.",
       },
       {
         level: "V",

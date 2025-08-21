@@ -17,8 +17,8 @@ export const karasunoPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Setter", "Serve"],
     image: "/characters/karasuno/koshi-sugawara-sp.jpg",
+    server: "Japan",
     stats: {
-      // SP baseline for a setter (consistent with Karasuno scaling)
       basic: {
         quickAttack: 111,
         powerAttack: 104,
@@ -144,6 +144,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-sp.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 90,
@@ -265,6 +266,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack"],
     image: "/characters/karasuno/shoyo-hinata-sp.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 118,
@@ -377,8 +379,8 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Block", "Quick Attack"],
     image: "/characters/karasuno/kei-tsukishima-sp.jpg",
+    server: "Japan",
     stats: {
-      // SP baseline for a blocker (consistent with Karasuno scaling)
       basic: {
         quickAttack: 121,
         powerAttack: 83,
@@ -502,6 +504,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Quick Attack"],
     image: "/characters/karasuno/tobio-kageyama-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 999,
@@ -597,6 +600,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Quick Attack"],
     image: "/characters/karasuno/tobio-kageyama-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 109,
@@ -717,6 +721,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/daichi-sawamura-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 75,
@@ -847,6 +852,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,
@@ -973,6 +979,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Serve", "Power Attack"],
     image: "/characters/karasuno/asahi-azumane-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 83,
@@ -1104,6 +1111,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Power Attack"],
     image: "/characters/karasuno/ryunosuke-tanaka-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 83,
@@ -1223,6 +1231,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
     image: "/characters/karasuno/kei-tsukishima-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 115,
@@ -1343,6 +1352,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack"],
     image: "/characters/karasuno/shoyo-hinata-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 121,
@@ -1459,6 +1469,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Power Attack", "Setter"],
     image: "/characters/karasuno/koshi-sugawara-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1583,6 +1594,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/daichi-sawamura-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1695,6 +1707,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/yu-nishinoya-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 55,
@@ -1825,6 +1838,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Power Attack"],
     image: "/characters/karasuno/ryunosuke-tanaka-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1948,6 +1962,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Receive"],
     image: "/characters/karasuno/chikara-ennoshita-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -2066,6 +2081,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Serve", "Power Attack"],
     image: "/characters/karasuno/asahi-azumane-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,
@@ -2186,6 +2202,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
     image: "/characters/karasuno/kei-tsukishima-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 94,
@@ -2298,6 +2315,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack"],
     image: "/characters/karasuno/shoyo-hinata-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 98,
@@ -2418,6 +2436,7 @@ export const karasunoPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Serve"],
     image: "/characters/karasuno/tadashi-yamaguchi-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 88,

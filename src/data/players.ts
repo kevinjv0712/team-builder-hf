@@ -10,6 +10,7 @@ import {
   fukurodaniPlayers,
   itachiyamaPlayers,
   kamomedaiPlayers,
+  johzenjiPlayers,
 } from "./teams";
 
 export const playersByTeam = {
@@ -22,6 +23,7 @@ export const playersByTeam = {
   Fukurodani: fukurodaniPlayers,
   Itachiyama: itachiyamaPlayers,
   Kamomedai: kamomedaiPlayers,
+  Johzenji: johzenjiPlayers,
 } as const;
 
 export const players: Player[] = Object.values(playersByTeam).flat();

@@ -1,7 +1,8 @@
+// src/teams/aoba-johsai.ts
 import type { Player } from "@/types";
 
 export const aobaJohsaiPlayers: Player[] = [
-  // ===== TORU OIKAWA (UR - placeholder) =====
+  // ===== TORU OIKAWA (UR — JAPAN) =====
   {
     id: "toru-oikawa-ur",
     name: "Toru Oikawa",
@@ -11,63 +12,122 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Power Attack"],
     image: "/characters/aoba-johsai/toru-oikawa-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
-        quickAttack: 0,
-        powerAttack: 0,
-        set: 0,
-        serve: 0,
-        receive: 0,
-        block: 0,
-        save: 0,
+        quickAttack: 64,
+        powerAttack: 128,
+        set: 156,
+        serve: 160,
+        receive: 118,
+        block: 134,
+        save: 106,
       },
-      bonusAttack: { awareness: 0, strength: 0, attackTechnique: 0 },
-      bonusDefense: { reflex: 0, spirit: 0, defenseTechnique: 0 },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
+      // 指揮者
       {
         key: "passive",
-        name: "",
-        levels: { "1": "", "2": "", "3": "", "4": "", "5": "" },
+        name: "Conductor",
+        levels: {
+          "1": "While Oikawa is on court: allies’ [Awareness] +10%. When an ally activates a Power Attack skill, consume 6 stacks of “Attack Tempo” to guarantee a Nice Play.",
+          "2": "While Oikawa is on court: allies’ [Awareness] +12%. Same Nice Play effect (consumes 6 stacks).",
+          "3": "While Oikawa is on court: allies’ [Awareness] +14%. Same Nice Play effect (consumes 6 stacks).",
+          "4": undefined,
+          "5": undefined,
+        },
       },
-      {
-        key: "passive",
-        name: "",
-        levels: { "1": "", "2": "", "3": "", "4": "", "5": "" },
-      },
-      {
-        key: "passive",
-        name: "",
-        levels: { "1": "", "2": "", "3": "", "4": "", "5": "" },
-      },
+      // 圧倒的なセンス
       {
         key: "active",
-        name: "",
-        levels: { "1": "", "2": "", "3": "", "4": "", "5": "" },
+        name: "Overwhelming Sense",
+        levels: {
+          "1": "Performs a Two-Attack with [Set] x115% (cannot be blocked). While Oikawa is on court, allies with Power Attack gain [Power] +20%.",
+          "2": "Two-Attack [Set] x130% (unblockable). Allies with Power Attack: [Power] +22%.",
+          "3": "Two-Attack [Set] x145% (unblockable). Allies with Power Attack: [Power] +24%.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      // 大王様のトス
+      {
+        key: "passive",
+        name: "King’s Toss",
+        levels: {
+          "1": "Oikawa performs a Set with [Set] x120%. When an ally makes a Nice Play, gain 1 stack of “Attack Tempo”. Each stack gives allies’ [Awareness] +1% (max 10 stacks).",
+          "2": "Set [Set] x135%. Same “Attack Tempo” effect (+1% Awareness per stack, max 10).",
+          "3": "Set [Set] x150%. Same “Attack Tempo” effect (+1% Awareness per stack, max 10).",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      // 大半径のジャンプサーブ
+      {
+        key: "finisher",
+        name: "Grand King Jump Serve",
+        levels: {
+          "1": "Performs a Power Jump Serve with [Serve] x260%. For this play: Oikawa’s [Awareness] +20% and [Power] +20%.",
+          "2": "Power Jump Serve [Serve] x275%. Same +20% Awareness/Power for this play.",
+          "3": "Power Jump Serve [Serve] x290%. Same +20% Awareness/Power for this play.",
+          "4": "Power Jump Serve [Serve] x305%. Same +20% Awareness/Power for this play.",
+          "5": "Power Jump Serve [Serve] x320%. Same +20% Awareness/Power for this play.",
+        },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "toru-oikawa-ur",
+        name: "Childhood Duo",
+        participants: ["toru-oikawa-ur", "hajime-iwaizumi-ssr"],
+        effect:
+          "If Oikawa sets to Iwaizumi this rally: Iwaizumi’s [Power Attack] x (Lv1: 250%, Lv2: 265%, Lv3: 280%, Lv4: 295%, Lv5: 310%) and [Awareness] +10% for the spike.",
+      },
+    ],
     resonances: [
-      { level: "I", name: "", effect: "" },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "" },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "" },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "Start of match: gain 2 stacks of “Attack Tempo”. While Oikawa is on court, each stack also increases allies’ [Set/Serve] effectiveness by 0.5%.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When Grand King Jump Serve scores, gain +2 “Attack Tempo” and its cooldown resets (once per set).",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Setter",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "Maximiza control del juego y presión desde el saque.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== TORU OIKAWA (SSR) =====
+  // ===== TORU OIKAWA (SSR — GLOBAL) =====
   {
     id: "toru-oikawa-ssr",
     name: "Toru Oikawa",
@@ -77,6 +137,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Power Attack"],
     image: "/characters/aoba-johsai/toru-oikawa-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 75,
@@ -95,9 +156,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Court Vision",
         levels: {
-          "1": "Increases TORU OIKAWA's Set stat by 10%. When your players cast a Spike skill, they gain 1 stacks of \"Attack Tempo\". Each stack increases your players' Awareness by 1%, up to 10 stacks.",
-          "2": "Increases TORU OIKAWA's Set stat by 11.5%. When your players cast a Spike skill, they gain 1 stacks of \"Attack Tempo\". Each stack increases your players' Awareness by 1.2%, up to 10 stacks.",
-          "3": "Increases TORU OIKAWA's Set stat by 13%. When your players cast a Spike skill, they gain 1 stacks of \"Attack Tempo\". Each stack increases your players' Awareness by 1.5%, up to 10 stacks.",
+          "1": 'Oikawa’s [Set] +10%. When your players cast a Spike skill, they gain 1 stack of "Attack Tempo" (Awareness +1% per stack, up to 10).',
+          "2": "Oikawa’s [Set] +11.5%. Same stacks (Awareness +1.2% per stack, up to 10).",
+          "3": "Oikawa’s [Set] +13%. Same stacks (Awareness +1.5% per stack, up to 10).",
           "4": undefined,
           "5": undefined,
         },
@@ -106,9 +167,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Game Changer",
         levels: {
-          "1": "While TORU OIKAWA is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 6%, lasting for 8 net crossings.",
-          "2": "While TORU OIKAWA is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 7.5%, lasting for 8 net crossings.",
-          "3": "While TORU OIKAWA is on the court, at the start of each turn, if your side is behind, increases all basic stats of your players by 9%, lasting for 8 net crossings.",
+          "1": "If your side is behind at turn start: allies’ basic stats +6% for 8 net crossings.",
+          "2": "If behind: allies’ basic stats +7.5% for 8 net crossings.",
+          "3": "If behind: allies’ basic stats +9% for 8 net crossings.",
           "4": undefined,
           "5": undefined,
         },
@@ -117,9 +178,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Control Tower",
         levels: {
-          "1": 'While TORU OIKAWA is on the court, increases your players\' Awareness by 6%. Each stack of "Attack Tempo" provides an additional 1% Awareness.',
-          "2": 'While TORU OIKAWA is on the court, increases your players\' Awareness by 7.5%. Each stack of "Attack Tempo" provides an additional 1% Awareness.',
-          "3": 'While TORU OIKAWA is on the court, increases your players\' Awareness by 9%. Each stack of "Attack Tempo" provides an additional 1.5% Awareness.',
+          "1": 'While Oikawa is on court: allies’ [Awareness] +6%. Each "Attack Tempo" stack adds +1% Awareness.',
+          "2": "While Oikawa is on court: allies’ [Awareness] +7.5%. Each stack adds +1%.",
+          "3": "While Oikawa is on court: allies’ [Awareness] +9%. Each stack adds +1.5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -128,11 +189,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Double-Edged Serve",
         levels: {
-          "1": "TORU OIKAWA performs a Power Jump Serve with 240% of his Serve stat as power; for this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail.",
-          "2": "TORU OIKAWA performs a Power Jump Serve with 255% of his Serve stat as power; for this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail.",
-          "3": "TORU OIKAWA performs a Power Jump Serve with 270% of his Serve stat as power; for this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail.",
-          "4": "TORU OIKAWA performs a Power Jump Serve with 285% of his Serve stat as power; for this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail.",
-          "5": "TORU OIKAWA performs a Power Jump Serve with 300% of his Serve stat as power; for this Serve, his Awareness increases by 15%. This Serve has a 5% chance to fail.",
+          "1": "Power Jump Serve [Serve] x240%; for this serve Oikawa’s [Awareness] +15%. 5% fixed fail chance.",
+          "2": "Power Jump Serve [Serve] x255%; same +15% Awareness and fail chance.",
+          "3": "Power Jump Serve [Serve] x270%; same +15% Awareness and fail chance.",
+          "4": "Power Jump Serve [Serve] x285%; same +15% Awareness and fail chance.",
+          "5": "Power Jump Serve [Serve] x300%; same +15% Awareness and fail chance.",
         },
       },
     ],
@@ -141,52 +202,52 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "hajime-iwaizumi-sr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
-        effect: "Increases TORU OIKAWA and HAJIME IWAIZUMI's Awareness",
+        effect: "Increases Toru Oikawa and Hajime Iwaizumi’s [Awareness].",
       },
     ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "DOUBLE-EDGED SERVE new effect: OIKAWA's serves never fail; when TORU OIKAWA serves, increases his Awareness by 15%.",
+          "DOUBLE-EDGED SERVE: serves never fail; when Oikawa serves, his [Awareness] +15%.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          'When casting DOUBLE-EDGED SERVE, receive 2 stacks of "Attack Tempo"; when scoring with DOUBLE-EDGED SERVE, its cooldown resets.',
+          'When casting DOUBLE-EDGED SERVE, gain 2 stacks of "Attack Tempo"; on score, its cooldown resets.',
       },
       {
         level: "V",
         name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Setter",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "Set consistente y presión con saque.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== HAJIME IWAIZUMI (SSR) =====
+  // ===== HAJIME IWAIZUMI (SSR — GLOBAL) =====
   {
     id: "hajime-iwaizumi-ssr",
     name: "Hajime Iwaizumi",
@@ -196,6 +257,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Power Attack"],
     image: "/characters/aoba-johsai/hajime-iwaizumi-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 83,
@@ -214,9 +276,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Ace's Strength",
         levels: {
-          "1": "Increases HAJIME IWAIZUMI's Awareness by 5% and Strength by 10%.",
-          "2": "Increases HAJIME IWAIZUMI's Awareness by 6.5% and Strength by 12.5%.",
-          "3": "Increases HAJIME IWAIZUMI's Awareness by 8% and Strength by 15%.",
+          "1": "Iwaizumi’s [Awareness] +5% and [Strength] +10%.",
+          "2": "Iwaizumi’s [Awareness] +6.5% and [Strength] +12.5%.",
+          "3": "Iwaizumi’s [Awareness] +8% and [Strength] +15%.",
           "4": undefined,
           "5": undefined,
         },
@@ -225,9 +287,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Focused Defense",
         levels: {
-          "1": "HAJIME IWAIZUMI performs a Receive with 120% of Receive stat as power.",
-          "2": "HAJIME IWAIZUMI performs a Receive with 135% of Receive stat as power.",
-          "3": "HAJIME IWAIZUMI performs a Receive with 150% of Receive stat as power.",
+          "1": "Performs [Receive] x120%.",
+          "2": "[Receive] x135%.",
+          "3": "[Receive] x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -236,9 +298,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Vice-Captain's Rally",
         levels: {
-          "1": "While HAJIME IWAIZUMI is present, increases Strength of players on your side by 6%.",
-          "2": "While HAJIME IWAIZUMI is present, increases Strength of players on your side by 7.5%.",
-          "3": "While HAJIME IWAIZUMI is present, increases Strength of players on your side by 9%.",
+          "1": "While on court: allies’ [Strength] +6%.",
+          "2": "While on court: allies’ [Strength] +7.5%.",
+          "3": "While on court: allies’ [Strength] +9%.",
           "4": undefined,
           "5": undefined,
         },
@@ -247,11 +309,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Head-to-Head",
         levels: {
-          "1": "HAJIME IWAIZUMI performs a Power Spike with 240% of Power Attack stat as power; on Critical, this spike gains +15% of Power Attack stat as power.",
-          "2": "HAJIME IWAIZUMI performs a Power Spike with 255% of Power Attack stat as power; on Critical, this spike gains +15% of Power Attack stat as power.",
-          "3": "HAJIME IWAIZUMI performs a Power Spike with 270% of Power Attack stat as power; on Critical, this spike gains +18% of Power Attack stat as power.",
-          "4": "HAJIME IWAIZUMI performs a Power Spike with 285% of Power Attack stat as power; on Critical, this spike gains +18% of Power Attack stat as power.",
-          "5": "HAJIME IWAIZUMI performs a Power Spike with 300% of Power Attack stat as power; on Critical, this spike gains +21% of Power Attack stat as power.",
+          "1": "Power Spike [Power Attack] x240%; on Critical, extra +15% of [Power Attack] as power.",
+          "2": "Power Spike [Power Attack] x255%; on Critical, extra +15%.",
+          "3": "Power Spike [Power Attack] x270%; on Critical, extra +18%.",
+          "4": "Power Spike [Power Attack] x285%; on Critical, extra +18%.",
+          "5": "Power Spike [Power Attack] x300%; on Critical, extra +21%.",
         },
       },
     ],
@@ -260,53 +322,57 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "kentaro-kyotani-ssr",
         name: "The Wolf Pack",
         participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-ssr"],
+        effect: "Boosts Iwaizumi & Kyotani’s [Power Attack].",
+      },
+      {
+        to: "toru-oikawa-ur",
+        name: "Childhood Duo",
+        participants: ["toru-oikawa-ur", "hajime-iwaizumi-ssr"],
         effect:
-          "Increases HAJIME IWAIZUMI and KENTARO KYOTANI's Power Attack stat",
+          "If Oikawa sets to Iwaizumi: Iwaizumi’s [Power Attack] +15% and spike power scales up as per bond on Oikawa UR.",
       },
     ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "While HAJIME IWAIZUMI is present, increases Strength of players on your side by 15%.",
+        effect: "While on court: allies’ [Strength] +15%.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "HEAD-TO-HEAD new effect: reduces opponent's blocking power by 20% of Block stat.",
+        effect: "HEAD-TO-HEAD: reduces opponent’s blocker [Block] by 20%.",
       },
       {
         level: "V",
         name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Power Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Receive",
         secondaryCount: 2,
-        reason: "",
+        reason: "DPS con estabilidad defensiva.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== HAJIME IWAIZUMI (SR) =====
+  // ===== HAJIME IWAIZUMI (SR — GLOBAL) =====
   {
     id: "hajime-iwaizumi-sr",
     name: "Hajime Iwaizumi",
@@ -316,6 +382,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Power Attack"],
     image: "/characters/aoba-johsai/hajime-iwaizumi-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,
@@ -334,9 +401,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Burning Spike",
         levels: {
-          "1": "Increases HAJIME IWAIZUMI (Practice)'s Power Attack stat by 10%.",
-          "2": "Increases HAJIME IWAIZUMI (Practice)'s Power Attack stat by 11.5%.",
-          "3": "Increases HAJIME IWAIZUMI (Practice)'s Power Attack stat by 13%.",
+          "1": "Iwaizumi (Practice) [Power Attack] +10%.",
+          "2": "Iwaizumi (Practice) [Power Attack] +11.5%.",
+          "3": "Iwaizumi (Practice) [Power Attack] +13%.",
           "4": undefined,
           "5": undefined,
         },
@@ -345,9 +412,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Calm Receive",
         levels: {
-          "1": "HAJIME IWAIZUMI (Practice) performs a Receive with 115% of Receive stat as power; for this Receive, IWAIZUMI (Practice)'s Spirit increases by 8%.",
-          "2": "HAJIME IWAIZUMI (Practice) performs a Receive with 130% of Receive stat as power; for this Receive, IWAIZUMI (Practice)'s Spirit increases by 9.5%.",
-          "3": "HAJIME IWAIZUMI (Practice) performs a Receive with 145% of Receive stat as power; for this Receive, IWAIZUMI (Practice)'s Spirit increases by 11%.",
+          "1": "Receive x115%; for this receive, [Spirit] +8%.",
+          "2": "Receive x130%; [Spirit] +9.5%.",
+          "3": "Receive x145%; [Spirit] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -356,9 +423,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Rising Spirit",
         levels: {
-          "1": "Increases HAJIME IWAIZUMI (Practice)'s Awareness and Reflex by 5%.",
-          "2": "Increases HAJIME IWAIZUMI (Practice)'s Awareness and Reflex by 6.5%.",
-          "3": "Increases HAJIME IWAIZUMI (Practice)'s Awareness and Reflex by 8%.",
+          "1": "[Awareness] & [Reflex] +5%.",
+          "2": "[Awareness] & [Reflex] +6.5%.",
+          "3": "[Awareness] & [Reflex] +8%.",
           "4": undefined,
           "5": undefined,
         },
@@ -367,11 +434,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Unstoppable Spike",
         levels: {
-          "1": "HAJIME IWAIZUMI (Practice) performs a Power Spike with 220% of Power Attack stat as power.",
-          "2": "HAJIME IWAIZUMI (Practice) performs a Power Spike with 235% of Power Attack stat as power.",
-          "3": "HAJIME IWAIZUMI (Practice) performs a Power Spike with 250% of Power Attack stat as power.",
-          "4": "HAJIME IWAIZUMI (Practice) performs a Power Spike with 265% of Power Attack stat as power.",
-          "5": "HAJIME IWAIZUMI (Practice) performs a Power Spike with 280% of Power Attack stat as power.",
+          "1": "Power Spike x220%.",
+          "2": "Power Spike x235%.",
+          "3": "Power Spike x250%.",
+          "4": "Power Spike x265%.",
+          "5": "Power Spike x280%.",
         },
       },
     ],
@@ -380,52 +447,42 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "toru-oikawa-ssr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
-        effect: "Increases TORU OIKAWA and HAJIME IWAIZUMI's Awareness",
+        effect: "Boosts both players’ [Awareness].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "UNSTOPPABLE SPIKE new effect: increases HAJIME IWAIZUMI (Practice)'s Awareness by 15% during this Power Spike.",
+        effect: "UNSTOPPABLE SPIKE: +15% [Awareness] during the spike.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "UNSTOPPABLE SPIKE new effect: increases HAJIME IWAIZUMI (Practice)'s Strength by 15% during this Power Spike.",
+        effect: "UNSTOPPABLE SPIKE: +15% [Strength] during the spike.",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Power Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "Ataque constante y presión extra con saque.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== KENTARO KYOTANI (SSR) =====
+  // ===== KENTARO KYOTANI (SSR — GLOBAL) =====
   {
     id: "kentaro-kyotani-ssr",
     name: "Kentaro Kyotani",
@@ -435,6 +492,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Power Attack", "Serve"],
     image: "/characters/aoba-johsai/kentaro-kyotani-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 83,
@@ -453,9 +511,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Fierce Attack",
         levels: {
-          "1": "Increases KENTARO KYOTANI's Awareness by 8% and Power Attack stat by 5%.",
-          "2": "Increases KENTARO KYOTANI's Awareness by 9.5% and Power Attack stat by 6.5%.",
-          "3": "Increases KENTARO KYOTANI's Awareness by 11% and Power Attack stat by 8%.",
+          "1": "Kyotani’s [Awareness] +8% and [Power Attack] +5%.",
+          "2": "Kyotani’s [Awareness] +9.5% and [Power Attack] +6.5%.",
+          "3": "Kyotani’s [Awareness] +11% and [Power Attack] +8%.",
           "4": undefined,
           "5": undefined,
         },
@@ -464,9 +522,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Mad Dog Serve",
         levels: {
-          "1": "KENTARO KYOTANI performs a Serve with 130% of his Serve stat. For this Serve, his Awareness increases by 15%, with a fixed 10% chance to fail.",
-          "2": "KENTARO KYOTANI performs a Serve with 145% of his Serve stat. For this Serve, his Awareness increases by 15%, with a fixed 10% chance to fail.",
-          "3": "KENTARO KYOTANI performs a Serve with 160% of his Serve stat. For this Serve, his Awareness increases by 15%, with a fixed 10% chance to fail.",
+          "1": "Serve x130%; for this serve, [Awareness] +15% (10% fixed fail).",
+          "2": "Serve x145%; +15% Awareness, 10% fail.",
+          "3": "Serve x160%; +15% Awareness, 10% fail.",
           "4": undefined,
           "5": undefined,
         },
@@ -475,9 +533,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Strength Burst",
         levels: {
-          "1": "Increases KENTARO KYOTANI's Strength by 18%.",
-          "2": "Increases KENTARO KYOTANI's Strength by 21%.",
-          "3": "Increases KENTARO KYOTANI's Strength by 24%.",
+          "1": "[Strength] +18%.",
+          "2": "[Strength] +21%.",
+          "3": "[Strength] +24%.",
           "4": undefined,
           "5": undefined,
         },
@@ -486,11 +544,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Mad Dog's Fang",
         levels: {
-          "1": "KENTARO KYOTANI performs a Power Spike with 210% of his Power Attack stat, reducing the Stamina of the opponent's blocking and receiving players by 10.",
-          "2": "KENTARO KYOTANI performs a Power Spike with 225% of his Power Attack stat, reducing the Stamina of the opponent's blocking and receiving players by 10.",
-          "3": "KENTARO KYOTANI performs a Power Spike with 240% of his Power Attack stat, reducing the Stamina of the opponent's blocking and receiving players by 10.",
-          "4": "KENTARO KYOTANI performs a Power Spike with 255% of his Power Attack stat, reducing the Stamina of the opponent's blocking and receiving players by 10.",
-          "5": "KENTARO KYOTANI performs a Power Spike with 270% of his Power Attack stat, reducing the Stamina of the opponent's blocking and receiving players by 10.",
+          "1": "Power Spike x210%; reduces blocking & receiving opponents’ Stamina by 10.",
+          "2": "Power Spike x225%; same stamina reduction.",
+          "3": "Power Spike x240%; same.",
+          "4": "Power Spike x255%; same.",
+          "5": "Power Spike x270%; same.",
         },
       },
     ],
@@ -499,53 +557,51 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "hajime-iwaizumi-ssr",
         name: "The Wolf Pack",
         participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-ssr"],
-        effect:
-          "Increases HAJIME IWAIZUMI and KENTARO KYOTANI's Power Attack stat",
+        effect: "Boosts both players’ [Power Attack].",
       },
     ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "When KENTARO KYOTANI performs a Critical Power Spike, reduces opponent's blocking and receiving players' Stamina by 5.",
+          "On Critical Power Spike: -5 Stamina to opponent blockers/receivers.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "MAD DOG'S FANG new effect: When opponent's receiver has less than 50% Stamina, their Receive stat is reduced by 18%.",
+        effect: "When receiver <50% Stamina: their [Receive] -18%.",
       },
       {
         level: "V",
         name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 10%.",
+        effect: "Main parameters +10%.",
       },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Power Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "OP agresivo con presión desde el servicio.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== KENTARO KYOTANI (SR) =====
+  // ===== KENTARO KYOTANI (SR — GLOBAL) =====
   {
     id: "kentaro-kyotani-sr",
     name: "Kentaro Kyotani",
@@ -555,6 +611,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Power Attack", "Serve"],
     image: "/characters/aoba-johsai/kentaro-kyotani-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,
@@ -573,9 +630,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Predator Serve",
         levels: {
-          "1": "KENTARO KYOTANI (Practice) performs a Jump Serve with 120% of Serve stat as power.",
-          "2": "KENTARO KYOTANI (Practice) performs a Jump Serve with 135% of Serve stat as power.",
-          "3": "KENTARO KYOTANI (Practice) performs a Jump Serve with 150% of Serve stat as power.",
+          "1": "Jump Serve [Serve] x120%.",
+          "2": "Jump Serve [Serve] x135%.",
+          "3": "Jump Serve [Serve] x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -584,9 +641,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Explosive Strength",
         levels: {
-          "1": "When KENTARO KYOTANI (Practice) performs a Power Spike, increases his Strength by 15% for this Spike.",
-          "2": "When KENTARO KYOTANI (Practice) performs a Power Spike, increases his Strength by 17.5% for this Spike.",
-          "3": "When KENTARO KYOTANI (Practice) performs a Power Spike, increases his Strength by 20% for this Spike.",
+          "1": "When Kyotani spikes: [Strength] +15% for that spike.",
+          "2": "… +17.5% for that spike.",
+          "3": "… +20% for that spike.",
           "4": undefined,
           "5": undefined,
         },
@@ -595,9 +652,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Revving Up",
         levels: {
-          "1": 'Increases KENTARO KYOTANI (Practice)\'s Power Attack stat by 8%; when he performs a Power Spike, receives 1 stacks of "Heat Up"; each stack increases Power Attack stat by 1%, up to 4 stacks.',
-          "2": 'Increases KENTARO KYOTANI (Practice)\'s Power Attack stat by 9.5%; when he performs a Power Spike, receives 1 stacks of "Heat Up"; each stack increases Power Attack stat by 1%, up to 4 stacks.',
-          "3": 'Increases KENTARO KYOTANI (Practice)\'s Power Attack stat by 11%; when he performs a Power Spike, receives 1 stacks of "Heat Up"; each stack increases Power Attack stat by 1%, up to 4 stacks.',
+          "1": "[Power Attack] +8%; on Power Spike, gain 1 “Heat Up” stack (+1% Power Attack, up to 4).",
+          "2": "[Power Attack] +9.5%; same stacks.",
+          "3": "[Power Attack] +11%; same stacks.",
           "4": undefined,
           "5": undefined,
         },
@@ -606,11 +663,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Rampaging Offense",
         levels: {
-          "1": "KENTARO KYOTANI (Practice) performs a Power Spike with 220% of Power Attack stat as power.",
-          "2": "KENTARO KYOTANI (Practice) performs a Power Spike with 235% of Power Attack stat as power.",
-          "3": "KENTARO KYOTANI (Practice) performs a Power Spike with 250% of Power Attack stat as power.",
-          "4": "KENTARO KYOTANI (Practice) performs a Power Spike with 265% of Power Attack stat as power.",
-          "5": "KENTARO KYOTANI (Practice) performs a Power Spike with 280% of Power Attack stat as power.",
+          "1": "Power Spike x220%.",
+          "2": "Power Spike x235%.",
+          "3": "Power Spike x250%.",
+          "4": "Power Spike x265%.",
+          "5": "Power Spike x280%.",
         },
       },
     ],
@@ -619,53 +676,43 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "hajime-iwaizumi-ssr",
         name: "The Wolf Pack",
         participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-sr"],
-        effect:
-          "Increases HAJIME IWAIZUMI and KENTARO KYOTANI's Power Attack stat",
+        effect: "Boosts both players’ [Power Attack].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "RAMPAGING OFFENSE new effect: increases KENTARO KYOTANI (Practice)'s Awareness by 15% during this Power Spike.",
+        effect: "RAMPAGING OFFENSE: +15% [Awareness] during the spike.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          'REVVING UP condition modified: "When KENTARO KYOTANI (Practice) performs a Power Spike" changed to "When KENTARO KYOTANI (Practice) touches the ball".',
+          "REVVING UP trigger broadened: now when Kyotani touches the ball.",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Power Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "Ataque + presión con saque desde SR.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== ISSEI MATSUKAWA (SR) =====
+  // ===== ISSEI MATSUKAWA (SR — GLOBAL) =====
   {
     id: "issei-matsukawa-sr",
     name: "Issei Matsukawa",
@@ -675,6 +722,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Block", "Quick Attack"],
     image: "/characters/aoba-johsai/issei-matsukawa-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 93,
@@ -693,9 +741,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Perfect Touch",
         levels: {
-          "1": "When ISSEI MATSUKAWA blocks an opponent's Quick Spike, increases blocking power by 11% of Block stat.",
-          "2": "When ISSEI MATSUKAWA blocks an opponent's Quick Spike, increases blocking power by 12.5% of Block stat.",
-          "3": "When ISSEI MATSUKAWA blocks an opponent's Quick Spike, increases blocking power by 14% of Block stat.",
+          "1": "When Matsukawa blocks an opponent's Quick Spike: +11% of [Block] as extra block power.",
+          "2": "When Matsukawa blocks an opponent's Quick Spike: +12.5% of [Block] as extra block power.",
+          "3": "When Matsukawa blocks an opponent's Quick Spike: +14% of [Block] as extra block power.",
           "4": undefined,
           "5": undefined,
         },
@@ -704,9 +752,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Overwhelming Spike",
         levels: {
-          "1": "ISSEI MATSUKAWA performs a Quick Spike with 120% of Quick Attack stat as power.",
-          "2": "ISSEI MATSUKAWA performs a Quick Spike with 135% of Quick Attack stat as power.",
-          "3": "ISSEI MATSUKAWA performs a Quick Spike with 150% of Quick Attack stat as power.",
+          "1": "Quick Spike [Quick Attack] x120%.",
+          "2": "Quick Spike [Quick Attack] x135%.",
+          "3": "Quick Spike [Quick Attack] x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -715,9 +763,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Crushing Block",
         levels: {
-          "1": "Increases ISSEI MATSUKAWA's Block stat by 8%; when MATSUKAWA performs a PERFECT Block, increases your side's next spiker's Awareness by 4%.",
-          "2": "Increases ISSEI MATSUKAWA's Block stat by 9.5%; when MATSUKAWA performs a PERFECT Block, increases your side's next spiker's Awareness by 5.5%.",
-          "3": "Increases ISSEI MATSUKAWA's Block stat by 11%; when MATSUKAWA performs a PERFECT Block, increases your side's next spiker's Awareness by 7%.",
+          "1": "Matsukawa’s [Block] +8%. On PERFECT Block: next ally spiker [Awareness] +4%.",
+          "2": "Matsukawa’s [Block] +9.5%. On PERFECT Block: next ally spiker [Awareness] +5.5%.",
+          "3": "Matsukawa’s [Block] +11%. On PERFECT Block: next ally spiker [Awareness] +7%.",
           "4": undefined,
           "5": undefined,
         },
@@ -726,11 +774,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Unbreakable Block",
         levels: {
-          "1": "ISSEI MATSUKAWA performs a Block with 180% of Block stat as power.",
-          "2": "ISSEI MATSUKAWA performs a Block with 195% of Block stat as power.",
-          "3": "ISSEI MATSUKAWA performs a Block with 210% of Block stat as power.",
-          "4": "ISSEI MATSUKAWA performs a Block with 225% of Block stat as power.",
-          "5": "ISSEI MATSUKAWA performs a Block with 240% of Block stat as power.",
+          "1": "Block x180%.",
+          "2": "Block x195%.",
+          "3": "Block x210%.",
+          "4": "Block x225%.",
+          "5": "Block x240%.",
         },
       },
     ],
@@ -739,53 +787,42 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "takahiro-hanamaki-sr",
         name: "Seijoh's Senior Year Pillars",
         participants: ["issei-matsukawa-sr", "takahiro-hanamaki-sr"],
-        effect:
-          "Increases ISSEI MATSUKAWA's Block stat and TAKAHIRO HANAMAKI's Receive stat",
+        effect: "Boosts Matsukawa’s [Block] and Hanamaki’s [Receive].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "PERFECT TOUCH condition modified: triggers on Block against Quick Spikes more reliably (easier condition).",
+        effect: "PERFECT TOUCH triggers more reliably versus Quick Spikes.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "UNBREAKABLE BLOCK new effect: Increases ISSEI MATSUKAWA's Reflex by 10% during this Block.",
+        effect: "UNBREAKABLE BLOCK: +10% [Reflex] during the block.",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Block",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Quick Attack",
         secondaryCount: 2,
-        reason: "",
+        reason: "Muro principal con amenaza de quick.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== TAKAHIRO HANAMAKI (SR) =====
+  // ===== TAKAHIRO HANAMAKI (SR — GLOBAL) =====
   {
     id: "takahiro-hanamaki-sr",
     name: "Takahiro Hanamaki",
@@ -795,6 +832,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Receive", "Power Attack"],
     image: "/characters/aoba-johsai/takahiro-hanamaki-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -813,9 +851,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Reliable Wing Spiker",
         levels: {
-          "1": "Increases TAKAHIRO HANAMAKI's Awareness by 8%; when his Power Spike is Critical, reduces blocking players' Block stat by 5%.",
-          "2": "Increases TAKAHIRO HANAMAKI's Awareness by 9.5%; when his Power Spike is Critical, reduces blocking players' Block stat by 6.5%.",
-          "3": "Increases TAKAHIRO HANAMAKI's Awareness by 11%; when his Power Spike is Critical, reduces blocking players' Block stat by 8%.",
+          "1": "Hanamaki’s [Awareness] +8%. On Critical Power Spike: blockers’ [Block] -5%.",
+          "2": "Hanamaki’s [Awareness] +9.5%. On Critical Power Spike: blockers’ [Block] -6.5%.",
+          "3": "Hanamaki’s [Awareness] +11%. On Critical Power Spike: blockers’ [Block] -8%.",
           "4": undefined,
           "5": undefined,
         },
@@ -824,9 +862,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Precise Spike",
         levels: {
-          "1": 'TAKAHIRO HANAMAKI performs a Power Spike with 115% of Power Attack stat as power; receives 1 stacks of "Attack Tempo", each stack increases the Awareness of players on your side by 1%, up to 10 stacks.',
-          "2": 'TAKAHIRO HANAMAKI performs a Power Spike with 130% of Power Attack stat as power; receives 1 stacks of "Attack Tempo", each stack increases the Awareness of players on your side by 1%, up to 10 stacks.',
-          "3": 'TAKAHIRO HANAMAKI performs a Power Spike with 145% of Power Attack stat as power; receives 1 stacks of "Attack Tempo", each stack increases the Awareness of players on your side by 1%, up to 10 stacks.',
+          "1": 'Power Spike x115%; gain 1 "Attack Tempo" (allies’ [Awareness] +1% per stack, up to 10).',
+          "2": 'Power Spike x130%; gain 1 "Attack Tempo" (same).',
+          "3": 'Power Spike x145%; gain 1 "Attack Tempo" (same).',
           "4": undefined,
           "5": undefined,
         },
@@ -835,9 +873,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Perfect Defense",
         levels: {
-          "1": "Increases TAKAHIRO HANAMAKI's Receive stat by 8%; when he receives an opponent's Quick Spike, increases receive power by 4% of Receive stat.",
-          "2": "Increases TAKAHIRO HANAMAKI's Receive stat by 9.5%; when he receives an opponent's Quick Spike, increases receive power by 5.5% of Receive stat.",
-          "3": "Increases TAKAHIRO HANAMAKI's Receive stat by 11%; when he receives an opponent's Quick Spike, increases receive power by 7% of Receive stat.",
+          "1": "Hanamaki’s [Receive] +8%. When receiving Quick Spike: +4% of [Receive] as extra power.",
+          "2": "Hanamaki’s [Receive] +9.5%. When receiving Quick Spike: +5.5% of [Receive].",
+          "3": "Hanamaki’s [Receive] +11%. When receiving Quick Spike: +7% of [Receive].",
           "4": undefined,
           "5": undefined,
         },
@@ -846,11 +884,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Perfect Read",
         levels: {
-          "1": "TAKAHIRO HANAMAKI performs a Receive with 220% of Receive stat as power.",
-          "2": "TAKAHIRO HANAMAKI performs a Receive with 235% of Receive stat as power.",
-          "3": "TAKAHIRO HANAMAKI performs a Receive with 250% of Receive stat as power.",
-          "4": "TAKAHIRO HANAMAKI performs a Receive with 265% of Receive stat as power.",
-          "5": "TAKAHIRO HANAMAKI performs a Receive with 280% of Receive stat as power.",
+          "1": "Receive x220%.",
+          "2": "Receive x235%.",
+          "3": "Receive x250%.",
+          "4": "Receive x265%.",
+          "5": "Receive x280%.",
         },
       },
     ],
@@ -859,53 +897,42 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "issei-matsukawa-sr",
         name: "Seijoh's Senior Year Pillars",
         participants: ["issei-matsukawa-sr", "takahiro-hanamaki-sr"],
-        effect:
-          "Increases ISSEI MATSUKAWA's Block stat and TAKAHIRO HANAMAKI's Receive stat",
+        effect: "Boosts Matsukawa’s [Block] and Hanamaki’s [Receive].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'At the start of each match, your side receives 1 stacks of "Attack Tempo" Buff.',
+        effect: 'Start of match: +1 "Attack Tempo" to your side.',
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "When casting PERFECT READ, increases Reflex of players on your side by 10%, lasting for 4 net crossings.",
+        effect: "On PERFECT READ: allies’ [Reflex] +10% for 4 net crossings.",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Receive",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Power Attack",
         secondaryCount: 2,
-        reason: "",
+        reason: "Equilibrio: recepción sólida con amenaza de remate.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== SHINJI WATARI (SR) =====
+  // ===== SHINJI WATARI (SR — GLOBAL) =====
   {
     id: "shinji-watari-sr",
     name: "Shinji Watari",
@@ -915,6 +942,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/aoba-johsai/shinji-watari-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 56,
@@ -933,9 +961,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Complete Defense",
         levels: {
-          "1": "Increases SHINJI WATARI's Save and Receive stats by 8%.",
-          "2": "Increases SHINJI WATARI's Save and Receive stats by 9.5%.",
-          "3": "Increases SHINJI WATARI's Save and Receive stats by 11%.",
+          "1": "Watari’s [Save] & [Receive] +8%.",
+          "2": "Watari’s [Save] & [Receive] +9.5%.",
+          "3": "Watari’s [Save] & [Receive] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -944,9 +972,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Skilled Save",
         levels: {
-          "1": "SHINJI WATARI performs a Save with 120% of Save stat as power.",
-          "2": "SHINJI WATARI performs a Save with 135% of Save stat as power.",
-          "3": "SHINJI WATARI performs a Save with 150% of Save stat as power.",
+          "1": "Save x120%.",
+          "2": "Save x135%.",
+          "3": "Save x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -955,9 +983,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Seamless Reception",
         levels: {
-          "1": "When receiving an opponent's Quick Spike, increases SHINJI WATARI's receive power by 20% of Receive stat.",
-          "2": "When receiving an opponent's Quick Spike, increases SHINJI WATARI's receive power by 22.5% of Receive stat.",
-          "3": "When receiving an opponent's Quick Spike, increases SHINJI WATARI's receive power by 25% of Receive stat.",
+          "1": "When receiving Quick Spike: +20% of [Receive] as extra power.",
+          "2": "When receiving Quick Spike: +22.5% of [Receive] as extra power.",
+          "3": "When receiving Quick Spike: +25% of [Receive] as extra power.",
           "4": undefined,
           "5": undefined,
         },
@@ -966,58 +994,50 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Consistent Reception",
         levels: {
-          "1": "SHINJI WATARI performs a Receive with 215% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turns.",
-          "2": "SHINJI WATARI performs a Receive with 230% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turns.",
-          "3": "SHINJI WATARI performs a Receive with 245% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turns.",
-          "4": "SHINJI WATARI performs a Receive with 260% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turns.",
-          "5": "SHINJI WATARI performs a Receive with 275% of Receive stat as power; when this Receive achieves a PERFECT result, increases your side's players' Strength by 10% when performing Power Spikes for 1 turns.",
+          "1": "Receive x215%. On PERFECT: allies’ [Strength] +10% when Power Spiking for 1 turn.",
+          "2": "Receive x230% (+same buff).",
+          "3": "Receive x245% (+same buff).",
+          "4": "Receive x260% (+same buff).",
+          "5": "Receive x275% (+same buff).",
         },
       },
     ],
     bonds: [],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "While SHINJI WATARI is present, increase Receive power of your side's back row players by 5% of their Receive stat.",
+          "While on court: back-row allies’ Receive power +5% of their [Receive].",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When casting Consistent Reception, increases your side's players' Strength by an additional 10% when performing Power Spikes for 1 turns.",
+          "CONSISTENT RECEPTION: additional +10% [Strength] to allies’ Power Spikes (same duration).",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Receive",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Save",
         secondaryCount: 2,
-        reason: "",
+        reason: "Líbero puro: recepción + estabilidad en defensa.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== SHIGERU YAHABA (SR) =====
+  // ===== SHIGERU YAHABA (SR — GLOBAL) =====
   {
     id: "shigeru-yahaba-sr",
     name: "Shigeru Yahaba",
@@ -1027,6 +1047,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Power Attack", "Setter"],
     image: "/characters/aoba-johsai/shigeru-yahaba-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 61,
@@ -1045,9 +1066,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "All-out Set",
         levels: {
-          "1": "SHIGERU YAHABA performs a Set with 120% of Set stat as power.",
-          "2": "SHIGERU YAHABA performs a Set with 135% of Set stat as power.",
-          "3": "SHIGERU YAHABA performs a Set with 150% of Set stat as power.",
+          "1": "Set x120%.",
+          "2": "Set x135%.",
+          "3": "Set x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1056,9 +1077,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Developing Setter",
         levels: {
-          "1": "Increases SHIGERU YAHABA's Serve and Set stats by 8%.",
-          "2": "Increases SHIGERU YAHABA's Serve and Set stats by 9.5%.",
-          "3": "Increases SHIGERU YAHABA's Serve and Set stats by 11%.",
+          "1": "Yahaba’s [Serve] & [Set] +8%.",
+          "2": "Yahaba’s [Serve] & [Set] +9.5%.",
+          "3": "Yahaba’s [Serve] & [Set] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1067,9 +1088,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Pride Defense",
         levels: {
-          "1": "Increases SHIGERU YAHABA's Set stat by 4%; while YAHABA is present, increases Awareness and Reflex of players on your side by 8%.",
-          "2": "Increases SHIGERU YAHABA's Set stat by 5.5%; while YAHABA is present, increases Awareness and Reflex of players on your side by 9.5%.",
-          "3": "Increases SHIGERU YAHABA's Set stat by 7%; while YAHABA is present, increases Awareness and Reflex of players on your side by 11%.",
+          "1": "Yahaba’s [Set] +4%. While on court: allies’ [Awareness] & [Reflex] +8%.",
+          "2": "Yahaba’s [Set] +5.5%. While on court: allies’ [Awareness] & [Reflex] +9.5%.",
+          "3": "Yahaba’s [Set] +7%. While on court: allies’ [Awareness] & [Reflex] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1078,58 +1099,49 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Will to Score",
         levels: {
-          "1": "SHIGERU YAHABA performs a Jump Serve with 220% of Serve stat as power.",
-          "2": "SHIGERU YAHABA performs a Jump Serve with 235% of Serve stat as power.",
-          "3": "SHIGERU YAHABA performs a Jump Serve with 250% of Serve stat as power.",
-          "4": "SHIGERU YAHABA performs a Jump Serve with 265% of Serve stat as power.",
-          "5": "SHIGERU YAHABA performs a Jump Serve with 280% of Serve stat as power.",
+          "1": "Jump Serve x220%.",
+          "2": "Jump Serve x235%.",
+          "3": "Jump Serve x250%.",
+          "4": "Jump Serve x265%.",
+          "5": "Jump Serve x280%.",
         },
       },
     ],
     bonds: [],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "Increases SHIGERU YAHABA's 1st Serve power by 10% of his Serve stat.",
+        effect: "Yahaba’s first serve power +10% of [Serve].",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "While SHIGERU YAHABA is present, increases the power of your side's first 2 Power Spikes by 8% of the spiker's Power Attack stat and increases the spiker's Awareness.",
+          "While on court, first two ally Power Spikes: +8% extra of spiker’s [Power Attack] and increase spiker [Awareness].",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Setter",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Serve",
         secondaryCount: 2,
-        reason: "",
+        reason: "Apoya a Oikawa con sets sólidos y presión de saque.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== YUTARO KINDAICHI (SR) =====
+  // ===== YUTARO KINDAICHI (SR — GLOBAL) =====
   {
     id: "yutaro-kindaichi-sr",
     name: "Yutaro Kindaichi",
@@ -1139,6 +1151,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
     image: "/characters/aoba-johsai/yutaro-kindaichi-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 99,
@@ -1157,9 +1170,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Overhead Spike",
         levels: {
-          "1": "When YUTARO KINDAICHI performs a Quick Spike, reduces the opponent blocker's Block by 10% of their Block stat.",
-          "2": "When YUTARO KINDAICHI performs a Quick Spike, reduces the opponent blocker's Block by 12.5% of their Block stat.",
-          "3": "When YUTARO KINDAICHI performs a Quick Spike, reduces the opponent blocker's Block by 15% of their Block stat.",
+          "1": "On Kindaichi’s Quick Spike: opposing blocker [Block] -10%.",
+          "2": "On Kindaichi’s Quick Spike: opposing blocker [Block] -12.5%.",
+          "3": "On Kindaichi’s Quick Spike: opposing blocker [Block] -15%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1168,9 +1181,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Decisive Hit",
         levels: {
-          "1": "Increases YUTARO KINDAICHI's Awareness by 8% and Strength by 8%.",
-          "2": "Increases YUTARO KINDAICHI's Awareness by 9.5% and Strength by 9.5%.",
-          "3": "Increases YUTARO KINDAICHI's Awareness by 11% and Strength by 11%.",
+          "1": "Kindaichi’s [Awareness] +8% & [Strength] +8%.",
+          "2": "Kindaichi’s [Awareness] +9.5% & [Strength] +9.5%.",
+          "3": "Kindaichi’s [Awareness] +11% & [Strength] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1179,9 +1192,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Elevated Block",
         levels: {
-          "1": "YUTARO KINDAICHI performs a Block with 105% of his Block stat.",
-          "2": "YUTARO KINDAICHI performs a Block with 120% of his Block stat.",
-          "3": "YUTARO KINDAICHI performs a Block with 135% of his Block stat.",
+          "1": "Block x105%.",
+          "2": "Block x120%.",
+          "3": "Block x135%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1190,11 +1203,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Power C-Quick",
         levels: {
-          "1": "YUTARO KINDAICHI performs a Quick Spike with 220% of Quick Attack stat as power.",
-          "2": "YUTARO KINDAICHI performs a Quick Spike with 235% of Quick Attack stat as power.",
-          "3": "YUTARO KINDAICHI performs a Quick Spike with 250% of Quick Attack stat as power.",
-          "4": "YUTARO KINDAICHI performs a Quick Spike with 265% of Quick Attack stat as power.",
-          "5": "YUTARO KINDAICHI performs a Quick Spike with 280% of Quick Attack stat as power.",
+          "1": "Quick Spike x220%.",
+          "2": "Quick Spike x235%.",
+          "3": "Quick Spike x250%.",
+          "4": "Quick Spike x265%.",
+          "5": "Quick Spike x280%.",
         },
       },
     ],
@@ -1204,52 +1217,44 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Blunt and Composed",
         participants: ["yutaro-kindaichi-sr", "akira-kunimi-sr"],
         effect:
-          "Increases YUTARO KINDAICHI's Quick Attack stat and AKIRA KUNIMI's Power Attack stat",
+          "Boosts Kindaichi’s [Quick Attack] and Kunimi’s [Power Attack].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "After casting POWER C-QUICK, increases the player's Strength by 10%; when your side's player next casts a Spike skill, it gains additional power.",
+          "After POWER C-QUICK: +10% [Strength]; next ally Spike gains extra power.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When YUTARO KINDAICHI performs a Critical Quick Spike, reduces opponent's blocking power by 12% of the blocking player's Block stat.",
+          "On Critical Quick Spike: reduce opponent blocker’s power by 12% of their [Block].",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Quick Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Block",
         secondaryCount: 2,
-        reason: "",
+        reason: "MB de combo rápido con utilidad en muro.",
       },
       equipped: [],
     },
     memory: { name: "", effect: "" },
   },
 
-  // ===== AKIRA KUNIMI (SR) =====
+  // ===== AKIRA KUNIMI (SR — GLOBAL) =====
   {
     id: "akira-kunimi-sr",
     name: "Akira Kunimi",
@@ -1259,6 +1264,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Receive", "Power Attack"],
     image: "/characters/aoba-johsai/akira-kunimi-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1277,9 +1283,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Efficient Spike",
         levels: {
-          "1": "Increases AKIRA KUNIMI's Power Attack stat by 10%.",
-          "2": "Increases AKIRA KUNIMI's Power Attack stat by 11.5%.",
-          "3": "Increases AKIRA KUNIMI's Power Attack stat by 13%.",
+          "1": "Kunimi’s [Power Attack] +10%.",
+          "2": "Kunimi’s [Power Attack] +11.5%.",
+          "3": "Kunimi’s [Power Attack] +13%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1288,9 +1294,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Effortless Reception",
         levels: {
-          "1": "AKIRA KUNIMI performs a Receive with 120% of Receive stat as power.",
-          "2": "AKIRA KUNIMI performs a Receive with 135% of Receive stat as power.",
-          "3": "AKIRA KUNIMI performs a Receive with 150% of Receive stat as power.",
+          "1": "Receive x120%.",
+          "2": "Receive x135%.",
+          "3": "Receive x150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1299,9 +1305,9 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "passive",
         name: "Power Saving Mode",
         levels: {
-          "1": "Reduces AKIRA KUNIMI's Stamina consumption by 15%.",
-          "2": "Reduces AKIRA KUNIMI's Stamina consumption by 17.5%.",
-          "3": "Reduces AKIRA KUNIMI's Stamina consumption by 20%.",
+          "1": "Stamina consumption -15%.",
+          "2": "Stamina consumption -17.5%.",
+          "3": "Stamina consumption -20%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1310,11 +1316,11 @@ export const aobaJohsaiPlayers: Player[] = [
         key: "active",
         name: "Focus Mode",
         levels: {
-          "1": "AKIRA KUNIMI performs a Power Spike with 220% of Power Attack stat as power.",
-          "2": "AKIRA KUNIMI performs a Power Spike with 235% of Power Attack stat as power.",
-          "3": "AKIRA KUNIMI performs a Power Spike with 250% of Power Attack stat as power.",
-          "4": "AKIRA KUNIMI performs a Power Spike with 265% of Power Attack stat as power.",
-          "5": "AKIRA KUNIMI performs a Power Spike with 280% of Power Attack stat as power.",
+          "1": "Power Spike x220%.",
+          "2": "Power Spike x235%.",
+          "3": "Power Spike x250%.",
+          "4": "Power Spike x265%.",
+          "5": "Power Spike x280%.",
         },
       },
     ],
@@ -1324,45 +1330,36 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Blunt and Composed",
         participants: ["yutaro-kindaichi-sr", "akira-kunimi-sr"],
         effect:
-          "Increases YUTARO KINDAICHI's Quick Attack stat and AKIRA KUNIMI's Power Attack stat",
+          "Boosts Kindaichi’s [Quick Attack] and Kunimi’s [Power Attack].",
       },
     ],
     resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "I", name: "Skill Resonance I", effect: "Main parameters +6%." },
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "When the turn count exceeds 3, increases AKIRA KUNIMI's Awareness by 12% when spiking.",
+        effect: "If turn > 3: Kunimi’s spiking [Awareness] +12%.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
+        effect: "Main parameters +6%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "FOCUS MODE effect modified: AKIRA KUNIMI performs a tip attack, and its power increases by an additional 8% of his Power Attack stat; also increases his Strength.",
+          "FOCUS MODE: enables tip with +8% extra of [Power Attack] and increases [Strength].",
       },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
+      { level: "V", name: "Skill Resonance V", effect: "Main parameters +6%." },
     ],
     potentials: {
       recommended: {
-        primaryType: "",
+        primaryType: "Power Attack",
         primaryCount: 4,
-        secondaryType: "",
+        secondaryType: "Receive",
         secondaryCount: 2,
-        reason: "",
+        reason: "OP que aporta daño y estabilidad al pase.",
       },
       equipped: [],
     },

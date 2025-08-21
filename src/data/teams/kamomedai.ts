@@ -10,8 +10,9 @@ export const kamomedaiPlayers: Player[] = [
     team: "Kamomedai",
     rarity: "UR",
     roles: ["MB"],
-    typeTags: ["Block", "Serve", "Enhance Team"],
+    typeTags: ["Block"],
     image: "/characters/kamomedai/sachiro-hirugami-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 126,
@@ -134,15 +135,9 @@ export const kamomedaiPlayers: Player[] = [
     team: "Kamomedai",
     rarity: "UR",
     roles: ["WS"],
-    typeTags: [
-      "Power Attack",
-      "All-Round",
-      "Debuff",
-      "Serve",
-      "Receive",
-      "Block",
-    ],
+    typeTags: ["Power Attack", "Serve", "Receive", "Block"],
     image: "/characters/kamomedai/kourai-hoshiumi-ur.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 101,

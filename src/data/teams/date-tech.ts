@@ -10,8 +10,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SP",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block", "Serve"],
+    typeTags: ["Serve", "Block"],
     image: "/characters/date/takanobu-aone-sp.jpg",
+    server: "Japan",
     stats: {
       basic: {
         quickAttack: 144,
@@ -71,7 +72,22 @@ export const dateTechPlayers: Player[] = [
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "kotaro-bokuto-sp",
+        name: "Iron Wall & Owl Ace",
+        participants: ["takanobu-aone-sp", "kotaro-bokuto-sp"],
+        effect:
+          "When aligned with BOKUTO (SP), AONE (SP)'s PERFECT blocks grant Bokuto +10% Power Attack for 1 rally.",
+      },
+      {
+        to: "keiji-akaashi-sp",
+        name: "Wall & Genius Setter",
+        participants: ["takanobu-aone-sp", "keiji-akaashi-sp"],
+        effect:
+          "AKAASHI (SP) gains +10% Set and his next Set becomes PERFECT after AONE (SP) blocks.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -124,8 +140,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SSR",
     roles: ["S"],
-    typeTags: ["Setter", "Block", "Serve"],
+    typeTags: ["Setter", "Block"],
     image: "/characters/date/kanji-koganegawa-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 79,
@@ -243,8 +260,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SSR",
     roles: ["OP"],
-    typeTags: ["Power Attack", "Block", "Serve", "Receive"],
+    typeTags: ["Power Attack"],
     image: "/characters/date/takehito-sasaya-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 83,
@@ -306,6 +324,19 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
+        to: "kaname-moniwa-sr",
+        name: "Seniors & Ace",
+        participants: ["takehito-sasaya-ssr", "kaname-moniwa-sr"],
+        effect: "When paired with MONIWA (SR), Sasaya's next Power Spike +10%.",
+      },
+      {
+        to: "yasushi-kamasaki-sr",
+        name: "Iron Wall Support",
+        participants: ["takehito-sasaya-ssr", "yasushi-kamasaki-sr"],
+        effect:
+          "When KAMASAKI scores with a Quick, Sasaya gains +10% Power Attack.",
+      },
+      {
         to: "yutaka-obara-sr",
         name: "Date Kōgyō Wing Spiker",
         participants: ["takehito-sasaya-ssr", "yutaka-obara-sr"],
@@ -362,8 +393,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SSR",
     roles: ["WS"],
-    typeTags: ["Serve", "Power Attack", "Block", "Receive"],
+    typeTags: ["Serve", "Block"],
     image: "/characters/date/kenji-futakuchi-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 79,
@@ -431,10 +463,10 @@ export const dateTechPlayers: Player[] = [
         effect: "Enables Double Block synergy when both are on court.",
       },
       {
-        to: "takanobu-aone-ssr",
+        to: "kanji-koganegawa-ssr",
         name: "New Captain & Tall Rookie",
         participants: ["kenji-futakuchi-ssr", "kanji-koganegawa-ssr"],
-        effect: "Increases Block stat of front row players",
+        effect: "Increases Block stat of front row players.",
       },
     ],
     resonances: [
@@ -488,6 +520,7 @@ export const dateTechPlayers: Player[] = [
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
     image: "/characters/date/takanobu-aone-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 115,
@@ -607,8 +640,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["S"],
-    typeTags: ["Setter", "Block", "Serve"],
+    typeTags: ["Setter", "Block"],
     image: "/characters/date/kaname-moniwa-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 60,
@@ -675,6 +709,12 @@ export const dateTechPlayers: Player[] = [
         participants: ["kaname-moniwa-sr", "yasushi-kamasaki-sr"],
         effect: "Morale up on PERFECT blocks; improves block coordination.",
       },
+      {
+        to: "takehito-sasaya-ssr",
+        name: "Seniors & Ace",
+        participants: ["kaname-moniwa-sr", "takehito-sasaya-ssr"],
+        effect: "When paired with MONIWA, Sasaya's next Power Spike +10%.",
+      },
     ],
     resonances: [
       {
@@ -726,8 +766,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["S"],
-    typeTags: ["Setter", "Block", "Serve"],
+    typeTags: ["Setter", "Block"],
     image: "/characters/date/kanji-koganegawa-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 65,
@@ -840,6 +881,7 @@ export const dateTechPlayers: Player[] = [
     roles: ["OP"],
     typeTags: ["Power Attack", "Block", "Receive"],
     image: "/characters/date/takehito-sasaya-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,
@@ -949,8 +991,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: ["Power Attack", "Block", "Serve", "Receive"],
+    typeTags: ["Power Attack", "Serve"],
     image: "/characters/date/kenji-futakuchi-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 65,
@@ -1061,8 +1104,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["WS"],
-    typeTags: ["Receive", "Block", "Power Attack"],
+    typeTags: ["Block", "Receive"],
     image: "/characters/date/yutaka-obara-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 67,
@@ -1179,8 +1223,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block"],
+    typeTags: ["Block"],
     image: "/characters/date/takanobu-aone-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 94,
@@ -1291,8 +1336,9 @@ export const dateTechPlayers: Player[] = [
     team: "Date Tech",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block"],
+    typeTags: ["Serve", "Block", "Quick Attack"],
     image: "/characters/date/yasushi-kamasaki-sr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 94,
@@ -1359,6 +1405,13 @@ export const dateTechPlayers: Player[] = [
         participants: ["yasushi-kamasaki-sr", "kaname-moniwa-sr"],
         effect:
           "Team morale up when blocking; improves front-row defense rhythm.",
+      },
+      {
+        to: "takehito-sasaya-ssr",
+        name: "Iron Wall Support",
+        participants: ["yasushi-kamasaki-sr", "takehito-sasaya-ssr"],
+        effect:
+          "When KAMASAKI scores with a Quick, Sasaya gains +10% Power Attack.",
       },
     ],
     resonances: [
