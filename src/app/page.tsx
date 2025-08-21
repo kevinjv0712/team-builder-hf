@@ -1,137 +1,251 @@
-"use client"
+// src/app/page.tsx
+"use client";
 
-import { useMemo, useState } from "react"
-import type { Slot, SlotKey, Role } from "@/types"
-import { players } from "@/data/players"
-import { useTeamStore } from "@/stores/teamStore"
-
-const SLOTS: Slot[] = [
-  { key: "S", label: "Setter", role: "Setter" },
-  { key: "OP", label: "Opposite", role: "Opposite" },
-  { key: "OH1", label: "Outside Hitter 1", role: "Outside Hitter" },
-  { key: "OH2", label: "Outside Hitter 2", role: "Outside Hitter" },
-  { key: "MB1", label: "Middle Blocker 1", role: "Middle Blocker" },
-  { key: "MB2", label: "Middle Blocker 2", role: "Middle Blocker" },
-  { key: "L", label: "Libero", role: "Libero" }
-]
+import { useEffect, useState, useRef } from "react";
+import LineupAndBench from "@/components/lineup/LineupAndBench";
+import AvailableForSlot from "@/components/available/AvailableForSlot";
+import PlayersList from "@/components/explore/PlayerList";
+import PlayerDetails from "@/components/players/PlayerDetails";
+import { useTeamStore } from "@/stores/teamStore";
+import { useSelectionStore } from "@/stores/selectionStore";
+import BonusesPanel from "@/components/bonuses/BonusesPanel";
+import MobileSlidePanel from "@/components/mobile/MobileSlidePanel";
 
 export default function Page() {
-  const [q, setQ] = useState("")
-  const { selected, selectSlot, assignments, clearSlot, assignSelected, reset, isAssigned } =
-    useTeamStore()
+  // Panel de Vínculos en mobile (abre desde el header)
+  const [linksOpen, setLinksOpen] = useState(false);
 
-  const selectedSlot = useMemo(() => SLOTS.find((s) => s.key === selected) ?? null, [selected])
+  const selectedSlot = useTeamStore((s) => s.selectedSlot);
+  const [availableOpen, setAvailableOpen] = useState(false);
 
-  const assignedName = (k: SlotKey) => {
-    const id = assignments[k]
-    if (!id) return "— vacío —"
-    const p = players.find((x) => x.id === id)
-    return p?.name ?? "—"
-  }
+  // VISIBILIDAD CONDICIONAL (puedes cambiar los defaults para probar)
+  const [showBonusMdUp, setShowBonusMdUp] = useState(true); // Bonificaciones en ≥ md
+  const [showBonusMobile, setShowBonusMobile] = useState(true); // Bonificaciones en < md
 
-  const candidates = useMemo(() => {
-    if (!selectedSlot) return []
-    const role: Role = selectedSlot.role
-    const nameQ = q.trim().toLowerCase()
-    return players
-      .filter((p) => p.roles.includes(role))
-      .filter((p) => !isAssigned(p.id) || assignments[selectedSlot.key] === p.id) // permitir el que ya está
-      .filter((p) => (nameQ ? p.name.toLowerCase().includes(nameQ) : true))
-  }, [selectedSlot, q, assignments, isAssigned])
+  // Panel móvil que baja desde el header
+  const [mobilePanel, setMobilePanel] = useState<"none" | "details" | "bonds">(
+    "none"
+  );
+
+  const resetTeam = useTeamStore((s) => s.reset);
+  const clearSelection = useSelectionStore((s) => s.clear);
+  const [highlightIds, setHighlightIds] = useState<Set<string>>(new Set());
+
+  const hardReset = () => {
+    resetTeam?.();
+    clearSelection();
+    useTeamStore.getState().selectSlot?.(null);
+    setAvailableOpen(false);
+    setHighlightIds(new Set());
+  };
+
+  useEffect(() => {
+    useTeamStore.getState().selectSlot?.(null);
+  }, []);
+
+  useEffect(() => {
+    if (selectedSlot) setAvailableOpen(true);
+  }, [selectedSlot]);
+
+  // Bloquea el scroll del body cuando el panel móvil está abierto
+  useEffect(() => {
+    document.body.style.overflow = linksOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [linksOpen]);
+
+  // Cerrar con Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLinksOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
-    <main className="mx-auto max-w-6xl p-6 space-y-8">
-      <header className="flex items-end justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Team Builder — Haikyuu!!</h1>
-          <p className="text-sm text-gray-500">Selecciona una posición y asigna jugadores.</p>
+    <main className="min-h-dvh text-neutral-100 bg-neutral-900/96">
+      {/* HEADER:
+          - < md: fijo arriba (siempre visible).
+          - ≥ md: header normal (no sticky). */}
+      <header
+        className="
+          fixed p-2 inset-x-0 top-0 z-40 h-14 bg-neutral-900/96
+          md:static md:h-auto md:bg-neutral-900/96
+        "
+      >
+        <div className="mx-auto max-w-7xl h-full px-4 flex items-center justify-between">
+          <h1 className="text-base md:text-lg font-semibold tracking-wide">
+            Haikyu Team Builder
+          </h1>
+
+          {/* Acciones desktop: 1 botón (≥ md) */}
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              onClick={hardReset}
+              className="rounded border px-3 py-1.5 text-sm font-semibold
+               border-red-400/70 text-red-300 bg-red-900/20
+               hover:bg-red-800/30"
+              title="Reset Team"
+            >
+              Reset
+            </button>
+          </div>
+
+          {/* Acciones mobile: 3 botones (< md) */}
+          <div className="flex md:hidden items-center gap-2">
+            {/* Details */}
+            <button
+              onClick={() =>
+                setMobilePanel((p) => (p === "details" ? "none" : "details"))
+              }
+              aria-expanded={mobilePanel === "details"}
+              className={`rounded border px-3 py-1 text-sm ${
+                mobilePanel === "details"
+                  ? "bg-orange-300 text-black font-semibold"
+                  : "border-white"
+              }`}
+            >
+              Details
+            </button>
+
+            {/* Bonds */}
+            <button
+              onClick={() =>
+                setMobilePanel((p) => (p === "bonds" ? "none" : "bonds"))
+              }
+              aria-expanded={mobilePanel === "bonds"}
+              className={`rounded border px-3 py-1 text-sm ${
+                mobilePanel === "bonds"
+                  ? "bg-orange-300 text-black font-semibold"
+                  : "border-white"
+              }`}
+            >
+              Bonds
+            </button>
+
+            {/* Reset (peligroso) */}
+            <button
+              onClick={() => {
+                // asumiendo que tu store tiene 'reset'
+                const reset = useTeamStore.getState().reset;
+                reset?.();
+              }}
+              className="rounded border px-3 py-1.5 text-sm font-semibold
+               border-red-400/70 text-red-300 bg-red-900/20
+               hover:bg-red-800/30"
+              title="Reset Team"
+            >
+              Reset
+            </button>
+          </div>
         </div>
-        <button
-          onClick={reset}
-          className="rounded-xl border px-4 py-2 text-sm hover:bg-gray-50"
-          title="Resetear equipo"
-        >
-          Reset
-        </button>
       </header>
 
-      {/* Slots */}
-      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
-        {SLOTS.map((s) => {
-          const active = selected === s.key
-          return (
-            <button
-              key={s.key}
-              onClick={() => selectSlot(s.key)}
-              className={[
-                "rounded-2xl border p-4 text-left transition",
-                active ? "ring-2 ring-black bg-gray-50" : "hover:bg-gray-50"
-              ].join(" ")}
+      {/* CONTENIDO PRINCIPAL */}
+      <div className="mx-auto max-w-7xl px-4 pt-20 md:pt-2 pb-4">
+        {/* Grid: 1 col en mobile; 2 col (2fr/1fr) en ≥ md → 67%/33% */}
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr]">
+          {/* ======== MOBILE-ONLY: Bonificaciones primero (si está visible) ======== */}
+          {showBonusMobile && (
+            <section className="md:hidden rounded-xl bg-neutral-600/100 mb-2">
+              <BonusesPanel onHighlightChange={setHighlightIds} />
+            </section>
+          )}
+
+          {/* ======== COLUMNA IZQUIERDA (67%) ======== */}
+          <div className="order-2 md:order-none md:min-w-0 space-y-4">
+            {/* Jugadores (con tu componente existente) */}
+            <section className="p-2 pb-6">
+              <div className="text-lg text-neutral-300 mb-2">
+                Select a slot to view available players
+              </div>
+              {/* Centrado dentro del bloque, sin lógica adicional */}
+              <section className="w-full flex justify-center">
+                {/* Si tu componente acepta props como highlightIds, pásalas aquí */}
+                <LineupAndBench highlightIds={highlightIds} />
+              </section>
+            </section>
+
+            {/* Disponibles */}
+            {availableOpen && selectedSlot && (
+              <AvailableForSlot open onClose={() => setAvailableOpen(false)} />
+            )}
+
+            {/* Lista */}
+            <section className="rounded-xl bg-neutral-700/40 p-4">
+              <div className="text-lg text-neutral-300 mb-4">
+                Select a player to view details.
+              </div>
+              <PlayersList />
+            </section>
+          </div>
+
+          {/* ======== COLUMNA DERECHA (33%) — SIEMPRE A LA VISTA (≥ md) ======== */}
+          <aside className="hidden md:block">
+            {/* Cálculo de ancho/posición para fixed (no usar sticky) */}
+            <div
+              className="fixed top-14 bottom-4 flex flex-col gap-4"
+              style={{
+                width: "calc((100vw - 2rem) / 3 - 1.5rem)",
+                maxWidth: "calc((1280px - 2rem) / 3 - 1.5rem)",
+                right: `max(1rem, calc((100vw - 1280px) / 2))`,
+              }}
             >
-              <div className="text-xs uppercase tracking-wide text-gray-500">{s.label}</div>
-              <div className="mt-1 text-[13px] text-gray-600">{s.role}</div>
-              <div className="mt-3 text-sm font-medium">{assignedName(s.key)}</div>
+              {showBonusMdUp ? (
+                <>
+                  {/* BONUSES PANEL */}
+                  <section className="rounded-xl bg-neutral-600/100 mt-4 shrink-0">
+                    <h2 className="sr-only">Active Bonds</h2>
+                    <BonusesPanel onHighlightChange={setHighlightIds} />
+                  </section>
 
-              {assignments[s.key] && (
-                <div className="mt-3">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      clearSlot(s.key)
-                    }}
-                    className="text-xs rounded-lg border px-2 py-1 hover:bg-gray-100"
+                  {/* DETAILS PANEL - Details/Bonds */}
+                  <section
+                    className="rounded-xl bg-neutral-700/40 p-4 min-h-0 overflow-auto"
+                    data-interactive="true"
                   >
-                    Quitar
-                  </button>
-                </div>
+                    <PlayerDetails />
+                  </section>
+                </>
+              ) : (
+                <>
+                  {/* VÍNCULOS SOLO (si Bonificaciones está oculto) */}
+                  <section
+                    className="rounded border border-white p-4 flex-1 min-h-0"
+                    data-interactive="true"
+                  >
+                    <h2 className="mb-2 font-medium uppercase tracking-wide text-sm">
+                      Vínculos
+                    </h2>
+                    <PlayerDetails desktopMaxHeight="100%" />
+                  </section>
+                </>
               )}
-            </button>
-          )
-        })}
-      </section>
-
-      {/* Panel de asignación */}
-      <section className="rounded-2xl border p-4">
-        {!selectedSlot ? (
-          <p className="text-sm text-gray-500">Selecciona una posición para ver candidatos.</p>
-        ) : (
-          <>
-            <div className="flex items-center justify-between gap-3">
-              <h2 className="text-lg font-semibold">
-                Asignar a: <span className="font-normal">{selectedSlot.label}</span>
-              </h2>
-              <input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Buscar por nombre..."
-                className="w-64 rounded-xl border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
-              />
             </div>
+          </aside>
+        </div>
+      </div>
 
-            <ul className="mt-4 divide-y">
-              {candidates.length === 0 && (
-                <li className="py-3 text-sm text-gray-500">Sin resultados para esta posición.</li>
-              )}
-              {candidates.map((p) => (
-                <li key={p.id} className="flex items-center justify-between gap-2 py-3">
-                  <div>
-                    <div className="text-sm font-medium">{p.name}</div>
-                    <div className="text-xs text-gray-500">
-                      {p.team ? `${p.team} · ` : ""}{p.roles.join(", ")}
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => assignSelected(p.id)}
-                    className="rounded-xl border px-3 py-1.5 text-sm hover:bg-gray-50"
-                  >
-                    Asignar
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </>
+      {/* PANEL DESPLEGABLE DESDE EL HEADER (solo mobile) */}
+      <MobileSlidePanel
+        open={mobilePanel !== "none"}
+        title={
+          mobilePanel === "details"
+            ? "Details"
+            : mobilePanel === "bonds"
+            ? "Bonds"
+            : ""
+        }
+        onClose={() => setMobilePanel("none")}
+        maxHeightVar="70vh" // ajustable
+      >
+        {mobilePanel === "details" && (
+          <PlayerDetails forceTab="details" hideTabs />
         )}
-      </section>
+        {mobilePanel === "bonds" && <PlayerDetails forceTab="bonds" hideTabs />}
+      </MobileSlidePanel>
     </main>
-  )
+  );
 }

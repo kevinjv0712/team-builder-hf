@@ -1,5 +1,8 @@
+// src/types.ts
 export type Role = "S" | "WS" | "MB" | "OP" | "LI"; // Setter, Outside, Middle, Opposite, Libero
-export type Rarity = "UR" | "SSR" | "SR";
+export type SlotKey = "S" | "MB1" | "WS1" | "WS2" | "MB2" | "OP" | "LI";
+export type Rarity = "UR" | "SSR" | "SR" | "SP";
+export type Server = "Japan" | "Global";
 
 export type SkillKey =
   | "quick attack"
@@ -70,6 +73,7 @@ export interface Memory {
 export interface Player {
   id: string;
   name: string;
+  shortName: string;
   team: string;
   rarity: Rarity;
   roles: Role[];
@@ -81,4 +85,11 @@ export interface Player {
   resonances: Resonance[]; // 5 items
   potentials: Potentials;
   memory: Memory;
+  server: Server;
+}
+
+export interface Slot {
+  key: SlotKey; // clave interna del slot
+  label: string; // etiqueta visible (ej. "S", "MB")
+  role: Role; // rol permitido en ese slot
 }
