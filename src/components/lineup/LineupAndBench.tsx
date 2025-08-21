@@ -67,7 +67,7 @@ const roleForSlot = (k: AnySlotKey): Role | null => {
 /* ======== Parámetros ajustables (tamaños) ======== */
 const GAP_PX = 16; // separación titulares
 const BENCH_GAP_PX = 12; // separación banca
-const COL_GAP_PX = 32; // gap entre columnas (md+)
+const COL_GAP_PX = 30; // gap entre columnas (md+)
 
 const MAX_SLOT = 120;
 const MIN_SAFE = 10;
@@ -214,7 +214,7 @@ export default function LineupAndBench({
   }, [isMdUp]);
 
   const cardHL = (pid?: string | null) =>
-    pid && highlightIds?.has(pid) ? "ring-4 ring-amber-400 shadow-lg" : "";
+    pid && highlightIds?.has(pid) ? "ring-4 ring-blue-700 rounded-md" : "";
 
   /* ======== Long-press (touch) sin bloquear scroll ======== */
   type PressState = {
@@ -293,7 +293,7 @@ export default function LineupAndBench({
             style={{
               gridTemplateColumns: `repeat(4, ${slotPx}px)`,
               columnGap: `${GAP_PX}px`,
-              rowGap: "2px",
+              rowGap: "6px",
               margin: "auto",
               maxWidth: `calc(${slotPx}px * 4 + ${GAP_PX}px * 3)`,
             }}
@@ -311,7 +311,7 @@ export default function LineupAndBench({
                   {/* Nombre */}
                   <div className="flex items-end justify-center min-h-3">
                     <div
-                      className={`text-[12px] text-gray-100 font-medium truncate whitespace-nowrap ${
+                      className={`text-xs text-gray-100 font-medium truncate whitespace-nowrap mb-1 ${
                         p ? "opacity-100" : "opacity-0"
                       }`}
                       style={{ maxWidth: `${slotPx}px` }}
@@ -347,8 +347,6 @@ export default function LineupAndBench({
                         return;
                       }
                       selectSlot(occupant);
-                      const selP = assignedPlayer(occupant);
-                      setSelectedPlayer(selP ? selP.id : null);
                     }}
                     onContextMenu={(e) => {
                       e.preventDefault();
@@ -402,7 +400,7 @@ export default function LineupAndBench({
                       <img
                         src={p.image}
                         alt={p.name}
-                        className="h-full w-full rounded-2xl object-cover"
+                        className="h-full w-full rounded-md object-cover"
                         loading="lazy"
                       />
                     ) : (
@@ -477,8 +475,6 @@ export default function LineupAndBench({
                           return;
                         }
                         selectSlot(occupant);
-                        const selP = assignedPlayer(occupant);
-                        setSelectedPlayer(selP ? selP.id : null);
                       }}
                       onContextMenu={(e) => {
                         e.preventDefault();
@@ -530,7 +526,7 @@ export default function LineupAndBench({
                         <img
                           src={p.image}
                           alt={p.name}
-                          className="h-full w-full rounded-2xl object-cover"
+                          className="h-full w-full rounded-md object-cover"
                           loading="lazy"
                         />
                       ) : (
@@ -618,8 +614,6 @@ export default function LineupAndBench({
                     return;
                   }
                   selectSlot(bk);
-                  const selP = assignedPlayer(bk);
-                  setSelectedPlayer(selP ? selP.id : null);
                 }}
                 onContextMenu={(e) => {
                   e.preventDefault();
@@ -718,8 +712,6 @@ export default function LineupAndBench({
                     return;
                   }
                   selectSlot(bk);
-                  const selP = assignedPlayer(bk);
-                  setSelectedPlayer(selP ? selP.id : null);
                 }}
                 onContextMenu={(e) => {
                   e.preventDefault();

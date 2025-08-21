@@ -217,7 +217,7 @@ export default function PlayerDetails({
             {(selected.skills ?? []).length === 0 ? (
               <div className="text-xs text-gray-500">No skills.</div>
             ) : (
-              <ul className="space-y-3">
+              <ul className="space-y-4 pb-4">
                 {selected.skills.map((sk: any, i: number) => {
                   const lvls = sk?.levels ?? {};
                   const ukey = skillKeyFor(sk, i);
@@ -327,14 +327,14 @@ export default function PlayerDetails({
                     </div>
                   )}
                   {partPlayers.length > 0 && (
-                    <div className="mt-2 flex -space-x-1">
+                    <div className="mt-2 flex space-x-1">
                       {partPlayers.map((pp: any) => (
                         <img
                           key={`${b.name}-p-${pp.id}`}
                           src={pp.image}
                           alt={pp.name}
                           title={pp.name}
-                          className="h-8 w-8 rounded object-cover border"
+                          className="h-14 w-14 rounded object-cover border"
                           loading="lazy"
                         />
                       ))}
@@ -358,7 +358,7 @@ export default function PlayerDetails({
             <img
               src={selected.image}
               alt={selected.name}
-              className="h-12 w-12 rounded object-cover shrink-0"
+              className="h-20 w-20 rounded object-cover shrink-0"
               loading="lazy"
             />
           ) : (
@@ -408,10 +408,7 @@ export default function PlayerDetails({
       {hideTabs ? (
         <Body />
       ) : (
-        <div
-          className="mt-2 overflow-auto"
-          style={{ maxHeight: desktopMaxHeight }}
-        >
+        <div className="mt-2" style={{ maxHeight: desktopMaxHeight }}>
           <Body />
         </div>
       )}

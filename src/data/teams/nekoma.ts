@@ -10,7 +10,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SP",
     roles: ["S"],
     typeTags: ["Receive", "Setter"],
-    image: "/characters/nekoma/kenma-kozume-sp.png",
+    image: "/characters/nekoma/kenma-kozume-sp.jpg",
     server: "Japan",
     stats: {
       basic: {
@@ -129,7 +129,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SSR",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/nekoma/morisuke-yaku-ssr.png",
+    image: "/characters/nekoma/morisuke-yaku-ssr.jpg",
     server: "Japan",
     stats: {
       basic: {
@@ -249,7 +249,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SSR",
     roles: ["S"],
     typeTags: ["Setter", "Receive"],
-    image: "/characters/nekoma/kenma-kozume-ssr.png",
+    image: "/characters/nekoma/kenma-kozume-ssr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -368,7 +368,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "UR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/nekoma/tetsuro-kuroo-ur.png",
+    image: "/characters/nekoma/tetsuro-kuroo-ur.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -487,7 +487,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SSR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/nekoma/tetsuro-kuroo-ssr.png",
+    image: "/characters/nekoma/tetsuro-kuroo-ssr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -607,7 +607,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Setter", "Receive"],
-    image: "/characters/nekoma/kenma-kozume-sr.png",
+    image: "/characters/nekoma/kenma-kozume-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -725,7 +725,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["LI"],
     typeTags: ["Receive"],
-    image: "/characters/nekoma/morisuke-yaku-sr.png",
+    image: "/characters/nekoma/morisuke-yaku-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -837,7 +837,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Quick Attack"],
-    image: "/characters/nekoma/lev-haiba-sr.png",
+    image: "/characters/nekoma/lev-haiba-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -948,7 +948,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SSR",
     roles: ["MB"],
     typeTags: ["Quick Attack", "Block"],
-    image: "/characters/nekoma/lev-haiba-ssr.png",
+    image: "/characters/nekoma/lev-haiba-ssr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -1068,7 +1068,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Power Attack"],
-    image: "/characters/nekoma/taketora-yamamoto-sr.png",
+    image: "/characters/nekoma/taketora-yamamoto-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -1202,7 +1202,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["OP"],
     typeTags: ["Receive"],
-    image: "/characters/nekoma/nobuyuki-kai-sr.png",
+    image: "/characters/nekoma/nobuyuki-kai-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -1337,7 +1337,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["WS"],
     typeTags: ["Power Attack", "Receive"],
-    image: "/characters/nekoma/shohei-fukunaga-sr.png",
+    image: "/characters/nekoma/shohei-fukunaga-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -1472,7 +1472,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["S"],
     typeTags: ["Receive", "Serve", "Setter"],
-    image: "/characters/nekoma/tamahiko-teshiro-sr.png",
+    image: "/characters/nekoma/tamahiko-teshiro-sr.jpg",
     server: "Global",
     stats: {
       basic: {
@@ -1585,7 +1585,7 @@ export const nekomaPlayers: Player[] = [
     rarity: "SR",
     roles: ["MB"],
     typeTags: ["Block"],
-    image: "/characters/nekoma/so-inuoka-sr.png",
+    image: "/characters/nekoma/so-inuoka-sr.jpg",
     server: "Global",
     stats: {
       basic: {

@@ -3,7 +3,7 @@ export { inarizakiPlayers } from "./inarizaki";
 export { nekomaPlayers } from "./nekoma";
 export { aobaJohsaiPlayers } from "./aoba-johsai";
 export { shiratorizawaPlayers } from "./shiratorizawa";
-export { dateTechPlayers } from "./date-tech";
+export { dateTechPlayers } from "./date";
 export { fukurodaniPlayers } from "./fukurodani";
 export { itachiyamaPlayers } from "./itachiyama";
 export { kamomedaiPlayers } from "./kamomedai";

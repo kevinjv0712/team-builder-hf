@@ -7,7 +7,7 @@ import { useTeamStore } from "@/stores/teamStore";
 import { schoolBonds } from "@/data/schoolBonds";
 
 // Ajustes
-const SCHOOL_THRESHOLD = 3;
+const SCHOOL_THRESHOLD = 4;
 const THUMB_MIN = 24;
 const THUMB_MAX = 56;
 const CHIP_GAP = 8;
@@ -293,7 +293,7 @@ export default function BonusesPanel({
                 {sel.effect && (
                   <div className="text-xs text-gray-200">{sel.effect}</div>
                 )}
-                {participants.length > 0 && (
+                {/* {participants.length > 0 && (
                   <div className="mt-2 flex -space-x-1">
                     {participants.map((pp: any) => (
                       <img
@@ -307,7 +307,7 @@ export default function BonusesPanel({
                       />
                     ))}
                   </div>
-                )}
+                )} */}
               </>
             )}
           </div>

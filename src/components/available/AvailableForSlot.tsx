@@ -56,7 +56,13 @@ function hasBondWithOnCourt(candidate: any, onCourtIds: Set<string>): boolean {
 }
 
 /* ====== Panel flotante anclado a un slot ====== */
-export default function AvailableForSlot() {
+export default function AvailableForSlot({
+  open = true,
+  onClose,
+}: {
+  open?: boolean;
+  onClose?: () => void;
+}) {
   const mounted = useHasMounted();
   const { selectedSlot, assignments } = useTeamStore();
   const selectSlot = useTeamStore((s) => s.selectSlot);
@@ -217,13 +223,11 @@ export default function AvailableForSlot() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, selectedSlot]);
 
-  /* ===== Cerrar ===== */
   const close = () => {
     try {
-      selectSlot(null as any);
-    } catch {
-      // si el store no acepta null, al menos oculta por UI (pero lo normal es limpiar selección)
-    }
+      selectSlot(null as any); // limpiamos el slot para que no se reabra
+    } catch {}
+    onClose?.(); // avisamos al padre para que ponga availableOpen=false
   };
 
   // Cerrar con Escape

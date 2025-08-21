@@ -1,7 +1,7 @@
 // src/app/page.tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import LineupAndBench from "@/components/lineup/LineupAndBench";
 import AvailableForSlot from "@/components/available/AvailableForSlot";
 import PlayersList from "@/components/explore/PlayerList";
@@ -14,6 +14,9 @@ import MobileSlidePanel from "@/components/mobile/MobileSlidePanel";
 export default function Page() {
   // Panel de Vínculos en mobile (abre desde el header)
   const [linksOpen, setLinksOpen] = useState(false);
+
+  const selectedSlot = useTeamStore((s) => s.selectedSlot);
+  const [availableOpen, setAvailableOpen] = useState(false);
 
   // VISIBILIDAD CONDICIONAL (puedes cambiar los defaults para probar)
   const [showBonusMdUp, setShowBonusMdUp] = useState(true); // Bonificaciones en ≥ md
@@ -31,8 +34,18 @@ export default function Page() {
   const hardReset = () => {
     resetTeam?.();
     clearSelection();
+    useTeamStore.getState().selectSlot?.(null);
+    setAvailableOpen(false);
     setHighlightIds(new Set());
   };
+
+  useEffect(() => {
+    useTeamStore.getState().selectSlot?.(null);
+  }, []);
+
+  useEffect(() => {
+    if (selectedSlot) setAvailableOpen(true);
+  }, [selectedSlot]);
 
   // Bloquea el scroll del body cuando el panel móvil está abierto
   useEffect(() => {
@@ -131,7 +144,7 @@ export default function Page() {
       </header>
 
       {/* CONTENIDO PRINCIPAL */}
-      <div className="mx-auto max-w-7xl px-4 pt-20 md:pt-4 pb-8">
+      <div className="mx-auto max-w-7xl px-4 pt-20 md:pt-2 pb-4">
         {/* Grid: 1 col en mobile; 2 col (2fr/1fr) en ≥ md → 67%/33% */}
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr]">
           {/* ======== MOBILE-ONLY: Bonificaciones primero (si está visible) ======== */}
@@ -142,9 +155,12 @@ export default function Page() {
           )}
 
           {/* ======== COLUMNA IZQUIERDA (67%) ======== */}
-          <div className="order-2 md:order-none md:min-w-0 space-y-2">
+          <div className="order-2 md:order-none md:min-w-0 space-y-4">
             {/* Jugadores (con tu componente existente) */}
-            <section className="p-2">
+            <section className="p-2 pb-6">
+              <div className="text-lg text-neutral-300 mb-2">
+                Select a slot to view available players
+              </div>
               {/* Centrado dentro del bloque, sin lógica adicional */}
               <section className="w-full flex justify-center">
                 {/* Si tu componente acepta props como highlightIds, pásalas aquí */}
@@ -153,23 +169,24 @@ export default function Page() {
             </section>
 
             {/* Disponibles */}
-            <section className="pl-4 pb-8">
-              <div className="w-full">
-                <AvailableForSlot />
-              </div>
-            </section>
+            {availableOpen && selectedSlot && (
+              <AvailableForSlot open onClose={() => setAvailableOpen(false)} />
+            )}
 
             {/* Lista */}
             <section className="rounded-xl bg-neutral-700/40 p-4">
+              <div className="text-lg text-neutral-300 mb-2">
+                Select a player to view details.
+              </div>
               <PlayersList />
             </section>
           </div>
 
           {/* ======== COLUMNA DERECHA (33%) — SIEMPRE A LA VISTA (≥ md) ======== */}
           <aside className="hidden md:block">
-            {/* Tu cálculo de ancho/posición para fixed (como ya lo resolviste) */}
+            {/* Cálculo de ancho/posición para fixed (no usar sticky) */}
             <div
-              className="fixed top-14 flex flex-col gap-4"
+              className="fixed top-14 bottom-4 flex flex-col gap-4"
               style={{
                 width: "calc((100vw - 2rem) / 3 - 1.5rem)",
                 maxWidth: "calc((1280px - 2rem) / 3 - 1.5rem)",
@@ -178,14 +195,15 @@ export default function Page() {
             >
               {showBonusMdUp ? (
                 <>
-                  {/* BONIFICACIONES ARRIBA (estado normal) */}
-                  <section className="rounded-xl bg-neutral-600/100 mt-4">
+                  {/* BONUSES PANEL */}
+                  <section className="rounded-xl bg-neutral-600/100 mt-4 shrink-0">
                     <h2 className="sr-only">Active Bonds</h2>
                     <BonusesPanel onHighlightChange={setHighlightIds} />
                   </section>
-                  {/* VÍNCULOS DEBAJO */}
+
+                  {/* DETAILS PANEL - Details/Bonds */}
                   <section
-                    className="rounded-xl bg-neutral-700/40 pt-4 pl-4 pr-4"
+                    className="rounded-xl bg-neutral-700/40 p-4 min-h-0 overflow-auto"
                     data-interactive="true"
                   >
                     <PlayerDetails />
@@ -195,13 +213,13 @@ export default function Page() {
                 <>
                   {/* VÍNCULOS SOLO (si Bonificaciones está oculto) */}
                   <section
-                    className="rounded border border-white p-4"
+                    className="rounded border border-white p-4 flex-1 min-h-0"
                     data-interactive="true"
                   >
                     <h2 className="mb-2 font-medium uppercase tracking-wide text-sm">
                       Vínculos
                     </h2>
-                    <PlayerDetails />
+                    <PlayerDetails desktopMaxHeight="100%" />
                   </section>
                 </>
               )}
