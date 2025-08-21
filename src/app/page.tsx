@@ -150,7 +150,7 @@ export default function Page() {
           {/* ======== MOBILE-ONLY: Bonificaciones primero (si está visible) ======== */}
           {showBonusMobile && (
             <section className="md:hidden rounded-xl bg-neutral-600/100 mb-2">
-              <BonusesPanel />
+              <BonusesPanel onHighlightChange={setHighlightIds} />
             </section>
           )}
 
@@ -175,7 +175,7 @@ export default function Page() {
 
             {/* Lista */}
             <section className="rounded-xl bg-neutral-700/40 p-4">
-              <div className="text-lg text-neutral-300 mb-2">
+              <div className="text-lg text-neutral-300 mb-4">
                 Select a player to view details.
               </div>
               <PlayersList />

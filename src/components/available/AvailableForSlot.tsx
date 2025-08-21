@@ -7,6 +7,7 @@ import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
 import type { AnySlotKey } from "@/stores/teamStore";
 import { useHasMounted } from "@/utils/useHasMounted";
+import { useSettingsStore } from "@/stores/settingStore";
 
 /* ========= Parámetros AJUSTABLES ========= */
 const COLS_XS = 8; // < sm
@@ -42,6 +43,10 @@ const roleForSlot = (k: AnySlotKey | null | undefined) =>
 const isBenchSlot = (k: AnySlotKey | null | undefined) =>
   !!k && !STARTER_KEYS.has(k);
 
+const NAME_BY_ID: Record<string, string> = Object.fromEntries(
+  players.map((p) => [p.id, p.name] as const)
+);
+
 function hasBondWithOnCourt(candidate: any, onCourtIds: Set<string>): boolean {
   if (!candidate?.bonds?.length) return false;
   for (const b of candidate.bonds) {
@@ -63,6 +68,7 @@ export default function AvailableForSlot({
   open?: boolean;
   onClose?: () => void;
 }) {
+  const server = useSettingsStore((s) => s.server);
   const mounted = useHasMounted();
   const { selectedSlot, assignments } = useTeamStore();
   const selectSlot = useTeamStore((s) => s.selectSlot);
@@ -77,6 +83,17 @@ export default function AvailableForSlot({
     return new Set(vals);
   }, [assignments]);
 
+  const assignedNamesExceptSelected = useMemo(() => {
+    const out = new Set<string>();
+    Object.entries(assignments ?? {}).forEach(([k, pid]) => {
+      if (!pid) return;
+      if (k === (selectedSlot ?? "")) return; // ignora el slot actual
+      const nm = NAME_BY_ID[pid];
+      if (nm) out.add(nm);
+    });
+    return out;
+  }, [assignments, selectedSlot]);
+
   const selectedRole = roleForSlot(selectedSlot as AnySlotKey);
   const showAll = isBenchSlot(selectedSlot);
 
@@ -87,8 +104,22 @@ export default function AvailableForSlot({
       showAll || !selectedRole
         ? players
         : players.filter((p) => p.roles?.includes(selectedRole));
-    return pool.filter((p) => !assignedIds.has(p.id));
-  }, [selectedSlot, showAll, selectedRole, assignedIds]);
+    const serverOK = (p: any) =>
+      server === "Global" ? (p.server ?? "Global") === "Global" : true; // Japan muestra todo
+    return pool.filter(
+      (p) =>
+        !assignedIds.has(p.id) && // no repitas misma carta
+        !assignedNamesExceptSelected.has(p.name) && // no repitas el mismo NOMBRE en otro slot
+        serverOK(p)
+    );
+  }, [
+    selectedSlot,
+    showAll,
+    selectedRole,
+    assignedIds,
+    assignedNamesExceptSelected,
+    server,
+  ]);
 
   // IDs en cancha para recomendaciones
   const onCourtIds = useMemo(() => {

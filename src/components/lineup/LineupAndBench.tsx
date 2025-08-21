@@ -10,6 +10,7 @@ import {
   type BenchKey,
 } from "@/stores/teamStore";
 import { useSelectionStore } from "@/stores/selectionStore";
+import { useSettingsStore } from "@/stores/settingStore";
 
 /* ================= Constantes y helpers ================= */
 const SLOTS: Slot[] = [
@@ -100,6 +101,8 @@ export default function LineupAndBench({
 }: {
   highlightIds?: Set<string>;
 }) {
+  const server = useSettingsStore((s) => s.server);
+  const setServer = useSettingsStore((s) => s.setServer);
   const { selectSlot, clearSlot, assignments, swapSlots } = useTeamStore();
   const selectedSlot = useTeamStore((s) => s.selectedSlot);
   const setSelectedPlayer = useSelectionStore((s) => s.setSelectedPlayer);
@@ -561,6 +564,41 @@ export default function LineupAndBench({
                       >
                         ↻ Rotate
                       </button>
+                    </div>
+                    {/* TOGGLE SERVER (arriba de la banca) */}
+                    <div className="flex items-center justify-center mt-4 mb-2">
+                      <div
+                        role="tablist"
+                        aria-label="Server"
+                        className="inline-flex rounded-full border border-white/20 p-1 bg-neutral-800/60"
+                      >
+                        <button
+                          role="tab"
+                          aria-selected={server === "Japan"}
+                          onClick={() => setServer("Japan")}
+                          className={[
+                            "px-3 py-1 text-xs rounded-full transition",
+                            server === "Japan"
+                              ? "bg-orange-300 text-black font-semibold"
+                              : "hover:bg-white/10",
+                          ].join(" ")}
+                        >
+                          Japan
+                        </button>
+                        <button
+                          role="tab"
+                          aria-selected={server === "Global"}
+                          onClick={() => setServer("Global")}
+                          className={[
+                            "px-3 py-1 text-xs rounded-full transition",
+                            server === "Global"
+                              ? "bg-orange-300 text-black font-semibold"
+                              : "hover:bg-white/10",
+                          ].join(" ")}
+                        >
+                          Global
+                        </button>
+                      </div>
                     </div>
                   </>
                 );

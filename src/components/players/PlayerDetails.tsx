@@ -358,7 +358,7 @@ export default function PlayerDetails({
             <img
               src={selected.image}
               alt={selected.name}
-              className="h-20 w-20 rounded object-cover shrink-0"
+              className="h-20 w-20 border-2 rounded object-cover shrink-0"
               loading="lazy"
             />
           ) : (

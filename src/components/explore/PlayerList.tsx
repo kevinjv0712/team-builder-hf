@@ -5,6 +5,7 @@ import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { players } from "@/data/players";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useHasMounted } from "@/utils/useHasMounted";
+import { useSettingsStore } from "@/stores/settingStore";
 
 // ===== Parámetros ajustables =====
 const COLS_XS = 8; // < sm
@@ -17,6 +18,13 @@ const SECTION_GAP = 16;
 
 export default function PlayersList() {
   const setSelectedPlayer = useSelectionStore((s) => s.setSelectedPlayer);
+  const server = useSettingsStore((s) => s.server);
+
+  const list = useMemo(() => {
+    const serverOK = (p: any) =>
+      server === "Global" ? (p.server ?? "Global") === "Global" : true;
+    return players.filter(serverOK);
+  }, [server]);
 
   // ---------- Opciones de filtros (derivadas del dataset) ----------
   const teams = useMemo(() => {

@@ -242,16 +242,14 @@ export default function BonusesPanel({
         <h4 className="text-lg font-bold mb-2">Active Bonds</h4>
 
         {schoolActive && (
-          <div className="mb-2">
+          <div className="mb-2 font-medium">
             <button
               onClick={toggleSchool}
-              className={`text-xs rounded-full px-2 py-1 mr-2 mb-2 border ${
+              className={`text-sm rounded-full px-2 py-1 mr-2 mb-2 border ${
                 sel?.kind === "school" ? "bg-white text-black" : "bg-black/40"
               }`}
             >
-              Escuela activa:
-              <span className="font-medium ml-1">{dominantTeam}</span>
-              <span className="opacity-80"> · {dominantCount} titulares</span>
+              School Bond
             </button>
           </div>
         )}
