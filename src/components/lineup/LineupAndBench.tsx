@@ -11,6 +11,7 @@ import {
 } from "@/stores/teamStore";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useSettingsStore } from "@/stores/settingStore";
+import Image from "next/image";
 
 /* ================= Constantes y helpers ================= */
 const SLOTS: Slot[] = [
@@ -400,9 +401,10 @@ export default function LineupAndBench({
                     onTouchCancel={(e) => onTouchCancelLP(e, occupant)}
                   >
                     {p ? (
-                      <img
+                      <Image
                         src={p.image}
                         alt={p.name}
+                        fill
                         className="h-full w-full rounded-md object-cover"
                         loading="lazy"
                       />
@@ -526,9 +528,10 @@ export default function LineupAndBench({
                       onTouchCancel={(e) => onTouchCancelLP(e, occupant)}
                     >
                       {p ? (
-                        <img
+                        <Image
                           src={p.image}
                           alt={p.name}
+                          fill
                           className="h-full w-full rounded-md object-cover"
                           loading="lazy"
                         />
@@ -699,9 +702,10 @@ export default function LineupAndBench({
                 onTouchCancel={(e) => onTouchCancelLP(e, bk)}
               >
                 {p ? (
-                  <img
+                  <Image
                     src={p.image}
                     alt={p.name}
+                    fill
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
@@ -761,9 +765,10 @@ export default function LineupAndBench({
                 onTouchCancel={(e) => onTouchCancelLP(e, bk)}
               >
                 {p ? (
-                  <img
+                  <Image
                     src={p.image}
                     alt={p.name}
+                    fill
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />

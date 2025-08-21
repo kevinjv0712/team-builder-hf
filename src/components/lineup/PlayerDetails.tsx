@@ -335,7 +335,6 @@ export default function PlayerDetails({
                           src={pp.image}
                           alt={pp.name}
                           title={pp.name}
-                          fill
                           className="h-14 w-14 rounded object-cover border"
                           loading="lazy"
                         />
@@ -360,7 +359,6 @@ export default function PlayerDetails({
             <Image
               src={selected.image}
               alt={selected.name}
-              fill
               className="h-20 w-20 border-2 rounded object-cover shrink-0"
               loading="lazy"
             />

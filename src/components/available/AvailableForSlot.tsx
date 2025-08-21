@@ -8,6 +8,7 @@ import { useTeamStore } from "@/stores/teamStore";
 import type { AnySlotKey } from "@/stores/teamStore";
 import { useHasMounted } from "@/utils/useHasMounted";
 import { useSettingsStore } from "@/stores/settingStore";
+import Image from "next/image";
 
 /* ========= Parámetros AJUSTABLES ========= */
 const COLS_XS = 8; // < sm
@@ -390,9 +391,10 @@ function ThumbGrid({
           }}
           title={`${p.name} · ${p.team}`}
         >
-          <img
+          <Image
             src={p.image}
             alt={p.name}
+            fill
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
           />

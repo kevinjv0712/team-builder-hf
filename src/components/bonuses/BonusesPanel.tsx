@@ -294,7 +294,7 @@ export default function BonusesPanel({
                 {/* {participants.length > 0 && (
                   <div className="mt-2 flex -space-x-1">
                     {participants.map((pp: any) => (
-                      <img
+                      <Image
                         key={pp.id}
                         src={pp.image}
                         alt={pp.name}
