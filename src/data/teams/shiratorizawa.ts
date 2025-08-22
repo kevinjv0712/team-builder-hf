@@ -32,8 +32,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "In the Groove",
         levels: {
           "1": "Ushijima’s [Awareness] +8%. At the end of each turn while on court, gains additional +3% [Awareness] (stacks up to 4 times).",
-          "2": "Ushijima’s [Awareness] +10%. End of turn: +3% (max 5 stacks).",
-          "3": "Ushijima’s [Awareness] +12%. End of turn: +3% (max 6 stacks).",
+          "2": "Ushijima’s [Awareness] +10%. End of turn: +3.5%.",
+          "3": "Ushijima’s [Awareness] +12%. End of turn: +4%.",
           "4": undefined,
           "5": undefined,
         },
@@ -43,8 +43,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Dominating Serve",
         levels: {
           "1": "Jump Serve [Serve] x125%. If Critical, the receivers cannot cast skills this rally. On score, this skill’s cooldown -4 net crossings.",
-          "2": "Jump Serve [Serve] x135%. Same restrictions; on score cooldown -4.",
-          "3": "Jump Serve [Serve] x145%. Same restrictions; on score cooldown -4.",
+          "2": "Jump Serve [Serve] x140%. Same restrictions; on score cooldown -4.",
+          "3": "Jump Serve [Serve] x155%. Same restrictions; on score cooldown -4.",
           "4": undefined,
           "5": undefined,
         },
@@ -54,8 +54,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Ace Style",
         levels: {
           "1": "When your side lands a Critical Spike, Ushijima gains +1.5% to all Basic stats (max 8 stacks). When he scores, cleanse all his debuffs.",
-          "2": "Critical Spike -> +1.8% (max 8). Cleanse on score.",
-          "3": "Critical Spike -> +2.0% (max 8). Cleanse on score.",
+          "2": "Critical Spike -> +2% (max 8). Cleanse on score.",
+          "3": "Critical Spike -> +2% (max 10). Cleanse on score.",
           "4": undefined,
           "5": undefined,
         },
@@ -78,14 +78,14 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Lifelong Best Friends",
         participants: ["wakatoshi-ushijima-ur", "satori-tendo-ssr"],
         effect:
-          "While both are on court: Ushijima’s [Power Attack] +8% and Tendō’s [Block] +8%.",
+          "Wakatoshi Ushijima's [attack technique] and Satoru Tendo's [defense technique] have been improved (Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%)",
       },
       {
         to: "wakatoshi-ushijima-ur",
         name: "Ace and Conductor",
         participants: ["wakatoshi-ushijima-ur", "kenjiro-shirabu-ssr"],
         effect:
-          "When Shirabu sets to Ushijima, Ushijima’s next spike gains +12% of his [Power Attack] as extra power (Lv scales with Shirabu’s bond).",
+          "Kenjiro Shirafu throws a toss, and Wakatoshi Ushijima delivers a powerful [hard hit] ×(Lv1: 260%, Lv2: 275%, Lv3: 290%, Lv4: 305%, Lv5: 320%). Wakatoshi Ushijima's [power] has increased by 10% in this hard hit",
       },
     ],
     resonances: [
@@ -160,14 +160,14 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Maverick",
         levels: {
           "1": "Tendō’s [Reflex] +12%.",
-          "2": "Tendō’s [Reflex] +14%.",
-          "3": "Tendō’s [Reflex] +16%.",
+          "2": "Tendō’s [Reflex] +17%.",
+          "3": "Tendō’s [Reflex] +22%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
-        key: "passive",
+        key: "active",
         name: "Surprise Quick",
         levels: {
           "1": "Quick Spike [Quick Attack] x120%.",
@@ -182,8 +182,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Mind Game Block",
         levels: {
           "1": "When Tendō performs a Critical Block, reduces WILD INSTINCT cooldown by 1 crossing.",
-          "2": "On Critical Block, cooldown -1 (and Tendō’s [Block] +5% for that play).",
-          "3": "On Critical Block, cooldown -2.",
+          "2": "When Tendō performs a Critical Block, reduces WILD INSTINCT cooldown by 2 crossing.",
+          "3": "When Tendō performs a Critical Block, reduces WILD INSTINCT cooldown by 3 crossing.",
           "4": undefined,
           "5": undefined,
         },
@@ -206,14 +206,14 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Lifelong Best Friends",
         participants: ["satori-tendo-ssr", "wakatoshi-ushijima-ur"],
         effect:
-          "While both are on court: Tendō’s [Block] +8% and Ushijima’s [Power Attack] +8%.",
+          "Wakatoshi Ushijima's [attack technique] and Satoru Tendo's [defense technique] have been improved (Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%)",
       },
       {
         to: "satori-tendo-ssr",
         name: "Shiratorizawa’s Middle Block",
         participants: ["satori-tendo-ssr", "taichi-kawanishi-sr"],
         effect:
-          "Front-row coordination: your front row [Block] +6% (Lv scales by bond).",
+          "[Block] of friendly vanguard has been increased (Lv1: 5%, Lv2: 5.5%, Lv3: 6%, Lv4: 6.5%, Lv5: 7%)",
       },
     ],
     resonances: [
@@ -285,18 +285,18 @@ export const shiratorizawaPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Powerful Defense",
+        name: "Meet expectations",
         levels: {
-          "1": "If the opponent’s last play was a Nice Play, this Receive gains +40% of [Receive] as power.",
-          "2": "Condition same; +45% of [Receive] as power.",
-          "3": "Condition same; +50% of [Receive] as power.",
+          "1": "When Goshikiko scores a goal, the morale of his teammates increases by 8",
+          "2": "When Goshikiko scores a goal, the morale of his teammates increases by 10",
+          "3": "When Goshikiko scores a goal, the morale of his teammates increases by 12",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Flow-Changing Receive",
+        name: "Simple Reception",
         levels: {
           "1": "Receive [Receive] x120%.",
           "2": "Receive [Receive] x135%.",
@@ -320,21 +320,28 @@ export const shiratorizawaPlayers: Player[] = [
         key: "active",
         name: "Miracle Maker",
         levels: {
-          "1": "Power Spike [Power Attack] x240%; for this spike, [Awareness] +10%.",
-          "2": "Power Spike x255%; +10% Awareness.",
-          "3": "Power Spike x270%; +12% Awareness.",
-          "4": "Power Spike x285%; +12% Awareness.",
-          "5": "Power Spike x300%; +15% Awareness.",
+          "1": "Power Spike [Power Attack] x225%; for this spike, [Awareness] +10%.",
+          "2": "Power Spike [Power Attack] x240%; for this spike, [Awareness] +10%.",
+          "3": "Power Spike [Power Attack] x255%; for this spike, [Awareness] +10%.",
+          "4": "Power Spike [Power Attack] x270%; for this spike, [Awareness] +10%.",
+          "5": "Power Spike [Power Attack] x285%; for this spike, [Awareness] +10%.",
         },
       },
     ],
     bonds: [
       {
         to: "tsutomu-goshiki-ssr",
-        name: "Captain & Rookie",
+        name: "Shiratorizawa WS",
         participants: ["tsutomu-goshiki-ssr", "reon-ohira-ssr"],
         effect:
-          "While both WS are on court: Goshiki’s [Power Attack] +8% and Ōhira’s [Receive] +8%.",
+          "Ally members' [bangs] have increased (Lv1: 4%, Lv2: 4.5%, Lv3: 5%, Lv4: 5.5%, Lv5: 6%)",
+      },
+      {
+        to: "From big ace to ace",
+        name: "Shiratorizawa WS",
+        participants: ["tsutomu-goshiki-ssr", "wakatoshi-ushijima-ur"],
+        effect:
+          "Wakatoshi Ushijima's [banging], Goshikiko's [receiving] (Lv1: +1%+5, Lv2: +2%+7, Lv3: +3%+9, Lv4: +4%+12, Lv5: +5%+15) up",
       },
     ],
     resonances: [
@@ -405,56 +412,56 @@ export const shiratorizawaPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Steady Reception",
+        name: "Strong defense",
         levels: {
-          "1": "Ōhira’s [Receive] +8%.",
-          "2": "Ōhira’s [Receive] +9.5%.",
-          "3": "Ōhira’s [Receive] +11%.",
+          "1": "When Shion Ohira receives, if the opponent's quick attack becomes a nice play, the receiving power this time will be increased by [receiving]×40%",
+          "2": "When Shion Ohira receives, if the opponent's quick attack becomes a nice play, the receiving power this time will be increased by [receiving]×55%",
+          "3": "When Shion Ohira receives, if the opponent's quick attack becomes a nice play, the receiving power this time will be increased by [receiving]×70%",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Reliable Wing",
+        name: "Defending to change the tide ",
         levels: {
-          "1": "When performing a Power Spike, his [Strength] +10% for that spike.",
-          "2": "When spiking, [Strength] +12.5% for that spike.",
-          "3": "When spiking, [Strength] +15% for that spike.",
+          "1": "Ohira receives [receiving]×120%",
+          "2": "Ohira receives [receiving]×135%",
+          "3": "Ohira receives [receiving]×150%",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Calm Captaincy",
+        name: "Gentle ”Benkei”",
         levels: {
-          "1": "While on court: allies’ [Awareness] +5%.",
-          "2": "While on court: allies’ [Awareness] +6.5%.",
-          "3": "While on court: allies’ [Awareness] +8%.",
+          "1": "Ohira's [consciousness] is up 5% and [response] is up 10%.",
+          "2": "Ohira's [consciousness] is up 5% and [response] is up 15%.",
+          "3": "Ohira's [consciousness] is up 8% and [response] is up 15%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Accurate Receive",
+        name: "Powerful spikes",
         levels: {
-          "1": "Receive [Receive] x235%.",
-          "2": "Receive x250%.",
-          "3": "Receive x265%.",
-          "4": "Receive x280%.",
-          "5": "Receive x295%.",
+          "1": "Ohira makes a strong hit with the power of [strong hit] 240%",
+          "2": "Ohira makes a strong hit with the power of [strong hit] 255%",
+          "3": "Ohira makes a strong hit with the power of [strong hit] 270%",
+          "4": "Ohira makes a strong hit with the power of [strong hit] 285%",
+          "5": "Ohira makes a strong hit with the power of [strong hit] 300%",
         },
       },
     ],
     bonds: [
       {
         to: "reon-ohira-ssr",
-        name: "Captain & Rookie",
+        name: "Shiratorizawa WS",
         participants: ["tsutomu-goshiki-ssr", "reon-ohira-ssr"],
         effect:
-          "While both WS are on court: Ōhira’s [Receive] +8% and Goshiki’s [Power Attack] +8%.",
+          "Ally members' [bangs] have increased (Lv1: 4%, Lv2: 4.5%, Lv3: 5%, Lv4: 5.5%, Lv5: 6%)",
       },
     ],
     resonances: [
@@ -525,11 +532,11 @@ export const shiratorizawaPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Corrective Ability",
+        name: "As usual",
         levels: {
-          "1": "Shirabu’s [Awareness] +9%.",
-          "2": "Shirabu’s [Awareness] +10.5%.",
-          "3": "Shirabu’s [Awareness] +12%.",
+          "1": "Kenjiro Shirabu's [toss] has been increased 10%",
+          "2": "Kenjiro Shirabu's [toss] has been increased 13%",
+          "3": "Kenjiro Shirabu's [toss] has been increased 16%",
           "4": undefined,
           "5": undefined,
         },
@@ -547,34 +554,34 @@ export const shiratorizawaPlayers: Player[] = [
       },
       {
         key: "passive",
-        name: "Always On Point",
+        name: "Corrective ability",
         levels: {
-          "1": "Shirabu’s [Set] +8%. When he sets to a WS/OP, that spike gains +8% power.",
-          "2": "[Set] +9.5%; the spike gains +10% power.",
-          "3": "[Set] +11%; the spike gains +12% power.",
+          "1": "Kenjiro Shirabu's [consciousness] has increased 9%.",
+          "2": "Kenjiro Shirabu's [consciousness] has increased 12%.",
+          "3": "Kenjiro Shirabu's [consciousness] has increased 15%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Spike-Connecting Set",
+        name: "Toss that makes use of Spiker",
         levels: {
-          "1": "Set [Set] x210%; for this play, Shirabu’s [Awareness] +10%.",
-          "2": "Set x225%; +10% Awareness.",
-          "3": "Set x240%; +12% Awareness.",
-          "4": "Set x255%; +12% Awareness.",
-          "5": "Set x270%; +15% Awareness.",
+          "1": "Kenjiro Shirafu performs a toss with the power of [toss]x210%. [Awareness] is 10% higher in this play",
+          "2": "Kenjiro Shirafu performs a toss with the power of [toss]x225%. [Awareness] is 10% higher in this play",
+          "3": "Kenjiro Shirafu performs a toss with the power of [toss]x240%. [Awareness] is 10% higher in this play",
+          "4": "Kenjiro Shirafu performs a toss with the power of [toss]x255%. [Awareness] is 10% higher in this play",
+          "5": "Kenjiro Shirafu performs a toss with the power of [toss]x270%. [Awareness] is 10% higher in this play",
         },
       },
     ],
     bonds: [
       {
-        to: "wakatoshi-ushijima-ur",
+        to: "kenjiro-shirabu-ssr",
         name: "Ace and Conductor",
         participants: ["kenjiro-shirabu-ssr", "wakatoshi-ushijima-ur"],
         effect:
-          "When Shirabu sets to Ushijima, Ushijima’s next spike gains extra power equal to 12% of his [Power Attack] (Lv scales with bond).",
+          "Kenjiro Shirafu throws a toss, and Wakatoshi Ushijima delivers a powerful [hard hit] ×(Lv1: 260%, Lv2: 275%, Lv3: 290%, Lv4: 305%, Lv5: 320%). Wakatoshi Ushijima's [power] has increased by 10% in this hard hit",
       },
     ],
     resonances: [
@@ -647,8 +654,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Control",
         levels: {
           "1": "When Semi serves, the primary opposing receiver’s [Receive] -13% for up to 4 net crossings.",
-          "2": "On serve: opposing primary receiver [Receive] -15% (4 crossings).",
-          "3": "On serve: opposing primary receiver [Receive] -17% (4 crossings).",
+          "2": "On serve: opposing primary receiver [Receive] -15.5% (4 crossings).",
+          "3": "On serve: opposing primary receiver [Receive] -18% (4 crossings).",
           "4": undefined,
           "5": undefined,
         },
@@ -657,9 +664,9 @@ export const shiratorizawaPlayers: Player[] = [
         key: "passive",
         name: "Flexible Combinations",
         levels: {
-          "1": "Set [Set] x120%.",
-          "2": "Set [Set] x135%.",
-          "3": "Set [Set] x150%.",
+          "1": "Eita Semi performs a toss with the power of [toss]x120%",
+          "2": "Eita Semi performs a toss with the power of [toss]x135%",
+          "3": "Eita Semi performs a toss with the power of [toss]x150%",
           "4": undefined,
           "5": undefined,
         },
@@ -669,8 +676,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Power Unleashed",
         levels: {
           "1": "When Semi serves: his [Awareness] +5% and [Strength] +10% for that serve.",
-          "2": "On serve: [Awareness] +6.5% and [Strength] +12.5%.",
-          "3": "On serve: [Awareness] +8% and [Strength] +15%.",
+          "2": "On serve: [Awareness] +5% and [Strength] +15%.",
+          "3": "On serve: [Awareness] +8% and [Strength] +20%.",
           "4": undefined,
           "5": undefined,
         },
@@ -679,11 +686,11 @@ export const shiratorizawaPlayers: Player[] = [
         key: "active",
         name: "Freedom—Just This Once",
         levels: {
-          "1": "Jump Serve [Serve] x220%. For this serve, allies gain +3% [Awareness] and +6% [Reflex] for 2 net crossings.",
-          "2": "Jump Serve x235%. Allies +3% Awareness, +6% Reflex.",
-          "3": "Jump Serve x250%. Allies +4% Awareness, +8% Reflex.",
-          "4": "Jump Serve x265%. Allies +4% Awareness, +8% Reflex.",
-          "5": "Jump Serve x280%. Allies +5% Awareness, +10% Reflex.",
+          "1": "Jump Serve [Serve] x220%. If you score an ace on this serve, your ally members' [awareness] will increase by 3%, and their [reaction] will increase by 6%",
+          "2": "Jump Serve [Serve] x235%. If you score an ace on this serve, your ally members' [awareness] will increase by 3%, and their [reaction] will increase by 6%",
+          "3": "Jump Serve [Serve] x250%. If you score an ace on this serve, your ally members' [awareness] will increase by 3%, and their [reaction] will increase by 6%",
+          "4": "Jump Serve [Serve] x265%. If you score an ace on this serve, your ally members' [awareness] will increase by 3%, and their [reaction] will increase by 6%",
+          "5": "Jump Serve [Serve] x280%. If you score an ace on this serve, your ally members' [awareness] will increase by 3%, and their [reaction] will increase by 6%",
         },
       },
     ],
@@ -758,8 +765,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Steady Reaction",
         levels: {
           "1": "Yamagata’s [Reflex] +13%.",
-          "2": "Yamagata’s [Reflex] +15%.",
-          "3": "Yamagata’s [Reflex] +17%.",
+          "2": "Yamagata’s [Reflex] +20%.",
+          "3": "Yamagata’s [Reflex] +25%.",
           "4": undefined,
           "5": undefined,
         },
@@ -780,8 +787,8 @@ export const shiratorizawaPlayers: Player[] = [
         name: "Reflex Read",
         levels: {
           "1": "If the opponent’s block result is PERFECT, Yamagata’s Cover gains +40% of his [Cover] as power.",
-          "2": "On PERFECT block, Cover gains +45% of [Cover] as power.",
-          "3": "On PERFECT block, Cover gains +50% of [Cover] as power.",
+          "2": "On PERFECT block, Cover gains +50% of [Cover] as power.",
+          "3": "On PERFECT block, Cover gains +60% of [Cover] as power.",
           "4": undefined,
           "5": undefined,
         },
@@ -914,7 +921,8 @@ export const shiratorizawaPlayers: Player[] = [
         to: "taichi-kawanishi-sr",
         name: "Shiratorizawa’s Middle Block",
         participants: ["taichi-kawanishi-sr", "satori-tendo-ssr"],
-        effect: "While both are front row: your front row [Block] +6%.",
+        effect:
+          "[Block] of friendly vanguard has been increased (Lv1: 5%, Lv2: 5.5%, Lv3: 6%, Lv4: 6.5%, Lv5: 7%)",
       },
     ],
     resonances: [

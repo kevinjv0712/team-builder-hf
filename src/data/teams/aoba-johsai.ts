@@ -33,8 +33,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Conductor",
         levels: {
           "1": "While Oikawa is on court: allies’ [Awareness] +10%. When an ally activates a Power Attack skill, consume 6 stacks of “Attack Tempo” to guarantee a Nice Play.",
-          "2": "While Oikawa is on court: allies’ [Awareness] +12%. Same Nice Play effect (consumes 6 stacks).",
-          "3": "While Oikawa is on court: allies’ [Awareness] +14%. Same Nice Play effect (consumes 6 stacks).",
+          "2": "While Oikawa is on court: allies’ [Awareness] +14%. Same Nice Play effect (consumes 6 stacks).",
+          "3": "While Oikawa is on court: allies’ [Awareness] +18%. Same Nice Play effect (consumes 6 stacks).",
           "4": undefined,
           "5": undefined,
         },
@@ -45,8 +45,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Overwhelming Sense",
         levels: {
           "1": "Performs a Two-Attack with [Set] x115% (cannot be blocked). While Oikawa is on court, allies with Power Attack gain [Power] +20%.",
-          "2": "Two-Attack [Set] x130% (unblockable). Allies with Power Attack: [Power] +22%.",
-          "3": "Two-Attack [Set] x145% (unblockable). Allies with Power Attack: [Power] +24%.",
+          "2": "Two-Attack [Set] x130% (unblockable). Allies with Power Attack: [Power] +20%.",
+          "3": "Two-Attack [Set] x145% (unblockable). Allies with Power Attack: [Power] +20%.",
           "4": undefined,
           "5": undefined,
         },
@@ -82,7 +82,7 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Childhood Duo",
         participants: ["toru-oikawa-ur", "hajime-iwaizumi-ssr"],
         effect:
-          "If Oikawa sets to Iwaizumi this rally: Iwaizumi’s [Power Attack] x (Lv1: 250%, Lv2: 265%, Lv3: 280%, Lv4: 295%, Lv5: 310%) and [Awareness] +10% for the spike.",
+          "If Oikawa sets to Iwaizumi this rally: Iwaizumi’s [Power Attack] x (Lv1: 250%, Lv2: 270%, Lv3: 285%, Lv4: 300%, Lv5: 315%) and [Awareness] +10% for the spike.",
       },
     ],
     resonances: [
@@ -157,8 +157,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Court Vision",
         levels: {
           "1": 'Oikawa’s [Set] +10%. When your players cast a Spike skill, they gain 1 stack of "Attack Tempo" (Awareness +1% per stack, up to 10).',
-          "2": "Oikawa’s [Set] +11.5%. Same stacks (Awareness +1.2% per stack, up to 10).",
-          "3": "Oikawa’s [Set] +13%. Same stacks (Awareness +1.5% per stack, up to 10).",
+          "2": "Oikawa’s [Set] +12%. Same stacks (Awareness +1% per stack, up to 10).",
+          "3": "Oikawa’s [Set] +14%. Same stacks (Awareness +1% per stack, up to 10).",
           "4": undefined,
           "5": undefined,
         },
@@ -168,8 +168,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Game Changer",
         levels: {
           "1": "If your side is behind at turn start: allies’ basic stats +6% for 8 net crossings.",
-          "2": "If behind: allies’ basic stats +7.5% for 8 net crossings.",
-          "3": "If behind: allies’ basic stats +9% for 8 net crossings.",
+          "2": "If behind: allies’ basic stats +9% for 8 net crossings.",
+          "3": "If behind: allies’ basic stats +12% for 8 net crossings.",
           "4": undefined,
           "5": undefined,
         },
@@ -179,8 +179,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Control Tower",
         levels: {
           "1": 'While Oikawa is on court: allies’ [Awareness] +6%. Each "Attack Tempo" stack adds +1% Awareness.',
-          "2": "While Oikawa is on court: allies’ [Awareness] +7.5%. Each stack adds +1%.",
-          "3": "While Oikawa is on court: allies’ [Awareness] +9%. Each stack adds +1.5%.",
+          "2": "While Oikawa is on court: allies’ [Awareness] +9%. Each stack adds +1%.",
+          "3": "While Oikawa is on court: allies’ [Awareness] +12%. Each stack adds +1.5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -202,7 +202,8 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "hajime-iwaizumi-sr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
-        effect: "Increases Toru Oikawa and Hajime Iwaizumi’s [Awareness].",
+        effect:
+          "Toru Oikawa (SSR) and Hajime Iwaizumi (SR)'s [awareness] has increased (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%)",
       },
     ],
     resonances: [
@@ -277,7 +278,7 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Ace's Strength",
         levels: {
           "1": "Iwaizumi’s [Awareness] +5% and [Strength] +10%.",
-          "2": "Iwaizumi’s [Awareness] +6.5% and [Strength] +12.5%.",
+          "2": "Iwaizumi’s [Awareness] +5% and [Strength] +15%.",
           "3": "Iwaizumi’s [Awareness] +8% and [Strength] +15%.",
           "4": undefined,
           "5": undefined,
@@ -299,8 +300,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Vice-Captain's Rally",
         levels: {
           "1": "While on court: allies’ [Strength] +6%.",
-          "2": "While on court: allies’ [Strength] +7.5%.",
-          "3": "While on court: allies’ [Strength] +9%.",
+          "2": "While on court: allies’ [Strength] +8.5%.",
+          "3": "While on court: allies’ [Strength] +11%.",
           "4": undefined,
           "5": undefined,
         },
@@ -311,18 +312,19 @@ export const aobaJohsaiPlayers: Player[] = [
         levels: {
           "1": "Power Spike [Power Attack] x240%; on Critical, extra +15% of [Power Attack] as power.",
           "2": "Power Spike [Power Attack] x255%; on Critical, extra +15%.",
-          "3": "Power Spike [Power Attack] x270%; on Critical, extra +18%.",
-          "4": "Power Spike [Power Attack] x285%; on Critical, extra +18%.",
-          "5": "Power Spike [Power Attack] x300%; on Critical, extra +21%.",
+          "3": "Power Spike [Power Attack] x270%; on Critical, extra +15%.",
+          "4": "Power Spike [Power Attack] x285%; on Critical, extra +15%.",
+          "5": "Power Spike [Power Attack] x300%; on Critical, extra +15%.",
         },
       },
     ],
     bonds: [
       {
-        to: "kentaro-kyotani-ssr",
+        to: "hajime-iwaizumi-ssr",
         name: "The Wolf Pack",
         participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-ssr"],
-        effect: "Boosts Iwaizumi & Kyotani’s [Power Attack].",
+        effect:
+          "Hajime Iwaizumi's [banging], Kentaro Kyotani's [banging] (Lv.1:6%, Lv2:7%, Lv.3:8%, Lv.4:9%, Lv.5:10%) up",
       },
       {
         to: "toru-oikawa-ur",
@@ -447,7 +449,15 @@ export const aobaJohsaiPlayers: Player[] = [
         to: "toru-oikawa-ssr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
-        effect: "Boosts both players’ [Awareness].",
+        effect:
+          "Toru Oikawa (SSR) and Hajime Iwaizumi (SR)'s [awareness] has increased (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%)",
+      },
+      {
+        to: "hajime-iwaizumi-sr",
+        name: "The Wolf Pack",
+        participants: ["hajime-iwaizumi-sr", "kentaro-kyotani-sr"],
+        effect:
+          "Increases Hajime Iwaizumi and Kentaro Kyotanis Power attact stat by  (Lv.1:6%, Lv2:7%, Lv.3:8%, Lv.4:9%, Lv.5:10%) ",
       },
     ],
     resonances: [
@@ -554,10 +564,11 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "hajime-iwaizumi-ssr",
+        to: "kentaro-kyotani-ssr",
         name: "The Wolf Pack",
         participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-ssr"],
-        effect: "Boosts both players’ [Power Attack].",
+        effect:
+          "Hajime Iwaizumi's [banging], Kentaro Kyotani's [banging] (Lv.1:6%, Lv2:7%, Lv.3:8%, Lv.4:9%, Lv.5:10%) up",
       },
     ],
     resonances: [
@@ -642,8 +653,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Explosive Strength",
         levels: {
           "1": "When Kyotani spikes: [Strength] +15% for that spike.",
-          "2": "… +17.5% for that spike.",
-          "3": "… +20% for that spike.",
+          "2": "… +18% for that spike.",
+          "3": "… +21% for that spike.",
           "4": undefined,
           "5": undefined,
         },
@@ -653,8 +664,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Revving Up",
         levels: {
           "1": "[Power Attack] +8%; on Power Spike, gain 1 “Heat Up” stack (+1% Power Attack, up to 4).",
-          "2": "[Power Attack] +9.5%; same stacks.",
-          "3": "[Power Attack] +11%; same stacks.",
+          "2": "[Power Attack] +10%; same stacks.",
+          "3": "[Power Attack] +12%; same stacks.",
           "4": undefined,
           "5": undefined,
         },
@@ -673,10 +684,11 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "hajime-iwaizumi-ssr",
+        to: "kentaro-kyotani-sr",
         name: "The Wolf Pack",
-        participants: ["hajime-iwaizumi-ssr", "kentaro-kyotani-sr"],
-        effect: "Boosts both players’ [Power Attack].",
+        participants: ["hajime-iwaizumi-sr", "kentaro-kyotani-sr"],
+        effect:
+          "Increases Hajime Iwaizumi and Kentaro Kyotanis Power attact stat by  (Lv.1:6%, Lv2:7%, Lv.3:8%, Lv.4:9%, Lv.5:10%) ",
       },
     ],
     resonances: [
@@ -742,8 +754,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Perfect Touch",
         levels: {
           "1": "When Matsukawa blocks an opponent's Quick Spike: +11% of [Block] as extra block power.",
-          "2": "When Matsukawa blocks an opponent's Quick Spike: +12.5% of [Block] as extra block power.",
-          "3": "When Matsukawa blocks an opponent's Quick Spike: +14% of [Block] as extra block power.",
+          "2": "When Matsukawa blocks an opponent's Quick Spike: +13% of [Block] as extra block power.",
+          "3": "When Matsukawa blocks an opponent's Quick Spike: +15% of [Block] as extra block power.",
           "4": undefined,
           "5": undefined,
         },
@@ -764,8 +776,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Crushing Block",
         levels: {
           "1": "Matsukawa’s [Block] +8%. On PERFECT Block: next ally spiker [Awareness] +4%.",
-          "2": "Matsukawa’s [Block] +9.5%. On PERFECT Block: next ally spiker [Awareness] +5.5%.",
-          "3": "Matsukawa’s [Block] +11%. On PERFECT Block: next ally spiker [Awareness] +7%.",
+          "2": "Matsukawa’s [Block] +10.5%. On PERFECT Block: next ally spiker [Awareness] +4%.",
+          "3": "Matsukawa’s [Block] +1%. On PERFECT Block: next ally spiker [Awareness] +4%.",
           "4": undefined,
           "5": undefined,
         },
@@ -852,8 +864,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Reliable Wing Spiker",
         levels: {
           "1": "Hanamaki’s [Awareness] +8%. On Critical Power Spike: blockers’ [Block] -5%.",
-          "2": "Hanamaki’s [Awareness] +9.5%. On Critical Power Spike: blockers’ [Block] -6.5%.",
-          "3": "Hanamaki’s [Awareness] +11%. On Critical Power Spike: blockers’ [Block] -8%.",
+          "2": "Hanamaki’s [Awareness] +10%. On Critical Power Spike: blockers’ [Block] -5%.",
+          "3": "Hanamaki’s [Awareness] +12%. On Critical Power Spike: blockers’ [Block] -5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -874,8 +886,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Perfect Defense",
         levels: {
           "1": "Hanamaki’s [Receive] +8%. When receiving Quick Spike: +4% of [Receive] as extra power.",
-          "2": "Hanamaki’s [Receive] +9.5%. When receiving Quick Spike: +5.5% of [Receive].",
-          "3": "Hanamaki’s [Receive] +11%. When receiving Quick Spike: +7% of [Receive].",
+          "2": "Hanamaki’s [Receive] +10%. When receiving Quick Spike: +5.5% of [Receive].",
+          "3": "Hanamaki’s [Receive] +12%. When receiving Quick Spike: +7% of [Receive].",
           "4": undefined,
           "5": undefined,
         },
@@ -962,8 +974,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Complete Defense",
         levels: {
           "1": "Watari’s [Save] & [Receive] +8%.",
-          "2": "Watari’s [Save] & [Receive] +9.5%.",
-          "3": "Watari’s [Save] & [Receive] +11%.",
+          "2": "Watari’s [Save] & [Receive] +10%.",
+          "3": "Watari’s [Save] & [Receive] +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -984,8 +996,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Seamless Reception",
         levels: {
           "1": "When receiving Quick Spike: +20% of [Receive] as extra power.",
-          "2": "When receiving Quick Spike: +22.5% of [Receive] as extra power.",
-          "3": "When receiving Quick Spike: +25% of [Receive] as extra power.",
+          "2": "When receiving Quick Spike: +35% of [Receive] as extra power.",
+          "3": "When receiving Quick Spike: +50% of [Receive] as extra power.",
           "4": undefined,
           "5": undefined,
         },
@@ -1078,8 +1090,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Developing Setter",
         levels: {
           "1": "Yahaba’s [Serve] & [Set] +8%.",
-          "2": "Yahaba’s [Serve] & [Set] +9.5%.",
-          "3": "Yahaba’s [Serve] & [Set] +11%.",
+          "2": "Yahaba’s [Serve] & [Set] +10%.",
+          "3": "Yahaba’s [Serve] & [Set] +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1089,8 +1101,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Pride Defense",
         levels: {
           "1": "Yahaba’s [Set] +4%. While on court: allies’ [Awareness] & [Reflex] +8%.",
-          "2": "Yahaba’s [Set] +5.5%. While on court: allies’ [Awareness] & [Reflex] +9.5%.",
-          "3": "Yahaba’s [Set] +7%. While on court: allies’ [Awareness] & [Reflex] +11%.",
+          "2": "Yahaba’s [Set] +6%. While on court: allies’ [Awareness] & [Reflex] +8%.",
+          "3": "Yahaba’s [Set] +8%. While on court: allies’ [Awareness] & [Reflex] +8%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1171,8 +1183,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Overhead Spike",
         levels: {
           "1": "On Kindaichi’s Quick Spike: opposing blocker [Block] -10%.",
-          "2": "On Kindaichi’s Quick Spike: opposing blocker [Block] -12.5%.",
-          "3": "On Kindaichi’s Quick Spike: opposing blocker [Block] -15%.",
+          "2": "On Kindaichi’s Quick Spike: opposing blocker [Block] -12%.",
+          "3": "On Kindaichi’s Quick Spike: opposing blocker [Block] -14%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1182,8 +1194,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Decisive Hit",
         levels: {
           "1": "Kindaichi’s [Awareness] +8% & [Strength] +8%.",
-          "2": "Kindaichi’s [Awareness] +9.5% & [Strength] +9.5%.",
-          "3": "Kindaichi’s [Awareness] +11% & [Strength] +11%.",
+          "2": "Kindaichi’s [Awareness] +10% & [Strength] +10%.",
+          "3": "Kindaichi’s [Awareness] +12% & [Strength] +12%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1284,8 +1296,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Efficient Spike",
         levels: {
           "1": "Kunimi’s [Power Attack] +10%.",
-          "2": "Kunimi’s [Power Attack] +11.5%.",
-          "3": "Kunimi’s [Power Attack] +13%.",
+          "2": "Kunimi’s [Power Attack] +12%.",
+          "3": "Kunimi’s [Power Attack] +14%.",
           "4": undefined,
           "5": undefined,
         },
@@ -1306,8 +1318,8 @@ export const aobaJohsaiPlayers: Player[] = [
         name: "Power Saving Mode",
         levels: {
           "1": "Stamina consumption -15%.",
-          "2": "Stamina consumption -17.5%.",
-          "3": "Stamina consumption -20%.",
+          "2": "Stamina consumption -20%.",
+          "3": "Stamina consumption -25%.",
           "4": undefined,
           "5": undefined,
         },

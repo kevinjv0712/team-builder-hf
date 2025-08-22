@@ -11,6 +11,10 @@ import {
 } from "@/stores/teamStore";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useSettingsStore } from "@/stores/settingStore";
+<<<<<<< HEAD
+=======
+import { prefix } from "@/utils/prefix";
+>>>>>>> refs/remotes/origin/feature/players-data
 import Image from "next/image";
 
 /* ================= Constantes y helpers ================= */
@@ -402,7 +406,11 @@ export default function LineupAndBench({
                   >
                     {p ? (
                       <Image
+<<<<<<< HEAD
                         src={p.image}
+=======
+                        src={prefix + p.image}
+>>>>>>> refs/remotes/origin/feature/players-data
                         alt={p.name}
                         fill
                         className="h-full w-full rounded-md object-cover"
@@ -529,7 +537,11 @@ export default function LineupAndBench({
                     >
                       {p ? (
                         <Image
+<<<<<<< HEAD
                           src={p.image}
+=======
+                          src={prefix + p.image}
+>>>>>>> refs/remotes/origin/feature/players-data
                           alt={p.name}
                           fill
                           className="h-full w-full rounded-md object-cover"
@@ -569,18 +581,18 @@ export default function LineupAndBench({
                       </button>
                     </div>
                     {/* TOGGLE SERVER (arriba de la banca) */}
-                    <div className="flex items-center justify-center mt-4 mb-2">
+                    <div className="flex items-center justify-center mt-4">
                       <div
                         role="tablist"
                         aria-label="Server"
-                        className="inline-flex rounded-full border border-white/20 p-1 bg-neutral-800/60"
+                        className="inline-flex flex-col rounded-2xl border border-white/20 p-1 bg-neutral-800/60"
                       >
                         <button
                           role="tab"
                           aria-selected={server === "Japan"}
                           onClick={() => setServer("Japan")}
                           className={[
-                            "px-3 py-1 text-xs rounded-full transition",
+                            "px-3 py-1 text-xs rounded-full transition text-center",
                             server === "Japan"
                               ? "bg-orange-300 text-black font-semibold"
                               : "hover:bg-white/10",
@@ -703,7 +715,11 @@ export default function LineupAndBench({
               >
                 {p ? (
                   <Image
+<<<<<<< HEAD
                     src={p.image}
+=======
+                    src={prefix + p.image}
+>>>>>>> refs/remotes/origin/feature/players-data
                     alt={p.name}
                     fill
                     className="h-full w-full object-cover"
@@ -766,7 +782,11 @@ export default function LineupAndBench({
               >
                 {p ? (
                   <Image
+<<<<<<< HEAD
                     src={p.image}
+=======
+                    src={prefix + p.image}
+>>>>>>> refs/remotes/origin/feature/players-data
                     alt={p.name}
                     fill
                     className="h-full w-full object-cover"

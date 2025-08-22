@@ -8,23 +8,24 @@ import { useTeamStore } from "@/stores/teamStore";
 import type { AnySlotKey } from "@/stores/teamStore";
 import { useHasMounted } from "@/utils/useHasMounted";
 import { useSettingsStore } from "@/stores/settingStore";
+import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 
 /* ========= Parámetros AJUSTABLES ========= */
-const COLS_XS = 8; // < sm
+const COLS_XS = 5; // < sm
 const COLS_SM = 10; // ≥ sm
 const COLS_XL = 12; // ≥ xl
 
-const CARD_GAP = 6;
+const CARD_GAP = 8;
 const SECTION_GAP = 12;
 
-const MIN_SAFE = 120; // px
-const MAX_CARD = 360; // px (tope superior)
+const MIN_SAFE = 70; // px
+const MAX_CARD = 180; // px (tope superior)
 
 const PANEL_MARGIN = 8; // margen a bordes de viewport
 const PANEL_MAX_W = 920; // ancho máximo del panel
 const PANEL_MIN_W = 280; // ancho mínimo del panel
-const PANEL_MAX_H_VH = 90; // alto máximo del panel en % de viewport
+const PANEL_MAX_H_VH = 80; // alto máximo del panel en % de viewport
 
 /* ===== Helpers de rol/slots ===== */
 const STARTER_KEYS = new Set(["S", "MB1", "WS1", "OP", "MB2", "WS2", "LI"]);
@@ -392,10 +393,10 @@ function ThumbGrid({
           title={`${p.name} · ${p.team}`}
         >
           <Image
-            src={p.image}
+            src={prefix + p.image}
             alt={p.name}
             fill
-            className="absolute inset-0 h-full w-full object-cover"
+            className="object-cover"
             loading="lazy"
           />
           {showBadge && (

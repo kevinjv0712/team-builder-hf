@@ -6,6 +6,10 @@ import { useSelectionStore } from "@/stores/selectionStore";
 import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
 import Image from "next/image";
+<<<<<<< HEAD
+=======
+import { prefix } from "@/utils/prefix";
+>>>>>>> refs/remotes/origin/feature/players-data
 
 type Tab = "none" | "details" | "bonds";
 
@@ -328,15 +332,19 @@ export default function PlayerDetails({
                     </div>
                   )}
                   {partPlayers.length > 0 && (
-                    <div className="mt-2 flex space-x-1">
+                    <div className="relative mt-2 flex space-x-1">
                       {partPlayers.map((pp: any) => (
                         <Image
                           key={`${b.name}-p-${pp.id}`}
-                          src={pp.image}
+                          src={prefix + pp.image}
                           alt={pp.name}
                           title={pp.name}
                           fill
+<<<<<<< HEAD
                           className="h-14 w-14 rounded object-cover border"
+=======
+                          className="rounded object-cover border"
+>>>>>>> refs/remotes/origin/feature/players-data
                           loading="lazy"
                         />
                       ))}
@@ -355,13 +363,21 @@ export default function PlayerDetails({
     <div className="w-full" data-interactive="true">
       {/* Header jugador + tabs (opcional) */}
       <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="relative flex items-center gap-3 min-w-0">
           {selected ? (
             <Image
+<<<<<<< HEAD
               src={selected.image}
               alt={selected.name}
               fill
               className="h-20 w-20 border-2 rounded object-cover shrink-0"
+=======
+              src={prefix + selected.image}
+              alt={selected.name}
+              width={80}
+              height={80}
+              className="border-2 rounded object-cover shrink-0"
+>>>>>>> refs/remotes/origin/feature/players-data
               loading="lazy"
             />
           ) : (
