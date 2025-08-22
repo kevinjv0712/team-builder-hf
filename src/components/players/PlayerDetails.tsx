@@ -6,10 +6,7 @@ import { useSelectionStore } from "@/stores/selectionStore";
 import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
 import Image from "next/image";
-<<<<<<< HEAD
-=======
 import { prefix } from "@/utils/prefix";
->>>>>>> refs/remotes/origin/feature/players-data
 
 type Tab = "none" | "details" | "bonds";
 
@@ -340,11 +337,7 @@ export default function PlayerDetails({
                           alt={pp.name}
                           title={pp.name}
                           fill
-<<<<<<< HEAD
-                          className="h-14 w-14 rounded object-cover border"
-=======
                           className="rounded object-cover border"
->>>>>>> refs/remotes/origin/feature/players-data
                           loading="lazy"
                         />
                       ))}
@@ -366,18 +359,11 @@ export default function PlayerDetails({
         <div className="relative flex items-center gap-3 min-w-0">
           {selected ? (
             <Image
-<<<<<<< HEAD
-              src={selected.image}
-              alt={selected.name}
-              fill
-              className="h-20 w-20 border-2 rounded object-cover shrink-0"
-=======
               src={prefix + selected.image}
               alt={selected.name}
               width={80}
               height={80}
               className="border-2 rounded object-cover shrink-0"
->>>>>>> refs/remotes/origin/feature/players-data
               loading="lazy"
             />
           ) : (

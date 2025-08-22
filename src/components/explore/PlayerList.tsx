@@ -6,10 +6,7 @@ import { players } from "@/data/players";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useHasMounted } from "@/utils/useHasMounted";
 import { useSettingsStore } from "@/stores/settingStore";
-<<<<<<< HEAD
-=======
 import { prefix } from "@/utils/prefix";
->>>>>>> refs/remotes/origin/feature/players-data
 import Image from "next/image";
 
 // ===== Parámetros ajustables =====
@@ -239,27 +236,6 @@ export default function PlayersList() {
       {/* Grid miniaturas: NO rellena; muchas columnas; centrado */}
       <div ref={containerRef}>
         <div className="flex flex-wrap" style={{ gap: `${CARD_GAP}px` }}>
-<<<<<<< HEAD
-          {filtered.map((p: any) => (
-            <button
-              key={p.id}
-              onClick={() => setSelectedPlayer(p.id)}
-              className="relative rounded-lg border border-white/40 bg-neutral-800 hover:bg-neutral-700 transition overflow-hidden"
-              style={{ width: `${cardPx}px`, aspectRatio: "19 / 26" }}
-              title={`${p.name} · ${p.team}`}
-              data-interactive="true"
-            >
-              <Image
-                src={p.image}
-                alt={p.name}
-                fill
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-1.5 bg-black/45 text-left">
-                <div className="text-[11px] font-medium truncate">
-                  {p.shortName ?? p.name}
-=======
           {filtered.map((p: any) => {
             const isSelected = selectedPlayerId === p.id;
             return (
@@ -294,7 +270,6 @@ export default function PlayersList() {
                   <div className="text-[10px] opacity-80 truncate">
                     {p.team}
                   </div>
->>>>>>> refs/remotes/origin/feature/players-data
                 </div>
 
                 {/* overlay azul muy sutil al seleccionar */}

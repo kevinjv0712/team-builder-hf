@@ -11,10 +11,7 @@ import {
 } from "@/stores/teamStore";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useSettingsStore } from "@/stores/settingStore";
-<<<<<<< HEAD
-=======
 import { prefix } from "@/utils/prefix";
->>>>>>> refs/remotes/origin/feature/players-data
 import Image from "next/image";
 
 /* ================= Constantes y helpers ================= */
@@ -406,11 +403,7 @@ export default function LineupAndBench({
                   >
                     {p ? (
                       <Image
-<<<<<<< HEAD
-                        src={p.image}
-=======
                         src={prefix + p.image}
->>>>>>> refs/remotes/origin/feature/players-data
                         alt={p.name}
                         fill
                         className="h-full w-full rounded-md object-cover"
@@ -537,11 +530,7 @@ export default function LineupAndBench({
                     >
                       {p ? (
                         <Image
-<<<<<<< HEAD
-                          src={p.image}
-=======
                           src={prefix + p.image}
->>>>>>> refs/remotes/origin/feature/players-data
                           alt={p.name}
                           fill
                           className="h-full w-full rounded-md object-cover"
@@ -715,11 +704,7 @@ export default function LineupAndBench({
               >
                 {p ? (
                   <Image
-<<<<<<< HEAD
-                    src={p.image}
-=======
                     src={prefix + p.image}
->>>>>>> refs/remotes/origin/feature/players-data
                     alt={p.name}
                     fill
                     className="h-full w-full object-cover"
@@ -782,11 +767,7 @@ export default function LineupAndBench({
               >
                 {p ? (
                   <Image
-<<<<<<< HEAD
-                    src={p.image}
-=======
                     src={prefix + p.image}
->>>>>>> refs/remotes/origin/feature/players-data
                     alt={p.name}
                     fill
                     className="h-full w-full object-cover"
