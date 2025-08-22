@@ -359,6 +359,134 @@ export const nekomaPlayers: Player[] = [
     memory: { name: "", effect: "" },
   },
 
+  // ===================== KUROO (SP) =====================
+  {
+    id: "tetsuro-kuroo-sp",
+    name: "Tetsurō Kuroo",
+    shortName: "Kuroo",
+    team: "Nekoma",
+    rarity: "SP",
+    roles: ["MB"],
+    typeTags: ["Receive", "Block"],
+    image: "/characters/nekoma/tetsuro-kuroo-sp.jpg",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 136,
+        powerAttack: 93,
+        set: 128,
+        serve: 143,
+        receive: 151,
+        block: 159,
+        save: 128,
+      },
+      bonusAttack: { awareness: 0.0, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "The command tower that cannot be eaten",
+        levels: {
+          "1": "While on the court, increases [Spirit] by 20% of allied members in the same front/back position as Kuroo. After Kuroo touches the ball, the power of the next play of the same type is increase by 40% x the corresponding parameter of the member making the play. If Kuroo's play is nice, a random member of the opposing team will be given [Anger].",
+          "2": "While on the court, increases [Spirit] by 25% of allied members in the same front/back position as Kuroo. After Kuroo touches the ball, the power of the next play of the same type is increase by 40% x the corresponding parameter of the member making the play. If Kuroo's play is nice, a random member of the opposing team will be given [Anger].",
+          "3": "While on the court, increases [Spirit] by 30% of allied members in the same front/back position as Kuroo. After Kuroo touches the ball, the power of the next play of the same type is increase by 40% x the corresponding parameter of the member making the play. If Kuroo's play is nice, a random member of the opposing team will be given [Anger].",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Skillful receive",
+        levels: {
+          "1": "Kuroo performs a receive with [Receive] x 140% If this is a nice play, the power of this receive is increased by [Receive] x 20%",
+          "2": "Kuroo performs a receive with [Receive] x 160% If this is a nice play, the power of this receive is increased by [Receive] x 20%",
+          "3": "Kuroo performs a receive with [Receive] x 180% If this is a nice play, the power of this receive is increased by [Receive] x 20%",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "A flawless, all-around player",
+        levels: {
+          "1": "When Kuroo is in the front line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the front line (maximum 100% each). Furthermore, when Kuroo is in the front line, the [Attack Technique] of allied members is increased by 14% and Kuroo's [Block] is increased by 45%. When Kuroo is in the back line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the back line (maximum 100% each). Furthermore, when Kuroo is in the back line, the [Defensive Technique] of allied members is increased by 14% and Kuroo's [Receive] is increased by 45%.",
+          "2": "When Kuroo is in the front line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the front line (maximum 100% each). Furthermore, when Kuroo is in the front line, the [Attack Technique] of allied members is increased by 17% and Kuroo's [Block] is increased by 45%. When Kuroo is in the back line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the back line (maximum 100% each). Furthermore, when Kuroo is in the back line, the [Defensive Technique] of allied members is increased by 17% and Kuroo's [Receive] is increased by 45%.",
+          "3": "When Kuroo is in the front line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the front line (maximum 100% each). Furthermore, when Kuroo is in the front line, the [Attack Technique] of allied members is increased by 20% and Kuroo's [Block] is increased by 45%. When Kuroo is in the back line and touches the ball, Kuroo's [Reaction] and [Spirit] increases by 50% of the [Reaction] and [Spirit] of each other allied member in the back line (maximum 100% each). Furthermore, when Kuroo is in the back line, the [Defensive Technique] of allied members is increased by 20% and Kuroo's [Receive] is increased by 45%.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Unpleasant Block",
+        levels: {
+          "1": "Kuroo performs a block [Block] x 280%; if this block does not bounce the ball back in the opponent's court, the first ally's reception after this play will not result in a point. If this block bounces back into the oponent's court, the main stats of all ally members will increase by 15%. This lasts untils the ball goes over the net 8 times.",
+          "2": "Kuroo performs a block [Block] x 300%; if this block does not bounce the ball back in the opponent's court, the first ally's reception after this play will not result in a point. If this block bounces back into the oponent's court, the main stats of all ally members will increase by 15%. This lasts untils the ball goes over the net 8 times.",
+          "3": "Kuroo performs a block [Block] x 320%; if this block does not bounce the ball back in the opponent's court, the first ally's reception after this play will not result in a point. If this block bounces back into the oponent's court, the main stats of all ally members will increase by 15%. This lasts untils the ball goes over the net 8 times.",
+          "4": "Kuroo performs a block [Block] x 340%; if this block does not bounce the ball back in the opponent's court, the first ally's reception after this play will not result in a point. If this block bounces back into the oponent's court, the main stats of all ally members will increase by 15%. This lasts untils the ball goes over the net 8 times.",
+          "5": "Kuroo performs a block [Block] x 360%; if this block does not bounce the ball back in the opponent's court, the first ally's reception after this play will not result in a point. If this block bounces back into the oponent's court, the main stats of all ally members will increase by 15%. This lasts untils the ball goes over the net 8 times.",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "kenma-kozume-sp",
+        name: "Brain & Control Tower",
+        participants: ["tetsuro-kuroo-sp", "kenma-kozume-sp"],
+        effect:
+          "Kenma sets the ball and Kuroo performs a quick attack with +(Lv1: 280%, Lv2: 300%,Lv3: 320%,Lv4: 340%,Lv5: 360%) of power of [Quick Attack]. Guarantee to be a nice play. Allie's [Attack Technique] is increase by 10%. This effect lasts for 1 set.",
+      },
+      {
+        to: "kei-tsukishima-sp",
+        name: "Fireworks display",
+        participants: ["tetsuro-kuroo-sp", "kei-tsukishima-sp"],
+        effect:
+          "Main parameters of allied members increase by +(Lv1: 6%, Lv2: 7%,Lv3: 8%,Lv4: 9%,Lv5: 10%). At the end of each rally, the opponent's front line will be inflicted with [Rage]. This lasts untils the ball crosses the net 8 times. If you inflict [Rage] on an enemy who already has [Rage], you will instead inflict [Distracted]. This lasts untils the ball crosses the net 8 times. The [Distracted] debuff cannot be removed.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters increase by 13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "After Kuroo touches the ball, the next [Quick/Power Attack] of an ally is increased by 20% x Kuroo's [Block], up to 1600 increase. If the member who spikes is in the back line, the [Attack Technique] of that member will be increased by 20%. This effect will last until the ball goes over the net twice.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters increase by 13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When serving, the [Quick/Power Attack] of allied members is increased by 40% and the [Receive] of allied back line is increased by 30%. This effect lasts for 1 rally. Kuroo's [Defensive Technique] is increased by 15%. When Kuroo is in the back line, [Defensive Technique] is increased by an additional 15%",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters increase by 13%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
   // ===================== KUROO (UR) =====================
   {
     id: "tetsuro-kuroo-ur",
