@@ -6,6 +6,7 @@ import { players } from "@/data/players";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useHasMounted } from "@/utils/useHasMounted";
 import { useSettingsStore } from "@/stores/settingStore";
+import { prefix } from "@/utils/prefix";
 import Image from "next/image";
 
 // ===== Parámetros ajustables =====
@@ -19,6 +20,7 @@ const SECTION_GAP = 16;
 
 export default function PlayersList() {
   const setSelectedPlayer = useSelectionStore((s) => s.setSelectedPlayer);
+  const selectedPlayerId = useSelectionStore((s) => s.selectedPlayerId);
   const server = useSettingsStore((s) => s.server);
 
   const list = useMemo(() => {
@@ -234,30 +236,49 @@ export default function PlayersList() {
       {/* Grid miniaturas: NO rellena; muchas columnas; centrado */}
       <div ref={containerRef}>
         <div className="flex flex-wrap" style={{ gap: `${CARD_GAP}px` }}>
-          {filtered.map((p: any) => (
-            <button
-              key={p.id}
-              onClick={() => setSelectedPlayer(p.id)}
-              className="relative rounded-lg border border-white/40 bg-neutral-800 hover:bg-neutral-700 transition overflow-hidden"
-              style={{ width: `${cardPx}px`, aspectRatio: "19 / 26" }}
-              title={`${p.name} · ${p.team}`}
-              data-interactive="true"
-            >
-              <Image
-                src={p.image}
-                alt={p.name}
-                fill
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-1.5 bg-black/45 text-left">
-                <div className="text-[11px] font-medium truncate">
-                  {p.shortName ?? p.name}
+          {filtered.map((p: any) => {
+            const isSelected = selectedPlayerId === p.id;
+            return (
+              <button
+                key={p.id}
+                onClick={() => setSelectedPlayer(isSelected ? null : p.id)}
+                aria-pressed={isSelected}
+                className={[
+                  "relative rounded-lg border transition overflow-hidden",
+                  "bg-neutral-800 hover:bg-neutral-700",
+                  isSelected
+                    ? "border-sky-400 ring-4 ring-blue-700 bg-sky-900/20"
+                    : "border-white/40",
+                ].join(" ")}
+                style={{ width: `${cardPx}px`, aspectRatio: "19 / 26" }}
+                title={`${p.name} · ${p.team}`}
+                data-interactive="true"
+              >
+                <Image
+                  src={prefix + p.image}
+                  alt={p.name}
+                  fill
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+
+                {/* banda inferior */}
+                <div className="absolute inset-x-0 bottom-0 p-1.5 bg-black/45 text-left">
+                  <div className="text-[11px] font-medium truncate">
+                    {p.shortName ?? p.name}
+                  </div>
+                  <div className="text-[10px] opacity-80 truncate">
+                    {p.team}
+                  </div>
                 </div>
-                <div className="text-[10px] opacity-80 truncate">{p.team}</div>
-              </div>
-            </button>
-          ))}
+
+                {/* overlay azul muy sutil al seleccionar */}
+                {isSelected && (
+                  <div className="pointer-events-none absolute inset-0 bg-sky-500/10" />
+                )}
+              </button>
+            );
+          })}
         </div>
         {filtered.length === 0 && (
           <p className="mt-4 text-center text-xs text-gray-400">
