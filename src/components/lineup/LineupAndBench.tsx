@@ -341,7 +341,7 @@ export default function LineupAndBench({
                         : "hover:bg-neutral-600",
                       cardHL(pid),
                       dragging && dropAllowed.has(occupant)
-                        ? "outline outline-2 outline-amber-400"
+                        ? "outline-2 outline-amber-400"
                         : "",
                     ].join(" ")}
                     style={{ width: `${slotPx}px` }}
@@ -470,7 +470,7 @@ export default function LineupAndBench({
                           : "hover:bg-neutral-600",
                         cardHL(p?.id),
                         dragging && dropAllowed.has(occupant)
-                          ? "outline outline-2 outline-amber-400"
+                          ? "outline-2 outline-amber-400"
                           : "",
                       ].join(" ")}
                       style={{ width: `${slotPx}px` }}
@@ -640,7 +640,7 @@ export default function LineupAndBench({
                     ? "ring-2 ring-black shadow"
                     : "hover:bg-neutral-400",
                   dragging && dropAllowed.has(bk)
-                    ? "outline outline-2 outline-amber-400"
+                    ? "outline-2 outline-amber-400"
                     : "",
                   cardHL(p?.id),
                 ].join(" ")}

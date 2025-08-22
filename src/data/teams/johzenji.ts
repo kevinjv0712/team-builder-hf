@@ -145,8 +145,8 @@ export const johzenjiPlayers: Player[] = [
         name: "Truly Free",
         levels: {
           "1": "While Nigi is on court, if an ally’s Receive result is not BAD, the first back-row ally after this play gains [Toss] boosted by Nigi’s [Set] x18%.",
-          "2": "Same trigger: boost equals Nigi’s [Set] x20%.",
-          "3": "Same trigger: boost equals Nigi’s [Set] x22%.",
+          "2": "Same trigger: boost equals Nigi’s [Set] x22%.",
+          "3": "Same trigger: boost equals Nigi’s [Set] x26%.",
           "4": undefined,
           "5": undefined,
         },

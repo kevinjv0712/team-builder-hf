@@ -34,60 +34,56 @@ export const karasunoPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Senpai’s Guidance",
+        name: "Support Attacks",
         levels: {
-          "1": "While KOSHI SUGAWARA (After School) is on the court, your side’s spikers gain +10% Strength; when your side’s spike is a Nice Play, reduces that spiker’s next Spike skill Stamina cost by 10%.",
-          "2": "While KOSHI SUGAWARA (After School) is on the court, your side’s spikers gain +10% Strength; when your side’s spike is a Nice Play, reduces that spiker’s next Spike skill Stamina cost by 10%.",
-          "3": "While KOSHI SUGAWARA (After School) is on the court, your side’s spikers gain +10% Strength; when your side’s spike is a Nice Play, reduces that spiker’s next Spike skill Stamina cost by 10%.",
+          "1": "While KOSHI SUGAWARA (After School) is on the court: when an allied vanguard uses a Block skill, that blocker’s Block increases by +5% of the other allied vanguard’s total Block (cap +1000%). When a back-row ally performs a Receive, that receiver’s Receive increases by +5% of the other allied back-row’s total Receive (cap +1000%). Both effects last 2 net crossings.",
+          "2": "While KOSHI SUGAWARA (After School) is on the court: when an allied vanguard uses a Block skill, that blocker’s Block increases by +6.25% of the other allied vanguard’s total Block (cap +1250%). When a back-row ally performs a Receive, that receiver’s Receive increases by +6.25% of the other allied back-row’s total Receive (cap +1250%). Both effects last 2 net crossings.",
+          "3": "While KOSHI SUGAWARA (After School) is on the court: when an allied vanguard uses a Block skill, that blocker’s Block increases by +7.5% of the other allied vanguard’s total Block (cap +1500%). When a back-row ally performs a Receive, that receiver’s Receive increases by +7.5% of the other allied back-row’s total Receive (cap +1500%). Both effects last 2 net crossings.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "A Pass",
+        name: "Exploit the Gap Serve",
         levels: {
-          "1": "KOSHI SUGAWARA (After School) performs a Set with 140% of his Set stat as power; SUGAWARA’s Awareness increases by 15% for the next 2 net crossings.",
-          "2": "KOSHI SUGAWARA (After School) performs a Set with 140% of his Set stat as power; SUGAWARA’s Awareness increases by 15% for the next 2 net crossings.",
-          "3": "KOSHI SUGAWARA (After School) performs a Set with 140% of his Set stat as power; SUGAWARA’s Awareness increases by 15% for the next 2 net crossings.",
+          "1": "Performs a Serve with 140% of Serve. Then all allies’ Main Parameters +12% for 1 rally.",
+          "2": "Performs a Serve with 160% of Serve. Then all allies’ Main Parameters +14% for 1 rally.",
+          "3": "Performs a Serve with 180% of Serve. Then all allies’ Main Parameters +16% for 1 rally.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Lift the Team",
+        name: "Careful Setup",
         levels: {
-          "1": "When your side makes a Nice Play, reduces the cooldown of a random teammate’s Spike skill by 2 net crossings and increases that player’s Attack Technique by 8% for 2 net crossings.",
-          "2": "When your side makes a Nice Play, reduces the cooldown of a random teammate’s Spike skill by 2 net crossings and increases that player’s Attack Technique by 8% for 2 net crossings.",
-          "3": "When your side makes a Nice Play, reduces the cooldown of a random teammate’s Spike skill by 2 net crossings and increases that player’s Attack Technique by 8% for 2 net crossings.",
+          "1": "SUGAWARA’s Set +13%. The first time he enters the court: consume 50% of each ally’s current Stamina; for every 6 Stamina consumed, that ally’s Main Parameters +1%. For the first 4 rallies after he enters, teammates recover +15 Stamina at the end of each rally.",
+          "2": "Set +16%. The first time he enters: for every 6 Stamina consumed, that ally’s Main Parameters +1.3%. Teammates recover +15 Stamina for 4 rallies.",
+          "3": "Set +20%. The first time he enters: for every 6 Stamina consumed, that ally’s Main Parameters +1.6%. Teammates recover +15 Stamina for 4 rallies.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Senpai’s Touch",
+        name: "Sign Play",
         levels: {
-          "1": "KOSHI SUGAWARA (After School) performs a Set that increases your side’s next Spike power by 110% of his Power/Quick Attack stat; if that next Spike is a Power Spike, it gains an additional +15% of the spiker’s Power Attack stat.",
-          "2": "KOSHI SUGAWARA (After School) performs a Set that increases your side’s next Spike power by 110% of his Power/Quick Attack stat; if that next Spike is a Power Spike, it gains an additional +15% of the spiker’s Power Attack stat.",
-          "3": "KOSHI SUGAWARA (After School) performs a Set that increases your side’s next Spike power by 110% of his Power/Quick Attack stat; if that next Spike is a Power Spike, it gains an additional +15% of the spiker’s Power Attack stat.",
-          "4": undefined,
-          "5": undefined,
+          "1": "Consumes +15 Stamina and performs a Set with 260% of Set. After this play, the first Spike (Power/Quick) gains +20% Attack Technique for 2 net crossings.",
+          "2": "Performs a Set with 280% of Set; same additional effect.",
+          "3": "Performs a Set with 300% of Set; same additional effect.",
+          "4": "Performs a Set with 320% of Set; same additional effect.",
+          "5": "Performs a Set with 340% of Set; same additional effect.",
         },
       },
     ],
     bonds: [
       {
-        to: "asahi-azumane-ssr",
-        name: "Karasuno Senior Year",
-        participants: [
-          "daichi-sawamura-ssr",
-          "asahi-azumane-ssr",
-          "koshi-sugawara-sr",
-        ],
+        to: "koshi-sugawara-sp",
+        name: "Karasuno's Geniuses",
+        participants: ["koshi-sugawara-sp", "yu-nishinoya-sp"],
         effect:
-          "Reduces Stamina consumption for your side's Spike skills; Increases Attack Technique when performing Power Spikes",
+          "YU NISHINOYA (After School) +Reaction (Lv1: 5%, Lv2: 7.5%, Lv3: 7.5%, Lv4: 7.5%, Lv5: 10%). If SUGAWARA is on court and NISHINOYA has <80 Stamina, NISHINOYA’s Reaction increases further (Lv1: 5%, Lv2: 5%, Lv3: 7.5%, Lv4: 10%, Lv5: 10%).",
       },
     ],
     resonances: [
@@ -100,7 +96,7 @@ export const karasunoPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "A PASS modified: additionally increases the next spiker’s Awareness by 10% for 2 net crossings.",
+          "If SUGAWARA’s Stamina < 80, he recovers 5 Stamina whenever he touches the ball. If SUGAWARA is on court, when an ally scores, the scorer recovers 10 Stamina and gains +8% Awareness and +8% Reflex (max 2 stacks).",
       },
       {
         level: "III",
@@ -111,7 +107,7 @@ export const karasunoPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When your side’s spike scores, reduces SENPAI’S TOUCH cooldown by 4 net crossings.",
+          "While on court: allies’ Main Parameters +10%. When an ally scores: allies gain +4% Attack Technique (max 3 stacks, lasts 8 net crossings). When an ally concedes: allies gain +4% Defense Technique (max 3 stacks, lasts 8 net crossings). If a conceded rally ends in ≤5 net crossings, the Defense Technique bonus is an additional +4%.",
       },
       {
         level: "V",
@@ -161,11 +157,11 @@ export const karasunoPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Top-Class Reflexes",
+        name: "Top-Class Explosive Power",
         levels: {
-          "1": "Increases YU NISHINOYA (After School)’s Reflex by 10%. When an opponent’s play is a Nice Play, NISHINOYA (After School) gains +1.5% Reflex, stacking up to 10 times and lasting for 6 net crossings.",
-          "2": "Increases YU NISHINOYA (After School)’s Reflex by 10%. When an opponent’s play is a Nice Play, NISHINOYA (After School) gains +1.5% Reflex, stacking up to 10 times and lasting for 6 net crossings.",
-          "3": "Increases YU NISHINOYA (After School)’s Reflex by 10%. When an opponent’s play is a Nice Play, NISHINOYA (After School) gains +1.5% Reflex, stacking up to 10 times and lasting for 6 net crossings.",
+          "1": "NISHINOYA (After School) gains +10% Reflex; when any other member makes a Nice Play, he gains +1.5% Reflex (max 4 stacks, lasts 6 net crossings).",
+          "2": "Reflex +13%; same stacking.",
+          "3": "Reflex +16%; same stacking.",
           "4": undefined,
           "5": undefined,
         },
@@ -174,20 +170,20 @@ export const karasunoPlayers: Player[] = [
         key: "active",
         name: "A Pass",
         levels: {
-          "1": "YU NISHINOYA (After School) performs a Set with 140% of his Set stat as power; NISHINOYA (After School)’s Awareness increases by 20% for the next 2 net crossings.",
-          "2": "YU NISHINOYA (After School) performs a Set with 140% of his Set stat as power; NISHINOYA (After School)’s Awareness increases by 20% for the next 2 net crossings.",
-          "3": "YU NISHINOYA (After School) performs a Set with 140% of his Set stat as power; NISHINOYA (After School)’s Awareness increases by 20% for the next 2 net crossings.",
+          "1": "Performs a Set with 140% of Set; NISHINOYA’s Awareness increases to Reaction ×100% for 2 net crossings.",
+          "2": "Performs a Set with 160% of Set; Awareness = Reaction ×100% for 2 net crossings.",
+          "3": "Performs a Set with 180% of Set; Awareness = Reaction ×100% for 2 net crossings.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Save the Day",
+        name: "Save the Team from Danger",
         levels: {
-          "1": "YU NISHINOYA (After School)’s Spirit increases by 20%. When a teammate makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
-          "2": "YU NISHINOYA (After School)’s Spirit increases by 20%. When a teammate makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
-          "3": "YU NISHINOYA (After School)’s Spirit increases by 20%. When a teammate makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
+          "1": "Spirit +20%. When an ally makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
+          "2": "Spirit +25%. When an ally or opponent makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
+          "3": "Spirit +30%. When an ally or opponent makes a Nice Play, reduces FOOT RECEIVE cooldown by 1 net crossing.",
           "4": undefined,
           "5": undefined,
         },
@@ -196,20 +192,28 @@ export const karasunoPlayers: Player[] = [
         key: "active",
         name: "Foot Receive",
         levels: {
-          "1": "YU NISHINOYA (After School) performs a Receive with 260% of his Receive stat as power; his Receive increases by 20% for the next 2 net crossings.",
-          "2": "YU NISHINOYA (After School) performs a Receive with 260% of his Receive stat as power; his Receive increases by 20% for the next 2 net crossings.",
-          "3": "YU NISHINOYA (After School) performs a Receive with 260% of his Receive stat as power; his Receive increases by 20% for the next 2 net crossings.",
-          "4": undefined,
-          "5": undefined,
+          "1": "Performs a Receive with 260% of Receive; then Receive +20% for 2 net crossings.",
+          "2": "Receives with 275% of Receive; then Receive +20% for 2 net crossings.",
+          "3": "Receives with 290% of Receive; then Receive +20% for 2 net crossings.",
+          "4": "Receives with 305% of Receive; then Receive +20% for 2 net crossings.",
+          "5": "Receives with 320% of Receive; then Receive +20% for 2 net crossings.",
         },
       },
     ],
     bonds: [
       {
-        to: "ryunosuke-tanaka-ssr",
-        name: "Kiyoko’s Knights",
-        participants: ["yu-nishinoya-ssr", "ryunosuke-tanaka-ssr"],
-        effect: "When scoring, increases Team Morale",
+        to: "yu-nishinoya-sp",
+        name: "Karasuno's Geniuses",
+        participants: ["yu-nishinoya-sp", "tobio-kageyama-ur"],
+        effect:
+          "NISHINOYA (After School) +Receive (Lv1: 5%, Lv2: 7%, Lv3: 9%, Lv4: 11%, Lv5: 13%) and +5% Reflex. When NISHINOYA’s special is activated, KAGEYAMA (UR) gains 1 [Losing Hate] stack. If that play is a Nice Play, the first allied Spike afterward gains +20% of the spiker’s (Power/Quick) as bonus power.",
+      },
+      {
+        to: "yu-nishinoya-sp",
+        name: "Karasuno's Geniuses",
+        participants: ["yu-nishinoya-sp", "koshi-sugawara-sp"],
+        effect:
+          "NISHINOYA (After School) +Reaction (Lv1: 5%, Lv2: 7.5%, Lv3: 7.5%, Lv4: 7.5%, Lv5: 10%). If SUGAWARA is on court and NISHINOYA has <80 Stamina, NISHINOYA gains additional Reaction (Lv1: 5%, Lv2: 5%, Lv3: 7.5%, Lv4: 10%, Lv5: 10%).",
       },
     ],
     resonances: [
@@ -222,7 +226,7 @@ export const karasunoPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "FOOT RECEIVE modified: additional +10% Receive for this Receive.",
+          "SAVE THE TEAM FROM DANGER change: trigger on any side’s Nice Play. If A PASS is a Nice Play, reduce FOOT RECEIVE cooldown by 1 net crossing and increase allies’ Main Parameters by 12% for 3 net crossings.",
       },
       {
         level: "III",
@@ -233,7 +237,7 @@ export const karasunoPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When your side makes 2 consecutive Nice Plays, immediately reduce FOOT RECEIVE cooldown by 3 net crossings.",
+          "While NISHINOYA (After School) is on the court, allies’ Reflex +10%. When the opponent’s Spike (Power/Quick) is a Nice Play, your back row allies gain +15% Reflex for 4 net crossings.",
       },
       {
         level: "V",
@@ -283,77 +287,92 @@ export const karasunoPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Seize the Moment",
+        name: "Manipulate the Moment",
         levels: {
-          "1": "While SHOYO HINATA (Hanami) is on the court, your front-row allies’ Defense Technique increases by 10%. When HINATA (Hanami) makes a Nice Play, his Attack Technique increases by 3%, stacking up to 4 times.",
-          "2": "While SHOYO HINATA (Hanami) is on the court, your front-row allies’ Defense Technique increases by 10%. When HINATA (Hanami) makes a Nice Play, his Attack Technique increases by 3%, stacking up to 4 times.",
-          "3": "While SHOYO HINATA (Hanami) is on the court, your front-row allies’ Defense Technique increases by 10%. When HINATA (Hanami) makes a Nice Play, his Attack Technique increases by 3%, stacking up to 4 times.",
+          "1": "While SHOYO HINATA (Hanami) is on court, allied vanguard Defense Technique +10%. When HINATA (Hanami) makes a Nice Play, his Attack Technique +3% (max 4 stacks).",
+          "2": "While on court, vanguard Defense Technique +13%. When he makes a Nice Play, Attack Technique +3.5% (max 4).",
+          "3": "While on court, vanguard Defense Technique +16%. When he makes a Nice Play, Attack Technique +4% (max 4).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Anchor Receive",
+        name: "A Stepping Stone",
         levels: {
-          "1": "SHOYO HINATA (Hanami) performs a Receive with 140% of his Receive stat as power; all allies’ main parameter increases by 12% for up to 6 net crossings.",
-          "2": "SHOYO HINATA (Hanami) performs a Receive with 140% of his Receive stat as power; all allies’ main parameter increases by 12% for up to 6 net crossings.",
-          "3": "SHOYO HINATA (Hanami) performs a Receive with 140% of his Receive stat as power; all allies’ main parameter increases by 12% for up to 6 net crossings.",
+          "1": "Performs a Receive with 140% of Receive; all allies’ Main Parameters +12% until the ball crosses the net six times.",
+          "2": "Performs a Receive with 160% of Receive; same team buff/duration.",
+          "3": "Performs a Receive with 180% of Receive; same team buff/duration.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Counter Spark",
+        name: "A Counterattack",
         levels: {
-          "1": "If a teammate’s Receive result is BAD while HINATA (Hanami) is on the court, your side’s Attack Technique increases by 12% for 2 net crossings. If HINATA (Hanami) is in the back row, front-row allies gain +10% Defense Technique.",
-          "2": "If a teammate’s Receive result is BAD while HINATA (Hanami) is on the court, your side’s Attack Technique increases by 12% for 2 net crossings. If HINATA (Hanami) is in the back row, front-row allies gain +10% Defense Technique.",
-          "3": "If a teammate’s Receive result is BAD while HINATA (Hanami) is on the court, your side’s Attack Technique increases by 12% for 2 net crossings. If HINATA (Hanami) is in the back row, front-row allies gain +10% Defense Technique.",
+          "1": "If HINATA (Hanami) is in the back row, allied back-row Defense Technique +10%. While on court and a teammate’s Receive result is not BAD, HINATA’s Quick Attack +12% for 2 net crossings. If a teammate’s Receive is a Nice Play, HINATA’s first Quick after that gains +100% Awareness during that Quick.",
+          "2": "Back-row Defense Technique +13%. Quick Attack +16% on teammate’s non-BAD Receive. Same Awareness effect.",
+          "3": "Back-row Defense Technique +16%. Quick Attack +20% on teammate’s non-BAD Receive. Same Awareness effect.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Leap High",
+        name: "Jump High",
         levels: {
-          "1": "SHOYO HINATA (Hanami) performs a Quick Spike with 260% of his Quick Attack stat as power. If this play is a Nice Play, increases its power by an additional 40% of his Quick Attack stat.",
-          "2": "SHOYO HINATA (Hanami) performs a Quick Spike with 260% of his Quick Attack stat as power. If this play is a Nice Play, increases its power by an additional 40% of his Quick Attack stat.",
-          "3": "SHOYO HINATA (Hanami) performs a Quick Spike with 260% of his Quick Attack stat as power. If this play is a Nice Play, increases its power by an additional 40% of his Quick Attack stat.",
-          "4": undefined,
-          "5": undefined,
+          "1": "Performs a Quick Spike with 260% of Quick Attack. If Nice, additional +40% of Quick Attack as power.",
+          "2": "Performs a Quick Spike with 275% of Quick. If Nice, +45% Quick.",
+          "3": "Performs a Quick Spike with 290% of Quick. If Nice, +50% Quick.",
+          "4": "Performs a Quick Spike with 305% of Quick. If Nice, +55% Quick.",
+          "5": "Performs a Quick Spike with 320% of Quick. If Nice, +60% Quick.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "shoyo-hinata-sp",
+        name: "Weird Duo",
+        participants: ["shoyo-hinata-sp", "tobio-kageyama-ur"],
+        effect:
+          "When an ally activates a Receive skill, consume 1 stack of [Losing Hate] and the receiving ally gains +6% Reflex. If HINATA (Hanami) activates a Receive and [Losing Hate] is consumed, HINATA gains an additional +9% Reflex and KAGEYAMA gains 1 [Losing Hate] stack. When HINATA (Hanami) activates his special, KAGEYAMA gains 1 [Losing Hate] stack.",
+      },
+      {
+        to: "shoyo-hinata-sp",
+        name: "Cats & Crows in Summer",
+        participants: ["kenma-kozume-sp", "shoyo-hinata-sp"],
+        effect:
+          "After Kenma (SP) casts SNEAK DUMP, Hinata (SP) gains +12% Quick Attack for 1 rally.",
+      },
+    ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "SEIZE THE MOMENT modified: maximum stacks increased from 4 to 6.",
+          "HINATA (Hanami) Attack Technique +20%. If his Quick is a Nice Play, it cannot be blocked and reduces the opponents’ Awareness and Reflex by 10% for 3 net crossings. If the team scores on that Quick, reduce those stats by an additional 10% for 3 net crossings.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "When HINATA (Hanami) lands a Critical Quick Spike, reset LEAP HIGH cooldown.",
+          "HINATA (Hanami) Strength +30%. At match start, his Awareness is set to 0%; for every 1% reduced, his Strength increases by 2.5%. When his Quick becomes a Nice Play, Strength increases by Awareness ×40% (up to +60%).",
       },
       {
         level: "V",
         name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
     ],
     potentials: {
@@ -396,84 +415,92 @@ export const karasunoPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Ice-Cold Read",
+        name: "Excellent Brain",
         levels: {
-          "1": "While KEI TSUKISHIMA (Fireworks) is on the court, your front-row players’ Block power increases by 10% of their Block stat.",
-          "2": "While KEI TSUKISHIMA (Fireworks) is on the court, your front-row players’ Block power increases by 10% of their Block stat.",
-          "3": "While KEI TSUKISHIMA (Fireworks) is on the court, your front-row players’ Block power increases by 10% of their Block stat.",
+          "1": "If any opponent has a debuff: TSUKISHIMA (Fireworks) gains +15% Awareness and +15% Reflex; your allies gain +10% Attack Technique and +10% Defense Technique for 1 rally. When an ally activates a Block skill, TSUKISHIMA’s Quick Attack +3% (max 10 stacks). When an ally activates a Quick skill, TSUKISHIMA’s Block +3% (max 10 stacks).",
+          "2": "Same effects (values unchanged).",
+          "3": "Same effects (values unchanged).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Delayed Read",
+        name: "“Block is a System”",
         levels: {
-          "1": "KEI TSUKISHIMA (Fireworks) performs a Block with 200% of his Block stat as power; applies Enrage to the opposing spiker, reducing their Power/Quick Attack by 10% for 2 net crossings.",
-          "2": "KEI TSUKISHIMA (Fireworks) performs a Block with 200% of his Block stat as power; applies Enrage to the opposing spiker, reducing their Power/Quick Attack by 10% for 2 net crossings.",
-          "3": "KEI TSUKISHIMA (Fireworks) performs a Block with 200% of his Block stat as power; applies Enrage to the opposing spiker, reducing their Power/Quick Attack by 10% for 2 net crossings.",
+          "1": "Performs a Block with 300% of Block. Your back row gains +10% Reflex and +20% Spirit for 2 net crossings.",
+          "2": "Performs a Block with 300% of Block. Same team buffs.",
+          "3": "Performs a Block with 300% of Block. Same team buffs.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Calculated Pressure",
+        name: "Calm View of Battle",
         levels: {
-          "1": "When your side performs a Quick Spike, increases that spiker’s Awareness by 8% and reduces the opponent blockers’ Reflex by 5% for 2 net crossings.",
-          "2": "When your side performs a Quick Spike, increases that spiker’s Awareness by 8% and reduces the opponent blockers’ Reflex by 5% for 2 net crossings.",
-          "3": "When your side performs a Quick Spike, increases that spiker’s Awareness by 8% and reduces the opponent blockers’ Reflex by 5% for 2 net crossings.",
+          "1": "At match start: if Attack Technique ≥ Defense Technique, gains [Attack I]; otherwise gains [Defense I]. [Attack I]: reduce “Block is a System” cooldown by 4 net crossings; during Quick, Awareness increases by Reflex (up to +50%) for 2 net crossings; Quick +20%. [Defense I]: reduce “Spikes that Take Advantage of Height” cooldown by 2 net crossings; when Blocking, Reflex increases by Awareness (up to +50%) for 2 net crossings; Block +20%.",
+          "2": "Same as L1.",
+          "3": "Same as L1.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Moonlit Quick",
+        name: "Spikes that Take Advantage of Height",
         levels: {
-          "1": "KEI TSUKISHIMA (Fireworks) performs a Quick Spike with 235% of his Quick Attack stat as power; if the opponent’s receiver has a debuff, increases this spike’s power by an additional 20% of his Quick Attack stat.",
-          "2": "KEI TSUKISHIMA (Fireworks) performs a Quick Spike with 235% of his Quick Attack stat as power; if the opponent’s receiver has a debuff, increases this spike’s power by an additional 20% of his Quick Attack stat.",
-          "3": "KEI TSUKISHIMA (Fireworks) performs a Quick Spike with 235% of his Quick Attack stat as power; if the opponent’s receiver has a debuff, increases this spike’s power by an additional 20% of his Quick Attack stat.",
-          "4": undefined,
-          "5": undefined,
+          "1": "Performs a Quick Spike with 260% of Quick Attack. If any opponent has a debuff, additional +60% of Quick Attack as power.",
+          "2": "260% base; same conditional bonus.",
+          "3": "260% base; same conditional bonus.",
+          "4": "260% base; same conditional bonus.",
+          "5": "260% base; same conditional bonus.",
         },
       },
     ],
     bonds: [
       {
-        to: "tadashi-yamaguchi-sr",
-        name: "Shield and Spear",
-        participants: ["kei-tsukishima-ssr", "tadashi-yamaguchi-sr"],
+        to: "kei-tsukishima-sp",
+        name: "Sun & Moon",
+        participants: ["kei-tsukishima-sp", "shoyo-hinata-sp"],
         effect:
-          "Increases Kei Tsukishima's Block stat and Tadashi Yamaguchi's Serve stat",
+          "When TSUKISHIMA tosses to an ally, that ally’s Awareness +10/15/20/25/30% for 2 net crossings. If HINATA (Hanami) lands a Nice Quick, reduce JUMP HIGH cooldown by 2 net crossings and TSUKISHIMA (Fireworks) gains Awareness equal to 50% of HINATA’s Awareness (up to +50%) for 4 net crossings.",
+      },
+      {
+        to: "kei-tsukishima-sp",
+        name: "Fireworks display",
+        participants: ["tetsuro-kuroo-sp", "kei-tsukishima-sp"],
+        effect:
+          "Main parameters of allied members increase by +(Lv1: 6%, Lv2: 7%,Lv3: 8%,Lv4: 9%,Lv5: 10%). At the end of each rally, the opponent's front line will be inflicted with [Rage]. This lasts untils the ball crosses the net 8 times. If you inflict [Rage] on an enemy who already has [Rage], you will instead inflict [Distracted]. This lasts untils the ball crosses the net 8 times. The [Distracted] debuff cannot be removed.",
       },
     ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "DELAYED READ modified: Enrage also reduces the target’s Defense Technique by 10%.",
+          "If [Attack I]: Attack Technique +15% and Defense Technique +20%. If [Defense I]: Defense Technique +15% and Attack Technique +20%. EXCELLENT BRAIN broadened: his Quick/Block stack conditions also trigger when he touches the ball or when an opponent with a debuff touches the ball.",
       },
       {
         level: "III",
         name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "When scoring with MOONLIT QUICK, reset DELAYED READ cooldown.",
+        effect:
+          "Spirit and Strength +40%. If his Block is a Nice Play, that Block’s power +40% and gives the opposing vanguard [Enrage] (−10% Power/Quick). If his Quick is a Nice Play, that Quick’s power +40% and cannot be blocked.",
       },
       {
         level: "V",
         name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 13%.",
+        effect: "Main Parameters +13%.",
       },
     ],
     potentials: {
@@ -494,7 +521,7 @@ export const karasunoPlayers: Player[] = [
   // ======== ORDER: S -> OP -> LI -> WS -> MB ===============
   // =========================================================
 
-  // TOBIO KAGEYAMA UR (placeholder – leave for you to edit stats)
+  // TOBIO KAGEYAMA UR
   {
     id: "tobio-kageyama-ur",
     name: "Tobio Kageyama",
@@ -507,70 +534,107 @@ export const karasunoPlayers: Player[] = [
     server: "Japan",
     stats: {
       basic: {
-        quickAttack: 999,
-        powerAttack: 999,
-        set: 999,
-        serve: 999,
-        receive: 999,
-        block: 999,
-        save: 999,
+        quickAttack: 137,
+        powerAttack: 94,
+        set: 152,
+        serve: 145,
+        receive: 123,
+        block: 137,
+        save: 115,
       },
-      bonusAttack: { awareness: 0.99, strength: 0.99, attackTechnique: 0.99 },
-      bonusDefense: { reflex: 0.99, spirit: 0.99, defenseTechnique: 0.99 },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
       {
         key: "passive",
-        name: "",
+        name: "Genius Setter",
         levels: {
-          "1": undefined,
-          "2": undefined,
-          "3": undefined,
+          "1": "Performs a Set with 120% of Set. When KAGEYAMA tosses, the spiker’s Quick Attack increases by KAGEYAMA’s Set ×15% for 2 net crossings.",
+          "2": "Performs a Set with 135% of Set. Same Quick bonus.",
+          "3": "Performs a Set with 150% of Set. Same Quick bonus.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "",
+        name: "Murder Serve",
         levels: {
-          "1": undefined,
-          "2": undefined,
-          "3": undefined,
+          "1": "Performs a Power Jump Serve with 130% of Serve. If Nice, allies’ Attack Technique +10% for 6 net crossings.",
+          "2": "Performs a Power Jump Serve with 145% of Serve. If Nice, allies’ Attack Technique +10% for 6 net crossings.",
+          "3": "Performs a Power Jump Serve with 160% of Serve. If Nice, allies’ Attack Technique +10% for 6 net crossings.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "",
+        name: "The Quiet King",
         levels: {
-          "1": undefined,
-          "2": undefined,
-          "3": undefined,
+          "1": "Attack Technique +8%. While on court, if an opponent’s serve-to-attack Spike (Power/Quick) is a Nice Play, KAGEYAMA gains 1 stack of [Losing Hate] (max 5). At rally start, gains 1 stack. When an ally serves/attacks/spikes, consume 1 stack: that player gains +Awareness (20%) for 2 net crossings.",
+          "2": "Attack Technique +10%. …consume 1 stack: +25% Awareness for 2 net crossings.",
+          "3": "Attack Technique +12%. …consume 1 stack: +30% Awareness for 2 net crossings.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
-        key: "passive",
-        name: "",
+        key: "active",
+        name: "Dominate the Game",
         levels: {
-          "1": undefined,
-          "2": undefined,
-          "3": undefined,
-          "4": undefined,
-          "5": undefined,
+          "1": "Performs an unblockable Setter Dump (Two) with 240% of Set. While the opponent vanguard is on cooldown, increase cooldown progress counted for Block skills by +4 net crossings.",
+          "2": "Performs a Setter Dump with 255% of Set; same extra effect.",
+          "3": "Performs a Setter Dump with 270% of Set; same extra effect.",
+          "4": "Performs a Setter Dump with 285% of Set; same extra effect.",
+          "5": "Performs a Setter Dump with 300% of Set; same extra effect.",
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "tobio-kageyama-ur",
+        name: "Weird Duo",
+        participants: ["tobio-kageyama-ur", "shoyo-hinata-ssr"],
+        effect:
+          "KAGEYAMA tosses → HINATA performs a weird Quick with power [Quick]×(Lv1: 280%, Lv2: 295%, Lv3: 310%, Lv4: 325%, Lv5: 340%), unblocked. During this play, HINATA Awareness +30% and Strength + Awareness×(Lv1: 30%, Lv2: 35%, Lv3: 40%, Lv4: 45%, Lv5: 50%) (cap 60/70/80/90/100%). Reset when an ally scores. If [Losing Hate] is consumed on activation, KAGEYAMA gains 1 stack.",
+      },
+      {
+        to: "tobio-kageyama-ur",
+        name: "Karasuno's Geniuses",
+        participants: ["tobio-kageyama-ur", "yu-nishinoya-sp"],
+        effect:
+          "When YU NISHINOYA (After School) uses his special, KAGEYAMA gains 1 [Losing Hate] stack. If that play is a Nice Play, the first allied Spike afterward gains +20% of the spiker’s (Power/Quick) as bonus power.",
+      },
+    ],
     resonances: [
-      { level: "I", name: "", effect: "" },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "" },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "" },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main Parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "Strength +20%. When [Losing Hate] is consumed on a serve-to-attack Spike, that player gains an additional +15% Awareness for 2 net crossings. If KAGEYAMA’s own play consumes [Losing Hate], he gains 1 stack and the play’s power increases by the relevant parameter ×15%; allies’ Awareness +20% for 2 net crossings. If a player has ≥3 stacks of [Losing Hate], their Attack Technique +10% on this serve-to-attack Spike.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main Parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "Set +15%. While on court, when a teammate performs a Quick or Two, that player’s Strength increases by (KAGEYAMA Set / 500)×6% (up to +60%). When KAGEYAMA activates a skill, reduce his other skills’ cooldowns by 1 net crossing.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main Parameters +13%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -662,7 +726,7 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "shoyo-hinata-sr",
+        to: "tobio-kageyama-ssr",
         name: "Teammates on the Court",
         participants: ["tobio-kageyama-ssr", "shoyo-hinata-sr"],
         effect:
@@ -783,7 +847,7 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "asahi-azumane-ssr",
+        to: "daichi-sawamura-ssr",
         name: "Karasuno Senior Year",
         participants: [
           "daichi-sawamura-ssr",
@@ -794,7 +858,7 @@ export const karasunoPlayers: Player[] = [
           "Reduces Stamina consumption for your side's Spike skills; Increases Attack Technique when performing Power Spikes",
       },
       {
-        to: "chikara-ennoshita-sr",
+        to: "daichi-sawamura-ssr",
         name: "Karasuno's Pillar",
         participants: ["daichi-sawamura-ssr", "chikara-ennoshita-sr"],
         effect: "When achieving a PERFECT receive, increases Team Morale",
@@ -914,13 +978,13 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "ryunosuke-tanaka-ssr",
+        to: "yu-nishinoya-ssr",
         name: "Kiyoko's Knights",
         participants: ["yu-nishinoya-ssr", "ryunosuke-tanaka-ssr"],
         effect: "When scoring, increases Team Morale",
       },
       {
-        to: "asahi-azumane-ssr",
+        to: "yu-nishinoya-ssr",
         name: "Guardian Deity and Wing Spiker",
         participants: ["yu-nishinoya-ssr", "asahi-azumane-ssr"],
         effect:
@@ -1041,7 +1105,7 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "daichi-sawamura-ssr",
+        to: "asahi-azumane-ssr",
         name: "Karasuno Senior Year",
         participants: [
           "daichi-sawamura-ssr",
@@ -1052,7 +1116,7 @@ export const karasunoPlayers: Player[] = [
           "Reduces Stamina consumption for your side's Spike skills; Increases Attack Technique when performing Power Spikes",
       },
       {
-        to: "yu-nishinoya-ssr",
+        to: "asahi-azumane-ssr",
         name: "Guardian Deity and Wing Spiker",
         participants: ["yu-nishinoya-ssr", "asahi-azumane-ssr"],
         effect:
@@ -1132,7 +1196,7 @@ export const karasunoPlayers: Player[] = [
         levels: {
           "1": "Increases the power of RYUNOSUKE TANAKA's 1st Power Spike in each match by 25% of Power Attack stat",
           "2": "Increases the power of RYUNOSUKE TANAKA's 1st Power Spike in each match by 40% of Power Attack stat",
-          "3": "Increases the power of RYUNOSUKE TANAKA's 1st Power Spike in each match by 5% of Power Attack stat",
+          "3": "Increases the power of RYUNOSUKE TANAKA's 1st Power Spike in each match by 55% of Power Attack stat",
           "4": undefined,
           "5": undefined,
         },
@@ -1164,16 +1228,16 @@ export const karasunoPlayers: Player[] = [
         name: "Super Inner Cross",
         levels: {
           "1": "RYUNOSUKE TANAKA consumes 5 extra Stamina to perform a Short Diagonal Spike with 250% of Power Attack stat as power; when this is TANAKA's first spike in this set, increases spike power by an additional 30% of TANAKA's Power Attack stat",
-          "2": "RYUNOSUKE TANAKA consumes 5 extra Stamina to perform a Short Diagonal Spike with 260% of Power Attack stat as power; when this is TANAKA's first spike in this set, increases spike power by an additional 30% of TANAKA's Power Attack stat",
-          "3": "RYUNOSUKE TANAKA consumes 5 extra Stamina to perform a Short Diagonal Spike with 275% of Power Attack stat as power; when this is TANAKA's first spike in this set, increases spike power by an additional 30% of TANAKA's Power Attack stat",
-          "4": "RYUNOSUKE TANAKA consumes 5 extra Stamina to perform a Short Diagonal Spike with 290% of Power Attack stat as power; when this is TANAKA's first spike in this set, increases spike power by an additional 30% of TANAKA's Power Attack stat",
-          "5": "RYUNOSUKE TANAKA consumes 5 extra Stamina to perform a Short Diagonal Spike with 305% of Power Attack stat as power; when this is TANAKA's first spike in this set, increases spike power by an additional 30% of TANAKA's Power Attack stat",
+          "2": "Consumes 5 extra Stamina to perform a Short Diagonal Spike with 260% of Power Attack as power; if it is TANAKA's first spike this set, +30% Power Attack.",
+          "3": "Consumes 5 extra Stamina to perform a Short Diagonal Spike with 275% of Power Attack as power; if it is TANAKA's first spike this set, +30% Power Attack.",
+          "4": "Consumes 5 extra Stamina to perform a Short Diagonal Spike with 290% of Power Attack as power; if it is TANAKA's first spike this set, +30% Power Attack.",
+          "5": "Consumes 5 extra Stamina to perform a Short Diagonal Spike with 305% of Power Attack as power; if it is TANAKA's first spike this set, +30% Power Attack.",
         },
       },
     ],
     bonds: [
       {
-        to: "yu-nishinoya-ssr",
+        to: "ryunosuke-tanaka-ssr",
         name: "Kiyoko's Knights",
         participants: ["ryunosuke-tanaka-ssr", "yu-nishinoya-ssr"],
         effect: "When scoring, increases Team Morale",
@@ -1293,7 +1357,7 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "tadashi-yamaguchi-sr",
+        to: "kei-tsukishima-ssr",
         name: "Shield and Spear",
         participants: ["kei-tsukishima-ssr", "tadashi-yamaguchi-sr"],
         effect:
@@ -1412,7 +1476,22 @@ export const karasunoPlayers: Player[] = [
         },
       },
     ],
-    bonds: [],
+    bonds: [
+      {
+        to: "shoyo-hinata-ssr",
+        name: "Weird Duo",
+        participants: ["tobio-kageyama-ssr", "shoyo-hinata-ssr"],
+        effect:
+          "KAGEYAMA tosses → HINATA performs a weird Quick with [Quick]×(280/295/310/325/340%), unblocked. HINATA Awareness +30%; Strength + Awareness×(30–50%) (caps 60–100%). Reset when an ally scores. If [Losing Hate] is consumed on activation, KAGEYAMA gains 1 stack.",
+      },
+      {
+        to: "shoyo-hinata-ssr",
+        name: "Weird Duo",
+        participants: ["tobio-kageyama-ur", "shoyo-hinata-ssr"],
+        effect:
+          "Same weird Quick as above tied to KAGEYAMA (UR) toss; same Awareness/Strength scaling, unblocked, reset on allied score, and [Losing Hate] interaction.",
+      },
+    ],
     resonances: [
       {
         level: "I",
@@ -1531,7 +1610,7 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "asahi-azumane-ssr",
+        to: "koshi-sugawara-sr",
         name: "Karasuno Senior Year",
         participants: [
           "daichi-sawamura-ssr",
@@ -1636,8 +1715,8 @@ export const karasunoPlayers: Player[] = [
         name: "Captain's Coverage",
         levels: {
           "1": "DAICHI SAWAMURA (Practice) consumes 1 additional Stamina whenever he touches the ball. When your side scores, that player recovers 3 Stamina. While SAWAMURA is on the court, increases Receive power by 8% of the receiving player's Receive stat.",
-          "2": "DAICHI SAWAMURA (Practice) consumes 1 additional Stamina whenever he touches the ball. When your side scores, that player recovers 3 Stamina. While SAWAMURA is on the court, increases Receive power by 10% of the receiving player's Receive stat.",
-          "3": "DAICHI SAWAMURA (Practice) consumes 1 additional Stamina whenever he touches the ball. When your side scores, that player recovers 3 Stamina. While SAWAMURA is on the court, increases Receive power by 12% of the receiving player's Receive stat.",
+          "2": "Consumes 1 additional Stamina on touch; when your side scores, that player recovers 3 Stamina. While SAWAMURA is on court, Receive power +10% of receiver’s Receive.",
+          "3": "Consumes 1 additional Stamina on touch; when your side scores, that player recovers 3 Stamina. While SAWAMURA is on court, Receive power +12% of receiver’s Receive.",
           "4": undefined,
           "5": undefined,
         },
@@ -1647,10 +1726,10 @@ export const karasunoPlayers: Player[] = [
         name: "Precision Receptor",
         levels: {
           "1": "DAICHI SAWAMURA (Practice) performs a Receive with 215% of Receive stat as power, when your side's player next casts an attack skill, increases the power of his touch by 10% of the player's corresponding stat.",
-          "2": "DAICHI SAWAMURA (Practice) performs a Receive with 230% of Receive stat as power, when your side's player next casts an attack skill, increases the power of his touch by 10% of the player's corresponding stat.",
-          "3": "DAICHI SAWAMURA (Practice) performs a Receive with 245% of Receive stat as power, when your side's player next casts an attack skill, increases the power of his touch by 10% of the player's corresponding stat.",
-          "4": "DAICHI SAWAMURA (Practice) performs a Receive with 260% of Receive stat as power, when your side's player next casts an attack skill, increases the power of his touch by 10% of the player's corresponding stat.",
-          "5": "DAICHI SAWAMURA (Practice) performs a Receive with 275% of Receive stat as power, when your side's player next casts an attack skill, increases the power of his touch by 10% of the player's corresponding stat.",
+          "2": "Performs a Receive with 230% of Receive; next allied attack gains +10% of the attacker’s corresponding stat.",
+          "3": "Performs a Receive with 245% of Receive; next allied attack gains +10% of the attacker’s corresponding stat.",
+          "4": "Performs a Receive with 260% of Receive; next allied attack gains +10% of the attacker’s corresponding stat.",
+          "5": "Performs a Receive with 275% of Receive; next allied attack gains +10% of the attacker’s corresponding stat.",
         },
       },
     ],
@@ -1769,14 +1848,14 @@ export const karasunoPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "asahi-azumane-sr",
+        to: "yu-nishinoya-sr",
         name: "Guardian Deity and Ace",
         participants: ["yu-nishinoya-sr", "asahi-azumane-sr"],
         effect:
           "When YU NISHINOYA (Practice) or ASAHI AZUMANE (Practice) casts a skill, increases their Attack Technique and Defense Technique",
       },
       {
-        to: "ryunosuke-tanaka-sr",
+        to: "yu-nishinoya-sr",
         name: "Karasuno's Sophomore",
         participants: [
           "ryunosuke-tanaka-sr",
@@ -1869,8 +1948,8 @@ export const karasunoPlayers: Player[] = [
         name: "Provocative Nature",
         levels: {
           "1": "RYUNOSUKE TANAKA (Practice) performs a Power Spike with 115% of Power Attack stat as power; applies [Taunt] Debuff to opponent's receiving player (lasts 2 net crossings), reducing their receive power by 3% of their Receive stat",
-          "2": "RYUNOSUKE TANAKA (Practice) performs a Power Spike with 130% of Power Attack stat as power; applies [Taunt] Debuff to opponent's receiving player (lasts 2 net crossings), reducing their receive power by 4% of their Receive stat",
-          "3": "RYUNOSUKE TANAKA (Practice) performs a Power Spike with 145% of Power Attack stat as power; applies [Taunt] Debuff to opponent's receiving player (lasts 2 net crossings), reducing their receive power by 5% of their Receive stat",
+          "2": "Performs a Power Spike with 130% of Power Attack as power; applies [Taunt] (2 crossings), reducing receiver’s power by 4% of their Receive stat.",
+          "3": "Performs a Power Spike with 145% of Power Attack as power; applies [Taunt] (2 crossings), reducing receiver’s power by 5% of their Receive stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -1879,36 +1958,25 @@ export const karasunoPlayers: Player[] = [
         key: "passive",
         name: "Continuous Growth",
         levels: {
-          "1": 'RYUNOSUKE TANAKA (Practice) receives 1 stacks of "Progress" after a Receive; each stack increases RYUNOSUKE TANAKA (Practice)\'s Receive stat by 4%, up to 3 stacks',
-          "2": 'RYUNOSUKE TANAKA (Practice) receives 1 stacks of "Progress" after a Receive; each stack increases RYUNOSUKE TANAKA (Practice)\'s Receive stat by 5%, up to 3 stacks',
-          "3": 'RYUNOSUKE TANAKA (Practice) receives 1 stacks of "Progress" after a Receive; each stack increases RYUNOSUKE TANAKA (Practice)\'s Receive stat by 6%, up to 3 stacks',
+          "1": 'After a Receive, TANAKA gains 1 stack of "Progress" (Receive +4% per stack, max 3 stacks).',
+          "2": 'After a Receive, TANAKA gains 1 stack of "Progress" (Receive +4% per stack, max 3 stacks).',
+          "3": 'After a Receive, TANAKA gains 1 stack of "Progress" (Receive +4% per stack, max 3 stacks).',
           "4": undefined,
           "5": undefined,
         },
       },
-      {
-        key: "passive",
-        name: "Stalwart Receives",
-        levels: {
-          "1": "RYUNOSUKE TANAKA (Practice) performs a Receive with 215% of Receive stat as power; when receiving an Opponent's Quick Attack, TANAKA (Practice)'s Reflex increases by 5%",
-          "2": "RYUNOSUKE TANAKA (Practice) performs a Receive with 230% of Receive stat as power; when receiving an Opponent's Quick Attack, TANAKA (Practice)'s Reflex increases by 5%",
-          "3": "RYUNOSUKE TANAKA (Practice) performs a Receive with 245% of Receive stat as power; when receiving an Opponent's Quick Attack, TANAKA (Practice)'s Reflex increases by 5%",
-          "4": "RYUNOSUKE TANAKA (Practice) performs a Receive with 260% of Receive stat as power; when receiving an Opponent's Quick Attack, TANAKA (Practice)'s Reflex increases by 5%",
-          "5": "RYUNOSUKE TANAKA (Practice) performs a Receive with 275% of Receive stat as power; when receiving an Opponent's Quick Attack, TANAKA (Practice)'s Reflex increases by 5%",
-        },
-      },
     ],
     bonds: [
-      //{
-      //to: "yu-nishinoya-sr",
-      //name: "Karasuno's Sophomore",
-      // participants: [
-      // "ryunosuke-tanaka-sr",
-      //"yu-nishinoya-sr",
-      //"chikara-ennoshita-r",
-      //],
-      // effect: "Increases Receive stat of back row players",
-      // },
+      {
+        to: "ryunosuke-tanaka-sr",
+        name: "Karasuno's Sophomore",
+        participants: [
+          "ryunosuke-tanaka-sr",
+          "yu-nishinoya-sr",
+          "chikara-ennoshita-sr",
+        ],
+        effect: "Increases Receive stat of back row players",
+      },
     ],
     resonances: [
       {
@@ -1919,8 +1987,7 @@ export const karasunoPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          'CONTINUOUS GROWTH effect change: each stack of "Progress" increases both Receive and Power Attack stats.',
+        effect: "Increases Basic Stats by 6%.",
       },
       {
         level: "III",
@@ -1930,8 +1997,7 @@ export const karasunoPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect:
-          "STALWART RECEIVE new effect: increases RYUNOSUKE TANAKA (Practice)'s Spirit by 10% during this Receive.",
+        effect: "Increases Basic Stats by 6%.",
       },
       {
         level: "V",
@@ -1951,83 +2017,83 @@ export const karasunoPlayers: Player[] = [
     },
     memory: { name: "", effect: "" },
   },
-
-  // CHIKARA ENNOSHITA SR (WS)
+  // SHOYO HINATA SR (MB)
   {
-    id: "chikara-ennoshita-sr",
-    name: "Chikara Ennoshita",
-    shortName: "Ennoshita",
+    id: "shoyo-hinata-sr",
+    name: "Shoyo Hinata",
+    shortName: "Hinata",
     team: "Karasuno",
     rarity: "SR",
-    roles: ["WS"],
-    typeTags: ["Receive"],
-    image: "/characters/karasuno/chikara-ennoshita-sr.jpg",
+    roles: ["MB"],
+    typeTags: ["Quick Attack"],
+    image: "/characters/karasuno/shoyo-hinata-sr.jpg",
     server: "Global",
     stats: {
       basic: {
-        quickAttack: 61,
-        powerAttack: 89,
-        set: 79,
+        quickAttack: 92,
+        powerAttack: 66,
+        set: 78,
         serve: 84,
-        receive: 98,
-        block: 89,
-        save: 85,
+        receive: 90,
+        block: 96,
+        save: 88,
       },
-      bonusAttack: { awareness: 0.0, strength: 0.0, attackTechnique: 0.0 },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
       bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
       {
+        key: "passive",
+        name: "Quick Learner",
+        levels: {
+          "1": "Quick Attack +6%. If the setter is Quick-type, Hinata’s Quick +6% for 1 rally.",
+          "2": "Quick Attack +7.5%. If the setter is Quick-type, Hinata’s Quick +7.5% for 1 rally.",
+          "3": "Quick Attack +9%. If the setter is Quick-type, Hinata’s Quick +9% for 1 rally.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
         key: "active",
-        name: "Forceful Spike",
+        name: "Mini-Quick",
         levels: {
-          "1": "CHIKARA ENNOSHITA performs a Power Spike with 120% of his Power Attack stat.",
-          "2": "CHIKARA ENNOSHITA performs a Power Spike with 135% of his Power Attack stat.",
-          "3": "CHIKARA ENNOSHITA performs a Power Spike with 150% of his Power Attack stat.",
+          "1": "Performs a Quick Spike with 115% of Quick Attack.",
+          "2": "Performs a Quick Spike with 130% of Quick Attack.",
+          "3": "Performs a Quick Spike with 145% of Quick Attack.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Carry the Torch",
+        name: "Decoy Instinct (SR)",
         levels: {
-          "1": "While CHIKARA ENNOSHITA is present, at the start of each turn, there is a 30% chance to remove 1 debuff from players on your side.",
-          "2": "While CHIKARA ENNOSHITA is present, at the start of each turn, there is a 45% chance to remove 1 debuff from players on your side.",
-          "3": "While CHIKARA ENNOSHITA is present, at the start of each turn, there is a 60% chance to remove 1 debuff from players on your side.",
+          "1": "While on court, allies’ Awareness +4%.",
+          "2": "While on court, allies’ Awareness +5.5%.",
+          "3": "While on court, allies’ Awareness +7%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Rising Leader",
+        name: "First Step",
         levels: {
-          "1": "While CHIKARA ENNOSHITA is on the court, when your side loses a point, the next spike from your side gains additional power equal to 8% of the spiker's Power/Quick Attack stat. If the spike is a Power Spike skill, its power increases further by 6% of the spiker's Power Attack stat.",
-          "2": "While CHIKARA ENNOSHITA is on the court, when your side loses a point, the next spike from your side gains additional power equal to 10% of the spiker's Power/Quick Attack stat. If the spike is a Power Spike skill, its power increases further by 6% of the spiker's Power Attack stat.",
-          "3": "While CHIKARA ENNOSHITA is on the court, when your side loses a point, the next spike from your side gains additional power equal to 12% of the spiker's Power/Quick Attack stat. If the spike is a Power Spike skill, its power increases further by 6% of the spiker's Power Attack stat.",
+          "1": "At rally start, Hinata Awareness +4% for 2 net crossings (max 1 stack).",
+          "2": "At rally start, Awareness +5% for 2 net crossings (max 1).",
+          "3": "At rally start, Awareness +6% for 2 net crossings (max 1).",
           "4": undefined,
           "5": undefined,
-        },
-      },
-      {
-        key: "pasive",
-        name: "Fighting Spirit",
-        levels: {
-          "1": "CHIKARA ENNOSHITA performs a Receive with 220% of his Receive stat",
-          "2": "CHIKARA ENNOSHITA performs a Receive with 235% of his Receive stat",
-          "3": "CHIKARA ENNOSHITA performs a Receive with 250% of his Receive stat",
-          "4": "CHIKARA ENNOSHITA performs a Receive with 265% of his Receive stat",
-          "5": "CHIKARA ENNOSHITA performs a Receive with 280% of his Receive stat",
         },
       },
     ],
     bonds: [
       {
-        to: "daichi-sawamura-ssr",
-        name: "Karasuno's Pillar",
-        participants: ["daichi-sawamura-ssr", "chikara-ennoshita-sr"],
-        effect: "When achieving a PERFECT receive, increases Team Morale",
+        to: "shoyo-hinata-sr",
+        name: "Teammates on the Court",
+        participants: ["tobio-kageyama-ssr", "shoyo-hinata-sr"],
+        effect:
+          "If KAGEYAMA (SSR) is on court, when HINATA (SR) casts a Quick Spike, HINATA’s Awareness increases during that play.",
       },
     ],
     resonances: [
@@ -2039,128 +2105,7 @@ export const karasunoPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "RISING LEADER new effect: reduces your side's next Power Spike Stamina consumption by 10% and cooldown by 2 net crossings.",
-      },
-      {
-        level: "III",
-        name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
-      },
-      {
-        level: "IV",
-        name: "Skill Resonance IV",
-        effect: "When casting FIGHTING SPIRIT, trigger RISING LEADER 1 time.",
-      },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
-    ],
-    potentials: {
-      recommended: {
-        primaryType: "",
-        primaryCount: 4,
-        secondaryType: "",
-        secondaryCount: 2,
-        reason: "",
-      },
-      equipped: [],
-    },
-    memory: { name: "", effect: "" },
-  },
-
-  // ASAHI AZUMANE SR (WS)
-  {
-    id: "asahi-azumane-sr",
-    name: "Asahi Azumane",
-    shortName: "Asahi",
-    team: "Karasuno",
-    rarity: "SR",
-    roles: ["WS"],
-    typeTags: ["Serve", "Power Attack"],
-    image: "/characters/karasuno/asahi-azumane-sr.jpg",
-    server: "Global",
-    stats: {
-      basic: {
-        quickAttack: 68,
-        powerAttack: 98,
-        set: 79,
-        serve: 94,
-        receive: 89,
-        block: 84,
-        save: 80,
-      },
-      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
-      bonusDefense: { reflex: 0.09, spirit: 0.0, defenseTechnique: 0.0 },
-    },
-    skills: [
-      {
-        key: "passive",
-        name: "Cannon Spike",
-        levels: {
-          "1": "Increases ASAHI AZUMANE (Practice)'s Power Attack stat by 10%",
-          "2": "Increases ASAHI AZUMANE (Practice)'s Power Attack stat by 12%",
-          "3": "Increases ASAHI AZUMANE (Practice)'s Power Attack stat by 14%",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
-      {
-        key: "passive",
-        name: "Pressure Field",
-        levels: {
-          "1": "When ASAHI AZUMANE (Practice) scores with Power Spike, reduces opponent's receiving players' Receive stat by 7%, lasting for 4 net crossings",
-          "2": "When ASAHI AZUMANE (Practice) scores with Power Spike, reduces opponent's receiving players' Receive stat by 9.5%, lasting for 4 net crossings",
-          "3": "When ASAHI AZUMANE (Practice) scores with Power Spike, reduces opponent's receiving players' Receive stat by 12%, lasting for 4 net crossings",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
-      {
-        key: "passive",
-        name: "Advantage Pressure",
-        levels: {
-          "1": "When your side is leading in points, increases ASAHI AZUMANE (Practice)'s Power Spike power by 10% of Power Attack stat",
-          "2": "When your side is leading in points, increases ASAHI AZUMANE (Practice)'s Power Spike power by 12.5% of Power Attack stat",
-          "3": "When your side is leading in points, increases ASAHI AZUMANE (Practice)'s Power Spike power by 15% of Power Attack stat",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
-      {
-        key: "active",
-        name: "Exhaust Spike",
-        levels: {
-          "1": "ASAHI AZUMANE (Practice) consumes 3 additional Stamina to perform a Power Spike with 225% of Power Attack stat as power",
-          "2": "ASAHI AZUMANE (Practice) consumes 3 additional Stamina to perform a Power Spike with 240% of Power Attack stat as power",
-          "3": "ASAHI AZUMANE (Practice) consumes 3 additional Stamina to perform a Power Spike with 255% of Power Attack stat as power",
-          "4": "ASAHI AZUMANE (Practice) consumes 3 additional Stamina to perform a Power Spike with 270% of Power Attack stat as power",
-          "5": "ASAHI AZUMANE (Practice) consumes 3 additional Stamina to perform a Power Spike with 285% of Power Attack stat as power",
-        },
-      },
-    ],
-    bonds: [
-      {
-        to: "yu-nishinoya-sr",
-        name: "Guardian Deity and Ace",
-        participants: ["asahi-azumane-sr", "yu-nishinoya-sr"],
-        effect:
-          "When YU NISHINOYA (Practice) or ASAHI AZUMANE (Practice) casts a skill, increases their Attack Technique and Defense Technique",
-      },
-    ],
-    resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
-      {
-        level: "II",
-        name: "Skill Resonance II",
-        effect:
-          "When scoring with EXHAUST SPIKE, reduces EXHAUST SPIKE cooldown by 4 net crossings.",
+        effect: "MINI-QUICK power +10%.",
       },
       {
         level: "III",
@@ -2171,7 +2116,7 @@ export const karasunoPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "EXHAUST SPIKE new effect: When the opponent's receiver has a debuff, reduces their Receive power by 10% of his Receive stat.",
+          "When Hinata’s Quick is a Nice Play, allies’ Awareness +6% for 2 net crossings.",
       },
       {
         level: "V",
@@ -2200,188 +2145,75 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Quick Attack", "Block"],
+    typeTags: ["Block", "Quick Attack"],
     image: "/characters/karasuno/kei-tsukishima-sr.jpg",
     server: "Global",
     stats: {
       basic: {
-        quickAttack: 94,
-        powerAttack: 64,
-        set: 82,
+        quickAttack: 90,
+        powerAttack: 62,
+        set: 80,
         serve: 86,
-        receive: 83,
-        block: 99,
-        save: 78,
+        receive: 88,
+        block: 102,
+        save: 86,
       },
       bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
       bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
       {
-        key: "active",
-        name: "Elevated Strike",
-        levels: {
-          "1": "KEI TSUKISHIMA (Practice) performs a Quick Spike with 110% of Quick Attack stat as power",
-          "2": "KEI TSUKISHIMA (Practice) performs a Quick Spike with 120% of Quick Attack stat as power",
-          "3": "KEI TSUKISHIMA (Practice) performs a Quick Spike with 140% of Quick Attack stat as power",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
-      {
         key: "passive",
-        name: "Block Tactician",
+        name: "Long Reach",
         levels: {
-          "1": "Increases KEI TSUKISHIMA (Practice)'s Block stat by 6%; when he performs a Block, increases his Reflex by 5%",
-          "2": "Increases KEI TSUKISHIMA (Practice)'s Block stat by 7.5%; when he performs a Block, increases his Reflex by 5%",
-          "3": "Increases KEI TSUKISHIMA (Practice)'s Block stat by 9%; when he performs a Block, increases his Reflex by 5%",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
-      {
-        key: "passive",
-        name: "Quick Attack Strategy",
-        levels: {
-          "1": "Increases KEI TSUKISHIMA (Practice)'s Quick Attack stat by 6%; when he performs a Quick Spike, increases his Awareness by 5%",
-          "2": "Increases KEI TSUKISHIMA (Practice)'s Quick Attack stat by 7.5%; when he performs a Quick Spike, increases his Awareness by 5%",
-          "3": "Increases KEI TSUKISHIMA (Practice)'s Quick Attack stat by 9%; when he performs a Quick Spike, increases his Awareness by 5%",
+          "1": "Block +6%.",
+          "2": "Block +7.5%.",
+          "3": "Block +9%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Delayed Block",
+        name: "Timing Block",
         levels: {
-          "1": "KEI TSUKISHIMA (Practice) performs a Block with 180% of Block stat as power",
-          "2": "KEI TSUKISHIMA (Practice) performs a Block with 195% of Block stat as power",
-          "3": "KEI TSUKISHIMA (Practice) performs a Block with 210% of Block stat as power",
-          "4": "KEI TSUKISHIMA (Practice) performs a Block with 225% of Block stat as power",
-          "5": "KEI TSUKISHIMA (Practice) performs a Block with 240% of Block stat as power",
-        },
-      },
-    ],
-    bonds: [],
-    resonances: [
-      {
-        level: "I",
-        name: "Skill Resonance I",
-        effect: "Increases Basic Stats by 6%.",
-      },
-      {
-        level: "II",
-        name: "Skill Resonance II",
-        effect:
-          "While KEI TSUKISHIMA (Practice) is present, increases Block stat of your side's front row players by 5%.",
-      },
-      {
-        level: "III",
-        name: "Skill Resonance III",
-        effect: "Increases Basic Stats by 6%.",
-      },
-      {
-        level: "IV",
-        name: "Skill Resonance IV",
-        effect:
-          "DELAYED BLOCK new effect (1 time per match): when the opponent performs a Power Spike, this Block will result in at least NORMAL. and applies the [Enrage] Debuff to the spiker, reducing their Power/Quick Attack stats by 10%",
-      },
-      {
-        level: "V",
-        name: "Skill Resonance V",
-        effect: "Increases Basic Stats by 6%.",
-      },
-    ],
-    potentials: {
-      recommended: {
-        primaryType: "",
-        primaryCount: 4,
-        secondaryType: "",
-        secondaryCount: 2,
-        reason: "",
-      },
-      equipped: [],
-    },
-    memory: { name: "", effect: "" },
-  },
-
-  // SHOYO HINATA SR (MB)
-  {
-    id: "shoyo-hinata-sr",
-    name: "Shoyo Hinata",
-    shortName: "Hinata",
-    team: "Karasuno",
-    rarity: "SR",
-    roles: ["MB"],
-    typeTags: ["Quick Attack"],
-    image: "/characters/karasuno/shoyo-hinata-sr.jpg",
-    server: "Global",
-    stats: {
-      basic: {
-        quickAttack: 98,
-        powerAttack: 67,
-        set: 79,
-        serve: 83,
-        receive: 84,
-        block: 88,
-        save: 89,
-      },
-      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
-      bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
-    },
-    skills: [
-      {
-        key: "passive",
-        name: "Relentless Runner",
-        levels: {
-          "1": "Increases SHOYO HINATA (Practice)'s Quick Attack stat by 10%",
-          "2": "Increases SHOYO HINATA (Practice)'s Quick Attack stat by 12%",
-          "3": "Increases SHOYO HINATA (Practice)'s Quick Attack stat by 14%",
+          "1": "Performs a Block with 115% of Block; if Nice, opposing spiker’s Power/Quick −5% for 2 net crossings.",
+          "2": "Performs a Block with 130% of Block; same debuff.",
+          "3": "Performs a Block with 145% of Block; same debuff.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Undying Spirit",
+        name: "Calm Analysis (SR)",
         levels: {
-          "1": 'When SHOYO HINATA (Practice) scores, players on your side receive "Spike Intuition" 1 (lasts for 8 net crossings), increasing Spike power by 6% of the player\'s Power/Quick Attack stat',
-          "2": 'When SHOYO HINATA (Practice) scores, players on your side receive "Spike Intuition" 1 (lasts for 8 net crossings), increasing Spike power by 7.5% of the player\'s Power/Quick Attack stat',
-          "3": 'When SHOYO HINATA (Practice) scores, players on your side receive "Spike Intuition" 1 (lasts for 8 net crossings), increasing Spike power by 9% of the player\'s Power/Quick Attack stat',
+          "1": "Attack Technique +3%; Defense Technique +3%.",
+          "2": "Attack Technique +4%; Defense Technique +4%.",
+          "3": "Attack Technique +5%; Defense Technique +5%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Above the Block",
+        name: "Quiet Retort",
         levels: {
-          "1": "When SHOYO HINATA (Practice) performs a Quick Spike, reduces opponent's blocking power by 7% of the blocking player's Block stat.",
-          "2": "When SHOYO HINATA (Practice) performs a Quick Spike, reduces opponent's blocking power by 9.5% of the blocking player's Block stat.",
-          "3": "When SHOYO HINATA (Practice) performs a Quick Spike, reduces opponent's blocking power by 12% of the blocking player's Block stat.",
+          "1": "When an opponent Spike is a Nice Play, reduce TIMING BLOCK cooldown by 2 net crossings.",
+          "2": "When an opponent Spike is a Nice Play, reduce TIMING BLOCK cooldown by 3 net crossings.",
+          "3": "When an opponent Spike is a Nice Play, reduce TIMING BLOCK cooldown by 4 net crossings.",
           "4": undefined,
           "5": undefined,
-        },
-      },
-      {
-        key: "active",
-        name: "Super Quick Attack",
-        levels: {
-          "1": "SHOYO HINATA (Practice) performs a Quick Spike with 215% of Quick Attack stat as power; for this Quick Spike, HINATA (Practice)'s Strength increases by 10%",
-          "2": "SHOYO HINATA (Practice) performs a Quick Spike with 230% of Quick Attack stat as power; for this Quick Spike, HINATA (Practice)'s Strength increases by 10%",
-          "3": "SHOYO HINATA (Practice) performs a Quick Spike with 245% of Quick Attack stat as power; for this Quick Spike, HINATA (Practice)'s Strength increases by 10%",
-          "4": "SHOYO HINATA (Practice) performs a Quick Spike with 260% of Quick Attack stat as power; for this Quick Spike, HINATA (Practice)'s Strength increases by 10%",
-          "5": "SHOYO HINATA (Practice) performs a Quick Spike with 275% of Quick Attack stat as power; for this Quick Spike, HINATA (Practice)'s Strength increases by 10%",
         },
       },
     ],
     bonds: [
       {
-        to: "tobio-kageyama-ssr",
-        name: "Teammates on the Court",
-        participants: ["tobio-kageyama-ssr", "shoyo-hinata-sr"],
+        to: "kei-tsukishima-sr",
+        name: "Reliable Upperclassman",
+        participants: ["kei-tsukishima-sr", "chikara-ennoshita-sr"],
         effect:
-          "When casting Quick Spike skills increases this player's Awareness",
+          "When ENNOSHITA (SR) casts a Receive, TSUKISHIMA (SR) gains +8% Block for 2 net crossings. When TSUKISHIMA blocks, ENNOSHITA’s next Receive +8%.",
       },
     ],
     resonances: [
@@ -2393,8 +2225,7 @@ export const karasunoPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect:
-          "When SHOYO HINATA (Practice) scores with a Quick Spike, increases your Team Morale by 15.",
+        effect: "LONG REACH additionally gives +3% Awareness.",
       },
       {
         level: "III",
@@ -2405,7 +2236,7 @@ export const karasunoPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "SUPER QUICK ATTACK new effect: Increases SHOYO HINATA (Practice)'s Strength by an additional 20% during this Quick Spike.",
+          "If TIMING BLOCK is a Nice Play, the debuff also reduces opponent Reflex −6% for 2 net crossings.",
       },
       {
         level: "V",
@@ -2434,88 +2265,88 @@ export const karasunoPlayers: Player[] = [
     team: "Karasuno",
     rarity: "SR",
     roles: ["MB"],
-    typeTags: ["Serve"],
+    typeTags: ["Serve", "Block"],
     image: "/characters/karasuno/tadashi-yamaguchi-sr.jpg",
     server: "Global",
     stats: {
       basic: {
-        quickAttack: 88,
-        powerAttack: 60,
-        set: 93,
-        serve: 99,
-        receive: 80,
-        block: 88,
-        save: 75,
+        quickAttack: 78,
+        powerAttack: 85,
+        set: 78,
+        serve: 98,
+        receive: 84,
+        block: 90,
+        save: 84,
       },
-      bonusAttack: { awareness: 0.0, strength: 0.0, attackTechnique: 0.0 },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
       bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
       {
         key: "passive",
-        name: "Serve Stability",
+        name: "Float Serve Trainee",
         levels: {
-          "1": "When TADASHI YAMAGUCHI's Serve results in a PERFECT, increases its power by 20% of his Serve stat. When it results in a BAD, reduces its power by 20% of his Serve stat.",
-          "2": "When TADASHI YAMAGUCHI's Serve results in a PERFECT, increases its power by 25% of his Serve stat. When it results in a BAD, reduces its power by 25% of his Serve stat.",
-          "3": "When TADASHI YAMAGUCHI's Serve results in a PERFECT, increases its power by 30 his Serve stat. When it results in a BAD, reduces its power by 30% of his Serve stat.",
+          "1": "Serve +8%; if his Serve is a Nice Play, next allied Spike +6% power.",
+          "2": "Serve +10%; if Nice, next allied Spike +8% power.",
+          "3": "Serve +12%; if Nice, next allied Spike +10% power.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Jump Float Serve",
+        levels: {
+          "1": "Performs a Serve with 130% of Serve; opposing receiver’s Receive −5% for 2 net crossings.",
+          "2": "Performs a Serve with 145% of Serve; opposing receiver’s Receive −6% for 2 net crossings.",
+          "3": "Performs a Serve with 160% of Serve; opposing receiver’s Receive −7% for 2 net crossings.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Spotlight Serve",
+        name: "Guts",
         levels: {
-          "1": "Increases the power of TADASHI YAMAGUCHI's 1st Serve in each match by 15% of his Serve stat. Also increases his Awareness by 15% for that serve.",
-          "2": "Increases the power of TADASHI YAMAGUCHI's 1st Serve in each match by 30% of his Serve stat. Also increases his Awareness by 15% for that serve.",
-          "3": "Increases the power of TADASHI YAMAGUCHI's 1st Serve in each match by 45% of his Serve stat. Also increases his Awareness by 15% for that serve.",
+          "1": "When entering the court, recovers 10 Stamina and Serve +6% for 3 rallies.",
+          "2": "When entering the court, recovers 12 Stamina and Serve +8% for 3 rallies.",
+          "3": "When entering the court, recovers 14 Stamina and Serve +10% for 3 rallies.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Point by Point",
+        name: "Pinch Server",
         levels: {
-          "1": "Increases TADASHI YAMAGUCHI's Serve stat by 10%",
-          "2": "Increases TADASHI YAMAGUCHI's Serve stat by 12%",
-          "3": "Increases TADASHI YAMAGUCHI's Serve stat by 14%",
+          "1": "If an ally is below 50 Stamina at rally start, YAMAGUCHI’s Serve +8% for this rally.",
+          "2": "…Serve +10% for this rally.",
+          "3": "…Serve +12% for this rally.",
           "4": undefined,
           "5": undefined,
-        },
-      },
-      {
-        key: "pasive",
-        name: "Defiant Float",
-        levels: {
-          "1": "TADASHI YAMAGUCHI performs a Jump Float Serve with 210% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat.",
-          "2": "TADASHI YAMAGUCHI performs a Jump Float Serve with 225% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat.",
-          "3": "TADASHI YAMAGUCHI performs a Jump Float Serve with 240% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat.",
-          "4": "TADASHI YAMAGUCHI performs a Jump Float Serve with 255% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat.",
-          "5": "TADASHI YAMAGUCHI performs a Jump Float Serve with 270% of his Serve stat as power. If your side is behind, this serve's power is additionally increased by 25% of his Serve stat.",
         },
       },
     ],
     bonds: [
       {
-        to: "kei-tsukishima-ssr",
-        name: "Shield and Spear",
-        participants: ["kei-tsukishima-ssr", "tadashi-yamaguchi-sr"],
+        to: "tadashi-yamaguchi-sr",
+        name: "Reliable Upperclassman",
+        participants: ["tadashi-yamaguchi-sr", "chikara-ennoshita-sr"],
         effect:
-          "Increases Kei Tsukishima's Block stat and Tadashi Yamaguchi's Serve stat",
+          "When YAMAGUCHI (SR) serves, ENNOSHITA (SR) recovers 6 Stamina; if the serve is a Nice Play, ENNOSHITA’s next Receive +10%. When ENNOSHITA receives, YAMAGUCHI’s next Serve +10%.",
       },
     ],
     resonances: [
       {
         level: "I",
         name: "Skill Resonance I",
-        effect: " Increases Basic Stats by 6%.",
+        effect: "Increases Basic Stats by 6%.",
       },
       {
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "SPOTLIGHT SERVE effect change: applies to the first 2 Serves of the match.",
+          "JUMP FLOAT SERVE also reduces the target’s Reflex −5% for 2 net crossings.",
       },
       {
         level: "III",
@@ -2526,7 +2357,255 @@ export const karasunoPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "DEFIANT FLOAT new effect: when scoring with DEFIANT FLOAT, resets its cooldown and receives 1 stacks of \"Supporting Hand\" Each stack increases your side's front row players' Awareness by 10% during Quick Attacks and Reflex by 10% when blocking, up to 2 stats.",
+          "When a serve by YAMAGUCHI is a Nice Play, next allied Spike cooldown −4 net crossings.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 6%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
+  // CHIKARA ENNOSHITA SR (WS)
+  {
+    id: "chikara-ennoshita-sr",
+    name: "Chikara Ennoshita",
+    shortName: "Ennoshita",
+    team: "Karasuno",
+    rarity: "SR",
+    roles: ["WS"],
+    typeTags: ["Receive", "Power Attack"],
+    image: "/characters/karasuno/chikara-ennoshita-sr.jpg",
+    server: "Global",
+    stats: {
+      basic: {
+        quickAttack: 70,
+        powerAttack: 94,
+        set: 82,
+        serve: 88,
+        receive: 96,
+        block: 86,
+        save: 90,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Acting Captain",
+        levels: {
+          "1": "While on court, allies recover +2 Stamina at rally end.",
+          "2": "While on court, allies recover +3 Stamina at rally end.",
+          "3": "While on court, allies recover +4 Stamina at rally end.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Steady Receive",
+        levels: {
+          "1": "Receive +8%.",
+          "2": "Receive +10%.",
+          "3": "Receive +12%.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Calm Direction",
+        levels: {
+          "1": "When a teammate scores, that scorer gains +4% Attack Technique for 2 net crossings.",
+          "2": "When a teammate scores, that scorer gains +5% Attack Technique for 2 net crossings.",
+          "3": "When a teammate scores, that scorer gains +6% Attack Technique for 2 net crossings.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Reliable Cover",
+        levels: {
+          "1": "Performs a Receive with 120% of Receive; the next allied Spike +8% power.",
+          "2": "Performs a Receive with 135% of Receive; next allied Spike +10% power.",
+          "3": "Performs a Receive with 150% of Receive; next allied Spike +12% power.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "chikara-ennoshita-sr",
+        name: "Reliable Upperclassman",
+        participants: ["chikara-ennoshita-sr", "kei-tsukishima-sr"],
+        effect:
+          "When ENNOSHITA (SR) receives, TSUKISHIMA (SR) Block +8% for 2 net crossings. When TSUKISHIMA blocks, ENNOSHITA’s next Receive +8%.",
+      },
+      {
+        to: "chikara-ennoshita-sr",
+        name: "Reliable Upperclassman",
+        participants: ["chikara-ennoshita-sr", "tadashi-yamaguchi-sr"],
+        effect:
+          "When ENNOSHITA (SR) receives, YAMAGUCHI’s next Serve +10%. When YAMAGUCHI serves a Nice Play, ENNOSHITA recovers 6 Stamina.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: "RELIABLE COVER also grants +5% Awareness to the next spiker.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When a back-row ally performs a Receive (not BAD), that ally recovers +3 Stamina.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 6%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
+  // ASAHI AZUMANE SR (WS)
+  {
+    id: "asahi-azumane-sr",
+    name: "Asahi Azumane",
+    shortName: "Asahi",
+    team: "Karasuno",
+    rarity: "SR",
+    roles: ["WS"],
+    typeTags: ["Power Attack", "Serve"],
+    image: "/characters/karasuno/asahi-azumane-sr.jpg",
+    server: "Global",
+    stats: {
+      basic: {
+        quickAttack: 72,
+        powerAttack: 98,
+        set: 80,
+        serve: 92,
+        receive: 90,
+        block: 86,
+        save: 84,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Aspirant Ace",
+        levels: {
+          "1": "Power Attack +6%. If Stamina > 70, Power Spike power +6% of Power Attack.",
+          "2": "Power Attack +7.5%. If Stamina > 70, Power Spike power +8% of Power Attack.",
+          "3": "Power Attack +9%. If Stamina > 70, Power Spike power +10% of Power Attack.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Solid First Touch",
+        levels: {
+          "1": "Receive +6%; first Receive in each set +15% power.",
+          "2": "Receive +7.5%; first Receive in each set +20% power.",
+          "3": "Receive +9%; first Receive in each set +25% power.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Bullet Serve (SR)",
+        levels: {
+          "1": "Performs a Jump Serve with 120% of Serve.",
+          "2": "Performs a Jump Serve with 135% of Serve.",
+          "3": "Performs a Jump Serve with 150% of Serve.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Firm Strike",
+        levels: {
+          "1": "Performs a Power Spike with 115% of Power Attack; if Nice, +15% additional power of Power Attack.",
+          "2": "Performs a Power Spike with 130% of Power Attack; if Nice, +15% additional power.",
+          "3": "Performs a Power Spike with 145% of Power Attack; if Nice, +15% additional power.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "asahi-azumane-sr",
+        name: "Guardian Deity and Ace",
+        participants: ["asahi-azumane-sr", "yu-nishinoya-sr"],
+        effect:
+          "When ASAHI (SR) or NISHINOYA (SR) casts a skill, both gain a small boost to Attack Technique and Defense Technique.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "FIRM STRIKE additional power on Nice increased by +5% of Power Attack.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 6%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When ASAHI scores with a Power Spike, next allied Receive +8% for 2 net crossings.",
       },
       {
         level: "V",

@@ -29,11 +29,11 @@ export const inarizakiPlayers: Player[] = [
       // 試合運び／柔軟さ
       {
         key: "passive",
-        name: "Flexible Offense",
+        name: "Unconventional Play",
         levels: {
-          "1": "Atsumu’s [Quick Attack] +10%. For every 1% Stamina lost this set, Atsumu’s [Attack Technique] +1% (caps at +10%).",
-          "2": "Atsumu’s [Quick Attack] +12%. Each 1% Stamina lost this set grants +1.2% [Attack Technique] (caps at +12%).",
-          "3": "Atsumu’s [Quick Attack] +14%. Each 1% Stamina lost this set grants +1.5% [Attack Technique] (caps at +15%).",
+          "1": "When serving: if aiming at a weak-defense zone, this serve gains +30% of Serve as bonus power; otherwise, allies’ back-row Receive +10% for 1 rally.",
+          "2": "When serving: if aiming at a weak-defense zone, this serve gains +40% of Serve as bonus power; otherwise, allies’ back-row Receive +12% for 1 rally.",
+          "3": "When serving: if aiming at a weak-defense zone, this serve gains +50% of Serve as bonus power; otherwise, allies’ back-row Receive +14% for 1 rally.",
           "4": undefined,
           "5": undefined,
         },
@@ -41,11 +41,11 @@ export const inarizakiPlayers: Player[] = [
       // 冷静なジャンプサーブ
       {
         key: "passive",
-        name: "Calm Jump Serve",
+        name: "Polite Toss",
         levels: {
-          "1": "Performs a Jump Serve with [Serve] x120%. If an ally is receiving this rally, Atsumu’s [Attack Technique] +10% for the receive.",
-          "2": "Jump Serve [Serve] x135%. Same +10% [Attack Technique] clause.",
-          "3": "Jump Serve [Serve] x150%. Same +10% [Attack Technique] clause.",
+          "1": "Performs a Set with Set ×125%. Cleanses all debuffs on the spiker for that attack.",
+          "2": "Performs a Set with Set ×140%. Cleanses all debuffs on the spiker.",
+          "3": "Performs a Set with Set ×155%. Cleanses all debuffs on the spiker.",
           "4": undefined,
           "5": undefined,
         },
@@ -53,11 +53,11 @@ export const inarizakiPlayers: Player[] = [
       // マルチな能力
       {
         key: "passive",
-        name: "Versatile Ability",
+        name: "Sincere & Dedicated Toss",
         levels: {
-          "1": "Atsumu’s [Attack Technique] +1%. When Atsumu serves or receives, inflict 1 stack of “Unstable” on one front-row opponent (Receive -10%). Lasts until 8 net crossings or cleansed.",
-          "2": "Atsumu’s [Attack Technique] +1.2%. Same “Unstable” (Receive -10%).",
-          "3": "Atsumu’s [Attack Technique] +1.5%. Same “Unstable” (Receive -10%).",
+          "1": "Toss +8%. If an ally’s play is not NICE, gain 2 stacks of “Donpishari” (Toss +2% per stack, max 10). When a Toss consumes stacks, spikers gain Attack Technique +2.5% and Quick Attack +2.5% per stack consumed (lasts 10 net crossings).",
+          "2": "Toss +11%. Same Donpishari (Toss +2%/stack, max 10). Same per-stack team buffs on consumption.",
+          "3": "Toss +14%. Same Donpishari (Toss +2%/stack, max 10). Same per-stack team buffs on consumption.",
           "4": undefined,
           "5": undefined,
         },
@@ -65,13 +65,13 @@ export const inarizakiPlayers: Player[] = [
       // 意地のある速攻（必殺）
       {
         key: "active",
-        name: "Assured Set Attack",
+        name: "Two-Way Serve",
         levels: {
-          "1": "Atsumu converts the pass into a Set Attack with [Set] x260%; during this play, Atsumu’s [Attack Technique] +40%. Lasts 2 net crossings.",
-          "2": "[Set] x275%; same +40% [Attack Technique].",
-          "3": "[Set] x290%; same +40% [Attack Technique].",
-          "4": "[Set] x305%; same +40% [Attack Technique].",
-          "5": "[Set] x320%; same +40% [Attack Technique].",
+          "1": "Alternates Jump Float Serve and Spike Serve. • Jump Float: Serve ×230%, disables opponents’ Power/Quick spikes until the ball crosses the net twice. • Spike Serve: Serve ×260%, Atsumu’s Awareness +1% per 3 team morale (lasts until the ball crosses the net twice).",
+          "2": "Alternates Jump Float Serve and Spike Serve. • Jump Float: Serve ×245%, disables opponents’ Power/Quick spikes (2 crossings). • Spike Serve: Serve ×275%, Awareness +1% per 3 team morale (2 crossings).",
+          "3": "Alternates Jump Float Serve and Spike Serve. • Jump Float: Serve ×260%, disables opponents’ Power/Quick spikes (2 crossings). • Spike Serve: Serve ×290%, Awareness +1% per 3 team morale (2 crossings).",
+          "4": "Alternates Jump Float Serve and Spike Serve. • Jump Float: Serve ×275%, disables opponents’ Power/Quick spikes (2 crossings). • Spike Serve: Serve ×305%, Awareness +1% per 3 team morale (2 crossings).",
+          "5": "Alternates Jump Float Serve and Spike Serve. • Jump Float: Serve ×290%, disables opponents’ Power/Quick spikes (2 crossings). • Spike Serve: Serve ×320%, Awareness +1% per 3 team morale (2 crossings).",
         },
       },
     ],
@@ -81,12 +81,14 @@ export const inarizakiPlayers: Player[] = [
         name: "Strongest High School Twins",
         participants: ["atsumu-miya-ur", "osamu-miya-ur"],
         effect:
-          "Atsumu sets, and Osamu performs a Quick Attack with [Quick Attack] x (Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). Osamu’s [Attack Technique] +15% while this link persists (ends if either twin leaves the court). Unblockable.",
+          "Atsumu raises the toss and Osamu performs a twin minus-tempo Quick with Quick Attack ×(Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). Osamu’s Attack Technique +15% while both remain on court. Unblockable.",
       },
       {
-        to: "miya-atsumu-ur",
+        to: "atsumu-miya-ur",
         name: "Head and Main Axis",
         participants: ["atsumu-miya-ur", "osamu-miya-ur", "shinsuke-kita-ssr"],
+        effect:
+          "Osamu’s Attack Technique +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%); Shinsuke Kita’s main parameters +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%). At match start: Atsumu gains 3 stacks of Donpishari (Toss +2%/stack, max 10); Kita gains 1 stack of “Sure Action” (Receive +2%/stack, max 3). Osamu’s first Quick each set gains +12% of Quick Attack as power.",
       },
     ],
     resonances: [
@@ -98,7 +100,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Serve effects improved and duration +1 crossing.",
+        effect:
+          "Atsumu’s Strength +30%. On participation, gain 5 stacks of Donpishari (Toss +2% per stack, max 10).",
       },
       {
         level: "III",
@@ -109,7 +112,7 @@ export const inarizakiPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "On scoring with Assured Set Attack: gain 2 stacks of “Attack Tempo”.",
+          "Donpishari improves: Toss gains an additional +3% per stack. When Donpishari is consumed, immediately gain 5 Donpishari stacks (Toss +2%/stack, max 10).",
       },
       {
         level: "V",
@@ -157,61 +160,63 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Steady Tempo",
+        name: "Flexible Attack",
         levels: {
-          "1": "Osamu’s [Quick Attack] +10%. When Osamu touches the ball, gain 1 stack of “Heat Up” (Quick Attack +1%, up to 6 stacks).",
-          "2": "Osamu’s [Quick Attack] +12%. Each touch grants +1.2% (cap 6 stacks).",
-          "3": "Osamu’s [Quick Attack] +14%. Each touch grants +1.5% (cap 6 stacks).",
+          "1": "Quick Attack +10%. At match start, Awareness is reduced to 0%; for every 1% reduced, Attack Technique +1%.",
+          "2": "Quick Attack +12%. Same Awareness-to-Attack-Tech scaling (+1% per 1%).",
+          "3": "Quick Attack +14%. Same Awareness-to-Attack-Tech scaling (+1% per 1%).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Careful Set",
+        name: "Calm Jump Serve",
         levels: {
-          "1": "Performs a Set with [Set] x125%; cleanses all debuffs on the spiker for that attack.",
-          "2": "Performs a Set with [Set] x140%; cleanses debuffs.",
-          "3": "Performs a Set with [Set] x155%; cleanses debuffs.",
+          "1": "Jump Serve with Serve ×120%. If the receiver has “Suppression”, Osamu’s Attack Technique +10% (lasts 8 net crossings).",
+          "2": "Jump Serve with Serve ×135%. Same +10% Attack Technique if receiver has Suppression (8 crossings).",
+          "3": "Jump Serve with Serve ×150%. Same +10% Attack Technique if receiver has Suppression (8 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Composed Serve",
+        name: "Multi-Ability",
         levels: {
-          "1": "If Osamu serves, allies’ next receive gains power +10% of their [Receive].",
-          "2": "If Osamu serves, allies’ next receive gains power +12% of their [Receive].",
-          "3": "If Osamu serves, allies’ next receive gains power +14% of their [Receive].",
+          "1": "Attack Technique +10%. On Osamu’s Quick or Serve, inflict 1 stack of “Suppression” on the opponent’s back row (Receive -10%), lasting 10 net crossings.",
+          "2": "Attack Technique +13%. Same Suppression infliction (Receive -10%, 10 crossings).",
+          "3": "Attack Technique +16%. Same Suppression infliction (Receive -10%, 10 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Technique-Weighted Spike",
+        name: "Flexible Quick",
         levels: {
-          "1": "Power Spike with [Power Attack] x260%; during this spike, Osamu’s [Attack Technique] +40%. Lasts 2 net crossings.",
-          "2": "[Power Attack] x275%; same +40% [Attack Technique].",
-          "3": "[Power Attack] x290%; same +40% [Attack Technique].",
-          "4": "[Power Attack] x305%; same +40% [Attack Technique].",
-          "5": "[Power Attack] x320%; same +40% [Attack Technique].",
+          "1": "Quick Attack ×260%; during this play, Quick power gains +40% of Attack Technique. Lasts until the ball crosses the net twice.",
+          "2": "Quick Attack ×275%; same +40% of Attack Technique (2 crossings).",
+          "3": "Quick Attack ×290%; same +40% of Attack Technique (2 crossings).",
+          "4": "Quick Attack ×305%; same +40% of Attack Technique (2 crossings).",
+          "5": "Quick Attack ×320%; same +40% of Attack Technique (2 crossings).",
         },
       },
     ],
     bonds: [
       {
-        to: "atsumu-miya-ur",
+        to: "osamu-miya-ur",
         name: "Strongest High School Twins",
         participants: ["atsumu-miya-ur", "osamu-miya-ur"],
         effect:
-          "Atsumu sets, and Osamu performs a Quick Attack with [Quick Attack] x (Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). Osamu’s [Attack Technique] +15% while this link persists. Unblockable.",
+          "Atsumu raises the toss and Osamu performs a twin minus-tempo Quick with Quick Attack ×(Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). Osamu’s Attack Technique +15% while both remain on court. Unblockable.",
       },
       {
-        to: "miya-atsumu-ur",
+        to: "osamu-miya-ur",
         name: "Head and Main Axis",
         participants: ["atsumu-miya-ur", "osamu-miya-ur", "shinsuke-kita-ssr"],
+        effect:
+          "Osamu’s Attack Technique +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%); Shinsuke Kita’s main parameters +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%). At match start: Atsumu gains 3 stacks of Donpishari (Toss +2%/stack, max 10); Kita gains 1 stack of “Sure Action” (Receive +2%/stack, max 3). Osamu’s first Quick each set gains +12% of Quick Attack as power.",
       },
     ],
     resonances: [
@@ -223,7 +228,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Careful Set cleanses and grants +10% Awareness to the spiker.",
+        effect:
+          "When Osamu performs a Quick, if the receiver has “Suppression”, that Quick gains +60% of Quick Attack as bonus power.",
       },
       {
         level: "III",
@@ -234,7 +240,7 @@ export const inarizakiPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "On scoring with Technique-Weighted Spike: gain 2 stacks of “Heat Up”.",
+          "After Osamu scores with a Quick: for the next two ally specials, the caster gains +20% Attack Technique and +20% Defense Technique.",
       },
       {
         level: "V",
@@ -282,56 +288,56 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Reliable Captain",
+        name: "Repeat. Continue. Courteous.",
         levels: {
-          "1": "Kita’s main parameters +6%. His plays never result in a Miss; Kita’s [Defense Technique] scales with [Reflex] (+8%).",
-          "2": "Kita’s main parameters +7.5%. Plays never Miss; [Defense Technique] scales (+9.5%).",
-          "3": "Kita’s main parameters +9%. Plays never Miss; [Defense Technique] scales (+11%).",
+          "1": "Main parameters +6%. Kita’s plays never Miss. Defense Technique increases by 80% of Reflex.",
+          "2": "Main parameters +8%. Plays never Miss. Defense Technique increases by 80% of Reflex.",
+          "3": "Main parameters +10%. Plays never Miss. Defense Technique increases by 80% of Reflex.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Calm Cover",
+        name: "Calm Play",
         levels: {
-          "1": "Performs a Cover with [Save] x120%.",
-          "2": "Cover [Save] x135%.",
-          "3": "Cover [Save] x150%.",
+          "1": "Covers with Save ×120%.",
+          "2": "Covers with Save ×135%.",
+          "3": "Covers with Save ×150%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "‘Do It Properly’",
+        name: "“Do It Properly”",
         levels: {
-          "1": "Kita’s [Receive] +8%. On PERFECT Receive, grant “Reliable Support” to allies (Receive +3%, Strength +3%) for 4 net crossings.",
-          "2": "Kita’s [Receive] +9.5%. PERFECT: allies Receive/Strength +4%.",
-          "3": "Kita’s [Receive] +11%. PERFECT: allies Receive/Strength +5%.",
+          "1": "Receive +8%. If Kita’s Receive is not NICE, gain 1 stack of “Sure Action” (Receive +3%/stack, max 3). At 3 stacks, consume them to grant the vanguard Attack Technique +10% (lasts 8 net crossings).",
+          "2": "Receive +10%. Same Sure Action (Receive +3%/stack, max 3) and 3-stack consumption effect.",
+          "3": "Receive +12%. Same Sure Action (Receive +3%/stack, max 3) and 3-stack consumption effect.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Steadfast Play",
+        name: "Solid Play",
         levels: {
-          "1": "Receive with [Receive] x235%.",
-          "2": "Receive with [Receive] x250%.",
-          "3": "Receive with [Receive] x265%.",
-          "4": "Receive with [Receive] x280%.",
-          "5": "Receive with [Receive] x295%.",
+          "1": "Receive with Receive ×235%.",
+          "2": "Receive with Receive ×250%.",
+          "3": "Receive with Receive ×265%.",
+          "4": "Receive with Receive ×280%.",
+          "5": "Receive with Receive ×295%.",
         },
       },
     ],
     bonds: [
       {
-        to: "miya-atsumu-ur",
+        to: "shinsuke-kita-ssr",
         name: "Head and Main Axis",
         participants: ["atsumu-miya-ur", "osamu-miya-ur", "shinsuke-kita-ssr"],
         effect:
-          "While all three are on court, the Miya twins’ spike power +10% and Kita’s Receives grant +1 stack of “Attack Tempo”.",
+          "Osamu’s Attack Technique +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%); Shinsuke Kita’s main parameters +(Lv1: 3%, Lv2: 3.5%, Lv3: 4%, Lv4: 4.5%, Lv5: 5%). At match start: Atsumu gains 3 stacks of Donpishari (Toss +2%/stack, max 10); Kita gains 1 stack of “Sure Action” (Receive +2%/stack, max 3). Osamu’s first Quick each set gains +12% of Quick Attack as power.",
       },
     ],
     resonances: [
@@ -343,7 +349,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Steadfast Play grants allies +10% [Reflex] for 4 crossings.",
+        effect:
+          "“Properly” trigger change: gain “Sure Action” when a teammate’s Receive is not NICE (instead of only Kita’s).",
       },
       {
         level: "III",
@@ -353,7 +360,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "On PERFECT Receive: immediately +1 “Attack Tempo” (team).",
+        effect:
+          "On non-missed Receive by Kita: team morale +10. While Kita is on court, when an ally uses a special, that ally restores 10 Stamina.",
       },
       {
         level: "V",
@@ -401,46 +409,46 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Seal the Angles",
+        name: "Seal the Course",
         levels: {
-          "1": "Suna’s [Block] +10%. While on court, if the opponent’s front row aims Power/Receive lines, your blocker’s [Block] +15%.",
-          "2": "Suna’s [Block] +12%. Same line-seal bonus +17%.",
-          "3": "Suna’s [Block] +14%. Same line-seal bonus +19%.",
+          "1": "Block +10%. While Suna is on court, if the opposing spiker has “Confusion”, allied blockers’ Block +15% against that spiker.",
+          "2": "Block +12%. Same bonus +20% if the target has Confusion.",
+          "3": "Block +14%. Same bonus +25% if the target has Confusion.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Solid Block",
+        name: "Skilled Block",
         levels: {
-          "1": "Block with [Block] x120%.",
-          "2": "Block with [Block] x135%.",
-          "3": "Block with [Block] x150%.",
+          "1": "Blocks with Block ×120%.",
+          "2": "Blocks with Block ×135%.",
+          "3": "Blocks with Block ×150%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Mind Games",
+        name: "Opposite-Read Attack",
         levels: {
-          "1": "Suna’s [Quick Attack] +10%. On his attacks, apply 1 stack of “Irritation” to the opposing front row (each stack: Block Power -10%), lasting 8 net crossings.",
-          "2": "Suna’s [Quick Attack] +12%. Irritation stacks as above.",
-          "3": "Suna’s [Quick Attack] +14%. Irritation stacks as above.",
+          "1": "Quick Attack +10%. On Suna’s Quick, inflict 1 stack of “Confusion” on the opponent’s vanguard (Block -10% per stack), lasting 8 net crossings.",
+          "2": "Quick Attack +12%. Same Confusion application (Block -10%, 8 crossings).",
+          "3": "Quick Attack +14%. Same Confusion application (Block -10%, 8 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Unexpected Quick",
+        name: "Wide-Point Quick",
         levels: {
-          "1": "Quick Spike with [Quick Attack] x240%.",
-          "2": "Quick Spike with [Quick Attack] x255%.",
-          "3": "Quick Spike with [Quick Attack] x270%.",
-          "4": "Quick Spike with [Quick Attack] x285%.",
-          "5": "Quick Spike with [Quick Attack] x300%.",
+          "1": "Quick Attack ×240%.",
+          "2": "Quick Attack ×255%.",
+          "3": "Quick Attack ×270%.",
+          "4": "Quick Attack ×285%.",
+          "5": "Quick Attack ×300%.",
         },
       },
     ],
@@ -455,7 +463,7 @@ export const inarizakiPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "On PERFECT Block: next ally spike power +8% of the spiker’s [Power Attack].",
+          "When Suna uses a special, inflict 1 stack of “Confusion” on the opponent’s vanguard (Block -10%, lasts 8 net crossings).",
       },
       {
         level: "III",
@@ -465,7 +473,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "Unexpected Quick becomes unblockable once per set.",
+        effect:
+          "On successful Quick: gain +7% Attack Technique (max 5 stacks).",
       },
       {
         level: "V",
@@ -513,11 +522,11 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Rhythm Tuning",
+        name: "Rhythm Adjustment",
         levels: {
-          "1": "Whenever Aran spends 10 Stamina, gain 1 stack of “Rhythm Time” (Attack Technique +3%). When serving, consume 1 stack to increase this serve’s power (+10% of [Serve]).",
-          "2": "Stacks grant +3.5% Attack Technique; serve bonus +12%.",
-          "3": "Stacks grant +4% Attack Technique; serve bonus +14%.",
+          "1": "For every 10 Stamina Aran spends, gain 1 stack of “Breathing Time” (Attack Technique +3% per stack). At rally end, consume all stacks; per stack consumed, restore 4 Stamina.",
+          "2": "Stacks grant +3.5% Attack Technique; same Stamina restore on consumption.",
+          "3": "Stacks grant +4% Attack Technique; same Stamina restore on consumption.",
           "4": undefined,
           "5": undefined,
         },
@@ -526,33 +535,33 @@ export const inarizakiPlayers: Player[] = [
         key: "passive",
         name: "High-Quality Serve",
         levels: {
-          "1": "Jump Serve with [Serve] x110%. Reduces the receiving opponent’s [Receive] by 10% for this rally.",
-          "2": "Jump Serve [Serve] x125%. Reduce [Receive] -12%.",
-          "3": "Jump Serve [Serve] x140%. Reduce [Receive] -14%.",
+          "1": "Jump Serve with Serve ×110%; receiver’s Receive -10% for this rally (lasts up to 6 net crossings).",
+          "2": "Jump Serve with Serve ×125%; receiver’s Receive -10% (up to 6 crossings).",
+          "3": "Jump Serve with Serve ×140%; receiver’s Receive -10% (up to 6 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Aggressive Offense",
+        name: "Aggressive Attack",
         levels: {
-          "1": "Aran’s [Power Attack] +6% and [Serve] +6%. If Aran attacks while under 60% Stamina, this spike’s power +30%.",
-          "2": "Aran’s [Power Attack] +7.5% and [Serve] +7.5%. Under 60% Stamina: +33%.",
-          "3": "Aran’s [Power Attack] +9% and [Serve] +9%. Under 60% Stamina: +36%.",
+          "1": "Power Attack +6% and Serve +6%. When Aran attacks, he may consume 60% of current Stamina; this spike gains +30% of Power Attack as bonus power.",
+          "2": "Power Attack +8% and Serve +8%. Consuming Stamina grants +40% bonus power.",
+          "3": "Power Attack +10% and Serve +10%. Consuming Stamina grants +50% bonus power.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Heavy Spike",
+        name: "Roaring Spikes",
         levels: {
-          "1": "Power Spike with [Power Attack] x240%.",
-          "2": "Power Spike with [Power Attack] x255%.",
-          "3": "Power Spike with [Power Attack] x270%.",
-          "4": "Power Spike with [Power Attack] x285%.",
-          "5": "Power Spike with [Power Attack] x300%.",
+          "1": "Power Spike ×240%.",
+          "2": "Power Spike ×255%.",
+          "3": "Power Spike ×270%.",
+          "4": "Power Spike ×285%.",
+          "5": "Power Spike ×300%.",
         },
       },
     ],
@@ -566,7 +575,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "On Critical Power Spike: reduce blockers’ Stamina by 5.",
+        effect:
+          "At rally start, gain 3 stacks of “Breathing Time” (Attack Technique increases per stack).",
       },
       {
         level: "III",
@@ -576,7 +586,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "First Jump Serve each set gains +15% power.",
+        effect:
+          "Up to twice per rally, when an ally restores Stamina and Aran is on court, Aran restores 8 Stamina.",
       },
       {
         level: "V",
@@ -624,46 +635,46 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Steady Defense",
+        name: "Stable Offense & Defense",
         levels: {
-          "1": "Ginjima’s [Power Attack] +6% and [Receive] +6%.",
-          "2": "Ginjima’s [Power Attack] +7.5% and [Receive] +7.5%.",
-          "3": "Ginjima’s [Power Attack] +9% and [Receive] +9%.",
+          "1": "Power Attack +6% and Receive +6%. On Receive vs a Power Spike, this Receive gains +15% of Receive as bonus power.",
+          "2": "Power Attack +8% and Receive +8%. Versus Power Spike: +25% of Receive.",
+          "3": "Power Attack +10% and Receive +10%. Versus Power Spike: +35% of Receive.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Boosted Receive",
+        name: "Powerful Reception",
         levels: {
-          "1": "Receive with [Receive] x120%.",
-          "2": "Receive with [Receive] x135%.",
-          "3": "Receive with [Receive] x150%.",
+          "1": "Receive with Receive ×120%.",
+          "2": "Receive with Receive ×135%.",
+          "3": "Receive with Receive ×150%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Offensive Response",
+        name: "Responsible & Eager Attack",
         levels: {
-          "1": "For each back-row receiver on your side, Ginjima’s [Attack Technique] +2%. If an ally’s Receive is not BAD or worse, Ginjima’s [Strength] +5% (4 crossings).",
-          "2": "Per back-row receiver: +2.5% [Attack Technique]; good Receive → [Strength] +6.5%.",
-          "3": "Per back-row receiver: +3% [Attack Technique]; good Receive → [Strength] +8%.",
+          "1": "Per friendly back-row receiver: Attack Technique +2%. If an ally’s Receive is not BAD, Ginjima’s Power Attack +15% (4 net crossings).",
+          "2": "Per friendly back-row receiver: Attack Technique +2.5%. Good Receive → Power Attack +15% (4 crossings).",
+          "3": "Per friendly back-row receiver: Attack Technique +3%. Good Receive → Power Attack +15% (4 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Forceful Shot",
+        name: "Powerful Shot",
         levels: {
-          "1": "Power Spike with [Power Attack] x235%; if Ginjima is on court’s back row beforehand, this spike gets +30% [Power Attack] as bonus power.",
-          "2": "Power Spike x250%; same +30% clause.",
-          "3": "Power Spike x265%; same +30% clause.",
-          "4": "Power Spike x280%; same +30% clause.",
-          "5": "Power Spike x295%; same +30% clause.",
+          "1": "Power Spike ×225%. If Ginjima is in the back row, this spike gains +30% of Power Attack as bonus power.",
+          "2": "Power Spike ×240%. Same +30% if back row.",
+          "3": "Power Spike ×255%. Same +30% if back row.",
+          "4": "Power Spike ×270%. Same +30% if back row.",
+          "5": "Power Spike ×285%. Same +30% if back row.",
         },
       },
     ],
@@ -677,7 +688,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Back-row Power Spike bonus +10% extra.",
+        effect:
+          "Ginjima’s Receive +15%. His first Receive in each set cannot concede a point.",
       },
       {
         level: "III",
@@ -687,7 +699,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "On PERFECT Receive: next ally spike +8% Awareness.",
+        effect:
+          "While on court: if a teammate’s Receive result is not BAD, Ginjima’s Awareness +12% for 1 rally.",
       },
       {
         level: "V",
@@ -735,11 +748,11 @@ export const inarizakiPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Morale-Boosting Cover",
+        name: "Morale-Boosting Covers",
         levels: {
-          "1": "Akagi’s [Receive] and [Cover] +10%. When Akagi Performs a Receive or Cover, allies’ Team Morale +10.",
-          "2": "Akagi’s [Receive]/[Cover] +12%. Same team morale +10.",
-          "3": "Akagi’s [Receive]/[Cover] +14%. Same team morale +10.",
+          "1": "Receive and Cover +8%. When Akagi Receives or Covers, team morale +10.",
+          "2": "Receive and Cover +10%. When he Receives or Covers, team morale +10.",
+          "3": "Receive and Cover +12%. When he Receives or Covers, team morale +10.",
           "4": undefined,
           "5": undefined,
         },
@@ -748,33 +761,33 @@ export const inarizakiPlayers: Player[] = [
         key: "passive",
         name: "Reliable Libero",
         levels: {
-          "1": "Cover with [Save] x120%. When Akagi Covers, allies’ “Defense Technique” +4% (6 net crossings).",
-          "2": "Cover [Save] x135%. Buff +5.5%.",
-          "3": "Cover [Save] x150%. Buff +7%.",
+          "1": "Covers with Save ×120%. Allies’ Defense Technique +4% (6 net crossings).",
+          "2": "Covers with Save ×135%. Allies’ Defense Technique +6% (6 crossings).",
+          "3": "Covers with Save ×150%. Allies’ Defense Technique +8% (6 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Never Let It Drop",
+        name: "Chasing the Ball",
         levels: {
-          "1": "Akagi’s [Receive] +10%. While Akagi is on court, on every opponent’s Quick Spike, apply 1 stack of “Pursuit” (up to 3): with 1/2/3 stacks, your side’s next receive power +4%/+8%/+12%. Lasts 5 net crossings.",
-          "2": "Akagi’s [Receive] +12%. Pursuit provides +5%/+9%/+13%.",
-          "3": "Akagi’s [Receive] +14%. Pursuit provides +6%/+10%/+14%.",
+          "1": "Receive +10%. While Akagi is on court, apply 1 stack of “Looming” to opposing Power Spikers (each stack: Power Attack -8%) for 3 net crossings. If the target already has Looming, your side’s Defense Technique +8% for 3 crossings.",
+          "2": "Receive +12%. Looming reduces Power Attack -10%/stack (3 crossings). If already Looming: your side’s Defense Technique +8% (3 crossings).",
+          "3": "Receive +14%. Looming reduces Power Attack -12%/stack (3 crossings). If already Looming: your side’s Defense Technique +8% (3 crossings).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Steady Receive",
+        name: "Grit Reception",
         levels: {
-          "1": "Receive with [Receive] x240%.",
-          "2": "Receive with [Receive] x255%.",
-          "3": "Receive with [Receive] x270%.",
-          "4": "Receive with [Receive] x285%.",
-          "5": "Receive with [Receive] x300%.",
+          "1": "Receive with Receive ×240%.",
+          "2": "Receive with Receive ×255%.",
+          "3": "Receive with Receive ×270%.",
+          "4": "Receive with Receive ×285%.",
+          "5": "Receive with Receive ×300%.",
         },
       },
     ],
@@ -788,7 +801,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "II",
         name: "Skill Resonance II",
-        effect: "Akagi’s Receives grant allies +5% Strength for 2 crossings.",
+        effect:
+          "Akagi’s Receive +14%. While he is on court, if the player in the back row fails to get a NICE on Receive, reduce that player’s Receive-skill cooldown by 1 net crossing.",
       },
       {
         level: "III",
@@ -798,7 +812,8 @@ export const inarizakiPlayers: Player[] = [
       {
         level: "IV",
         name: "Skill Resonance IV",
-        effect: "First Receive each set is guaranteed NICE (once per set).",
+        effect:
+          "Akagi’s Defense Technique +15%. If Akagi’s Receive or Cover is not BAD, the first ally to spike after this play gains +15% Attack Technique for 2 net crossings.",
       },
       {
         level: "V",
@@ -870,9 +885,9 @@ export const inarizakiPlayers: Player[] = [
         key: "passive",
         name: "Smart Response",
         levels: {
-          "1": "Reflex +6%. On Block, if block isn’t BAD or worse, [Defense Technique] +1% (lasts 2 crossings).",
-          "2": "Reflex +7.5%. DT +1.2%.",
-          "3": "Reflex +9%. DT +1.5%.",
+          "1": "Reflex +6%. On Block, if block isn’t BAD or worse, Defense Technique +1% (lasts 2 crossings).",
+          "2": "Reflex +7.5%. Defense Technique +1.2%.",
+          "3": "Reflex +9%. Defense Technique +1.5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -881,11 +896,11 @@ export const inarizakiPlayers: Player[] = [
         key: "active",
         name: "Solid Block",
         levels: {
-          "1": "Block with [Block] x220%.",
-          "2": "Block with [Block] x235%.",
-          "3": "Block with [Block] x250%.",
-          "4": "Block with [Block] x265%.",
-          "5": "Block with [Block] x280%.",
+          "1": "Block with Block ×220%.",
+          "2": "Block with Block ×235%.",
+          "3": "Block with Block ×250%.",
+          "4": "Block with Block ×265%.",
+          "5": "Block with Block ×280%.",
         },
       },
     ],
