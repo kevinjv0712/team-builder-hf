@@ -5,6 +5,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
+import Image from "next/image";
+import { prefix } from "@/utils/prefix";
 
 type Tab = "none" | "details" | "bonds";
 
@@ -327,14 +329,15 @@ export default function PlayerDetails({
                     </div>
                   )}
                   {partPlayers.length > 0 && (
-                    <div className="mt-2 flex space-x-1">
+                    <div className="relative mt-2 flex space-x-1">
                       {partPlayers.map((pp: any) => (
                         <img
                           key={`${b.name}-p-${pp.id}`}
-                          src={pp.image}
+                          src={prefix + pp.image}
                           alt={pp.name}
                           title={pp.name}
-                          className="h-14 w-14 rounded object-cover border"
+                          fill
+                          className="rounded object-cover border"
                           loading="lazy"
                         />
                       ))}
@@ -353,12 +356,14 @@ export default function PlayerDetails({
     <div className="w-full" data-interactive="true">
       {/* Header jugador + tabs (opcional) */}
       <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="relative flex items-center gap-3 min-w-0">
           {selected ? (
-            <img
-              src={selected.image}
+            <Image
+              src={prefix + selected.image}
               alt={selected.name}
-              className="h-20 w-20 border-2 rounded object-cover shrink-0"
+              width={80}
+              height={80}
+              className="border-2 rounded object-cover shrink-0"
               loading="lazy"
             />
           ) : (

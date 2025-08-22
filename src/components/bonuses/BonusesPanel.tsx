@@ -5,6 +5,7 @@ import { useMemo, useRef, useState, useLayoutEffect, useEffect } from "react";
 import { players } from "@/data/players";
 import { useTeamStore } from "@/stores/teamStore";
 import { schoolBonds } from "@/data/schoolBonds";
+import { prefix } from "@/utils/prefix";
 
 // Ajustes
 const SCHOOL_THRESHOLD = 4;
@@ -17,13 +18,13 @@ const BENCH_KEYS = ["B1", "B2", "B3", "B4", "B5", "B6"] as const;
 
 // Fondo por escuela cuando hay bono activo (para la sección de Bonos)
 const TEAM_BG: Record<string, string> = {
-  AobaJohsai: "/teams/aoba-johsai.webp",
-  Date: "/teams/date.webp",
-  Fukurodani: "/teams/fukurodani.webp",
-  Inarizaki: "/teams/inarizaki.webp",
-  Karasuno: "/teams/karasuno.jpeg",
-  Nekoma: "/teams/nekoma.webp",
-  Shiratorizawa: "/teams/shiratorizawa.webp",
+  AobaJohsai: `${prefix}/teams/aoba-johsai.webp`,
+  Date: `${prefix}/teams/date.webp`,
+  Fukurodani: `${prefix}/teams/fukurodani.webp`,
+  Inarizaki: `${prefix}/teams/inarizaki.webp`,
+  Karasuno: `${prefix}/teams/karasuno.jpeg`,
+  Nekoma: `${prefix}/teams/nekoma.webp`,
+  Shiratorizawa: `${prefix}/teams/shiratorizawa.webp`,
 };
 
 type BondEntry = { name: string; effect?: string; participants: string[] };

@@ -11,6 +11,8 @@ import {
 } from "@/stores/teamStore";
 import { useSelectionStore } from "@/stores/selectionStore";
 import { useSettingsStore } from "@/stores/settingStore";
+import { prefix } from "@/utils/prefix";
+import Image from "next/image";
 
 /* ================= Constantes y helpers ================= */
 const SLOTS: Slot[] = [
@@ -400,8 +402,8 @@ export default function LineupAndBench({
                     onTouchCancel={(e) => onTouchCancelLP(e, occupant)}
                   >
                     {p ? (
-                      <img
-                        src={p.image}
+                      <Image
+                        src={prefix + p.image}
                         alt={p.name}
                         className="h-full w-full rounded-md object-cover"
                         loading="lazy"
@@ -526,8 +528,8 @@ export default function LineupAndBench({
                       onTouchCancel={(e) => onTouchCancelLP(e, occupant)}
                     >
                       {p ? (
-                        <img
-                          src={p.image}
+                        <Image
+                          src={prefix + p.image}
                           alt={p.name}
                           className="h-full w-full rounded-md object-cover"
                           loading="lazy"
@@ -566,18 +568,18 @@ export default function LineupAndBench({
                       </button>
                     </div>
                     {/* TOGGLE SERVER (arriba de la banca) */}
-                    <div className="flex items-center justify-center mt-4 mb-2">
+                    <div className="flex items-center justify-center mt-4">
                       <div
                         role="tablist"
                         aria-label="Server"
-                        className="inline-flex rounded-full border border-white/20 p-1 bg-neutral-800/60"
+                        className="inline-flex flex-col rounded-2xl border border-white/20 p-1 bg-neutral-800/60"
                       >
                         <button
                           role="tab"
                           aria-selected={server === "Japan"}
                           onClick={() => setServer("Japan")}
                           className={[
-                            "px-3 py-1 text-xs rounded-full transition",
+                            "px-3 py-1 text-xs rounded-full transition text-center",
                             server === "Japan"
                               ? "bg-orange-300 text-black font-semibold"
                               : "hover:bg-white/10",
@@ -699,8 +701,8 @@ export default function LineupAndBench({
                 onTouchCancel={(e) => onTouchCancelLP(e, bk)}
               >
                 {p ? (
-                  <img
-                    src={p.image}
+                  <Image
+                    src={prefix + p.image}
                     alt={p.name}
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -761,8 +763,8 @@ export default function LineupAndBench({
                 onTouchCancel={(e) => onTouchCancelLP(e, bk)}
               >
                 {p ? (
-                  <img
-                    src={p.image}
+                  <Image
+                    src={prefix + p.image}
                     alt={p.name}
                     className="h-full w-full object-cover"
                     loading="lazy"
