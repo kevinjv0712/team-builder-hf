@@ -6,7 +6,7 @@ export const dateTechPlayers: Player[] = [
   {
     id: "takanobu-aone-sp",
     name: "Takanobu Aone (Swimsuit)",
-    shortName: "Aone (SP)",
+    shortName: "Aone",
     team: "Date",
     rarity: "SP",
     roles: ["MB"],
@@ -29,18 +29,18 @@ export const dateTechPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Mighty High Wall",
+        name: "Strong & High Walls",
         levels: {
-          "1": "Each stack of “Reinforced Block” increases AONE (SP)’s Block power by 10% of Block stat. If stacks ≥ 4, cooldown of “Sharp Read Block” becomes 8 net crossings; if stacks ≥ 6, AONE’s Mental +10%; if stacks ≥ 8, cooldown becomes 4.",
-          "2": "Each stack of “Reinforced Block” increases AONE (SP)’s Block power by 11.5% of Block stat. If stacks ≥ 4, cooldown of “Sharp Read Block” becomes 8 net crossings; if stacks ≥ 6, AONE’s Mental +10%; if stacks ≥ 8, cooldown becomes 4.",
-          "3": "Each stack of “Reinforced Block” increases AONE (SP)’s Block power by 13% of Block stat. If stacks ≥ 4, cooldown of “Sharp Read Block” becomes 8 net crossings; if stacks ≥ 6, AONE’s Mental +10%; if stacks ≥ 8, cooldown becomes 4.",
+          "1": "While AONE (SP) is on court, whenever an opponent performs a Power/Quick Spike, that spiker gains 1 stack of “Lock On”. At match start, opponent-court players gain 1 stack of “Lock On”. When any opponent reaches 2 stacks, consume them to grant AONE (SP) 1 stack of “Reinforced Block” (Reaction +10% per stack, up to 20). If Reinforced Block stacks ≥2 → AONE’s Block power +10% of Block. If ≥4 → SHARP LEAD BLOCK cooldown becomes 8 net crossings. If ≥6 → Mental +10%. If ≥8 → SHARP LEAD BLOCK cooldown becomes 4.",
+          "2": "Same as Lv1, but “Reinforced Block” grants Reaction +12.5% per stack (max 20). Threshold bonuses unchanged.",
+          "3": "Same as Lv1, but “Reinforced Block” grants Reaction +15% per stack (max 20). Threshold bonuses unchanged.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "Sharp Read Block",
+        name: "Sharp Lead Block",
         levels: {
           "1": "TAKANOBU AONE (SP) performs a Block with 260% of Block stat as power. Increases your side’s Team Morale by 15.",
           "2": "TAKANOBU AONE (SP) performs a Block with 275% of Block stat as power. Increases your side’s Team Morale by 15.",
@@ -53,39 +53,39 @@ export const dateTechPlayers: Player[] = [
         key: "passive",
         name: "Morale-Boosting Jump Serve",
         levels: {
-          "1": "Performs a Jump Serve with 140% of Serve stat as power; increases opponent Set-skill cooldown by the number of net crossings. When AONE (SP) enters and uses this serve, allies’ Attack Technique & Defense Technique +5%; if “Reinforced Block” stacks ≥ 3, bonuses +10% more until AONE exits.",
-          "2": "Performs a Jump Serve with 150% of Serve stat as power; increases opponent Set-skill cooldown by the number of net crossings. When AONE (SP) enters and uses this serve, allies’ Attack Technique & Defense Technique +5%; if “Reinforced Block” stacks ≥ 3, bonuses +10% more until AONE exits.",
-          "3": "Performs a Jump Serve with 160% of Serve stat as power; increases opponent Set-skill cooldown by the number of net crossings. When AONE (SP) enters and uses this serve, allies’ Attack Technique & Defense Technique +5%; if “Reinforced Block” stacks ≥ 3, bonuses +10% more until AONE exits.",
+          "1": "Performs a Jump Serve with 140% of Serve stat as power and increases the opponent’s Set-skill cooldown by the number of net crossings. If AONE (SP) uses this serve upon (re)entering from off-court, allies’ Attack Technique & Defense Technique +5%; if “Reinforced Block” stacks ≥3, these bonuses gain an additional +10% until AONE exits.",
+          "2": "Performs a Jump Serve with 160% of Serve stat as power; same Set-skill cooldown increase and ally buffs on (re)entry.",
+          "3": "Performs a Jump Serve with 180% of Serve stat as power; same Set-skill cooldown increase and ally buffs on (re)entry.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Overwhelming Wall",
+        name: "Mighty Wall",
         levels: {
-          "1": "AONE (SP)’s Reflex +10%. When Stamina < 80, Block and Serve +10%. In 2/3-man blocks, for each blocking teammate with a Block skill, this block's power +20% of AONE’s Block stat.",
-          "2": "AONE (SP)’s Reflex +12%. When Stamina < 80, Block and Serve +12%. In 2/3-man blocks, for each blocking teammate with a Block skill, this block's power +22.5% of AONE’s Block stat.",
-          "3": "AONE (SP)’s Reflex +14%. When Stamina < 80, Block and Serve +14%. In 2/3-man blocks, for each blocking teammate with a Block skill, this block's power +25% of AONE’s Block stat.",
-          "4": "AONE (SP)’s Reflex +16%. When Stamina < 80, Block and Serve +16%. In 2/3-man blocks, for each blocking teammate with a Block skill, this block's power +27.5% of AONE’s Block stat.",
-          "5": "AONE (SP)’s Reflex +18%. When Stamina < 80, Block and Serve +18%. In 2/3-man blocks, for each blocking teammate with a Block skill, this block's power +30% of AONE’s Block stat.",
+          "1": "AONE (SP)’s Reflex +10%. If Stamina < 80, Block and Serve +10%. In 2/3-man blocks, for each blocking teammate that has a Block skill, this block’s power +20% of AONE’s Block stat.",
+          "2": "AONE (SP)’s Reflex +13%. Same Stamina clause and 2/3-man block bonus (+20% per eligible blocker).",
+          "3": "AONE (SP)’s Reflex +16%. Same Stamina clause and 2/3-man block bonus (+20% per eligible blocker).",
+          "4": undefined,
+          "5": undefined,
         },
       },
     ],
     bonds: [
       {
-        to: "kotaro-bokuto-sp",
+        to: "takanobu-aone-sp",
         name: "Iron Wall & Owl Ace",
         participants: ["takanobu-aone-sp", "kotaro-bokuto-sp"],
         effect:
-          "When aligned with BOKUTO (SP), AONE (SP)'s PERFECT blocks grant Bokuto +10% Power Attack for 1 rally.",
+          "While an ally activates Team Morale Awakening, when your side performs a 2/3-man block, the Reflex of participating blockers is (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%) up for 2 net crossings. At rally start, your team’s Morale +20.",
       },
       {
-        to: "keiji-akaashi-sp",
+        to: "takanobu-aone-sp",
         name: "Wall & Genius Setter",
         participants: ["takanobu-aone-sp", "keiji-akaashi-sp"],
         effect:
-          "AKAASHI (SP) gains +10% Set and his next Set becomes PERFECT after AONE (SP) blocks.",
+          "While an ally activates Team Morale Awakening, when your side performs a 2/3-man block, the Reflex of participating blockers is (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%) up for 2 net crossings. At rally start, your team’s Morale +20.",
       },
     ],
     resonances: [
@@ -98,7 +98,7 @@ export const dateTechPlayers: Player[] = [
         level: "II",
         name: "Skill Resonance II",
         effect:
-          "While AONE (SP) is on the court, when the opponent scores, apply “Lock On” to opponent-court players.",
+          "While AONE (SP) is on the court, when the opponent scores, apply “Lock On” to opponent-court players. Once per set, if AONE’s “Reinforced Block” stacks reach 6, reset SHARP LEAD BLOCK’s cooldown.",
       },
       {
         level: "III",
@@ -109,7 +109,7 @@ export const dateTechPlayers: Player[] = [
         level: "IV",
         name: "Skill Resonance IV",
         effect:
-          "While AONE (SP) is off the court, increases the effect of “Lock On” by 25%.",
+          "While AONE (SP) is off the court, [Block] of friendly vanguards +25%. If AONE’s Reflex exceeds 100%, for every +1% over 100%, Mental +1% (up to +60%).",
       },
       {
         level: "V",
@@ -150,10 +150,10 @@ export const dateTechPlayers: Player[] = [
         set: 121,
         serve: 103,
         receive: 97,
-        block: 109,
-        save: 95,
+        block: 116,
+        save: 91,
       },
-      bonusAttack: { awareness: 0, strength: 0, attackTechnique: 0 },
+      bonusAttack: { awareness: 0.05, strength: 0, attackTechnique: 0 },
       bonusDefense: { reflex: 0, spirit: 0, defenseTechnique: 0 },
     },
     skills: [
@@ -184,8 +184,8 @@ export const dateTechPlayers: Player[] = [
         name: "Iron Wall III",
         levels: {
           "1": "While KOGANEGAWA is on the court, increases Block power of your other players’ Block skills by 2% of their Block stat.",
-          "2": "While KOGANEGAWA is on the court, increases Block power of your other players’ Block skills by 3.5% of their Block stat.",
-          "3": "While KOGANEGAWA is on the court, increases Block power of your other players’ Block skills by 5% of their Block stat.",
+          "2": "While KOGANEGAWA is on the court, increases Block power of your other players’ Block skills by 2.5% of their Block stat.",
+          "3": "While KOGANEGAWA is on the court, increases Block power of your other players’ Block skills by 3% of their Block stat.",
           "4": undefined,
           "5": undefined,
         },
@@ -204,10 +204,11 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "kenji-futakuchi-ssr",
+        to: "kanji-koganegawa-ssr",
         name: "New Captain & Tall Rookie",
         participants: ["kanji-koganegawa-ssr", "kenji-futakuchi-ssr"],
-        effect: "Front row Block boost when both are on court.",
+        effect:
+          "[Blocking] of friendly vanguards is (Lv1: 2%, Lv2: 2.5%, Lv3: 3%, Lv4: 3.5%, Lv5: 4%) up while both are on court.",
       },
     ],
     resonances: [
@@ -282,8 +283,8 @@ export const dateTechPlayers: Player[] = [
         name: "Calm Response",
         levels: {
           "1": "Increases SASAYA’s Awareness by 5%; while SASAYA is present, increases Reflex of players on your side by 5%.",
-          "2": "Increases SASAYA’s Awareness by 6.5%; while SASAYA is present, increases Reflex of players on your side by 6.5%.",
-          "3": "Increases SASAYA’s Awareness by 8%; while SASAYA is present, increases Reflex of players on your side by 8%.",
+          "2": "Increases SASAYA’s Awareness by 6%; while SASAYA is present, increases Reflex of players on your side by 6%.",
+          "3": "Increases SASAYA’s Awareness by 7%; while SASAYA is present, increases Reflex of players on your side by 7%.",
           "4": undefined,
           "5": undefined,
         },
@@ -304,8 +305,8 @@ export const dateTechPlayers: Player[] = [
         name: "Fortified Iron Wall",
         levels: {
           "1": "While SASAYA is present, when your side is behind, increases your side's Block skill power by an additional 3% of each blocking player's Block stat and increases blocking players' Reflex by 5%.",
-          "2": "While SASAYA is present, when your side is behind, increases your side's Block skill power by an additional 4.5% of each blocking player's Block stat and increases blocking players' Reflex by 7.5%.",
-          "3": "While SASAYA is present, when your side is behind, increases your side's Block skill power by an additional 6% of each blocking player's Block stat and increases blocking players' Reflex by 10%.",
+          "2": "While SASAYA is present, when your side is behind, increases your side's Block skill power by an additional 3.5% of each blocking player's Block stat and increases blocking players' Reflex by 5%.",
+          "3": "While SASAYA is present, when your side is behind, increases your side's Block skill power by an additional 4% of each blocking player's Block stat and increases blocking players' Reflex by 5%.",
           "4": undefined,
           "5": undefined,
         },
@@ -324,20 +325,18 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "kaname-moniwa-sr",
-        name: "Seniors & Ace",
-        participants: ["takehito-sasaya-ssr", "kaname-moniwa-sr"],
-        effect: "When paired with MONIWA (SR), Sasaya's next Power Spike +10%.",
-      },
-      {
-        to: "yasushi-kamasaki-sr",
-        name: "Iron Wall Support",
-        participants: ["takehito-sasaya-ssr", "yasushi-kamasaki-sr"],
+        to: "takehito-sasaya-ssr",
+        name: "Date Kogyo's Senior",
+        participants: [
+          "takehito-sasaya-ssr",
+          "yasushi-kamasaki-sr",
+          "kaname-moniwa-sr",
+        ],
         effect:
           "When KAMASAKI scores with a Quick, Sasaya gains +10% Power Attack.",
       },
       {
-        to: "yutaka-obara-sr",
+        to: "takehito-sasaya-ssr",
         name: "Date Kōgyō Wing Spiker",
         participants: ["takehito-sasaya-ssr", "yutaka-obara-sr"],
         effect: "Power/Block synergy when aligned together.",
@@ -457,16 +456,18 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "takanobu-aone-ssr",
+        to: "kenji-futakuchi-ssr",
         name: "The Silent and the Snarky",
         participants: ["kenji-futakuchi-ssr", "takanobu-aone-ssr"],
-        effect: "Enables Double Block synergy when both are on court.",
+        effect:
+          "AONE (SSR) and FUTAKUCHI (SSR) perform a coordinated double block using AONE’s Block ×(Lv1: 180%, Lv2: 195%, Lv3: 210%, Lv4: 225%, Lv5: 240%) as base power. Applies “Enrage” to the blocked spiker (Power/Quick Attack -10%).",
       },
       {
-        to: "kanji-koganegawa-ssr",
+        to: "kenji-futakuchi-ssr",
         name: "New Captain & Tall Rookie",
         participants: ["kenji-futakuchi-ssr", "kanji-koganegawa-ssr"],
-        effect: "Increases Block stat of front row players.",
+        effect:
+          "[Blocking] of friendly vanguards is (Lv1: 2%, Lv2: 2.5%, Lv3: 3%, Lv4: 3.5%, Lv5: 4%) up while both are on court.",
       },
     ],
     resonances: [
@@ -582,10 +583,11 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "kenji-futakuchi-ssr",
+        to: "takanobu-aone-ssr",
         name: "The Silent and the Snarky",
         participants: ["takanobu-aone-ssr", "kenji-futakuchi-ssr"],
-        effect: "Enables Double Block synergy when both are on court.",
+        effect:
+          "AONE (SSR) and FUTAKUCHI (SSR) perform a coordinated double block using AONE’s Block ×(Lv1: 180%, Lv2: 195%, Lv3: 210%, Lv4: 225%, Lv5: 240%) as base power. Applies “Enrage” to the blocked spiker (Power/Quick Attack -10%).",
       },
     ],
     resonances: [
@@ -704,15 +706,19 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "yasushi-kamasaki-sr",
+        to: "kaname-moniwa-sr",
         name: "Date Kōgyō Seniors",
-        participants: ["kaname-moniwa-sr", "yasushi-kamasaki-sr"],
+        participants: [
+          "kaname-moniwa-sr",
+          "yasushi-kamasaki-sr",
+          "takehito-sasaya-ssr",
+        ],
         effect: "Morale up on PERFECT blocks; improves block coordination.",
       },
       {
         to: "takehito-sasaya-ssr",
-        name: "Seniors & Ace",
-        participants: ["kaname-moniwa-sr", "takehito-sasaya-ssr"],
+        name: "Wing Spiker",
+        participants: ["yutaka-obara-sr", "takehito-sasaya-ssr"],
         effect: "When paired with MONIWA, Sasaya's next Power Spike +10%.",
       },
     ],
@@ -1168,7 +1174,7 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "takehito-sasaya-ssr",
+        to: "yutaka-obara-sr",
         name: "Date Kōgyō Wing Spiker",
         participants: ["yutaka-obara-sr", "takehito-sasaya-ssr"],
         effect: "Power/Block synergy when aligned together.",
@@ -1400,7 +1406,7 @@ export const dateTechPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "kaname-moniwa-sr",
+        to: "yasushi-kamasaki-sr",
         name: "Date Kōgyō Seniors",
         participants: ["yasushi-kamasaki-sr", "kaname-moniwa-sr"],
         effect:

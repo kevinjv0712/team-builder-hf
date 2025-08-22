@@ -219,7 +219,7 @@ export default function LineupAndBench({
   }, [isMdUp]);
 
   const cardHL = (pid?: string | null) =>
-    pid && highlightIds?.has(pid) ? "ring-4 ring-blue-700 rounded-md" : "";
+    pid && highlightIds?.has(pid) ? "ring-5 ring-lime-400 rounded-md" : "";
 
   /* ======== Long-press (touch) sin bloquear scroll ======== */
   type PressState = {
@@ -341,7 +341,7 @@ export default function LineupAndBench({
                         : "hover:bg-neutral-600",
                       cardHL(pid),
                       dragging && dropAllowed.has(occupant)
-                        ? "outline outline-2 outline-amber-400"
+                        ? "outline-2 outline-amber-400"
                         : "",
                     ].join(" ")}
                     style={{ width: `${slotPx}px` }}
@@ -419,9 +419,9 @@ export default function LineupAndBench({
                   </div>
 
                   {/* Escuela */}
-                  <div className="mt-0 flex items-center justify-center min-h-4">
+                  <div className="flex items-center justify-center min-h-4">
                     <div
-                      className={`text-center text-[10px] text-gray-300 truncate whitespace-nowrap ${
+                      className={`text-center text-[10px] text-gray-300 truncate whitespace-nowrap pt-1 ${
                         p ? "opacity-100" : "opacity-0"
                       }`}
                       style={{ maxWidth: `${slotPx}px` }}
@@ -470,7 +470,7 @@ export default function LineupAndBench({
                           : "hover:bg-neutral-600",
                         cardHL(p?.id),
                         dragging && dropAllowed.has(occupant)
-                          ? "outline outline-2 outline-amber-400"
+                          ? "outline-2 outline-amber-400"
                           : "",
                       ].join(" ")}
                       style={{ width: `${slotPx}px` }}
@@ -640,7 +640,7 @@ export default function LineupAndBench({
                     ? "ring-2 ring-black shadow"
                     : "hover:bg-neutral-400",
                   dragging && dropAllowed.has(bk)
-                    ? "outline outline-2 outline-amber-400"
+                    ? "outline-2 outline-amber-400"
                     : "",
                   cardHL(p?.id),
                 ].join(" ")}

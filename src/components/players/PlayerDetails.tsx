@@ -126,7 +126,7 @@ export default function PlayerDetails({
     if (!selected) {
       return (
         <div className="mt-3 mb-3 text-sm text-gray-400">
-          Select a player to view more details.
+          Search and select a player, to view more details.
         </div>
       );
     }
@@ -329,17 +329,21 @@ export default function PlayerDetails({
                     </div>
                   )}
                   {partPlayers.length > 0 && (
-                    <div className="relative mt-2 flex space-x-1">
+                    <div className="mt-2 flex items-center gap-1">
                       {partPlayers.map((pp: any) => (
-                        <Image
+                        <div
                           key={`${b.name}-p-${pp.id}`}
-                          src={prefix + pp.image}
-                          alt={pp.name}
+                          className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden"
                           title={pp.name}
-                          fill
-                          className="rounded object-cover border"
-                          loading="lazy"
-                        />
+                        >
+                          <Image
+                            src={prefix + pp.image}
+                            alt={pp.name}
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                          />
+                        </div>
                       ))}
                     </div>
                   )}
@@ -358,14 +362,19 @@ export default function PlayerDetails({
       <div className="flex items-start justify-between gap-3">
         <div className="relative flex items-center gap-3 min-w-0">
           {selected ? (
-            <Image
-              src={prefix + selected.image}
-              alt={selected.name}
-              width={80}
-              height={80}
-              className="border-2 rounded object-cover shrink-0"
-              loading="lazy"
-            />
+            <div
+              key={`${selected.name}-p-${selected.id}`}
+              className="relative w-22 h-22 shrink-0 rounded-full overflow-hidden"
+              title={selected.name}
+            >
+              <Image
+                src={prefix + selected.image}
+                alt={selected.name}
+                fill
+                className="object-cover shrink-0"
+                loading="lazy"
+              />
+            </div>
           ) : (
             <div />
           )}

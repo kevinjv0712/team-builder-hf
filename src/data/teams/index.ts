@@ -1,10 +1,10 @@
 export { karasunoPlayers } from "./karasuno";
-export { inarizakiPlayers } from "./inarizaki";
-export { nekomaPlayers } from "./nekoma";
 export { aobaJohsaiPlayers } from "./aoba-johsai";
-export { shiratorizawaPlayers } from "./shiratorizawa";
+export { nekomaPlayers } from "./nekoma";
 export { dateTechPlayers } from "./date";
+export { shiratorizawaPlayers } from "./shiratorizawa";
 export { fukurodaniPlayers } from "./fukurodani";
-export { itachiyamaPlayers } from "./itachiyama";
+export { inarizakiPlayers } from "./inarizaki";
 export { kamomedaiPlayers } from "./kamomedai";
+export { itachiyamaPlayers } from "./itachiyama";
 export { johzenjiPlayers } from "./johzenji";

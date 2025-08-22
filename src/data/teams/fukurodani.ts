@@ -27,66 +27,92 @@ export const fukurodaniPlayers: Player[] = [
       bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
+      // Enthusiastic Influence
+      {
+        key: "passive",
+        name: "Enthusiastic Influence",
+        levels: {
+          "1": "When Bokuto participates, allies’ Team Morale +20. While he is on the court, every time a friendly member touches the ball, Team Morale +4. Change during Team Morale Awakening: on-court allies’ main parameters +32% (lasts up to 4 friendly touches).",
+          "2": "When Bokuto participates, allies’ Team Morale +25. While he is on the court, every time a friendly member touches the ball, Team Morale +4. Change during Team Morale Awakening: on-court allies’ main parameters +36% (lasts up to 4 friendly touches).",
+          "3": "When Bokuto participates, allies’ Team Morale +30. While he is on the court, every time a friendly member touches the ball, Team Morale +4. Change during Team Morale Awakening: on-court allies’ main parameters +40% (lasts up to 4 friendly touches).",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      // Big Server
       {
         key: "passive",
         name: "Big Server",
         levels: {
-          "1": "Performs a Jump Serve with [Serve] x125%.",
-          "2": "Performs a Jump Serve with [Serve] x135%.",
-          "3": "Performs a Jump Serve with [Serve] x145%.",
+          "1": "Performs a Jump Serve with [Serve]×125%.",
+          "2": "Performs a Jump Serve with [Serve]×140%.",
+          "3": "Performs a Jump Serve with [Serve]×155%.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Up and Down the Tone
       {
         key: "passive",
-        name: "Predator’s Instinct",
+        name: "Up and Down the Tone",
         levels: {
-          "1": "If an ally has the [Excellent] effect: Bokuto’s [Power Attack] +12% and [Power] +7%.",
-          "2": "If an ally has the [Excellent] effect: Bokuto’s [Power Attack] +14% and [Power] +9%.",
-          "3": "If an ally has the [Excellent] effect: Bokuto’s [Power Attack] +16% and [Power] +11%.",
+          "1": "If Bokuto has [Excellent]: [Power Attack] +12% and [Power] +18%. If he has [Shobokure Mode], he cannot activate the finisher. When an ally activates Team Morale Awakening, Bokuto gains [Excellent]. When allies’ Awakening ends, Bokuto gains [Shobokure Mode]; at each rally end, lose [Shobokure Mode].",
+          "2": "If Bokuto has [Excellent]: [Power Attack] +15% and [Power] +22.5%. Same other effects.",
+          "3": "If Bokuto has [Excellent]: [Power Attack] +18% and [Power] +27%. Same other effects.",
           "4": undefined,
           "5": undefined,
         },
       },
-      {
-        key: "passive",
-        name: "Crowd-Fired Ace",
-        levels: {
-          "1": "When team morale increases on court, Bokuto’s main parameters +2% (stacks up to 5).",
-          "2": "When team morale increases on court, Bokuto’s main parameters +3% (stacks up to 5).",
-          "3": "When team morale increases on court, Bokuto’s main parameters +4% (stacks up to 5).",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
+      // Ace Thanks to Everyone
       {
         key: "finisher",
         name: "Ace Thanks to Everyone",
         levels: {
-          "1": "[Power Attack] x260%. If this play becomes a Nice Serve chain, Bokuto’s [Power] +12% and allies’ team morale +16.",
-          "2": "[Power Attack] x275%. If Nice Serve chain, [Power] +14%, team morale +16.",
-          "3": "[Power Attack] x290%. If Nice Serve chain, [Power] +16%, team morale +16.",
-          "4": "[Power Attack] x305%. If Nice Serve chain, [Power] +18%, team morale +16.",
-          "5": "[Power Attack] x320%. If Nice Serve chain, [Power] +20%, team morale +16.",
+          "1": "Performs a [Power Attack]×260%. If this finisher is not BAD: Bokuto’s [Power] +12% and allies’ Team Morale +16.",
+          "2": "Performs a [Power Attack]×275%. If not BAD: [Power] +14% and Team Morale +16.",
+          "3": "Performs a [Power Attack]×290%. If not BAD: [Power] +16% and Team Morale +16.",
+          "4": "Performs a [Power Attack]×305%. If not BAD: [Power] +18% and Team Morale +16.",
+          "5": "Performs a [Power Attack]×320%. If not BAD: [Power] +20% and Team Morale +16.",
         },
       },
     ],
     bonds: [
       {
         to: "kotaro-bokuto-ur",
-        name: "Ace & Setter Core",
+        name: "Miracle Ace and Caring Setter",
         participants: ["kotaro-bokuto-ur", "keiji-akaashi-ur"],
         effect:
-          "If Akaashi sets to Bokuto this rally: Bokuto [Power Attack] x(Lv1: 250%, Lv2: 265%, Lv3: 280%, Lv4: 295%, Lv5: 310%).",
+          "Akaashi tosses → Bokuto performs a [Power Attack]×(Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). With this hit, Bokuto’s [Power Attack] +20%, and allies’ Team Morale +15.",
       },
     ],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +13%." },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "Main parameters +13%." },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "Main parameters +13%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "While Bokuto has [Shobokure Mode], allies gain [Team Spirit] (main parameters +12%).",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "Bokuto’s [Power Attack] +16%. If his finisher result is not BAD, reset the cooldown of “Ace Thanks to Everyone”.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -130,9 +156,9 @@ export const fukurodaniPlayers: Player[] = [
         key: "passive",
         name: "Instant Read",
         levels: {
-          "1": "If an ally’s Block & Receive results are PERFECT while Akaashi is on court: remove all that ally’s debuffs. Akaashi’s [Awareness] +8% and allies’ team morale +3.",
-          "2": "Same trigger: cleanse that ally’s debuffs. Akaashi’s [Awareness] +10% and allies’ team morale +3.",
-          "3": "Same trigger: cleanse that ally’s debuffs. Akaashi’s [Awareness] +12% and allies’ team morale +3.",
+          "1": "If an ally’s Block & Receive results are PERFECT while Akaashi is on court: remove all that ally’s debuffs. Akaashi’s [Awareness] +8% and allies’ Team Morale +3.",
+          "2": "Same trigger: cleanse that ally’s debuffs. Akaashi’s [Awareness] +10% and allies’ Team Morale +3.",
+          "3": "Same trigger: cleanse that ally’s debuffs. Akaashi’s [Awareness] +12% and allies’ Team Morale +3.",
           "4": undefined,
           "5": undefined,
         },
@@ -141,9 +167,9 @@ export const fukurodaniPlayers: Player[] = [
         key: "active",
         name: "Brains of Owl Valley",
         levels: {
-          "1": "Performs a Dual Attack with [Set] x120%. The two hits cannot be blocked. If it scores, next ally after this play gets [Serve] +10%.",
-          "2": "Dual Attack [Set] x135% (unblockable). If it scores, next ally [Serve] +10%.",
-          "3": "Dual Attack [Set] x150% (unblockable). If it scores, next ally [Serve] +10%.",
+          "1": "Performs a Dual Attack with [Set]×120% (unblockable). If it scores, the next ally after this play gets [Serve] +10%.",
+          "2": "Dual Attack [Set]×135% (unblockable). Same bonus.",
+          "3": "Dual Attack [Set]×150% (unblockable). Same bonus.",
           "4": undefined,
           "5": undefined,
         },
@@ -152,9 +178,9 @@ export const fukurodaniPlayers: Player[] = [
         key: "passive",
         name: "Devoted Toss",
         levels: {
-          "1": "Akaashi’s [Set] +8%. While an ally’s Team Morale Awakening is active, every +4 team morale on that ally gives Akaashi [Awareness] +1.2%. If Akaashi’s toss is Good, the first spike after is guaranteed Good.",
-          "2": "Akaashi’s [Set] +10%. Every +4 morale: [Awareness] +1.75%. Good toss guarantees next spike Good.",
-          "3": "Akaashi’s [Set] +12%. Every +4 morale: [Awareness] +2.3%. Good toss guarantees next spike Good.",
+          "1": "Akaashi’s [Set] +8%. While an ally’s Team Morale Awakening is active, every +4 Team Morale on that ally gives Akaashi [Awareness] +1.2%. If Akaashi’s toss is NICE, the first spike after is guaranteed NICE.",
+          "2": "Akaashi’s [Set] +10%. Every +4 morale: [Awareness] +1.75%. NICE toss guarantees next spike NICE.",
+          "3": "Akaashi’s [Set] +12%. Every +4 morale: [Awareness] +2.3%. NICE toss guarantees next spike NICE.",
           "4": undefined,
           "5": undefined,
         },
@@ -163,37 +189,51 @@ export const fukurodaniPlayers: Player[] = [
         key: "finisher",
         name: "“As Usual” Set",
         levels: {
-          "1": "Performs a Set with [Set] x240%.",
-          "2": "Performs a Set with [Set] x255%.",
-          "3": "Performs a Set with [Set] x270%.",
-          "4": "Performs a Set with [Set] x285%.",
-          "5": "Performs a Set with [Set] x300%.",
+          "1": "Performs a Set with [Set]×240%.",
+          "2": "Performs a Set with [Set]×255%.",
+          "3": "Performs a Set with [Set]×270%.",
+          "4": "Performs a Set with [Set]×285%.",
+          "5": "Performs a Set with [Set]×300%.",
         },
       },
     ],
     bonds: [
       {
         to: "keiji-akaashi-ur",
-        name: "Ace & Setter Core",
+        name: "Miracle Ace and Caring Setter",
         participants: ["keiji-akaashi-ur", "kotaro-bokuto-ur"],
+        effect:
+          "Akaashi tosses to Bokuto → Bokuto’s [Power Attack]×(Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). With this hit Bokuto’s [Power Attack] +20% and Team Morale +15.",
       },
     ],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +10%.",
+      },
       {
         level: "II",
-        name: "",
+        name: "Skill Resonance II",
         effect:
-          "Special resets ‘As Usual’ Set CD when ally triggers Morale Awakening.",
+          "Reset the cooldown of “As Usual” Set when an ally activates Team Morale Awakening.",
       },
-      { level: "III", name: "", effect: "Main parameters +10%." },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +10%.",
+      },
       {
         level: "IV",
-        name: "",
+        name: "Skill Resonance IV",
         effect:
-          "If Akaashi’s set isn’t BAD: cleanse first spiker’s debuffs and that spiker’s [Power/Quick] +4% (max 3 stacks, 3 rallies).",
+          "If Akaashi’s set isn’t BAD: cleanse the first spiker’s debuffs and that spiker’s [Power/Quick] +4% (max 3 stacks, lasts 3 rallies).",
       },
-      { level: "V", name: "", effect: "Main parameters +10%." },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +10%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -212,7 +252,7 @@ export const fukurodaniPlayers: Player[] = [
   {
     id: "kotaro-bokuto-sp",
     name: "Kotaro Bokuto (Beach)",
-    shortName: "Bokuto (SP)",
+    shortName: "Bokuto",
     team: "Fukurodani",
     rarity: "UR",
     roles: ["WS"],
@@ -233,48 +273,52 @@ export const fukurodaniPlayers: Player[] = [
       bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
+      // Liven Up
       {
         key: "passive",
-        name: "Hype Up (盛り上げる)",
+        name: "Liven Up",
         levels: {
-          "1": "Bokuto (SP) [Power Attack] +13%. While he is on court, non-<Hype Up> team morale gains from allies are reduced by 100%, and every -10 morale gained converts to 1 stack of [Unite]. Each [Unite] stack: allies’ main parameters +0.16% (max 199 stacks).",
-          "2": "Same effect; allies’ main parameters +0.18% per stack.",
-          "3": "Same effect; allies’ main parameters +0.20% per stack.",
+          "1": "Bokuto (SP) [Power Attack] +13%. While he is on court, non-<Liven Up> Team Morale gains from allies are reduced by 100%, and for every +10 Team Morale gained convert 1 stack of [Unite]. Each [Unite] stack: allies’ main parameters +0.16% (max 199). At rally end while he is on court: Team Morale +40 and gain 4 stacks of [Unite]. During allies’ Team Morale Awakening: on-court allies’ main parameters +20% (lasts up to 10 friendly touches).",
+          "2": "Bokuto (SP) [Power Attack] +16%. [Unite] stacks give +0.16% each. Same conversion/40 morale/4 stacks. Awakening buff +25% (10 touches).",
+          "3": "Bokuto (SP) [Power Attack] +20%. [Unite] stacks give +0.16% each. Same conversion/40 morale/4 stacks. Awakening buff +30% (10 touches).",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Defensive Participation
       {
         key: "passive",
-        name: "Keep the Energy",
+        name: "Defensive Participation",
         levels: {
-          "1": "If an ally holds [Excellent], Bokuto (SP) [Power Attack] +12% and [Power] +7%; when team morale finishes Awakening, gain 8 stacks of [Unite].",
-          "2": "Same but [Power Attack] +14%, [Power] +9%.",
-          "3": "Same but [Power Attack] +16%, [Power] +11%.",
+          "1": "Performs a [Receive]×140% power receive. Gain 3 stacks of [Unite].",
+          "2": "Performs a [Receive]×160% power receive. Gain 3 stacks of [Unite].",
+          "3": "Performs a [Receive]×180% power receive. Gain 3 stacks of [Unite].",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Always Fine!
       {
         key: "passive",
-        name: "Summer Rhythm",
+        name: "Always Fine!",
         levels: {
-          "1": "While on court, each rally end: allies’ team morale +10.",
-          "2": "While on court, each rally end: allies’ team morale +12.",
-          "3": "While on court, each rally end: allies’ team morale +14.",
+          "1": "If Bokuto (SP) has [Great Condition], when his finisher activates his [Power Attack] is increased by +1% per [Unite] (cap +70%) until the ball crosses the net twice. Also, per [Unite], the power of [Power Attack] +1.5% (cap +120%) until the ball crosses the net twice. When his finisher activates, gain [Ups and Downs]. If he has [Ups and Downs], he cannot activate the strong finisher; instead his [Power Attack] power is increased by [Power Attack]×30%, and after a hit gain 3 stacks of [Unite]. At match start he gains [Ups and Downs]. If an ally’s Team Morale Awakening is activated, allies’ Team Morale +20; Bokuto (SP) gains [Excellent] and loses [Ups and Downs].",
+          "2": "Same as Lv1, but the [Ups and Downs] bonus becomes [Power Attack]×50%.",
+          "3": "Same as Lv1, but the [Ups and Downs] bonus becomes [Power Attack]×70%.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Miracle Spike
       {
         key: "finisher",
-        name: "Miracle Ace",
+        name: "Miracle Spike",
         levels: {
-          "1": "[Power Attack] x260%. If the play becomes a Nice Serve chain: Bokuto’s [Power] +12% and allies’ team morale +16.",
-          "2": "[Power Attack] x275% (+same bonus).",
-          "3": "[Power Attack] x290% (+same bonus).",
-          "4": "[Power Attack] x305% (+same bonus).",
-          "5": "[Power Attack] x320% (+same bonus).",
+          "1": "Performs a [Power Attack]×260%. While [Unite] is active: Bokuto (SP) [Attack Technique] +0.75% per stack (cap +30%) until the ball crosses the net twice.",
+          "2": "Performs a [Power Attack]×280%. Same [Unite] scaling.",
+          "3": "Performs a [Power Attack]×300%. Same [Unite] scaling.",
+          "4": "Performs a [Power Attack]×320%. Same [Unite] scaling.",
+          "5": "Performs a [Power Attack]×340%. Same [Unite] scaling.",
         },
       },
     ],
@@ -283,6 +327,8 @@ export const fukurodaniPlayers: Player[] = [
         to: "kotaro-bokuto-sp",
         name: "Unbeatable Summer Duo",
         participants: ["kotaro-bokuto-sp", "keiji-akaashi-sp"],
+        effect:
+          "Akaashi (SP) [Toss] +(Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%). While allies are in Team Morale Awakening: Bokuto (SP) [Power Attack] +18% and Akaashi (SP) [Toss] +5% additional.",
       },
       {
         to: "kotaro-bokuto-sp",
@@ -292,14 +338,38 @@ export const fukurodaniPlayers: Player[] = [
           "keiji-akaashi-sp",
           "takanobu-aone-ur",
         ],
+        effect:
+          "While an ally activates Team Morale Awakening, when a friendly 2/3-block is activated, the [Reflex] of all members participating in the block increases (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%) until the ball crosses the net twice. At the start of each rally, allies’ Team Morale +20.",
       },
     ],
     resonances: [
-      { level: "I", name: "", effect: "" },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "" },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "" },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "[Unite] effect: Bokuto (SP) [Awareness] +0.4% per stack (cap +15%). When his finisher activates: [Power] increases by Awareness×(85–100%) (caps accordingly).",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "Gain 8 stacks of [Unite] when allies’ Team Morale Awakening ends. If Bokuto (SP) has [Excellent], each [Unite] stack also increases [Power] +3% (cap +150%).",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -318,7 +388,7 @@ export const fukurodaniPlayers: Player[] = [
   {
     id: "keiji-akaashi-sp",
     name: "Keiji Akaashi (Beach)",
-    shortName: "Akaashi (SP)",
+    shortName: "Akaashi",
     team: "Fukurodani",
     rarity: "UR",
     roles: ["S"],
@@ -339,48 +409,52 @@ export const fukurodaniPlayers: Player[] = [
       bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
-      {
-        key: "passive",
-        name: "100% Practice Extraction",
-        levels: {
-          "1": "When Akaashi (SP) sets: [Set] +14%, first spike after this play gets +15% set bonus. Lasts until ball crosses net twice.",
-          "2": "[Set] +16%, next spike +17%.",
-          "3": "[Set] +18%, next spike +19%.",
-          "4": undefined,
-          "5": undefined,
-        },
-      },
+      // Team Organizer
       {
         key: "passive",
         name: "Team Organizer",
         levels: {
-          "1": "If no ally is in Morale Awakening: allies’ [Receive] & [Block] +25%; while on court, each net-cross: allies’ team morale +10.",
-          "2": "Allies’ [Receive] & [Block] +27%; same morale effect.",
-          "3": "Allies’ [Receive] & [Block] +30%; same morale effect.",
+          "1": "Akaashi (SP) [Toss] +13%. Each +10 Team Morale gained by allies gives 1 stack of [Calm Awareness] (each stack: [Toss] +1.5%, max 10). When Akaashi (SP) touches the ball while allies’ Team Morale Awakening is NOT active, consume all stacks: per stack, [Awareness] +3% (cap +30%) until the ball crosses the net twice.",
+          "2": "Akaashi (SP) [Toss] +16%. [Calm Awareness]: +1.5% [Toss] per stack (max 10). Same consumption; per stack +3% [Awareness] (cap +30%).",
+          "3": "Akaashi (SP) [Toss] +20%. [Calm Awareness]: +1.5% [Toss] per stack (max 10). Same consumption; per stack +3% [Awareness] (cap +30%).",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Bring out 100% of Practice
       {
-        key: "active",
-        name: "Cerebral Set",
+        key: "passive",
+        name: "Bring Out 100% of Practice",
         levels: {
-          "1": "Performs a Tour-Attack with [Set] x120% (unblockable). If this scores, next ally’s [Serve] +10%.",
-          "2": "Tour-Attack [Set] x135% (unblockable). Same bonus.",
-          "3": "Tour-Attack [Set] x150% (unblockable). Same bonus.",
+          "1": "Akaashi (SP) performs a [Toss] with [Toss]×140% power. The first time his finisher activates after this play: [Toss] +15% until the ball crosses the net twice.",
+          "2": "Performs [Toss]×160% power. Next finisher after this play: [Toss] +17% until ball crosses twice.",
+          "3": "Performs [Toss]×180% power. Next finisher after this play: [Toss] +19% until ball crosses twice.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Toss Launches an Attack
+      {
+        key: "passive",
+        name: "Toss Launches an Attack",
+        levels: {
+          "1": "While allies’ Team Morale Awakening is active, when Akaashi (SP) touches the ball consume 5 stacks of [Calm Awareness]: [Awareness] +70% until the ball crosses the net twice. If his toss is NICE, the first allied spiker after this play gains [Awareness] equal to 50% of Akaashi’s [Awareness] (caps at 60%). If that spike is a Power Attack, the spiker gains an additional +50% of Akaashi’s [Awareness] (caps at 60%). When <Bring Out 100% of Practice> is activated, per [Calm Awareness] stack gained this set, allied spikers’ [Power Attack/Quick] +3% (cap +24%).",
+          "2": "Same effects as Lv1.",
+          "3": "Same effects as Lv1.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      // A Decisive Blow
       {
         key: "finisher",
-        name: "Decisive Shot",
+        name: "A Decisive Blow",
         levels: {
-          "1": "[Set] x260%. If triggered during ‘100% Practice Extraction’: extra [Set] bonus scales with [Calm Awareness] stacks gained in this set (up to +40%). On Power spike: extra +0.8% per stack (up to +80%).",
-          "2": "[Set] x270% (same scaling caps).",
-          "3": "[Set] x280% (same scaling caps).",
-          "4": "[Set] x290% (same scaling caps).",
-          "5": "[Set] x300% (same scaling caps).",
+          "1": "Akaashi (SP) performs an unblockable two-attack with [Toss]×260%. If this play is NICE: reduce the cooldown of <Bring Out 100% of Practice> by 4 net crossings. Gain 1 stack of [Calm Awareness].",
+          "2": "Unblockable two-attack with [Toss]×270%. Same extra effects.",
+          "3": "Unblockable two-attack with [Toss]×280%. Same extra effects.",
+          "4": "Unblockable two-attack with [Toss]×290%. Same extra effects.",
+          "5": "Unblockable two-attack with [Toss]×300%. Same extra effects.",
         },
       },
     ],
@@ -389,6 +463,8 @@ export const fukurodaniPlayers: Player[] = [
         to: "keiji-akaashi-sp",
         name: "Unbeatable Summer Duo",
         participants: ["keiji-akaashi-sp", "kotaro-bokuto-sp"],
+        effect:
+          "Akaashi (SP) [Toss] +(Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%). While allies are in Team Morale Awakening: Bokuto (SP) [Power Attack] +18% and Akaashi (SP) [Toss] +5% additional.",
       },
       {
         to: "keiji-akaashi-sp",
@@ -398,14 +474,38 @@ export const fukurodaniPlayers: Player[] = [
           "kotaro-bokuto-sp",
           "takanobu-aone-ur",
         ],
+        effect:
+          "While an ally activates Team Morale Awakening, when a friendly 2/3-block is activated, the [Reflex] of all members participating in the block increases (Lv1: 6%, Lv2: 7%, Lv3: 8%, Lv4: 9%, Lv5: 10%) until the ball crosses the net twice. At the start of each rally, allies’ Team Morale +20.",
       },
     ],
     resonances: [
-      { level: "I", name: "", effect: "" },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "" },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "" },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "Akaashi (SP) [Power] +30%. While he is on the court: at rally end Team Morale +40; and when allies are NOT in Morale Awakening, allies’ [Receive] & [Block] +25%.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When <Bring Out 100% of Practice> is activated, for each [Calm Awareness] stack gained this set: allied spikers’ [Power/Quick] +0.3% (cap +40%) until the ball crosses twice; if the spike is a Power Attack, +0.8% more (cap +80%). Also, per stack, <A Decisive Blow> power +[Toss]×0.6% (cap +100%). While allies’ Morale Awakening is active, for every +5 Team Morale, the corresponding member’s [Power] +1% on the first special after Awakening ends (cap +30%).",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -447,33 +547,33 @@ export const fukurodaniPlayers: Player[] = [
     skills: [
       {
         key: "passive",
-        name: "Defense Master",
+        name: "Master of Defense",
         levels: {
-          "1": "Komi’s [Receive] +8%. If Komi’s receive does not become Bad, enemy team morale -12.",
-          "2": "Komi’s [Receive] +10%. If not Bad, enemy team morale -12.",
-          "3": "Komi’s [Receive] +12%. If not Bad, enemy team morale -12.",
+          "1": "Komi’s [Receive] +8%. If Komi’s Receive result is not BAD, enemy Team Morale −12.",
+          "2": "Komi’s [Receive] +10%. If not BAD, enemy Team Morale −12.",
+          "3": "Komi’s [Receive] +12%. If not BAD, enemy Team Morale −12.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Team Lubricant",
+        name: "Lubricating Oils for Teams",
         levels: {
-          "1": "Performs [Cover] x110%. If this play avoids AD result, allies’ main parameters +5% for 1 rally.",
-          "2": "Performs [Cover] x125%. If avoids AD, allies’ main parameters +6% for 1 rally.",
-          "3": "Performs [Cover] x140%. If avoids AD, allies’ main parameters +7% for 1 rally.",
+          "1": "Performs [Cover]×110%. If this play avoids BAD, allies’ main parameters +5% for 1 rally.",
+          "2": "Performs [Cover]×125%. If avoids BAD, allies’ main parameters +6.5% for 1 rally.",
+          "3": "Performs [Cover]×140%. If avoids BAD, allies’ main parameters +8% for 1 rally.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "passive",
-        name: "Resilient Receive",
+        name: "Well-Established Receiving",
         levels: {
-          "1": "When opponent uses Power Attack: Komi’s [Receive] +20%.",
-          "2": "When opponent uses Power Attack: Komi’s [Receive] +25%.",
-          "3": "When opponent uses Power Attack: Komi’s [Receive] +30%.",
+          "1": "When Komi receives a hit and opponent uses Power Attack: [Receive] power +[Receive]×30%.",
+          "2": "… +[Receive]×40%.",
+          "3": "… +[Receive]×50%.",
           "4": undefined,
           "5": undefined,
         },
@@ -482,26 +582,43 @@ export const fukurodaniPlayers: Player[] = [
         key: "finisher",
         name: "Center of Defense",
         levels: {
-          "1": "[Receive] x235%.",
-          "2": "[Receive] x250%.",
-          "3": "[Receive] x265%.",
-          "4": "[Receive] x280%.",
-          "5": "[Receive] x295%.",
+          "1": "[Receive]×235%.",
+          "2": "[Receive]×250%.",
+          "3": "[Receive]×265%.",
+          "4": "[Receive]×280%.",
+          "5": "[Receive]×295%.",
         },
       },
     ],
     bonds: [],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +10%.",
+      },
       {
         level: "II",
-        name: "",
+        name: "Skill Resonance II",
         effect:
-          "Cooldown resets of ‘As Usual’ for Akaashi when Komi prevents AD.",
+          "The cooldown of <Center of Defense> is tracked by 6 net crossings. When <Center of Defense> is activated: allies’ [Power Attack/Quick] +3% (max 5 stacks).",
       },
-      { level: "III", name: "", effect: "Main parameters +10%." },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "Main parameters +10%." },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "When a teammate concedes a point, the next back-row ally’s Receive power +[Receive]×30% for that member.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +10%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -516,9 +633,9 @@ export const fukurodaniPlayers: Player[] = [
     memory: { name: "", effect: "" },
   },
 
-  // SARUKUI YAMATO (SSR) - Wing Spiker
+  // SARUKUI YAMATO (SR) - Wing Spiker
   {
-    id: "yamato-sarukui-ssr",
+    id: "yamato-sarukui-sr",
     name: "Yamato Sarukui",
     shortName: "Yamato",
     team: "Fukurodani",
@@ -556,9 +673,9 @@ export const fukurodaniPlayers: Player[] = [
         key: "passive",
         name: "Exquisite Combination",
         levels: {
-          "1": "Performs [Cover] x120%.",
-          "2": "[Cover] x135%.",
-          "3": "[Cover] x150%.",
+          "1": "Performs [Cover]×120%.",
+          "2": "[Cover]×135%.",
+          "3": "[Cover]×150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -578,21 +695,33 @@ export const fukurodaniPlayers: Player[] = [
         key: "finisher",
         name: "Mr. Versatile",
         levels: {
-          "1": "[Receive] x225%. If the play avoids AD result: allies’ team morale +20.",
-          "2": "[Receive] x240% (+team morale +20).",
-          "3": "[Receive] x255% (+team morale +20).",
-          "4": "[Receive] x270% (+team morale +20).",
-          "5": "[Receive] x285% (+team morale +20).",
+          "1": "[Receive]×225%. If this play avoids BAD: allies’ Team Morale +20.",
+          "2": "[Receive]×240% (+Team Morale +20).",
+          "3": "[Receive]×255% (+Team Morale +20).",
+          "4": "[Receive]×270% (+Team Morale +20).",
+          "5": "[Receive]×285% (+Team Morale +20).",
         },
       },
     ],
     bonds: [],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +10%." },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "Main parameters +10%." },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "Main parameters +10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +10%.",
+      },
+      { level: "II", name: "Skill Resonance II", effect: "—" },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +10%.",
+      },
+      { level: "IV", name: "Skill Resonance IV", effect: "—" },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +10%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -636,20 +765,20 @@ export const fukurodaniPlayers: Player[] = [
         key: "passive",
         name: "Intimidating Block",
         levels: {
-          "1": "Washio’s [Block] +8%. When he blocks, the ally with the highest [Receive] gets [Receive] +20% for this rally.",
-          "2": "Washio’s [Block] +10%. Same trigger grants [Receive] +24%.",
-          "3": "Washio’s [Block] +12%. Same trigger grants [Receive] +28%.",
+          "1": "Washio’s [Block] +8%. When he blocks, the ally with the highest [Receive] gets [Receive] +20% for this rally. If Washio’s block result is not BAD, his next personal block gets [Block] +20%.",
+          "2": "Washio’s [Block] +10%. Same triggers, [Receive] +24%.",
+          "3": "Washio’s [Block] +12%. Same triggers, [Receive] +28%.",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "active",
-        name: "High-Point Quick",
+        name: "High-RBI Quick",
         levels: {
-          "1": "Performs [Quick Attack] x120%.",
-          "2": "Performs [Quick Attack] x135%.",
-          "3": "Performs [Quick Attack] x150%.",
+          "1": "Performs [Quick Attack]×120%.",
+          "2": "Performs [Quick Attack]×135%.",
+          "3": "Performs [Quick Attack]×150%.",
           "4": undefined,
           "5": undefined,
         },
@@ -658,32 +787,54 @@ export const fukurodaniPlayers: Player[] = [
         key: "passive",
         name: "Hidden Capability",
         levels: {
-          "1": "If ally makes a Nice Play: Washio’s [Block] & [Quick Attack] +2% (stacks to 5).",
-          "2": "Stacks grant +3% per stack.",
-          "3": "Stacks grant +4% per stack.",
+          "1": "If an ally makes a NICE play: Washio’s [Block] & [Quick Attack] +2% (max 5 stacks).",
+          "2": "… +2.5% per stack (max 5).",
+          "3": "… +3% per stack (max 5).",
           "4": undefined,
           "5": undefined,
         },
       },
       {
         key: "finisher",
-        name: "Terrifying Block",
+        name: "Height-Advantage Block",
         levels: {
-          "1": "[Block] x220%.",
-          "2": "[Block] x235%.",
-          "3": "[Block] x250%.",
-          "4": "[Block] x265%.",
-          "5": "[Block] x280%.",
+          "1": "[Block]×220%.",
+          "2": "[Block]×235%.",
+          "3": "[Block]×250%.",
+          "4": "[Block]×265%.",
+          "5": "[Block]×280%.",
         },
       },
     ],
     bonds: [],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +10%." },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "Main parameters +10%." },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "Main parameters +10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +10%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "If Washio is on the court, when your team scores: Team Morale +10. While allies’ Team Morale Awakening is active, when an ally scores: Washio’s [Block] +5% (max 3 stacks).",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "If Washio’s block result is not BAD, the first allied blocker after this play gets [Block] +15%.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +10%.",
+      },
     ],
     potentials: {
       recommended: {
@@ -723,58 +874,84 @@ export const fukurodaniPlayers: Player[] = [
       bonusDefense: { reflex: 0.05, spirit: 0.0, defenseTechnique: 0.0 },
     },
     skills: [
+      // Excellent Reception
       {
         key: "passive",
-        name: "Absolute Receiver",
+        name: "Excellent Reception",
         levels: {
-          "1": "Konoha’s [Receive] +8%. If opponent damages this rally, Konoha’s [Receive] power +4%.",
-          "2": "Konoha’s [Receive] +10%. If damaged, +6%.",
-          "3": "Konoha’s [Receive] +12%. If damaged, +8%.",
+          "1": "Konoha’s [Receive] +8%. While allies are in Team Morale Awakening, Konoha’s [Receive] and [Cover] +10%.",
+          "2": "Konoha’s [Receive] +10%. While allies are in Team Morale Awakening, [Receive]/[Cover] +10%.",
+          "3": "Konoha’s [Receive] +12%. While allies are in Team Morale Awakening, [Receive]/[Cover] +10%.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Exquisite Combination
       {
         key: "passive",
-        name: "Team Player’s Receive",
+        name: "Exquisite Combination",
         levels: {
-          "1": "Performs [Receive] x120% for the team.",
-          "2": "[Receive] x135%.",
-          "3": "[Receive] x150%.",
+          "1": "Performs [Cover]×120%.",
+          "2": "Performs [Cover]×135%.",
+          "3": "Performs [Cover]×150%.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Block of All-Rounders
       {
         key: "passive",
-        name: "Calm Crisis Response",
+        name: "Block of All-Rounders",
         levels: {
-          "1": "If team is behind: Konoha’s [Receive] and [Power Attack] +8%.",
-          "2": "If team is behind: [Receive] and [Power Attack] +10%.",
-          "3": "If team is behind: [Receive] and [Power Attack] +12%.",
+          "1": "If Konoha is in the vanguard: front-row allies’ [Block] +8% and [Power Attack/Quick] +8%. If in the back row: back-row allies’ [Receive] +8% and [Cover] +8%.",
+          "2": "If vanguard: [Block] +10% & [Power/Quick] +10%. If rear guard: [Receive]/[Cover] +10%.",
+          "3": "If vanguard: [Block] +12% & [Power/Quick] +12%. If rear guard: [Receive]/[Cover] +12%.",
           "4": undefined,
           "5": undefined,
         },
       },
+      // Mr. Dexterity Poor
       {
         key: "finisher",
-        name: "Hidden Weapon",
+        name: "Mr. Dexterity Poor",
         levels: {
-          "1": "[Power Attack] x220%.",
-          "2": "[Power Attack] x235%.",
-          "3": "[Power Attack] x250%.",
-          "4": "[Power Attack] x265%.",
-          "5": "[Power Attack] x280%.",
+          "1": "Performs a Receive with [Receive]×225%. If this play avoids BAD: allies’ Team Morale +20.",
+          "2": "[Receive]×240% (+Team Morale +20).",
+          "3": "[Receive]×255% (+Team Morale +20).",
+          "4": "[Receive]×270% (+Team Morale +20).",
+          "5": "[Receive]×285% (+Team Morale +20).",
         },
       },
     ],
     bonds: [],
     resonances: [
-      { level: "I", name: "", effect: "Main parameters +10%." },
-      { level: "II", name: "", effect: "" },
-      { level: "III", name: "", effect: "Main parameters +10%." },
-      { level: "IV", name: "", effect: "" },
-      { level: "V", name: "", effect: "Main parameters +10%." },
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +10%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "If Konoha’s Receive result is not BAD, the next allied setter gains [Set] +10% and [Awareness] +8%.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "While Konoha is on the court and allies are in Team Morale Awakening: if his Receive is not BAD, this play does not consume Awakening duration.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +10%.",
+      },
     ],
     potentials: {
       recommended: {

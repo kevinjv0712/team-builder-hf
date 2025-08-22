@@ -199,7 +199,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "hajime-iwaizumi-sr",
+        to: "toru-oikawa-ssr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
         effect:
@@ -327,7 +327,7 @@ export const aobaJohsaiPlayers: Player[] = [
           "Hajime Iwaizumi's [banging], Kentaro Kyotani's [banging] (Lv.1:6%, Lv2:7%, Lv.3:8%, Lv.4:9%, Lv.5:10%) up",
       },
       {
-        to: "toru-oikawa-ur",
+        to: "hajime-iwaizumi-ssr",
         name: "Childhood Duo",
         participants: ["toru-oikawa-ur", "hajime-iwaizumi-ssr"],
         effect:
@@ -446,7 +446,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "toru-oikawa-ssr",
+        to: "hajime-iwaizumi-sr",
         name: "Team Chemistry",
         participants: ["toru-oikawa-ssr", "hajime-iwaizumi-sr"],
         effect:
@@ -796,7 +796,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "takahiro-hanamaki-sr",
+        to: "issei-matsukawa-sr",
         name: "Seijoh's Senior Year Pillars",
         participants: ["issei-matsukawa-sr", "takahiro-hanamaki-sr"],
         effect: "Boosts Matsukawa’s [Block] and Hanamaki’s [Receive].",
@@ -906,7 +906,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "issei-matsukawa-sr",
+        to: "takahiro-hanamaki-sr",
         name: "Seijoh's Senior Year Pillars",
         participants: ["issei-matsukawa-sr", "takahiro-hanamaki-sr"],
         effect: "Boosts Matsukawa’s [Block] and Hanamaki’s [Receive].",
@@ -1225,7 +1225,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "akira-kunimi-sr",
+        to: "yutaro-kindaichi-sr",
         name: "Blunt and Composed",
         participants: ["yutaro-kindaichi-sr", "akira-kunimi-sr"],
         effect:
@@ -1338,7 +1338,7 @@ export const aobaJohsaiPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "yutaro-kindaichi-sr",
+        to: "akira-kunimi-sr",
         name: "Blunt and Composed",
         participants: ["yutaro-kindaichi-sr", "akira-kunimi-sr"],
         effect:

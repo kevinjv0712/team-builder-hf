@@ -246,9 +246,7 @@ export default function PlayersList() {
                 className={[
                   "relative rounded-lg border transition overflow-hidden",
                   "bg-neutral-800 hover:bg-neutral-700",
-                  isSelected
-                    ? "border-sky-400 ring-4 ring-blue-700 bg-sky-900/20"
-                    : "border-white/40",
+                  isSelected ? "ring-4 ring-lime-400" : "border-white/40",
                 ].join(" ")}
                 style={{ width: `${cardPx}px`, aspectRatio: "19 / 26" }}
                 title={`${p.name} · ${p.team}`}
