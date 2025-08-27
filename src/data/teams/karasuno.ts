@@ -468,7 +468,7 @@ export const karasunoPlayers: Player[] = [
       },
       {
         to: "kei-tsukishima-sp",
-        name: "Fireworks display",
+        name: "Fireworks Display",
         participants: ["tetsuro-kuroo-sp", "kei-tsukishima-sp"],
         effect:
           "Main parameters of allied members increase by +(Lv1: 6%, Lv2: 7%,Lv3: 8%,Lv4: 9%,Lv5: 10%). At the end of each rally, the opponent's front line will be inflicted with [Rage]. This lasts untils the ball crosses the net 8 times. If you inflict [Rage] on an enemy who already has [Rage], you will instead inflict [Distracted]. This lasts untils the ball crosses the net 8 times. The [Distracted] debuff cannot be removed.",
@@ -1480,7 +1480,7 @@ export const karasunoPlayers: Player[] = [
       {
         to: "shoyo-hinata-ssr",
         name: "Weird Duo",
-        participants: ["tobio-kageyama-ssr", "shoyo-hinata-ssr"],
+        participants: ["tobio-kageyama-ur", "shoyo-hinata-ssr"],
         effect:
           "KAGEYAMA tosses → HINATA performs a weird Quick with [Quick]×(280/295/310/325/340%), unblocked. HINATA Awareness +30%; Strength + Awareness×(30–50%) (caps 60–100%). Reset when an ally scores. If [Losing Hate] is consumed on activation, KAGEYAMA gains 1 stack.",
       },

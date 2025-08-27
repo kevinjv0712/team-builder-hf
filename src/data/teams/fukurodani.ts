@@ -251,7 +251,7 @@ export const fukurodaniPlayers: Player[] = [
   // BOKUTO KOTARO (SP - Beach)
   {
     id: "kotaro-bokuto-sp",
-    name: "Kotaro Bokuto (Beach)",
+    name: "Kotaro Bokuto",
     shortName: "Bokuto",
     team: "Fukurodani",
     rarity: "UR",

@@ -8,6 +8,6 @@ type SettingsState = {
 };
 
 export const useSettingsStore = create<SettingsState>((set) => ({
-  server: "Global",
+  server: "Japan",
   setServer: (server) => set({ server }),
 }));
