@@ -2,7 +2,7 @@
 import type { Player } from "@/types";
 
 export const aobaJohsaiPlayers: Player[] = [
-  // ===== TORU OIKAWA (UR — JAPAN) =====
+  // ===== TORU OIKAWA (UR) =====
   {
     id: "toru-oikawa-ur",
     name: "Toru Oikawa",
@@ -12,7 +12,7 @@ export const aobaJohsaiPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Serve", "Setter", "Power Attack"],
     image: "/characters/aoba-johsai/toru-oikawa-ur.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 64,
