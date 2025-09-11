@@ -395,7 +395,7 @@ export const shiratorizawaPlayers: Player[] = [
     roles: ["WS"],
     typeTags: ["Receive"],
     image: "/characters/shiratorizawa/reon-ohira-ssr.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 75,
@@ -515,7 +515,7 @@ export const shiratorizawaPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Setter", "Power Attack"],
     image: "/characters/shiratorizawa/kenjiro-shirabu-ssr.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 75,
