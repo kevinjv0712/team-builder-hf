@@ -137,7 +137,7 @@ export const nekomaPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/nekoma/morisuke-yaku-ssr.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 62,
