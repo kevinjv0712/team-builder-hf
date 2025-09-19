@@ -130,6 +130,145 @@ export const dateTechPlayers: Player[] = [
     memory: { name: "", effect: "" },
   },
 
+  // --------------------- KANJI KOGANEGAWA (SP) — Setter ---------------------
+  {
+    id: "kanji-koganegawa-sp",
+    name: "Kanji Koganegawa",
+    shortName: "Koganegawa",
+    team: "Date",
+    rarity: "SP",
+    roles: ["S"],
+    typeTags: ["Setter", "Block"],
+    image: "/characters/date/kanji-koganegawa-sp.jpg",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 93,
+        powerAttack: 135,
+        set: 151,
+        serve: 144,
+        receive: 135,
+        block: 159,
+        save: 128,
+      },
+      bonusAttack: { awareness: 0, strength: 0, attackTechnique: 0 },
+      bonusDefense: { reflex: 0.05, spirit: 0, defenseTechnique: 0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Support Block",
+        levels: {
+          "1": "Soon...",
+          "2": "Soon...",
+          "3": "Soon...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Shortest Distance Setup",
+        levels: {
+          "1": "Soon...",
+          "2": "Soon...",
+          "3": "Soon...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "A Corner of the Iron Wall",
+        levels: {
+          "1": "Soon...",
+          "2": "Soon...",
+          "3": "Soon...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "High Wall",
+        levels: {
+          "1": "Soon...",
+          "2": "Soon...",
+          "3": "Soon...",
+          "4": "Soon...",
+          "5": "Soon...",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "kanji-koganegawa-sp",
+        name: "Sports Festival",
+        participants: ["kanji-koganegawa-sp", "akira-kunimi-sp"],
+        effect:
+          "When an ally touches the ball, consumes an additional 1 stamina and increases the main stat of that ally by 3% until the ball goes over the net twice. If the touch is a block, the ally's [Block] is increase by an additional 5%.",
+      },
+      {
+        to: "kanji-koganegawa-sp",
+        name: "Teammates at the mock youth training camp",
+        participants: ["kanji-koganegawa-sp", "kei-tsukishima-sp"],
+        effect:
+          "Increases [Block] of teammates wit block skills by 6%. The cooldown of [Block is a system] is reduces by 2 times the ball goes over the net. When an ally teammate's serve skill is activated, the opposing backline player is inflicted with [Rage] by 8 net crosses.",
+      },
+      {
+        to: "kanji-koganegawa-sp",
+        name: "New Iron Wall",
+        participants: [
+          "kanji-koganegawa-sp",
+          "kenji-futakuchi-ssr",
+          "takanobu-aone-sp",
+        ],
+        effect:
+          "When an ally blocks 2/3 players, the [Defensive Technique] of the ally's front line will increase by 3% for 1 rally. When an ally activates a serve skill, the serve will not miss. During a rally when an ally activates a serve skill, when an ally blocks 2/3 players, gain 1 stack of [Strong Block] and [Create an Iron Wall].",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect:
+          "While KOGANEGAWA is in the front row, reduces Power Attack stat of opponent players by 4%.",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Increases Basic Stats by 10%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect:
+          "FLASH DUMP new effect: when all your front row players are Block-type, increases this dump’s power by an additional 15% of Set stat.",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Increases Basic Stats by 10%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "",
+        primaryCount: 4,
+        secondaryType: "",
+        secondaryCount: 2,
+        reason: "",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
   // ===================== SSR (S → OP → WS → MB) =====================
 
   // --------------------- KANJI KOGANEGAWA (SSR) — Setter ---------------------

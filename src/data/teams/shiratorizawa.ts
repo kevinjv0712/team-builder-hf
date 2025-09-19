@@ -634,7 +634,7 @@ export const shiratorizawaPlayers: Player[] = [
     roles: ["S"],
     typeTags: ["Setter", "Power Attack", "Serve"],
     image: "/characters/shiratorizawa/eita-semi-ssr.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 75,
@@ -745,7 +745,7 @@ export const shiratorizawaPlayers: Player[] = [
     roles: ["LI"],
     typeTags: ["Receive"],
     image: "/characters/shiratorizawa/hayato-yamagata-ssr.jpg",
-    server: "Japan",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 68,

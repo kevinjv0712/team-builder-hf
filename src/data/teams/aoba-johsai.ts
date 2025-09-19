@@ -2,6 +2,125 @@
 import type { Player } from "@/types";
 
 export const aobaJohsaiPlayers: Player[] = [
+  // ===== AKIRA KUNIMI (SP) =====
+  {
+    id: "akira-kunimi-sp",
+    name: "Akira Kunimi",
+    shortName: "Kunimi",
+    team: "AobaJohsai",
+    rarity: "SR",
+    roles: ["OP"],
+    typeTags: ["Receive", "Power Attack"],
+    image: "/characters/aoba-johsai/akira-kunimi-sp.jpg",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 109,
+        powerAttack: 159,
+        set: 128,
+        serve: 136,
+        receive: 151,
+        block: 144,
+        save: 128,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Leave Some Energy",
+        levels: {
+          "1": "Kunimi’s [Power Attack] +10%. If stamina is below 80, [Powe attack] increases an additional 1.2%. If his stamina limit exceeds 80 at the end of each rally, his stamina limit will reduce by 10 and he will recover 120 stamina. Kunimi gains 1 stack of [Conserve Stamina] for every 10 stamina lost by an ally, each stack increases [Awareness] by 7%. Max 30 stacks, max 10 stacks per rally.",
+          "2": "Kunimi’s [Power Attack] +13%. If stamina is below 80, [Powe attack] increases an additional 1.2%. If his stamina limit exceeds 80 at the end of each rally, his stamina limit will reduce by 10 and he will recover 120 stamina. Kunimi gains 1 stack of [Conserve Stamina] for every 10 stamina lost by an ally, each stack increases [Awareness] by 7%. Max 30 stacks, max 10 stacks per rally.",
+          "3": "Kunimi’s [Power Attack] +16%. If stamina is below 80, [Powe attack] increases an additional 1.2%. If his stamina limit exceeds 80 at the end of each rally, his stamina limit will reduce by 10 and he will recover 120 stamina. Kunimi gains 1 stack of [Conserve Stamina] for every 10 stamina lost by an ally, each stack increases [Awareness] by 7%. Max 30 stacks, max 10 stacks per rally.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Accurate Defense",
+        levels: {
+          "1": "Receive x140% and increases the main parameters of all team members by 10% until the ball goes over the net twice",
+          "2": "Receive x160% and increases the main parameters of all team members by 10% until the ball goes over the net twice",
+          "3": "Receive x180% and increases the main parameters of all team members by 10% until the ball goes over the net twice",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Full Power",
+        levels: {
+          "1": "Each time Kunimi's stamina is recovered, [Power Attack] increases by 0.8%. Up to a maximum of 16%. At the start of a rally, if stamina limit is 80 or less, gains the [Critical Moment] effect. When he has this effect, the cooldown of [Hot Fighting Spirit] will be 6 net crosses. When kunimi's [Awareness] exceeds 100%, for every 1% it exceeds, [Power] increases 0.9%, up to 90%. After gainin [Critical Moment] effect, the first 2 times he actives [Hot Fighting Spirit] the cooldown will be reset.",
+          "2": "Each time Kunimi's stamina is recovered, [Power Attack] increases by 1.1%. Up to a maximum of 22%. At the start of a rally, if stamina limit is 80 or less, gains the [Critical Moment] effect. When he has this effect, the cooldown of [Hot Fighting Spirit] will be 6 net crosses. When kunimi's [Awareness] exceeds 100%, for every 1% it exceeds, [Power] increases 0.9%, up to 90%. After gainin [Critical Moment] effect, the first 2 times he actives [Hot Fighting Spirit] the cooldown will be reset.",
+          "3": "Each time Kunimi's stamina is recovered, [Power Attack] increases by 1.4%. Up to a maximum of 28%. At the start of a rally, if stamina limit is 80 or less, gains the [Critical Moment] effect. When he has this effect, the cooldown of [Hot Fighting Spirit] will be 6 net crosses. When kunimi's [Awareness] exceeds 100%, for every 1% it exceeds, [Power] increases 0.9%, up to 90%. After gainin [Critical Moment] effect, the first 2 times he actives [Hot Fighting Spirit] the cooldown will be reset.",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Hot Fighting Spirit",
+        levels: {
+          "1": "Kunimi consumes an additional 8 stamina and performs a Power Spike x295%. If stamina exceeds 50, the power of this attack increases by [Power Attack] x 50%",
+          "2": "Kunimi consumes an additional 8 stamina and performs a Power Spike x315%. If stamina exceeds 50, the power of this attack increases by [Power Attack] x 50%",
+          "3": "Kunimi consumes an additional 8 stamina and performs a Power Spike x335%. If stamina exceeds 50, the power of this attack increases by [Power Attack] x 50%",
+          "4": "Kunimi consumes an additional 8 stamina and performs a Power Spike x355%. If stamina exceeds 50, the power of this attack increases by [Power Attack] x 50%",
+          "5": "Kunimi consumes an additional 8 stamina and performs a Power Spike x375%. If stamina exceeds 50, the power of this attack increases by [Power Attack] x 50%",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "akira-kunimi-sp",
+        name: "Sports Festival",
+        participants: ["akira-kunimi-sp", "kanji-koganegawa-sp"],
+        effect:
+          "When an ally touches the ball, consumes an additional 1 stamina and increases the main stat of that ally by 3% until the ball goes over the net twice. If the touch is a block, the ally's [Block] is increase by an additional 5%.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: "Soon..",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect: "Soon..",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "Power Attack",
+        primaryCount: 4,
+        secondaryType: "Receive",
+        secondaryCount: 2,
+        reason: "OP que aporta daño y estabilidad al pase.",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
   // ===== TORU OIKAWA (UR) =====
   {
     id: "toru-oikawa-ur",

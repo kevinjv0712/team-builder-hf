@@ -127,17 +127,17 @@ export const fukurodaniPlayers: Player[] = [
     memory: { name: "", effect: "" },
   },
 
-  // AKAASHI KEIJI (UR)
+  // AKAASHI KEIJI (SSR)
   {
-    id: "keiji-akaashi-ur",
+    id: "keiji-akaashi-sr",
     name: "Keiji Akaashi",
     shortName: "Akaashi",
     team: "Fukurodani",
-    rarity: "UR",
+    rarity: "SSR",
     roles: ["S"],
     typeTags: ["Setter", "Power Attack"],
-    image: "/characters/fukurodani/keiji-akaashi-ur.jpg",
-    server: "Japan",
+    image: "/characters/fukurodani/keiji-akaashi-ssr.jpg",
+    server: "Global",
     stats: {
       basic: {
         quickAttack: 71,
@@ -199,9 +199,9 @@ export const fukurodaniPlayers: Player[] = [
     ],
     bonds: [
       {
-        to: "keiji-akaashi-ur",
+        to: "keiji-akaashi-ssr",
         name: "Miracle Ace and Caring Setter",
-        participants: ["keiji-akaashi-ur", "kotaro-bokuto-ur"],
+        participants: ["keiji-akaashi-ssr", "kotaro-bokuto-ur"],
         effect:
           "Akaashi tosses to Bokuto → Bokuto’s [Power Attack]×(Lv1: 265%, Lv2: 280%, Lv3: 295%, Lv4: 310%, Lv5: 325%). With this hit Bokuto’s [Power Attack] +20% and Team Morale +15.",
       },

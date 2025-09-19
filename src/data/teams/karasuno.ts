@@ -473,6 +473,13 @@ export const karasunoPlayers: Player[] = [
         effect:
           "Main parameters of allied members increase by +(Lv1: 6%, Lv2: 7%,Lv3: 8%,Lv4: 9%,Lv5: 10%). At the end of each rally, the opponent's front line will be inflicted with [Rage]. This lasts untils the ball crosses the net 8 times. If you inflict [Rage] on an enemy who already has [Rage], you will instead inflict [Distracted]. This lasts untils the ball crosses the net 8 times. The [Distracted] debuff cannot be removed.",
       },
+      {
+        to: "kei-tsukishima-sp",
+        name: "Teammates at the mock youth training camp",
+        participants: ["kei-tsukishima-sp", "kanji-koganegawa-sp"],
+        effect:
+          "Increases [Block] of teammates wit block skills by 6%. The cooldown of [Block is a system] is reduces by 2 times the ball goes over the net. When an ally teammate's serve skill is activated, the opposing backline player is inflicted with [Rage] by 8 net crosses.",
+      },
     ],
     resonances: [
       {
