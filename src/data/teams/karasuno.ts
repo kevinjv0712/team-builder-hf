@@ -613,6 +613,12 @@ export const karasunoPlayers: Player[] = [
         effect:
           "When YU NISHINOYA (After School) uses his special, KAGEYAMA gains 1 [Losing Hate] stack. If that play is a Nice Play, the first allied Spike afterward gains +20% of the spiker’s (Power/Quick) as bonus power.",
       },
+      {
+        to: "tobio-kageyama-ur",
+        name: "King and Great King",
+        participants: ["toru-oikawa-sp", "tobio-kageyama-ur"],
+        effect: "Soon...",
+      },
     ],
     resonances: [
       {

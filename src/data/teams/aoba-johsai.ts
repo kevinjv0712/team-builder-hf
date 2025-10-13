@@ -8,7 +8,7 @@ export const aobaJohsaiPlayers: Player[] = [
     name: "Akira Kunimi",
     shortName: "Kunimi",
     team: "AobaJohsai",
-    rarity: "SR",
+    rarity: "SP",
     roles: ["OP"],
     typeTags: ["Receive", "Power Attack"],
     image: "/characters/aoba-johsai/akira-kunimi-sp.jpg",
@@ -79,6 +79,124 @@ export const aobaJohsaiPlayers: Player[] = [
         participants: ["akira-kunimi-sp", "kanji-koganegawa-sp"],
         effect:
           "When an ally touches the ball, consumes an additional 1 stamina and increases the main stat of that ally by 3% until the ball goes over the net twice. If the touch is a block, the ally's [Block] is increase by an additional 5%.",
+      },
+    ],
+    resonances: [
+      {
+        level: "I",
+        name: "Skill Resonance I",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "II",
+        name: "Skill Resonance II",
+        effect: "Soon..",
+      },
+      {
+        level: "III",
+        name: "Skill Resonance III",
+        effect: "Main parameters +13%.",
+      },
+      {
+        level: "IV",
+        name: "Skill Resonance IV",
+        effect: "Soon..",
+      },
+      {
+        level: "V",
+        name: "Skill Resonance V",
+        effect: "Main parameters +13%.",
+      },
+    ],
+    potentials: {
+      recommended: {
+        primaryType: "Power Attack",
+        primaryCount: 4,
+        secondaryType: "Receive",
+        secondaryCount: 2,
+        reason: "OP que aporta daño y estabilidad al pase.",
+      },
+      equipped: [],
+    },
+    memory: { name: "", effect: "" },
+  },
+
+  // ===== TORU OIKAWA (SP) =====
+  {
+    id: "toru-oikawa-sp",
+    name: "Toru Oikawa",
+    shortName: "Oikawa",
+    team: "AobaJohsai",
+    rarity: "SP",
+    roles: ["S"],
+    typeTags: ["Serve", "Setter", "Power Attack"],
+    image: "/characters/aoba-johsai/toru-oikawa-sp.jpg",
+    server: "Japan",
+    stats: {
+      basic: {
+        quickAttack: 99,
+        powerAttack: 144,
+        set: 159,
+        serve: 1352,
+        receive: 128,
+        block: 142,
+        save: 120,
+      },
+      bonusAttack: { awareness: 0.05, strength: 0.0, attackTechnique: 0.0 },
+      bonusDefense: { reflex: 0.0, spirit: 0.0, defenseTechnique: 0.0 },
+    },
+    skills: [
+      {
+        key: "passive",
+        name: "Soon...",
+        levels: {
+          "1": "...",
+          "2": "...",
+          "3": "...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Soon...",
+        levels: {
+          "1": "...",
+          "2": "...",
+          "3": "...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "passive",
+        name: "Soon...",
+        levels: {
+          "1": "...",
+          "2": "...",
+          "3": "...",
+          "4": undefined,
+          "5": undefined,
+        },
+      },
+      {
+        key: "active",
+        name: "Soon...",
+        levels: {
+          "1": "...",
+          "2": "...",
+          "3": "...",
+          "4": "...",
+          "5": "...",
+        },
+      },
+    ],
+    bonds: [
+      {
+        to: "toru-oikawa-sp",
+        name: "King and Great King",
+        participants: ["toru-oikawa-sp", "tobio-kageyama-ur"],
+        effect: "Soon...",
       },
     ],
     resonances: [
